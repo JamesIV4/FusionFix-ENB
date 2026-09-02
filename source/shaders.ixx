@@ -13,6 +13,7 @@ import shadows;
 import timecycext;
 import seasonal;
 import d3dx9_43;
+import enbcompat;
 
 template<typename T, typename ... U>
 concept IsAnyOf = (std::same_as<T, U> || ...);
@@ -192,16 +193,55 @@ public:
             fMaxPQValue = std::max(iniReader.ReadFloat("MISC", "MaxPQValue", 100.0f), 0.0000001f);
 
             // Redirect path to one unified folder
+            //
+            // The game keeps six GPU-specific shader-variant folders
+            // (win32_30, win32_30_low_ati, _nv6, _nv7, _nv8, _atidx10) and
+            // picks one at runtime. FusionFix collapses every lookup onto a
+            // single folder so it only has to ship one shader set. Normally
+            // that is entry 0, win32_30, which is the folder its own package
+            // overlays.
+            //
+            // In ENB mode the package is not wanted, so the collapse targets a
+            // folder nothing overlays instead and the game loads the stock
+            // shaders. Same hook either way -- only the index differs -- so
+            // there is no separate code path to keep working.
+            static auto shaderFolderIndex = [](const char** table) -> uint32_t
+            {
+                if (ENBCompat::Renderer().FusionShaderPackage)
+                    return 0;
+
+                // Resolve by name rather than by a hard-coded index: the table
+                // order is not guaranteed, and a wrong index here would send
+                // every shader lookup somewhere arbitrary.
+                auto& wanted = ENBCompat::StockShaderFolder();
+                for (uint32_t i = 0; i < 8; i++)
+                {
+                    // Walk only as far as entries that still look like variant
+                    // folder names, so running off the end of the table stops
+                    // the scan instead of comparing against arbitrary memory.
+                    auto entry = table[i];
+                    if (IsBadReadPtr(entry, 32) || strncmp(entry, "win32_30", 8) != 0)
+                        break;
+                    if (wanted == entry)
+                        return i;
+                }
+
+                ENBCompat::Log("StockShaderFolder '" + wanted + "' is not one of the game's shader"
+                    " variant folders; falling back to the FusionFix package.");
+                return 0;
+            };
+
             auto pattern = hook::pattern("8B 04 8D ? ? ? ? A3 ? ? ? ? 8B 44 24 04");
             if (!pattern.empty())
             {
                 static auto off_1045520 = *pattern.get_first<const char**>(3);
+                static auto index = shaderFolderIndex(off_1045520);
                 struct ShaderPathHook
                 {
                     void operator()(injector::reg_pack& regs)
                     {
-                        regs.ecx = 0;
-                        *(const char**)&regs.eax = *off_1045520;
+                        regs.ecx = index;
+                        *(const char**)&regs.eax = off_1045520[index];
                     }
                 }; injector::MakeInline<ShaderPathHook>(pattern.get_first(0), pattern.get_first(7));
             }
@@ -209,12 +249,13 @@ public:
             {
                 pattern = hook::pattern("8B 14 85 ? ? ? ? A3 ? ? ? ? 8B 44 24 04");
                 static auto off_1045520 = *pattern.get_first<const char**>(3);
+                static auto index = shaderFolderIndex(off_1045520);
                 struct ShaderPathHook
                 {
                     void operator()(injector::reg_pack& regs)
                     {
-                        regs.eax = 0;
-                        *(const char**)&regs.edx = *off_1045520;
+                        regs.eax = index;
+                        *(const char**)&regs.edx = off_1045520[index];
                     }
                 }; injector::MakeInline<ShaderPathHook>(pattern.get_first(0), pattern.get_first(7));
             }
@@ -325,6 +366,8 @@ public:
             }
 
             // z-fighting fix helpers
+            // Uploads vs c227 / ps c209, which only the FusionFix shaders read.
+            if (ENBCompat::Renderer().ShaderConstantInjection)
             {
                 auto pattern = find_pattern("75 ? 8B CE E8 ? ? ? ? 5E 8B E5 5D C3", "? 75 ? 56 E8 ? ? ? ? 8B E5");
                 static auto grcViewPortUpdateTransformHook = safetyhook::create_mid(pattern.get_first(4), [](SafetyHookContext& regs)
@@ -365,6 +408,14 @@ public:
 
         FusionFix::onGameInitEvent() += []()
         {
+            // c208..c223 (pixel) and c227..c237 (vertex) are read only by the
+            // FusionFix replacement shaders. With the stock shader package
+            // installed -- which is what an old ENB preset needs, since it
+            // matches game shaders by bytecode hash -- these uploads write into
+            // registers nothing reads, so skip the hook entirely.
+            if (!ENBCompat::Renderer().ShaderConstantInjection)
+                return;
+
             auto pattern = hook::pattern("80 7C 24 ? ? 74 3F 80 BE ? ? ? ? ? 74 36");
             static auto BeginSceneHook = safetyhook::create_mid(pattern.get_first(), [](SafetyHookContext& regs)
             {
@@ -666,7 +717,7 @@ public:
                 pHDRTexQuarter = nullptr;
             };
 
-            if (GetD3DX9_43DLL())
+            if (GetD3DX9_43DLL() && ENBCompat::Renderer().ShaderConstantInjection)
             {
                 CRenderPhaseDeferredLighting_LightsToScreen::OnBuildRenderList() += []()
                 {

@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ENB shader map",
+  "description": "Maps each ENB shaderinput hash to the game shader it replaces, in each shader set under investigation. Identification is separate from confidence on purpose: a candidate with low confidence is a lead, not a fact.",
+  "type": "object",
+  "required": [
+    "generated",
+    "method",
+    "shader_sets",
+    "entries"
+  ],
+  "properties": {
+    "generated": {
+      "type": "string",
+      "description": "ISO date the map was produced"
+    },
+    "method": {
+      "type": "string",
+      "description": "How candidates were identified, including the tool"
+    },
+    "note": {
+      "type": "string"
+    },
+    "shader_sets": {
+      "type": "object",
+      "description": "Named shader sets the entries refer to, each described well enough to reproduce",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "presets": {
+      "type": "object",
+      "description": "ENB presets the hashes came from",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "enb_hash",
+          "stage",
+          "preset"
+        ],
+        "properties": {
+          "enb_hash": {
+            "type": "string",
+            "pattern": "^[0-9A-F]{8}$",
+            "description": "The hash in the shaderinput filename, uppercase"
+          },
+          "stage": {
+            "enum": [
+              "ps",
+              "vs"
+            ]
+          },
+          "preset": {
+            "type": "string",
+            "description": "Preset(s) shipping this replacement"
+          },
+          "role": {
+            "type": "string",
+            "description": "What the shader appears to do, from its code"
+          },
+          "enb_instructions": {
+            "type": "integer"
+          },
+          "ce_vanilla": {
+            "$ref": "#/$defs/match"
+          },
+          "ce_fusionfix": {
+            "$ref": "#/$defs/match"
+          },
+          "old_reference": {
+            "$ref": "#/$defs/match"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "headline": {
+      "type": "string",
+      "description": "One-paragraph summary of what the map shows."
+    },
+    "container_spread": {
+      "type": "string",
+      "description": "How much of a shader package has to be given up to satisfy the identified targets, since a .fxc container is the finest granularity available."
+    }
+  },
+  "$defs": {
+    "match": {
+      "type": "object",
+      "required": [
+        "candidate",
+        "confidence"
+      ],
+      "properties": {
+        "candidate": {
+          "type": "string",
+          "description": "container.fxc#index within that shader set, or empty if none"
+        },
+        "similarity": {
+          "type": "number",
+          "description": "Symmetric normalised-assembly similarity, 0..1"
+        },
+        "confidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low",
+            "none",
+            "confirmed"
+          ],
+          "description": "high/medium/low come from the similarity measure alone. 'confirmed' means a runtime capture showed ENB substituting this shader; nothing else does."
+        },
+        "declaration_matched_pool": {
+          "type": "integer",
+          "description": "How many candidates survived declaration filtering. 1 with a high similarity is an identification; a large pool with a low one is a lead; 0 means no shader in the set has a compatible signature."
+        }
+      }
+    }
+  }
+}

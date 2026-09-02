@@ -147,6 +147,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
 
         WCHAR path[MAX_PATH];
         int apiValue = 0;
+        std::filesystem::path cfgPath;
         {
             std::vector<std::filesystem::path> cfgPaths;
             auto cfgName = L"d3d9.cfg";
@@ -157,8 +158,6 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
                 cfgPaths.emplace_back(std::filesystem::path(path) / cfgName);
             if (SUCCEEDED(SHGetFolderPathW(NULL, CSIDL_MYDOCUMENTS, NULL, 0, path)))
                 cfgPaths.emplace_back(std::filesystem::path(path) / cfgName);
-
-            std::filesystem::path cfgPath;
 
             // First, try to find an existing readable file
             for (auto& it : cfgPaths)
@@ -218,7 +217,59 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
             apiValue = GetPrivateProfileIntW(L"MAIN", L"API", 0, cfgPath.c_str());
         }
 
-        if (apiValue)
+        // Optional proxy chain.
+        //
+        // ENBSeries ships as a d3d9.dll wrapper and so does this file, and only
+        // one of them can own the name next to the exe. ProxyLibrary lets this
+        // wrapper keep that slot and forward to a renamed ENB build, giving the
+        // chain GTAIV.exe -> FusionFix d3d9.dll -> ENB -> system d3d9.dll.
+        //
+        // The reverse order (ENB's own [PROXY] section pointing at a renamed
+        // FusionFix d3d9.dll) is also worth testing; see
+        // research/proxy-chain-results.md. This setting only makes the first
+        // arrangement possible, it does not claim it is the right one.
+        //
+        //   [MAIN]
+        //   ProxyLibrary = enbseries_d3d9.dll
+        //
+        // Relative names resolve next to the exe, so the proxy cannot be
+        // satisfied by an unrelated DLL further along the search path. Ignored
+        // when API=1, since the Vulkan path has no D3D9 wrapper to chain to.
+        if (!apiValue)
+        {
+            WCHAR proxyName[MAX_PATH] = {};
+            GetPrivateProfileStringW(L"MAIN", L"ProxyLibrary", L"", proxyName, MAX_PATH, cfgPath.c_str());
+            if (proxyName[0])
+            {
+                std::filesystem::path proxyPath(proxyName);
+                if (proxyPath.is_relative())
+                    proxyPath = GetExeModulePath() / proxyPath;
+
+                // Pointing ProxyLibrary at this file would have it load itself
+                // and forward to itself forever, which presents as a hang with
+                // no message. Catch the obvious form of that.
+                std::error_code ec;
+                if (std::filesystem::equivalent(proxyPath, GetModulePath(hModule), ec) && !ec)
+                {
+                    MessageBoxW(0, L"ProxyLibrary points at this same d3d9.dll.\n\n"
+                        L"Set it to the renamed wrapper you want to chain to, or remove the setting.",
+                        L"DLL Load Error", MB_ICONERROR);
+                    ExitProcess(0);
+                }
+
+                d3d9.dll = LoadLibraryW(proxyPath.c_str());
+                if (d3d9.dll == NULL)
+                {
+                    wchar_t errorMsg[1024];
+                    wsprintfW(errorMsg, L"ProxyLibrary is set but could not be loaded.\nError code: %lu\nPath: %ls",
+                        GetLastError(), proxyPath.c_str());
+                    MessageBoxW(0, errorMsg, L"DLL Load Error", MB_ICONERROR);
+                    ExitProcess(0);
+                }
+            }
+        }
+
+        if (d3d9.dll == NULL && apiValue)
         {
             lstrcpyW(path, L"vulkan.dll");
             d3d9.dll = LoadLibraryW(path);

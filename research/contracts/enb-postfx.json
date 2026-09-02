@@ -1,0 +1,33 @@
+{
+  "name": "enb-postfx",
+  "source": "ENB resources/enbseries_gta4_v0163.zip -> enbeffect.fx, function PS_C215BE6E",
+  "description": "The post-process pixel shader interface ENBSeries 0.163 expects. ENB names its entry point after the hash of the game shader it replaces and documents that shader's full parameter table in a comment block; this file is that table, transcribed. iCEnhancer 4.0's precompiled enbeffect.fx declares the same interface.",
+  "stage": "ps",
+  "constants": {
+    "globalScreenSize": "c44",
+    "Exposure": "c66",
+    "motionBlurMatrix": "c72",
+    "TexelSize": "c76",
+    "dofProj": "c77",
+    "dofDist": "c78",
+    "dofBlur": "c79",
+    "gDirectionalMotionBlurLength": "c80",
+    "ToneMapParams": "c81",
+    "deSatContrastGamma": "c82",
+    "ColorCorrect": "c83",
+    "ColorShift": "c84",
+    "PLAYER_MASK": "c85"
+  },
+  "samplers": {
+    "GBufferTextureSampler2": "s0",
+    "GBufferTextureSampler3": "s1",
+    "HDRSampler": "s2",
+    "BloomSampler": "s3",
+    "AdapLumSampler": "s4",
+    "JitterSampler": "s5",
+    "StencilCopySampler": "s6"
+  },
+  "expected_constant_registers": [44, 66, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85],
+  "expected_sampler_registers": [0, 1, 2, 3, 4, 5, 6],
+  "notes": "motionBlurMatrix occupies c72..c75 (a row-major float4x4). ENB additionally declares sampler s13 for its own detail texture, which the game does not provide and which is therefore not part of what the game must supply."
+}

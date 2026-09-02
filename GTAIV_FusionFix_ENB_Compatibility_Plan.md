@@ -18,6 +18,7 @@ The ideal end result is an **ENB Compatibility Mode / ENB-compatible FusionFix f
 
 # 1. Current Understanding
 
+
 ## 1.1 What is probably *not* the main problem
 
 Do **not** start from the assumption that GTA IV Complete Edition contains a universal "disable mods" mechanism.

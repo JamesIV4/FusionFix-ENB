@@ -1,0 +1,247 @@
+{
+  "$schema": "./shader-map.schema.json",
+  "generated": "2026-09-02",
+  "method": "static: tools/shader_dump/match_enb.py --match-decls. Candidates are first restricted to shaders with a compatible declaration signature (identical input declarations, samplers a subset of the ENB file's), then ranked by normalised-assembly similarity. declaration_matched_pool records how many candidates survived that filter -- a pool of 1 with a high similarity is an identification, a large pool with a low one is a lead.",
+  "note": "Confidence is about identification, not about anything working. Similarity is symmetric: matched instruction lines over combined length, with def/dcl excluded because that is precisely what ENB and FusionFix both edit. A similarity of 1.000 means the game shader's whole instruction body appears verbatim inside the ENB replacement file. No row has been confirmed against a running game. Supersedes the 2026-09-01 version, which was produced with a shader extractor that missed about nine blobs in ten.",
+  "shader_sets": {
+    "ce-vanilla": "Grand Theft Auto IV/GTAIV/common/shaders/win32_30 (CE 1.2.0.59, 102 containers, 1689 shaders)",
+    "ce-fusionfix": "Grand Theft Auto IV/GTAIV/update/common/shaders/win32_30 (FusionFix 5.0.1, 103 containers, 1739 shaders)",
+    "old-reference": "not available, and no longer considered necessary -- see enb-contract.md section 4"
+  },
+  "presets": {
+    "enbseries-0.163": "ENB resources/enbseries_gta4_v0163.zip -- 4 pixel shader replacements",
+    "icenhancer-4.0": "ENB resources/icenhancer40.zip -- 10 pixel + 2 vertex shader replacements"
+  },
+  "headline": "Complete Edition did not rewrite the shaders these presets target; FusionFix did. Seven of the twelve shaderinput files resolve to a single stock CE shader, three of them at similarity 1.000; every entry scores lower against FusionFix than against stock. A thirteenth target, C215BE6E, is named by enbeffect.fx rather than a shaderinput file and lives in rage_postfx.fxc.",
+  "container_spread": "The nine containers holding an identified target hold 191 of 1739 FusionFix shaders (11.0%), so a selective package retains 89%. Excluding deferred_lighting.fxc -- 62 shaders for two vegetation vertex shaders -- leaves 8 containers, 129 shaders, 92.6% retained. See tools/shader_dump/make_vanilla_package.py --selective.",
+  "entries": [
+    {
+      "enb_hash": "0CBF49C5",
+      "stage": "ps",
+      "preset": "icenhancer-4.0",
+      "role": "two-layer terrain blend, writes the full GBuffer (oC0..oC3)",
+      "enb_instructions": 20,
+      "ce_vanilla": {
+        "candidate": "gta_terrain_va_2lyr.fxc#5",
+        "similarity": 1.0,
+        "confidence": "high",
+        "declaration_matched_pool": 1
+      },
+      "ce_fusionfix": {
+        "candidate": "gta_terrain_va_2lyr.fxc#5",
+        "similarity": 0.632,
+        "confidence": "medium"
+      },
+      "notes": "Exact. Verified line by line against the CE disassembly: twelve instructions, identical declarations, differing only in the .w component of one def. The CE shader is 20 instructions, the FusionFix rewrite is 42."
+    },
+    {
+      "enb_hash": "405ABC1B",
+      "stage": "ps",
+      "preset": "icenhancer-4.0",
+      "role": "three-layer terrain blend",
+      "enb_instructions": 25,
+      "ce_vanilla": {
+        "candidate": "gta_terrain_va_3lyr.fxc#7",
+        "similarity": 1.0,
+        "confidence": "high",
+        "declaration_matched_pool": 1
+      },
+      "ce_fusionfix": {
+        "candidate": "gta_terrain_va_3lyr.fxc#7",
+        "similarity": 0.687,
+        "confidence": "medium"
+      },
+      "notes": "Exact. Same body as 0CBF49C5 with one more blend layer."
+    },
+    {
+      "enb_hash": "841FD9AE",
+      "stage": "ps",
+      "preset": "icenhancer-4.0",
+      "role": "four-layer terrain blend",
+      "enb_instructions": 30,
+      "ce_vanilla": {
+        "candidate": "gta_terrain_va_4lyr.fxc#9",
+        "similarity": 1.0,
+        "confidence": "high",
+        "declaration_matched_pool": 1
+      },
+      "ce_fusionfix": {
+        "candidate": "gta_terrain_va_4lyr.fxc#9",
+        "similarity": 0.727,
+        "confidence": "medium"
+      },
+      "notes": "Exact. Third member of the terrain family."
+    },
+    {
+      "enb_hash": "54F25463",
+      "stage": "vs",
+      "preset": "icenhancer-4.0",
+      "role": "vegetation wind sway vertex shader",
+      "enb_instructions": 99,
+      "ce_vanilla": {
+        "candidate": "deferred_lighting.fxc#7",
+        "similarity": 0.995,
+        "confidence": "high",
+        "declaration_matched_pool": 3
+      },
+      "ce_fusionfix": {
+        "candidate": "deferred_lighting.fxc#3",
+        "similarity": 0.923,
+        "confidence": "medium"
+      },
+      "notes": "Reads c208..c222 -- vertex registers, which do not overlap FusionFix's vertex range of c227..c237."
+    },
+    {
+      "enb_hash": "C35A5E05",
+      "stage": "vs",
+      "preset": "icenhancer-4.0",
+      "role": "vegetation wind sway vertex shader, texture-sampling variant",
+      "enb_instructions": 129,
+      "ce_vanilla": {
+        "candidate": "deferred_lighting.fxc#8",
+        "similarity": 0.988,
+        "confidence": "high",
+        "declaration_matched_pool": 4
+      },
+      "ce_fusionfix": {
+        "candidate": "deferred_lighting.fxc#8",
+        "similarity": 0.879,
+        "confidence": "medium"
+      },
+      "notes": "Same family as 54F25463; declares s0 and reads c215..c222."
+    },
+    {
+      "enb_hash": "22DCDB69",
+      "stage": "ps",
+      "preset": "icenhancer-4.0",
+      "role": "post-process pass reconstructing view depth (depth of field / motion blur)",
+      "enb_instructions": 88,
+      "ce_vanilla": {
+        "candidate": "rage_postfx.fxc#12",
+        "similarity": 0.912,
+        "confidence": "high",
+        "declaration_matched_pool": 79
+      },
+      "ce_fusionfix": {
+        "candidate": "rage_postfx.fxc#24",
+        "similarity": 0.785,
+        "confidence": "medium"
+      },
+      "notes": "Lives in the same container as the shader enbeffect.fx replaces, and is the reason the post-process interface in contracts/enb-postfx.json matters. Reconstructs depth from c73 and offsets sampling by c72."
+    },
+    {
+      "enb_hash": "71CC11CF",
+      "stage": "ps",
+      "preset": "icenhancer-4.0",
+      "role": "vegetation / grass, stipple-faded",
+      "enb_instructions": 35,
+      "ce_vanilla": {
+        "candidate": "gta_grass.fxc#2",
+        "similarity": 0.817,
+        "confidence": "high",
+        "declaration_matched_pool": 1
+      },
+      "ce_fusionfix": {
+        "candidate": "gta_grass.fxc#2",
+        "similarity": 0.479,
+        "confidence": "low"
+      },
+      "notes": "The largest stock-versus-FusionFix gap of any entry."
+    },
+    {
+      "enb_hash": "2DF967C6",
+      "stage": "ps",
+      "preset": "enbseries-0.163, icenhancer-4.0",
+      "role": "alpha-faded surface using the stipple texture",
+      "enb_instructions": 51,
+      "ce_vanilla": {
+        "candidate": "gta_default.fxc#15 (= gta_cutout_fence.fxc#15 = gta_wire.fxc#14, same bytecode)",
+        "similarity": 0.667,
+        "confidence": "medium",
+        "declaration_matched_pool": 11
+      },
+      "ce_fusionfix": {
+        "candidate": "gta_cutout_fence.fxc#15",
+        "similarity": 0.43,
+        "confidence": "low"
+      },
+      "notes": "Present in both presets with different contents, which is what shows the hash names the shader being replaced rather than the replacement. Parameter block lists StippleTexture, TextureSampler, globalScalars and stencil."
+    },
+    {
+      "enb_hash": "323E9BB8",
+      "stage": "ps",
+      "preset": "enbseries-0.163, icenhancer-4.0",
+      "role": "alpha-faded surface, detail-mapped variant",
+      "enb_instructions": 51,
+      "ce_vanilla": {
+        "candidate": "",
+        "similarity": 0.345,
+        "confidence": "none",
+        "declaration_matched_pool": 11
+      },
+      "ce_fusionfix": {
+        "candidate": "gta_cutout_fence.fxc#15",
+        "similarity": 0.38,
+        "confidence": "low"
+      },
+      "notes": "UNRESOLVED. Shares its declaration signature with 2DF967C6 (s0, s10 plus ENB's s13; texcoord/texcoord1/color/vPos) and so draws the same 11-candidate pool, but matches none of them well -- best 0.345 against 2DF967C6's 0.667 on the identical pool. Most likely a variant of the same surface shader that Complete Edition compiles differently, or one that is absent here."
+    },
+    {
+      "enb_hash": "F5256B40",
+      "stage": "ps",
+      "preset": "enbseries-0.163, icenhancer-4.0",
+      "role": "normal-mapped surface with detail map",
+      "enb_instructions": 67,
+      "ce_vanilla": {
+        "candidate": "",
+        "similarity": 0.375,
+        "confidence": "none",
+        "declaration_matched_pool": 16
+      },
+      "ce_fusionfix": {
+        "candidate": "gta_glass_spec.fxc#15",
+        "similarity": 0.404,
+        "confidence": "none"
+      },
+      "notes": "UNRESOLVED. Declaration signature s0, s1, s10 (plus ENB s13) narrows it to 16 candidates in the gta_spec / gta_glass_spec family; best similarity 0.375, which is a lead rather than an identification."
+    },
+    {
+      "enb_hash": "46A43A9F",
+      "stage": "ps",
+      "preset": "icenhancer-4.0",
+      "role": "distorted alpha-tested sprite (texkill on alpha)",
+      "enb_instructions": 16,
+      "ce_vanilla": {
+        "candidate": "",
+        "similarity": 0.0,
+        "confidence": "none",
+        "declaration_matched_pool": 0
+      },
+      "ce_fusionfix": {
+        "candidate": "cascadeConvert.fxc#2",
+        "similarity": 0.273,
+        "confidence": "none"
+      },
+      "notes": "NO CANDIDATE. No shader in stock CE has its declaration signature (color v0.x, texcoord v1.xy, samplers s0 and s1). Either the shader it targets is absent from Complete Edition, or the preset carries a replacement for a game it also supports."
+    },
+    {
+      "enb_hash": "8DB4CDB2",
+      "stage": "ps",
+      "preset": "enbseries-0.163, icenhancer-4.0",
+      "role": "normal + specular surface with detail map",
+      "enb_instructions": 102,
+      "ce_vanilla": {
+        "candidate": "",
+        "similarity": 0.16,
+        "confidence": "none",
+        "declaration_matched_pool": 6
+      },
+      "ce_fusionfix": {
+        "candidate": "gta_glass_spec.fxc#15",
+        "similarity": 0.23,
+        "confidence": "none"
+      },
+      "notes": "UNRESOLVED. Declaration filtering narrows it to 6 candidates in the gta_normal_spec family, which matches its inputs (s0, s1, s2 plus tangent-frame texcoord4/5). Best similarity 0.160 -- low because this is the largest replacement in either preset (102 lines against a 63-instruction game shader), so ENB additions dominate the comparison."
+    }
+  ]
+}

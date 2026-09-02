@@ -25,6 +25,15 @@ This projects aims to fix some issues in Grand Theft Auto IV: The Complete Editi
 
 Also available for [Max Payne 3](https://github.com/ThirteenAG/MaxPayne3.FusionFix#readme) and [other games](https://thirteenag.github.io/wfp).
 
+> **Fork note — ENB compatibility.**
+> This fork adds an opt-in ENB compatibility mode, a D3D9 tracer and offline
+> shader-analysis tooling, aimed at running an old GTA IV ENB preset on
+> Complete Edition alongside FusionFix. It is unfinished: the switch and the
+> instrumentation build and run, the combination has not yet been tested in the
+> game. With `[ENBCompatibility] Mode = 0` (the default) nothing changes.
+> See [docs/ENBCompatibility.md](docs/ENBCompatibility.md) for setup and
+> [research/](research/) for what is known versus assumed.
+
 ## Installation:
 
 > [!NOTE]

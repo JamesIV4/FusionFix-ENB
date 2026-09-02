@@ -9,6 +9,7 @@ import common;
 import comvars;
 import d3dx9_43;
 import settings;
+import enbcompat;
 
 #ifndef SAFE_RELEASE
 #define SAFE_RELEASE(p) { if (p) { (p)->Release(); (p)=NULL; } }
@@ -367,7 +368,10 @@ public:
     {
         FusionFix::onInitEventAsync() += []()
         {
-            if (GetD3DX9_43DLL())
+            // The blit lands on the real back buffer at EndScene, which is
+            // where an external post-processor expects to have the last word,
+            // so the ENB profile takes FusionFix out of that slot entirely.
+            if (GetD3DX9_43DLL() && ENBCompat::Renderer().ConsoleGammaBlit)
             {
                 FusionFix::onEndScene() += []()
                 {

@@ -12,6 +12,7 @@ import shaders;
 import fusiondxhook;
 import settings;
 import d3dx9_43;
+import enbcompat;
 
 #define IDR_FXAA                                 101
 #define IDR_SMAA                                 102
@@ -1253,7 +1254,7 @@ private:
                     }
 
                     static auto refSunShafts = FusionFixSettings.GetRef("PREF_SUNSHAFTS");
-                    if (refSunShafts->get())
+                    if (refSunShafts->get() && ENBCompat::Renderer().SunShafts)
                     {
                         // 2 passes at half res
                         if (PostFxResources.SSPrepass_PS && PostFxResources.SSDraw_PS)
@@ -1314,7 +1315,7 @@ private:
                             pDevice->SetSamplerState(i, D3DSAMP_MAGFILTER, PostFxResources.Samplers[i]);
                         }
 
-                        if (UsePostFxAA->get() > FusionFixSettings.AntialiasingText.eMO_OFF)
+                        if (UsePostFxAA->get() > FusionFixSettings.AntialiasingText.eMO_OFF && ENBCompat::Renderer().PostProcessAA)
                             pDevice->SetRenderTarget(0, PostFxResources.FullScreenSurface_temp2);
                         else
                             pDevice->SetRenderTarget(0, PostFxResources.backBuffer);
@@ -1333,7 +1334,7 @@ private:
                     }
 
                     // Anti aliasing
-                    if (UsePostFxAA && UsePostFxAA->get() > FusionFixSettings.AntialiasingText.eMO_OFF)
+                    if (UsePostFxAA && UsePostFxAA->get() > FusionFixSettings.AntialiasingText.eMO_OFF && ENBCompat::Renderer().PostProcessAA)
                     {
                         // FXAA
                         if ((UsePostFxAA->get() == FusionFixSettings.AntialiasingText.eFXAA) && PostFxResources.FxaaPS)
@@ -1748,6 +1749,12 @@ private:
     {
         DWORD result = RenderPedAndVehicleFakeShadowsInlineHook.unsafe_ccall<DWORD>(a1);
 
+        // Init() normally runs from the replaced post-process draw. With that
+        // replacement switched off, the AO effect would never be loaded, so do
+        // it here instead; Init() is idempotent.
+        if (!ENBCompat::Renderer().ReplacePostFX)
+            Init();
+
         RenderAmbientOcclusion();
 
         return result;
@@ -1762,20 +1769,42 @@ public:
             {
                 PostFxResources.Readini();
 
+                // Each hook is installed only if the active renderer profile
+                // wants that behaviour. Skipping installation (rather than
+                // returning early from inside the hook) leaves the original
+                // game code path completely untouched, which is what an
+                // external post-processor such as ENB expects to find.
+                auto& profile = ENBCompat::Renderer();
+
+                // Nothing but the replaced post-process chain reads the
+                // pre-alpha depth copy, so without that chain the copy would
+                // only allocate a screen-sized render target for no one.
+                if (!profile.PreAlphaDepthCopy || !profile.ReplacePostFX)
+                    PostFxResources.bEnablePreAlphaDepth = false;
+
                 //if(PostFxResources.EnablePostfx)
                 {
-                    auto pattern = find_pattern("E8 ? ? ? ? 8B 4F 60 E8 ? ? ? ? 8B 4F 60", "E8 ? ? ? ? 8B 4F 60 E8 ? ? ? ? 8B 4F 60");
-                    hbDrawPrimitivePostFX.fun = injector::MakeCALL(pattern.get_first(0), DrawPrimitivePostFX).get();
+                    if (profile.ReplacePostFX)
+                    {
+                        auto pattern = find_pattern("E8 ? ? ? ? 8B 4F 60 E8 ? ? ? ? 8B 4F 60", "E8 ? ? ? ? 8B 4F 60 E8 ? ? ? ? 8B 4F 60");
+                        hbDrawPrimitivePostFX.fun = injector::MakeCALL(pattern.get_first(0), DrawPrimitivePostFX).get();
 
-                    pattern = find_pattern("E8 ? ? ? ? 8D 44 24 60 50 8B CF E8 ? ? ? ? 8D 84 24", "E8 ? ? ? ? 8D 44 24 40 50 8B CE E8 ? ? ? ? 8D 8C 24");
-                    hbDrawSkyHook.fun = injector::MakeCALL(pattern.get_first(0), DrawSky).get();
+                        pattern = find_pattern("E8 ? ? ? ? 6A 0A FF B7", "E8 ? ? ? ? 8B 8E ? ? ? ? 8B 56 10");
+                        hbDrawCallPostFX.fun = injector::MakeCALL(pattern.get_first(0), DrawCallPostFX).get();
+                    }
 
-                    pattern = find_pattern("E8 ? ? ? ? 6A 0A FF B7", "E8 ? ? ? ? 8B 8E ? ? ? ? 8B 56 10");
-                    hbDrawCallPostFX.fun = injector::MakeCALL(pattern.get_first(0), DrawCallPostFX).get();
+                    if (profile.SkyDiffuseSplit)
+                    {
+                        auto pattern = find_pattern("E8 ? ? ? ? 8D 44 24 60 50 8B CF E8 ? ? ? ? 8D 84 24", "E8 ? ? ? ? 8D 44 24 40 50 8B CE E8 ? ? ? ? 8D 8C 24");
+                        hbDrawSkyHook.fun = injector::MakeCALL(pattern.get_first(0), DrawSky).get();
+                    }
 
+                    // The fog draw call exists only to produce the pre-alpha
+                    // depth copy, which the flag above has already cleared if
+                    // nothing would consume it.
                     if (PostFxResources.bEnablePreAlphaDepth)
                     {
-                        pattern = hook::pattern("6A ? E8 ? ? ? ? 5E 8B E5 5D C3");
+                        auto pattern = hook::pattern("6A ? E8 ? ? ? ? 5E 8B E5 5D C3");
                         if (!pattern.empty())
                             hbDrawCallFog.fun = injector::MakeCALL(pattern.get_first(2), DrawCallFog).get();
                         else
@@ -1785,8 +1814,11 @@ public:
                         }
                     }
 
-                    pattern = find_pattern("55 8B EC 83 E4 ? 8B 0D ? ? ? ? 8B 15 ? ? ? ? 8B 41", "55 8B EC 83 E4 ? 8B 0D ? ? ? ? 8B 41 ? 8B 15");
-                    RenderPedAndVehicleFakeShadowsInlineHook = safetyhook::create_inline(pattern.get_first(0), RenderPedAndVehicleFakeShadows);
+                    if (profile.AmbientOcclusion)
+                    {
+                        auto pattern = find_pattern("55 8B EC 83 E4 ? 8B 0D ? ? ? ? 8B 15 ? ? ? ? 8B 41", "55 8B EC 83 E4 ? 8B 0D ? ? ? ? 8B 41 ? 8B 15");
+                        RenderPedAndVehicleFakeShadowsInlineHook = safetyhook::create_inline(pattern.get_first(0), RenderPedAndVehicleFakeShadows);
+                    }
                 }
             }
         };
