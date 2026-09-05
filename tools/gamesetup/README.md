@@ -1,5 +1,21 @@
 # gamesetup
 
+For the September 2026 shader-hash experiment, use
+[the focused user-run test](../../research/alias-test.md) and
+`Invoke-ShaderAliasTest.ps1`. Its Baseline/Probe/Aliases/Effect phases share a
+per-file snapshot, and Restore preserves pre-existing shader variant folders.
+`TraceAliases` installs the current diagnostic build and enables exact shader
+creation plus automatic first-bind capture; `CollectTrace` copies the result
+into the kit and prints the per-alias audit. The user only launches, loads a
+scene, and exits.
+`FixedBaseline` returns to regular ENB shaderinput, installs the stock-depth
+extended-tree build, restores the stock shadow/G-buffer/native-D3D9 state path,
+and keeps the tree alpha/wind constants enabled.
+The older restore helper below deletes whole variant folders; do not use it to
+restore the new kit. The new script never starts GTAIV. The user has exercised
+Baseline, Probe and Aliases; TraceAliases, CollectTrace and Restore remain to be
+validated against the real installation.
+
 Everything needed to put an ENB compatibility test into a GTA IV install, and
 take it out again. Nothing here is required to build FusionFix; it exists so a
 test configuration is reproducible rather than something assembled by hand and

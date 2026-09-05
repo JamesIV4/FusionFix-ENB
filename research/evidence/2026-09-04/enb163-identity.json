@@ -1,0 +1,128 @@
+{
+  "decoder": {
+    "input_sha256": "280e2bc15485bb7b944d47bad9e7d553b6e63eba3afb97bdbc546d45fcc203c4",
+    "output_sha256": "ad5b2210100d26a4b372b921da5487cb919cda3cde4162a8e9a7d904dcced866",
+    "output_bytes": 1850794,
+    "first_rva": "00001000",
+    "preferred_image_base": "10000000",
+    "packed_bytes_consumed": 763217,
+    "branches": 9936,
+    "relocations": 15832,
+    "input_executed": false,
+    "runnable_pe": false
+  },
+  "hash": {
+    "ps_scan_rva": "00001230",
+    "crc_wrapper_rva": "000226E0",
+    "crc_table_rva": "00022620",
+    "crc_bitwise_rva": "00022650",
+    "polynomial": "EDB88320",
+    "initial": "FFFFFFFF",
+    "final_xor": "00000000",
+    "end": "first aligned 0000FFFF excluded; version and comments included",
+    "postfx_comparison_chain_rva": "00006A1C",
+    "postfx_common_call_rva": "00006A66",
+    "vs_scan_rva": "00002400",
+    "ps_scan_limit_dwords": 100000,
+    "vs_scan_limit_dwords": 200000
+  },
+  "scans": {
+    "stock-all-six-variants": {
+      "enb_wrapper_sha256": "280e2bc15485bb7b944d47bad9e7d553b6e63eba3afb97bdbc546d45fcc203c4",
+      "method": "raw container bytes; not runtime capture",
+      "shader_count": 10134,
+      "postfx_recognized_hashes": [
+        "7BC57CE4",
+        "7D9A776E",
+        "AA1C0C36",
+        "B2497014",
+        "C215BE6E",
+        "C50103F3"
+      ],
+      "postfx_matches": [
+        {
+          "file": "win32_30/rage_postfx.fxc",
+          "index": 13,
+          "stage": "ps",
+          "enb_hash": "AA1C0C36",
+          "size": 3800,
+          "hashed_bytes": 3796,
+          "shader_sha256": "2780e157105840b1226fff8ca72b5729652e75bc29fe3aa5f053ce9b9b8b96b9"
+        },
+        {
+          "file": "win32_30_atidx10/rage_postfx.fxc",
+          "index": 13,
+          "stage": "ps",
+          "enb_hash": "AA1C0C36",
+          "size": 3800,
+          "hashed_bytes": 3796,
+          "shader_sha256": "2780e157105840b1226fff8ca72b5729652e75bc29fe3aa5f053ce9b9b8b96b9"
+        },
+        {
+          "file": "win32_30_low_ati/rage_postfx.fxc",
+          "index": 13,
+          "stage": "ps",
+          "enb_hash": "AA1C0C36",
+          "size": 3800,
+          "hashed_bytes": 3796,
+          "shader_sha256": "2780e157105840b1226fff8ca72b5729652e75bc29fe3aa5f053ce9b9b8b96b9"
+        },
+        {
+          "file": "win32_30_nv8/rage_postfx.fxc",
+          "index": 13,
+          "stage": "ps",
+          "enb_hash": "AA1C0C36",
+          "size": 3800,
+          "hashed_bytes": 3796,
+          "shader_sha256": "2780e157105840b1226fff8ca72b5729652e75bc29fe3aa5f053ce9b9b8b96b9"
+        }
+      ],
+      "shaderinput_matches": {
+        "psh0cbf49c5.txt": [],
+        "psh22dcdb69.txt": [],
+        "psh2df967c6.txt": [],
+        "psh323e9bb8.txt": [],
+        "psh405abc1b.txt": [],
+        "psh46a43a9f.txt": [],
+        "psh71cc11cf.txt": [],
+        "psh841fd9ae.txt": [],
+        "psh8db4cdb2.txt": [],
+        "pshf5256b40.txt": [],
+        "vsh54f25463.txt": [],
+        "vshc35a5e05.txt": []
+      },
+      "runtime_verified": false,
+      "container_count": 612
+    },
+    "modern-win32_30": {
+      "enb_wrapper_sha256": "280e2bc15485bb7b944d47bad9e7d553b6e63eba3afb97bdbc546d45fcc203c4",
+      "method": "raw container bytes; not runtime capture",
+      "shader_count": 1739,
+      "postfx_recognized_hashes": [
+        "7BC57CE4",
+        "7D9A776E",
+        "AA1C0C36",
+        "B2497014",
+        "C215BE6E",
+        "C50103F3"
+      ],
+      "postfx_matches": [],
+      "shaderinput_matches": {
+        "psh0cbf49c5.txt": [],
+        "psh22dcdb69.txt": [],
+        "psh2df967c6.txt": [],
+        "psh323e9bb8.txt": [],
+        "psh405abc1b.txt": [],
+        "psh46a43a9f.txt": [],
+        "psh71cc11cf.txt": [],
+        "psh841fd9ae.txt": [],
+        "psh8db4cdb2.txt": [],
+        "pshf5256b40.txt": [],
+        "vsh54f25463.txt": [],
+        "vshc35a5e05.txt": []
+      },
+      "runtime_verified": false,
+      "container_count": 103
+    }
+  }
+}

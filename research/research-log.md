@@ -1,5 +1,60 @@
 # Research log
 
+## 2026-09-05 — review of the ordinary ENB baseline
+
+At the user's request, paused the next alias capture and reviewed c18e6cf's
+renderer changes, evidence and installed baseline against the screenshots.
+The review found a retained modern extended-tree shader with its alpha/wind/depth
+constant providers disabled; unconditional shadow/G-buffer format and matrix
+changes omitted from ENBLegacy; and a register-audit regex that misses `_abs`
+operands. Installed tree bytecode and on-disk executable immediates support the
+first two findings. Neither exact foliage draw nor runtime resource formats
+were captured, so specific screenshot root-cause attribution remains qualified.
+
+The installed ENB effect matches the original archive. Its active 0.34 gray-value
+power curve strongly lifts dark values, and it divides by an unmeasured
+adaptation sample. The old "remaining brightness is tuning" conclusion was
+premature. Postfx execution and the later terrain probe remain real milestones,
+but do not establish material/lighting/resource correctness. The later user kit
+inherited the structural baseline issues.
+
+No game/native-device test, game-file modification or renderer fix was performed
+in this review. Saved [the findings and revised order](regular-enb-review.md)
+and [bytecode/PE evidence](evidence/2026-09-05/regular-enb-review.json).
+Prioritize coherent ordinary ENB tree and resource behavior before resuming the
+prepared TraceAliases/Effect tests. Earlier entries below are historical and
+must be read with these corrections.
+
+### 2026-09-05 implementation — coherent fixed baseline
+
+Implemented the first repair from the regular-ENB review. ENBLegacy now disables
+`ShadowPipelineFixes`, which gates dynamic model-shadow changes plus the shadow
+atlas/G-buffer format, cascade and matrix patches. It also disables
+`FusionShaderTweaks`, gating the FusionShader reflection multiplier, console
+contrast offset and DXVK-only adaptive-state suppression on native D3D9.
+
+ENBLegacy leaves `ShaderConstantInjection` on because the required FusionFix-only
+extended tree reads pixel c221 for alpha and vertex c233 for wind.
+`make_legacy_tree_shader.py` rebuilds that container from copied authored sources,
+removing exactly five marked logarithmic-depth blocks and now-unused pixel v9
+declarations. The source tree is unchanged. The 13,276-byte result has eleven
+extractable shaders, no pixel c209 dependency and no explicit depth output;
+SHA256 `8e6ef1dfd44a87603b3160b20b5e565be73272cbd9bcf6ebbb7b80663de5142a`.
+Both `--stage-extras` and full-package staging now build this variant.
+
+Fixed the interface parser to recognize `cN_abs` operands. The package detector
+now includes the extended-tree exception, so stock plus that file logs as mixed
+instead of falsely all-stock. The current user kit has a guarded `fixed` tree
+artifact. `FixedBaseline` installs the new ASI/tree and required settings after
+restoring regular ENB shaderinput, with hash verification.
+
+The full setup/restore passed against a synthetic game tree. No installed GTAIV
+file was changed by the assistant. Twenty-five offline tests and the Release
+native build pass; build output retains existing wchar conversion and missing
+third-party PDB warnings. Runtime rendering remains user validation.
+The final repaired ASI is 5,923,328 bytes, SHA256
+`EC91097B991A3F1D181F53C58D1D8D255A38F74732536DD5FE501B4429EF2DA4`.
+
 Append one entry per meaningful investigation session. The point is that the
 next person, human or otherwise, does not repeat an experiment that has already
 been run.
@@ -618,3 +673,170 @@ Blocked on external input: an old-patch GTA IV install (1.0.4.0 or 1.0.7.0).
 Without it, ENB's hash function cannot be recovered by working backwards from a
 known-good match, and "CE broke it" cannot be separated from "FusionFix broke
 it".
+
+
+## 2026-09-04 ? historical FusionFix bridge, recovered ENB hash, manual test handoff
+
+**Request:** revisit the earlier stop on iCEnhancer 4, starting with FusionFix
+forks supporting old patches. The user later requested that they perform PC
+runtime testing; subsequent work stayed offline.
+
+**Pinned source evidence:** Zolika fork dc33fad and its exact shader submodule
+9d86139; Gillian GFWL fork aee995b. The historical Create/SetPixelShader hooks
+are commented out. The shader bundle supplies useful named techniques and
+bindings across 1.0.7.0/1.0.8.0/CE, not a ready table of ENB hashes. Old postfx
+preserves all twenty stock bindings; modern FusionFix moves five. Fourteen
+container audits record role, declaration, register, depth and pass-state
+changes. Modern terrain's oDepth/paired vertex differences prohibit treating a
+bytecode splice as a complete adapter.
+
+**Effect evidence:** before the user's manual-test boundary, the three bundled
+iCEnhancer compiled effects loaded, validated and bound all seven passes in a
+standalone Microsoft D3DX9 HAL harness without ENB or the ASI; twelve shader
+programs disassembled. No geometry was drawn. Their names, interfaces and CPU
+preshaders are accessible. Whole-effect fxc failure had been misread as opaque
+shader code requiring a custom runtime.
+
+**Actual game attempt:** original ENB 0.163 effects plus twelve iCEnhancer
+shaderinput files, stock overlay, compatibility ASI, D3D9 tracing enabled,
+no iCEnhancer ASI. Launcher timestamps were 19:33:17 launch / 19:33:51 exit
+0xC0000005; no scene was inspected. No paired stock shaderinput control was
+run. This identifies neither the failing component nor a failure of the new
+aliases, which did not exist yet. Sixteen original file hashes and settings
+were restored; added test files were moved to scratch. No further game/native
+runtime test followed the user's instruction.
+
+**Offline breakthrough:** independently decoded the exact supplied ENB 0.163
+wrapper without executing it. Recovered raw CRC32 identity (no final XOR,
+exclude first aligned END, retain version/comments) from both creation paths.
+Postfx recognizes six aliases, including stock CE #13 AA1C0C36; #29 2D5D52B3 is
+not recognized. None of twelve iCEnhancer filenames matches any of 10,134 stock
+blobs in six variants. Modern FusionFix's 1,739 win32_30 blobs match neither
+those twelve names nor the postfx aliases. This supersedes earlier claims of
+raw identity equality and the unresolved hash algorithm. File matches remain
+static until actual runtime shader inputs/substitution are observed.
+
+**Implementation:** added hash calculation to offline fingerprints; decoder,
+hash scan, guarded filename-alias builder, terrain color probe, historical
+interface auditor, effect inspector and existing-minidump inspector. Staged
+three terrain aliases by default, five weaker candidates separately. Four
+unresolved files remain excluded. No ENB DLL or game executable patch was made.
+Seventeen offline tests pass for mapping ambiguity/indexing, binding/depth
+changes, raw CRC behavior, duplicate/colliding identities, modified-input
+rejection, output protection and diagnostic probe generation.
+
+**Existing ASI dumps:** two September 2 dumps contain changed instruction bytes
+at game+8D6D26..29. In the first, the modified displacement plus captured ESI
+exactly explains the invalid read at game+8D6D22. No writer was captured. This
+narrows a future debugger experiment to a data breakpoint on those four bytes;
+it does not prove a particular ASI hook wrote them. Sanitized reports are saved.
+
+**User test prepared, not run:** `C:\temp\enb-revisit\user-test-kit` contains
+Baseline, Probe, Aliases and Effect phases plus a per-file snapshot/restore
+script. The script does not launch the game. Baseline uses stock shaders,
+tracing off, spoof off; the user enables DOF. Probe forces three terrain diffuse
+outputs magenta. Aliases uses untouched iCEnhancer assembly with CE filenames.
+Effect resets to the baseline then replaces only enbeffect.fx. Setup/restore
+has been parsed/reviewed but not executed; all copies remain outside GTAIV.
+
+Current analysis, code RVAs, pinned sources and evidence:
+[legacy-shader-bridge.md](legacy-shader-bridge.md).
+Next action is the user's [baseline and terrain test](alias-test.md), not another
+blanket claim that obfuscation or a complete old executable map blocks progress.
+
+
+### 2026-09-04 user follow-up ? Baseline loads, brightness unresolved
+
+The user ran Baseline and supplied screenshot `20260904210046_1.jpg` (21:00:46)
+from the Steam GTAIV screenshot folder. An outdoor Hove Beach scene loads;
+shadows are washed out and highlights appear clipped. The user reports this
+resembles the earlier over-bright ENB result. No diagnosis of brightness yet.
+
+Read-only installed file comparisons match the staged ENB DLL, enbeffect.fx,
+enbseries.ini and FusionFix ini. ENBCompat.log at 20:57 confirms stock nv8
+shaders, ENBLegacy renderer flags off and no spoof. DepthOfField = 9. The four
+original ENB shaderinput files are present; new alias/probe files are absent.
+The Baseline snapshot exists. The assistant did not operate or launch the game.
+
+Result: baseline scene-loading passes on the user's run. This does not validate
+new shader mappings or iCEnhancer effects. Next: user-run Probe on blended
+terrain, with brightness left unchanged. Evidence:
+[evidence/2026-09-04/user-baseline.json](evidence/2026-09-04/user-baseline.json).
+
+
+### 2026-09-04 user follow-up ? no magenta seen, probe files absent
+
+The user reported searching several terrain areas without seeing magenta.
+Read-only inspection afterward found just the four original ENB shaderinput
+files. pshA5F4E880.txt, pshFDFF185D.txt and psh1D661524.txt were all absent,
+although the staged probe folder contains all three. ENBCompat.log's latest
+startup is 21:08:10 with stock nv8/ENBLegacy and no version spoof. Whether the
+Probe action completed or the user subsequently restored Baseline is pending
+clarification; do not count this as a validated negative mapping test.
+
+Re-read the recovered pixel creation routine: the filename open/assemble path
+at RVAs 0x1538..0x1608 has no shader-hash whitelist before its file lookup.
+This does not prove runtime inputs have the same bytes as the container.
+
+Updated the repository setup script to reject empty phases/missing probe inputs
+before mutation, hash the expected final phase files, and verify every installed
+file before success. Probe success explicitly lists the three filenames. The
+assistant did not run setup or alter game/kit files. The user must invoke the
+repository script to get these checks; the staged copy remains the old version.
+Evidence: evidence/2026-09-04/user-terrain-search.json.
+
+### 2026-09-04 user follow-up — terrain alias probe confirmed in game
+
+The user repeated Probe using the corrected repository script and found the
+expected magenta on a narrow blended-ground corridor beside buildings. Screenshot
+`20260904223905_1.jpg` was captured at 22:39:05. The image shows local ground
+replacement rather than a fullscreen tint: character, buildings, foliage,
+fence, bench and adjacent pavement retain normal shading.
+
+Read-only post-run inspection found all three probe files present and byte-for-byte
+equal to the kit: A5F4E880 (2-layer), FDFF185D (3-layer), and 1D661524 (4-layer).
+ENBCompat.log confirms the stock nv8 overlay, ENBLegacy mode, all FusionFix
+renderer flags off, and no version spoof. The iCEnhancer ASI was absent.
+
+Result: ENB 0.163's filename lookup accepted at least one recovered CE hash and
+executed the aliased iCEnhancer-derived terrain program. This validates the
+decoded hash/filename bridge at runtime for the combined terrain group. Since
+all three probes were active, the screenshot cannot say which individual layer
+count drew the strip. Next is `Aliases`, revisiting the same scene to verify that
+unchanged iCEnhancer terrain programs render without the diagnostic override.
+Evidence: [user-terrain-probe.json](evidence/2026-09-04/user-terrain-probe.json).
+
+### 2026-09-04 user follow-up — unchanged terrain aliases render
+
+The user switched from Probe to Aliases and revisited the same building-side
+terrain corridor. Screenshot `20260904230235_1.jpg` shows textured ground with
+the diagnostic magenta gone. The user notes visible fading where it meets the
+street and toward the right, while broader broken rendering makes correctness
+hard to judge. A simple threshold finds zero magenta-like pixels, versus 82,423
+in the probe screenshot. All three installed normal aliases hash-match the kit.
+
+This verifies that replacing the diagnostic assembly restores non-probe output
+at the known location. It does not prove the visual result is correct or identify
+the active layer-count shader. Evidence:
+[user-terrain-aliases.json](evidence/2026-09-04/user-terrain-aliases.json).
+
+To eliminate further visual searching, ENBTrace now writes one first-bind row
+per raw shader identity for the whole run. `assemble_shader.cpp` reproduced
+ENB's zero-flag D3DX assembly path offline; the eight guarded mappings now carry
+expected assembled SHA256/raw CRC identities. `report_runtime_aliases.py` joins
+creation, exact dumps and first binds into explicit statuses. `TraceAliases` and
+`CollectTrace` automate setup and collection; only launching, loading a scene,
+and exiting remain manual.
+
+The Release ASI rebuilt successfully with the new first-bind recorder. The build
+reported the existing wchar conversion warning in graphics-module logging and
+missing third-party PDB warnings; no new compiler or linker failure occurred.
+`bin/GTAIV.EFLC.FusionFix.asi` SHA256 is
+`520E0AB83B280643E1FFCBD996FC26FEA8FF23BD994EBC4FCF2FBB41F308D444`.
+The game retains the earlier ASI until the user runs TraceAliases.
+
+The full Baseline -> TraceAliases -> CollectTrace -> Restore sequence was run
+against a synthetic game/kit tree. The report classified one exact-bound test
+shader, two installed-but-unseen aliases and five not-installed candidates, then
+Restore recovered the original synthetic ASI and ini. No real game files were
+used by this validation.

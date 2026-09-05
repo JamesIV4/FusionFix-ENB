@@ -1,5 +1,33 @@
 # GTA IV Complete Edition + FusionFix ENB Compatibility Project Plan
 
+> **2026-09-05: repair the regular ENB baseline before further preset tests.**
+> [The review](research/regular-enb-review.md) found a retained modern tree shader
+> with disabled constant providers and ungated shadow/G-buffer format/matrix
+> changes. Treat over-brightening as unresolved, not established tuning. The
+> user has paused the scheduled alias capture; no game changes were made by
+> the review. Runtime alias milestones remain valid but do not prove quality.
+> The first repair is built: stock shadow/G-buffer/native-D3D9 behavior,
+> compatible extended-tree depth, retained tree alpha/wind constants, and fixed
+> register auditing. Next is the user's FixedBaseline scene comparison.
+
+> **2026-09-04 ? investigation reopened; earlier stopping conclusions superseded.**
+> [New evidence and tools](research/legacy-shader-bridge.md) recover ENB 0.163's
+> actual hash algorithm offline and expose all three iCEnhancer effects through
+> standard D3DX. Historical FusionFix preserves ENB's twenty postfx bindings;
+> modern FusionFix moves five and changes depth handling. CE's stock postfx is
+> already recognized as AA1C0C36, one of six aliases, while none of the twelve
+> supplied shaderinput filenames matches stock CE on disk. Three terrain filename
+> aliases are staged, with five weaker candidates separate. Existing ASI crash
+> dumps show changed instruction bytes at game+0x8D6D26. Full iCEnhancer rendering
+> remains unproven. **The user performs further PC/game tests**; see the
+> [focused test](research/alias-test.md). Baseline loads, still over-bright, and
+> the corrected terrain probe produced a localized magenta ground strip with
+> all three alias files verified in place. This confirms runtime substitution
+> for the combined terrain group. Unchanged aliases then restored textured
+> ground there, though broader rendering remains broken. First-bind tracing and
+> exact assembled-bytecode reporting now replace further visual shader hunting.
+> The historical plan below must be read with these corrections.
+
 GTA 4's local install location on this PC: `C:\Games\Steam\steamapps\common\Grand Theft Auto IV`
 ENB location: `ENB resources\enbseries_gta4_v0163.zip`
 END shader to use: `ENB resources\icenhancer40.zip`

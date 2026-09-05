@@ -1,122 +1,126 @@
 # Status
 
-Where the ENB compatibility project stands, as of 2026-09-02.
+As of 2026-09-05. **iCEnhancer 4 is still unproven in game, but the investigation
+has a concrete new route.** The earlier impossibility conclusion is superseded
+by [the recovered shader bridge](legacy-shader-bridge.md).
 
-The game folder has been reverted to a stock FusionFix 5.0.1 install. Everything
-needed to reproduce a test setup lives in this repository —
-[tools/gamesetup/](../tools/gamesetup/) installs it and takes it out again.
+**Regular ENB baseline repair ready for user validation:** the review found a
+modern tree shader with disabled providers and ungated shadow/G-buffer/state
+changes. The new profile restores the stock resource/state path, keeps required
+tree alpha/wind constants, and stages a stock-depth extended-tree build. The
+earlier conclusion that over-brightening is merely tuning was premature. See
+[the review and implementation](regular-enb-review.md). Loading and probe
+execution remain verified milestones; corrected rendering is not yet confirmed.
 
----
+## New evidence
 
-## The headline
+* All three iCEnhancer effects are standard compiled D3D9 effects. A standalone
+  Microsoft D3DX9 harness loaded, validated, bound all seven passes and
+  disassembled twelve shader programs without ENB or the iCEnhancer ASI.
+  Preshaders and named parameters remain accessible. No geometry was drawn.
+* Historical FusionFix's exact shader bundle for 1.0.7.0/1.0.8.0/CE preserves
+  all twenty stock postfx bindings. Modern FusionFix moves five and adds depth
+  dependencies. The old fork's shader creation/bind experiment is commented
+  out; it supplies useful interfaces, not a ready ENB hash/address table.
+* ENB 0.163's packed wrapper was decoded **offline without executing it**.
+  Its actual hash is reflected CRC32 without final XOR, over raw bytes before
+  the first aligned END word. Version and comments count. Both vertex and pixel
+  paths were inspected. `d3d9bc.py` now reports this as `enb163`.
+* The postfx handler recognizes six hashes. Stock CE rage_postfx#13 is
+  **AA1C0C36**, already recognized; C215BE6E is the canonical effect name.
+  Stock #29 is 2D5D52B3 and is absent from that chain. This supports the earlier
+  finding that DOF must be enabled for ENB's postfx path.
+* None of iCEnhancer's twelve original shaderinput filenames matches any of
+  10,134 stock shader blobs across six variants on disk. Modern FusionFix's
+  1,739 win32_30 blobs match none of those filenames or the six postfx hashes.
+  Matching normalized assembly bodies is **not** matching raw shader identities.
+* Three strongly supported terrain filename aliases are staged outside the game,
+  with a separate magenta diagnostic probe. Five weaker candidate aliases are
+  optional; four unresolved files are excluded. SHA256 guards reject changed
+  preset/stock inputs, modern FusionFix inputs, and ambiguous hash collisions.
+* The user's corrected terrain Probe run produced a localized magenta ground
+  strip with all three staged CE aliases verified in place. At least one recovered
+  CE filename therefore triggers ENB substitution. Because all three probes were
+  active, the individual 2-/3-/4-layer mapping is not isolated yet.
+* The following Aliases run removed the diagnostic magenta and restored textured
+  ground at the same corridor. The user sees fading near its street boundary,
+  but broader broken rendering prevents a clean correctness judgment. All three
+  normal alias files matched the staged iCEnhancer inputs.
+* A less manual validator is now implemented. The tracer records every shader
+  creation and one first-bind row per exact bytecode identity. A report joins
+  those records against D3DX-assembled iCEnhancer signatures, distinguishing
+  exact-bound, exact-created, unseen and mismatch states in one normal scene.
+* Two existing ASI crash dumps show four changed instruction bytes at
+  game+0x8D6D26..29. The resulting displacement explains the invalid read at
+  game+0x8D6D22. The writer has not been identified; a bad patch is a hypothesis.
 
-**ENBSeries 0.163 works on GTA IV Complete Edition 1.2.0.59, with FusionFix.**
+Tools, pinned source links, addresses and machine-readable evidence are in
+[legacy-shader-bridge.md](legacy-shader-bridge.md). Twenty-five offline tests
+pass for role mapping, hashing, tree rebuilding, alias staging and runtime-report
+classification. The fixed-baseline/tracing ASI was rebuilt successfully; warnings were limited to
+pre-existing wchar conversion and missing third-party PDBs. It is staged in
+`bin`, while the game still has the earlier ASI until the user runs FixedBaseline.
 
-That was the question the whole project hung on, and it was genuinely open: the
-community position is "downgrade to 1.0.4.0", and nobody had shown otherwise.
-It initialises, its shader substitution fires, its post-process replaces the
-game's, its in-game GUI works, and FusionFix keeps everything that is not a
-shader.
+## What has and has not rendered
 
-Two conditions, both now understood rather than guessed:
+Earlier sessions reported ENB 0.163 rendering on CE 1.2.0.59 with stock shaders,
+`API = 0`, DOF enabled and FusionFix's ENBLegacy configuration. Those reports
+remain historical evidence. Their broader claim that arbitrary shaderinput
+substitution was confirmed needs rechecking with actual ENB hashes.
 
-1. `d3d9.cfg` must be `[MAIN] API = 0`. ENB is a D3D9 wrapper; on the DXVK path
-   it does nothing at all.
-2. **Depth of Field must be Low or higher.** Off and Cutscenes Only make the
-   game bind a post-process pass no preset carries a replacement for.
+One earlier September 4 launch used the original ENB effects plus twelve iCEnhancer
+shaderinput files, stock shader overlay and tracing enabled, without the
+icenhancer ASI. It exited 0xC0000005 before a scene was inspected. There was no
+paired stock four-file baseline, so the failing component is unidentified.
+That failed blanket test is superseded by the controlled baseline and terrain
+probe below.
 
-**iCEnhancer 4 does not work**, and cannot be made to without a large
-reverse-engineering effort. See below.
+All sixteen backed-up installed file hashes and original settings were restored;
+test-only additions were moved into scratch. **The user requested that they
+perform further PC/game testing.** Subsequent work has been offline analysis
+only. The user has now installed the prepared Baseline phase and confirmed an
+outdoor scene loads. Read-only checks match the staged ENB DLL, effect, ENB ini
+and FusionFix ini; the log confirms stock nv8 shaders, ENBLegacy renderer flags
+off and no version spoof. Persisted DepthOfField is 9. The screenshot shows
+strong over-brightening, washed-out shadows and clipped-looking highlights;
+the brightness cause remains unproven. The kit snapshot exists. See
+[user-baseline.json](evidence/2026-09-04/user-baseline.json).
 
-## What is settled
+## Probe follow-up
 
-| Question | Answer | How |
-|---|---|---|
-| Does ENB initialise on CE? | yes | run |
-| Does its shader substitution fire? | yes | visual probes in its own `shaderinput` files |
-| Did CE break the shaders presets target? | **no** | 3 of 12 match stock CE at similarity 1.000 |
-| Does CE still expose ENB's post-process interface? | **yes, exactly** | 4 passes match all 20 parameters |
-| Does FusionFix break it? | yes | 1689 shaders, 0 with unchanged bytecode |
-| Do they collide on constant registers? | no | register maps do not overlap |
-| Do they double-hook D3D9? | no | FusionFix hooks no device method |
-| Which pass does ENB replace? | `rage_postfx#13`, crc `1895B35D` | constants, DOF path, absence of a select |
-| Why does DOF matter? | `#13` is the DOF composite; `#29` is not, and its layout is shifted | runtime capture, indoors vs outdoors |
-| Can FusionFix be kept alongside? | yes, ~89% of its shaders | container analysis |
-| Is an old-patch install needed? | **no** | the contract is in `enbeffect.fx`; CE satisfies it |
+The first terrain search showed no magenta, but read-only inspection found that
+none of the probe files was installed. The corrected run used the repository
+script's file verification and produced a localized magenta terrain strip. All
+three installed aliases exactly match the staged probe, and the startup log
+confirms the intended stock shader/ENBLegacy configuration. This proves runtime
+substitution for at least one terrain alias. It does not distinguish which of
+the simultaneously active 2-, 3-, or 4-layer shaders drew the strip. Evidence:
+[user-terrain-probe.json](evidence/2026-09-04/user-terrain-probe.json). The
+earlier invalid negative is retained in
+[user-terrain-search.json](evidence/2026-09-04/user-terrain-search.json).
 
-## What was built
+## Next user test
 
-**In the mod** — [source/enb_compat/](../source/enb_compat/):
+Baseline loads, the combined terrain Probe is positive, and normal Aliases
+remove magenta at the same location. At the user's request, further identity
+capture is paused to address the visibly broken regular ENB baseline. The first
+coherent tree/resource/state repair is built; run `FixedBaseline` against the
+same scene, then establish a comparable scene for exposure analysis.
+The prepared `TraceAliases`/`CollectTrace` tools remain available afterward;
+shader identity logs alone do not establish postfx texture contents or quality.
 
-* `enbcompat.ixx` — `RendererCompatibilityProfile` with `FusionFixDefault` /
-  `ENBLegacy`, `[ENBCompatibility]` config, ENB detection, shader-package
-  detection (stock / FusionFix / mixed), logging. `Mode = 0` is upstream
-  FusionFix, unchanged: every switch defaults on and no hook is skipped.
-* `enbtrace.ixx` — opt-in D3D9 tracer. Shader fingerprinting by the same hash
-  the offline tools use, shader-bind logging, hotkey-triggered capture.
-* `enbversion.ixx` — version spoofing for plugins whose check reads the
-  executable's version resource. Scoped by caller module. Off by default.
+If the ASI is eventually required, identify the writer of the four changed
+instruction bytes before porting hooks. Restore modern FusionFix rendering only
+after stock compatibility works, accounting for each pass's bindings and depth.
 
-Renderer features are gated at *hook-installation* time in `postfx.ixx`,
-`shaders.ixx` and `consolegamma.ixx`, so ENB mode leaves the original game code
-path untouched rather than running a guarded version of it.
+## Existing implementation
 
-**Offline tooling** — [tools/shader_dump/](../tools/shader_dump/):
-`.fxc` extraction and fingerprinting, set comparison, ENB `shaderinput`
-identification with declaration filtering, interface checking against a declared
-contract, selective package building, and `.fxc` slot splicing.
+`source/enb_compat/` provides ENBLegacy renderer gating, package selection,
+opt-in tracing and scoped version spoofing. Mode 0 preserves upstream defaults.
+`tools/shader_dump/` provides extraction, comparisons, role/interface auditing,
+ENB hash mapping, alias staging, effect inspection and existing crash inspection.
 
-**Setup tooling** — [tools/gamesetup/](../tools/gamesetup/): reversible install,
-restore, and scripts to switch configuration, preset, and preset components.
-
-## What is open
-
-**Tuning.** ENB 0.163 renders, but the image was still over-bright at the point
-testing stopped. With DOF on this is a tuning problem, not a substitution
-failure — `[ADAPTATION]` and `EBrightnessV2`, driven live from ENB's GUI
-(Shift+Enter).
-
-**The selective package is untested in game.** `--selective` keeps ~89% of
-FusionFix's shaders by serving only the ENB-targeted containers from stock. It
-builds and verifies; nobody has run it.
-
-**Four of thirteen shader targets are unidentified.** `323E9BB8`, `F5256B40`,
-`8DB4CDB2` narrow to a family but not a shader; `46A43A9F` has no CE shader with
-a matching declaration signature at all.
-
-**A sky flicker** was seen with the ENB effect toggled off, and never captured —
-tracing was disabled at the time.
-
-**How much of iCEnhancer 4's preset runs without its ASI.**
-`ENBCompat-Mix.cmd` bisects it; not yet run.
-
-## The iCEnhancer 4 result
-
-Worth stating plainly because it was the goal.
-
-iCEnhancer 4 (July 2025) is deliberately scoped to patches 1.0.3.0 and 1.0.4.0.
-Its `icenhancer.asi` checks the game version by reading `GTAIV.exe`'s version
-resource — which we can satisfy from outside, and did. But the check turned out
-to gate **1.0.4.0-specific work on the executable**: with the check passed, it
-faults inside `GTAIV.exe` at `+0x008d6d22` during its own `DllMain`, before
-`LoadLibrary` returns. Its preset also fails without it.
-
-A version number can be exposed. A 1.0.4.0 memory map cannot. Getting further
-means mapping its hard-coded addresses onto CE inside a packed anti-tamper
-binary — a different kind of project to this one, which worked precisely because
-it never needed to touch ENB's code.
-
-That does not undo the rest. The compatibility layer, the DOF finding, the
-shader analysis and the tooling apply to any preset that is not version-locked
-to an executable — and ENBSeries 0.163 itself is one.
-
-## Next, in order
-
-1. Reinstall with `tools/gamesetup/install.ps1`, ENB 0.163, DOF on, and judge
-   the image against the preset's intended look. Tune from ENB's GUI.
-2. Re-run with `-Selective` and compare — how much FusionFix survives alongside.
-3. Capture the sky flicker with `D3D9Trace = 1` and `TraceShaderBinds = 1`.
-4. `ENBCompat-Mix.cmd shaders` — does iCEnhancer 4's shader set run on 0.163
-   alone?
-5. Resolve the four unidentified shader targets before trusting the selective
-   container list for a preset that uses them.
+The selective package retains roughly 89% of shader **blobs**. Its rendering is
+untested; that percentage does not measure retained graphics features. Modern
+terrain writes depth and depends on paired vertex outputs, so inserting stock
+pixel bytecode alone is not a complete compatibility solution.

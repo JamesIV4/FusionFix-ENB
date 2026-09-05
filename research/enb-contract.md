@@ -1,5 +1,11 @@
 # The rendering contract ENBSeries expects
 
+> September 4 correction: the named interface remains useful, but normalized
+> assembly equality does not imply raw hash equality. ENB 0.163 recognizes CE
+> postfx AA1C0C36 as one of six aliases for the canonical C215BE6E effect.
+> The twelve iCEnhancer shaderinput filenames do not match stock CE on disk.
+> See [the recovered hash and filename bridge](legacy-shader-bridge.md).
+
 The project plan asks: *"What rendering contract does this ENB expect, and how
 can FusionFix expose that contract while retaining its modern fixes?"*
 

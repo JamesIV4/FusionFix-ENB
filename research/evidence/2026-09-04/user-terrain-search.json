@@ -1,0 +1,27 @@
+{
+  "date": "2026-09-04",
+  "performed_by": "user",
+  "reported_result": "Searched several terrain areas; no magenta observed.",
+  "post_report_file_inspection": {
+    "shaderinput_files": [
+      "psh2DF967C6.txt",
+      "psh323E9BB8.txt",
+      "psh8DB4CDB2.txt",
+      "pshF5256B40.txt"
+    ],
+    "probe_files_present": {
+      "pshA5F4E880.txt": false,
+      "pshFDFF185D.txt": false,
+      "psh1D661524.txt": false
+    },
+    "log_lines": [
+      "21:08:10.128  stock shaders requested: shader-variant lookups redirected to common/shaders/win32_30_nv8",
+      "21:08:10.128  shaders loaded from win32_30_nv8: stock",
+      "21:08:10.128  ENBCompatibility mode=1 profile=ENBLegacy",
+      "21:08:10.129    ReplacePostFX=0 PostProcessAA=0 AmbientOcclusion=0 SunShafts=0 PreAlphaDepthCopy=0 SkyDiffuseSplit=0 ConsoleGammaBlit=0 ShaderConstantInjection=0 FusionShaderPackage=0",
+      "21:08:10.944  version spoof: SpoofGameVersion unset or unparsable (''), not installed"
+    ]
+  },
+  "interpretation": "No probe files are installed at inspection time. It is not established that Probe was active during the reported run; user clarification pending. This is not a confirmed negative runtime shader mapping test.",
+  "game_modified_by_assistant": false
+}

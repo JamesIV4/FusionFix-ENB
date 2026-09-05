@@ -1,0 +1,52 @@
+{
+  "date": "2026-09-04",
+  "performed_by": "user",
+  "phase": "Baseline",
+  "user_result": "Loads an outdoor scene; still strongly over-brightened, similar to earlier ENB baseline.",
+  "screenshot": {
+    "file": "20260904210046_1.jpg",
+    "sha256": "46aa4266fff8e844825a9d19dd3000652f7a13760b6e598aa0c8eff90bc28360",
+    "bytes": 785254,
+    "observations": "Outdoor Hove Beach street under elevated tracks. Washed-out shadows, bright cyan cast, clipped-looking sidewalk/sky highlights. Visual observation does not identify the brightness cause."
+  },
+  "installed_baseline_checks": [
+    {
+      "file": "d3d9.dll",
+      "sha256": "280e2bc15485bb7b944d47bad9e7d553b6e63eba3afb97bdbc546d45fcc203c4",
+      "matches_staged_baseline": true
+    },
+    {
+      "file": "enbeffect.fx",
+      "sha256": "5676d6393cb82983f0a23a85c20919549a6a95093188fb36e289ce35acce4d63",
+      "matches_staged_baseline": true
+    },
+    {
+      "file": "enbseries.ini",
+      "sha256": "26da605de27e8c574bc6831323d37a0b247945aa3442636c70e4589f0f502f94",
+      "matches_staged_baseline": true
+    },
+    {
+      "file": "plugins/GTAIV.EFLC.FusionFix.ini",
+      "sha256": "e3de648848793113d84b4a4c75c1232e15696ac8a5fc74b09bccfbb161baaf75",
+      "matches_staged_baseline": true
+    }
+  ],
+  "log": [
+    "20:57:36.918  stock shaders requested: shader-variant lookups redirected to common/shaders/win32_30_nv8",
+    "20:57:36.918  shaders loaded from win32_30_nv8: stock",
+    "20:57:36.918  ENBCompatibility mode=1 profile=ENBLegacy",
+    "20:57:36.918    ReplacePostFX=0 PostProcessAA=0 AmbientOcclusion=0 SunShafts=0 PreAlphaDepthCopy=0 SkyDiffuseSplit=0 ConsoleGammaBlit=0 ShaderConstantInjection=0 FusionShaderPackage=0",
+    "20:57:37.808  version spoof: SpoofGameVersion unset or unparsable (''), not installed"
+  ],
+  "depth_of_field_cfg": 9,
+  "shaderinput_files": [
+    "psh2DF967C6.txt",
+    "psh323E9BB8.txt",
+    "psh8DB4CDB2.txt",
+    "pshF5256B40.txt"
+  ],
+  "snapshot_present": true,
+  "probe_tested": false,
+  "icenhancer_effect_tested": false,
+  "next_test": "User switches to Probe, then observes blended dirt/grass terrain for magenta diffuse output. Leave brightness unchanged for this comparison."
+}

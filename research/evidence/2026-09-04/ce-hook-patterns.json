@@ -1,0 +1,83 @@
+{
+  "exe_sha256": "08759a5516f9837920ea504436236bbab89d0826a8e4d04ff106345177b5345d",
+  "preferred_image_base": "0x400000",
+  "method": "on-disk executable PE sections only; no patching",
+  "entries": [
+    {
+      "name": "legacy_CreatePixelShader",
+      "pattern": "50 8B 82 A8 01 00 00 56 51 FF D0",
+      "source_line": 1577,
+      "active_in_legacy_source": false,
+      "d3d9_vtable_index": 106,
+      "matches": [],
+      "runtime_validated": false
+    },
+    {
+      "name": "legacy_SetPixelShader",
+      "pattern": "8B 0D ? ? ? ? 8B 11 50 A3 ? ? ? ? 8B 82 AC 01 00 00 51 FF D0",
+      "source_line": 1633,
+      "active_in_legacy_source": false,
+      "d3d9_vtable_index": 107,
+      "matches": [],
+      "runtime_validated": false
+    },
+    {
+      "name": "legacy_SetVertexShaderConstantF",
+      "pattern": "8B 81 AC 11 00 00 8B 4C 24 2C 8B 10 8B 92 78 01 00 00 83 C4 0C 51",
+      "source_line": 1703,
+      "active_in_legacy_source": true,
+      "d3d9_vtable_index": 94,
+      "matches": [],
+      "runtime_validated": false
+    },
+    {
+      "name": "legacy_SetPixelShaderConstantF",
+      "pattern": "8B 81 AC 11 00 00 8B 4C 24 2C 8B 10 8B 92 B4 01 00 00",
+      "source_line": 1753,
+      "active_in_legacy_source": true,
+      "d3d9_vtable_index": 109,
+      "matches": [],
+      "runtime_validated": false
+    },
+    {
+      "name": "legacy_CreateTexture_1080",
+      "pattern": "8B 80 AC 11 00 00 8B 10 8B 52 5C",
+      "source_line": 1824,
+      "active_in_legacy_source": true,
+      "d3d9_vtable_index": 23,
+      "matches": [],
+      "runtime_validated": false
+    },
+    {
+      "name": "legacy_CreateTexture_1070",
+      "pattern": "8B 80 AC 11 00 00 8B 08 6A 00 8D 9F 8C 00 00 00 53 52 8B 57 58 52 8B 57 0C 52 8B 57 20 52 8B 57 10 52 8B 57",
+      "source_line": 1868,
+      "active_in_legacy_source": true,
+      "d3d9_vtable_index": 23,
+      "matches": [],
+      "runtime_validated": false
+    },
+    {
+      "name": "gfwl_ShaderPath_CE",
+      "pattern": "8B 04 8D ? ? ? ? A3 ? ? ? ? 8B 44 24 04",
+      "source": "https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/blob/aee995b0181feea58ed3682417d48a0c125beb06/source/shaders.ixx#L98",
+      "active_in_legacy_source": true,
+      "matches": [
+        {
+          "section": ".text",
+          "rva": "0x0071D1D7",
+          "file_offset": "0x0071C5D7"
+        }
+      ],
+      "runtime_validated": false
+    },
+    {
+      "name": "gfwl_ShaderPath_fallback",
+      "pattern": "8B 14 85 ? ? ? ? A3 ? ? ? ? 8B 44 24 04",
+      "source": "https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/blob/aee995b0181feea58ed3682417d48a0c125beb06/source/shaders.ixx#L113",
+      "active_in_legacy_source": true,
+      "matches": [],
+      "runtime_validated": false
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "format": 1,
+  "experimental": true,
+  "rendering_validated": false,
+  "probe": null,
+  "hash_algorithm": "enb163_raw_crc32_no_final_xor_before_first_aligned_END",
+  "groups": [
+    "terrain"
+  ],
+  "mapping_evidence": "research/shader-map.json: static assembly candidates, not proven original hash identities; SHA256 pins stock CE 1.2.0.59 win32_30 and supplied iCEnhancer 4 inputs",
+  "mappings": [
+    {
+      "preset_file": "psh0CBF49C5.txt",
+      "stage": "ps",
+      "container": "gta_terrain_va_2lyr.fxc",
+      "index": 5,
+      "shader_sha256": "f74244479986809d0bc89c1c9950f1735e1205bbeea448ebc702678308626457",
+      "replacement_sha256": "4c0cddd226c8a16a8cbe6b8859ea59d190d704dda0574ee06bdcb589ac80545d",
+      "group": "terrain",
+      "normalized_body_similarity": 1.0,
+      "alias": "pshA5F4E880.txt",
+      "source_container_sha256": "5646a5bd8ffe124083bfa89c2ca4311d4687e4a6f34198138ed6714416dd3d8d",
+      "output_sha256": "4c0cddd226c8a16a8cbe6b8859ea59d190d704dda0574ee06bdcb589ac80545d",
+      "runtime_substitution_verified": false
+    },
+    {
+      "preset_file": "psh405ABC1B.txt",
+      "stage": "ps",
+      "container": "gta_terrain_va_3lyr.fxc",
+      "index": 7,
+      "shader_sha256": "b7172ce35b4fcb07005bee26c3097613e92b70b6046f3399862230c90562353a",
+      "replacement_sha256": "ac7ddbba137b192b509b1893f694209d6bdc293783e9b915c483573fcbff1cb2",
+      "group": "terrain",
+      "normalized_body_similarity": 1.0,
+      "alias": "pshFDFF185D.txt",
+      "source_container_sha256": "e792af185f2ff64148b2b78f277cbc04dd72a72e0d344ba9396910b47f4b415f",
+      "output_sha256": "ac7ddbba137b192b509b1893f694209d6bdc293783e9b915c483573fcbff1cb2",
+      "runtime_substitution_verified": false
+    },
+    {
+      "preset_file": "psh841FD9AE.txt",
+      "stage": "ps",
+      "container": "gta_terrain_va_4lyr.fxc",
+      "index": 9,
+      "shader_sha256": "29e50d84858272c037e1a731252c18760b812d05998d228027119bfab96aa449",
+      "replacement_sha256": "f2ee6ff902604a0e1deecf302089108b600122f32dcd8234c8ee29d3664cc1bd",
+      "group": "terrain",
+      "normalized_body_similarity": 1.0,
+      "alias": "psh1D661524.txt",
+      "source_container_sha256": "baa6a260d3649d1cba62a03fa7e01b3608994dffd176c0d95b1aed91852b3148",
+      "output_sha256": "f2ee6ff902604a0e1deecf302089108b600122f32dcd8234c8ee29d3664cc1bd",
+      "runtime_substitution_verified": false
+    }
+  ],
+  "affected_slots": {
+    "pshA5F4E880.txt": [
+      {
+        "container": "gta_terrain_va_2lyr.fxc",
+        "index": 5
+      }
+    ],
+    "pshFDFF185D.txt": [
+      {
+        "container": "gta_terrain_va_3lyr.fxc",
+        "index": 7
+      }
+    ],
+    "psh1D661524.txt": [
+      {
+        "container": "gta_terrain_va_4lyr.fxc",
+        "index": 9
+      }
+    ]
+  },
+  "excluded_preset_files": [
+    "psh22DCDB69.txt",
+    "psh2DF967C6.txt",
+    "psh323E9BB8.txt",
+    "psh46A43A9F.txt",
+    "psh71CC11CF.txt",
+    "psh8DB4CDB2.txt",
+    "pshF5256B40.txt",
+    "vsh54F25463.txt",
+    "vshC35A5E05.txt"
+  ],
+  "game_modified": false
+}

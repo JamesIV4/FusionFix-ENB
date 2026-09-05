@@ -1,5 +1,12 @@
 # FusionFix rendering pipeline, as it stands
 
+> September 5 correction: regular ENB review found that the prior profile did
+> not gate `shadows.ixx` resource/cascade changes or several FusionShader state
+> tweaks. ENBLegacy now disables those via `ShadowPipelineFixes` and
+> `FusionShaderTweaks`; the required extended tree uses a stock-depth rebuild
+> with c221/c233 uploads retained. See
+> [regular-enb-review.md](regular-enb-review.md).
+
 Reconnaissance for the ENB compatibility work. Everything here was read out of
 this repository at commit `c3f9a9a` and out of a Complete Edition 1.2.0.59
 install; nothing is inferred from documentation.

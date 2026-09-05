@@ -28,7 +28,7 @@ import re
 import sys
 
 DEF_RE = re.compile(r'^\s*def[ib]?\s+c(\d+)', re.I)
-CONST_RE = re.compile(r'\bc(\d+)\b')
+CONST_RE = re.compile(r'\bc(\d+)(?:_abs)?\b')
 SAMPLER_RE = re.compile(r'\bs(\d+)\b')
 # "//   ParamName        c44      1"
 CTAB_RE = re.compile(r'^//\s+(\w+)\s+([cs]\d+)\s+\d+\s*$')

@@ -1,0 +1,56 @@
+{
+  "date": "2026-09-04",
+  "performed_by": "user",
+  "phase": "Probe",
+  "user_result": "Magenta appeared on a strip of terrain beside a building.",
+  "screenshot": {
+    "source_file": "C:/Games/Steam/userdata/34944319/760/remote/12210/screenshots/20260904223905_1.jpg",
+    "evidence_copy": "research/evidence/2026-09-04/user-terrain-probe.jpg",
+    "sha256": "b359ff795e5636eff125a51b320ba69f1344395c480fe5163484db5e5197c158",
+    "bytes": 511722,
+    "width": 2560,
+    "height": 1440,
+    "observations": "A contiguous magenta ground corridor appears between and beside buildings. Buildings, character, trees, fence, bench and adjacent pavement remain normally shaded. A simple color threshold found 82423 magenta-like pixels (2.236 percent of the image), bounded by x=548..1109 and y=511..903. The baseline screenshot had zero pixels under the same threshold. This numerical threshold supports the visual observation; it is not a semantic segmentation."
+  },
+  "installed_probe_checks": [
+    {
+      "file": "shaderinput/pshA5F4E880.txt",
+      "role": "stock CE terrain 2-layer alias for iCEnhancer psh0CBF49C5.txt",
+      "sha256": "6ba945e68942cb533f4406691dc1ba0f48ff2aa0b5b6c3c92e244c62a83dac69",
+      "matches_staged_probe": true
+    },
+    {
+      "file": "shaderinput/pshFDFF185D.txt",
+      "role": "stock CE terrain 3-layer alias for iCEnhancer psh405ABC1B.txt",
+      "sha256": "56f7203e55c6c2474b37490e871cab153df55f0c644d9354897058396cb1772a",
+      "matches_staged_probe": true
+    },
+    {
+      "file": "shaderinput/psh1D661524.txt",
+      "role": "stock CE terrain 4-layer alias for iCEnhancer psh841FD9AE.txt",
+      "sha256": "7e9337a06500dec8b7858e516a6e643b59a07ae00927e6fe16301a6e80f6929a",
+      "matches_staged_probe": true
+    }
+  ],
+  "configuration": {
+    "d3d9_dll_sha256": "280e2bc15485bb7b944d47bad9e7d553b6e63eba3afb97bdbc546d45fcc203c4",
+    "enbeffect_fx_sha256": "5676d6393cb82983f0a23a85c20919549a6a95093188fb36e289ce35acce4d63",
+    "fusionfix_asi_sha256": "d2482ef958130e25d755f6ed54cd6fbe0d3048558304eaed2e18b08283cd8085",
+    "fusionfix_ini_sha256": "e3de648848793113d84b4a4c75c1232e15696ac8a5fc74b09bccfbb161baaf75",
+    "d3d9_cfg_sha256": "e1c6a20b62f277a7d8c5932fb0d4f83533e2d24d16c381058d52db9e9292d5d8",
+    "shader_package": "stock win32_30_nv8 overlay",
+    "renderer_profile": "ENBLegacy",
+    "fusionfix_renderer_flags": "all disabled",
+    "version_spoof": false,
+    "icenhancer_asi": false
+  },
+  "log": [
+    "22:32:24.113  stock shaders requested: shader-variant lookups redirected to common/shaders/win32_30_nv8",
+    "22:32:24.114  shaders loaded from win32_30_nv8: stock",
+    "22:32:24.114  ENBCompatibility mode=1 profile=ENBLegacy",
+    "22:32:24.114    ReplacePostFX=0 PostProcessAA=0 AmbientOcclusion=0 SunShafts=0 PreAlphaDepthCopy=0 SkyDiffuseSplit=0 ConsoleGammaBlit=0 ShaderConstantInjection=0 FusionShaderPackage=0",
+    "22:32:25.075  version spoof: SpoofGameVersion unset or unparsable (''), not installed"
+  ],
+  "conclusion": "Runtime substitution is confirmed for at least one of the three stock-CE terrain aliases. The combined probe cannot identify which active 2-layer, 3-layer or 4-layer alias drew this strip, so individual mappings remain grouped rather than independently runtime-confirmed.",
+  "next_test": "Switch to Aliases and revisit the same view. The magenta must disappear while the unchanged iCEnhancer terrain assemblies remain active under the recovered CE filenames."
+}

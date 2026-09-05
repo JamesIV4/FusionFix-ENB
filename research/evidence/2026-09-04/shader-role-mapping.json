@@ -1,0 +1,1053 @@
+{
+  "source": "CE 1.2.0.59 win32_30 exported with repository RageShaderEditor",
+  "legacy_commit": "9d8613917d492720cd1192372dc16674c49cd6ec",
+  "reports": [
+    {
+      "container": "rage_postfx.fxc",
+      "target": "fusionfix-5.0.1",
+      "source_xml_sha256": "3d18cfb288912615376ed60295388b34b621c8c2c089548564286800b0efa61b",
+      "target_xml_sha256": "a8dfb79c95ce0afce873dd78b4a4360ca2e3a9669494ca7e2e64e7af8210195c",
+      "method": "named technique/pass and stage; never assume equal slot numbers",
+      "rendering_validated": false,
+      "entries": [
+        {
+          "source_slot": 12,
+          "stage": "ps",
+          "roles": [
+            "GTACompositePostFx/10"
+          ],
+          "missing_roles": [],
+          "target_slots": [
+            12
+          ],
+          "candidates": [
+            {
+              "target_slot": 12,
+              "changed_bindings": {
+                "AdapLumSampler": {
+                  "source": [
+                    "sampler",
+                    4
+                  ],
+                  "target": [
+                    "sampler",
+                    5
+                  ]
+                },
+                "BloomSampler": {
+                  "source": [
+                    "sampler",
+                    3
+                  ],
+                  "target": [
+                    "sampler",
+                    4
+                  ]
+                },
+                "ColorCorrect": {
+                  "source": [
+                    "float4",
+                    78
+                  ],
+                  "target": [
+                    "float4",
+                    83
+                  ]
+                },
+                "ColorShift": {
+                  "source": [
+                    "float4",
+                    79
+                  ],
+                  "target": [
+                    "float4",
+                    84
+                  ]
+                },
+                "TexelSize": {
+                  "source": [
+                    "float4",
+                    72
+                  ],
+                  "target": [
+                    "float4",
+                    76
+                  ]
+                },
+                "ToneMapParams": {
+                  "source": [
+                    "float4",
+                    76
+                  ],
+                  "target": [
+                    "float4",
+                    81
+                  ]
+                },
+                "deSatContrastGamma": {
+                  "source": [
+                    "float4",
+                    77
+                  ],
+                  "target": [
+                    "float4",
+                    82
+                  ]
+                },
+                "dofBlur": {
+                  "source": [
+                    "float4",
+                    75
+                  ],
+                  "target": [
+                    "float4",
+                    79
+                  ]
+                },
+                "dofDist": {
+                  "source": [
+                    "float4",
+                    74
+                  ],
+                  "target": [
+                    "float4",
+                    78
+                  ]
+                },
+                "dofProj": {
+                  "source": [
+                    "float4",
+                    73
+                  ],
+                  "target": [
+                    "float4",
+                    77
+                  ]
+                }
+              },
+              "target_extra_bindings": {
+                "StippleTexture": [
+                  "sampler",
+                  10
+                ],
+                "BlurSampler": [
+                  "sampler",
+                  3
+                ],
+                "JitterSampler": [
+                  "sampler",
+                  6
+                ],
+                "NoiseParams": [
+                  "float4",
+                  85
+                ],
+                "PLAYER_MASK": [
+                  "float",
+                  86
+                ],
+                "StencilCopySampler": [
+                  "sampler",
+                  7
+                ],
+                "gDirectionalMotionBlurLength": [
+                  "float",
+                  80
+                ],
+                "globalScreenSize": [
+                  "float4",
+                  44
+                ],
+                "motionBlurMatrix": [
+                  "float4x4",
+                  72
+                ],
+                "NearFarPlane": [
+                  "float4",
+                  128
+                ]
+              },
+              "source_writes_depth": false,
+              "target_writes_depth": false,
+              "declarations_equal": false,
+              "changed_pass_states": [],
+              "source_bindings_preserved": false
+            }
+          ],
+          "mapping_unambiguous": true
+        },
+        {
+          "source_slot": 13,
+          "stage": "ps",
+          "roles": [
+            "GTACompositePostFx/11"
+          ],
+          "missing_roles": [],
+          "target_slots": [
+            13
+          ],
+          "candidates": [
+            {
+              "target_slot": 13,
+              "changed_bindings": {
+                "AdapLumSampler": {
+                  "source": [
+                    "sampler",
+                    4
+                  ],
+                  "target": [
+                    "sampler",
+                    5
+                  ]
+                },
+                "BloomSampler": {
+                  "source": [
+                    "sampler",
+                    3
+                  ],
+                  "target": [
+                    "sampler",
+                    4
+                  ]
+                },
+                "JitterSampler": {
+                  "source": [
+                    "sampler",
+                    5
+                  ],
+                  "target": [
+                    "sampler",
+                    6
+                  ]
+                },
+                "PLAYER_MASK": {
+                  "source": [
+                    "float",
+                    85
+                  ],
+                  "target": [
+                    "float",
+                    86
+                  ]
+                },
+                "StencilCopySampler": {
+                  "source": [
+                    "sampler",
+                    6
+                  ],
+                  "target": [
+                    "sampler",
+                    7
+                  ]
+                }
+              },
+              "target_extra_bindings": {
+                "StippleTexture": [
+                  "sampler",
+                  10
+                ],
+                "BlurSampler": [
+                  "sampler",
+                  3
+                ],
+                "NoiseParams": [
+                  "float4",
+                  85
+                ],
+                "NearFarPlane": [
+                  "float4",
+                  128
+                ]
+              },
+              "source_writes_depth": false,
+              "target_writes_depth": false,
+              "declarations_equal": false,
+              "changed_pass_states": [],
+              "source_bindings_preserved": false
+            }
+          ],
+          "mapping_unambiguous": true
+        },
+        {
+          "source_slot": 29,
+          "stage": "ps",
+          "roles": [
+            "GTACompositePostFx/27"
+          ],
+          "missing_roles": [],
+          "target_slots": [
+            29
+          ],
+          "candidates": [
+            {
+              "target_slot": 29,
+              "changed_bindings": {
+                "AdapLumSampler": {
+                  "source": [
+                    "sampler",
+                    3
+                  ],
+                  "target": [
+                    "sampler",
+                    5
+                  ]
+                },
+                "ColorCorrect": {
+                  "source": [
+                    "float4",
+                    82
+                  ],
+                  "target": [
+                    "float4",
+                    83
+                  ]
+                },
+                "ColorShift": {
+                  "source": [
+                    "float4",
+                    83
+                  ],
+                  "target": [
+                    "float4",
+                    84
+                  ]
+                },
+                "JitterSampler": {
+                  "source": [
+                    "sampler",
+                    4
+                  ],
+                  "target": [
+                    "sampler",
+                    6
+                  ]
+                },
+                "PLAYER_MASK": {
+                  "source": [
+                    "float",
+                    84
+                  ],
+                  "target": [
+                    "float",
+                    86
+                  ]
+                },
+                "StencilCopySampler": {
+                  "source": [
+                    "sampler",
+                    5
+                  ],
+                  "target": [
+                    "sampler",
+                    7
+                  ]
+                },
+                "ToneMapParams": {
+                  "source": [
+                    "float4",
+                    80
+                  ],
+                  "target": [
+                    "float4",
+                    81
+                  ]
+                },
+                "deSatContrastGamma": {
+                  "source": [
+                    "float4",
+                    81
+                  ],
+                  "target": [
+                    "float4",
+                    82
+                  ]
+                },
+                "dofBlur": {
+                  "source": [
+                    "float4",
+                    78
+                  ],
+                  "target": [
+                    "float4",
+                    79
+                  ]
+                },
+                "gDirectionalMotionBlurLength": {
+                  "source": [
+                    "float",
+                    79
+                  ],
+                  "target": [
+                    "float",
+                    80
+                  ]
+                }
+              },
+              "target_extra_bindings": {
+                "StippleTexture": [
+                  "sampler",
+                  10
+                ],
+                "BloomSampler": [
+                  "sampler",
+                  4
+                ],
+                "BlurSampler": [
+                  "sampler",
+                  3
+                ],
+                "NoiseParams": [
+                  "float4",
+                  85
+                ],
+                "dofDist": [
+                  "float4",
+                  78
+                ],
+                "NearFarPlane": [
+                  "float4",
+                  128
+                ]
+              },
+              "source_writes_depth": false,
+              "target_writes_depth": false,
+              "declarations_equal": false,
+              "changed_pass_states": [],
+              "source_bindings_preserved": false
+            }
+          ],
+          "mapping_unambiguous": true
+        }
+      ]
+    },
+    {
+      "container": "rage_postfx.fxc",
+      "target": "legacy-shaders-9d86139",
+      "source_xml_sha256": "3d18cfb288912615376ed60295388b34b621c8c2c089548564286800b0efa61b",
+      "target_xml_sha256": "86f8f23ae2d9db84d7b56a4f68a7e07b04f897441e16eb7ed85acf83424e1bb1",
+      "method": "named technique/pass and stage; never assume equal slot numbers",
+      "rendering_validated": false,
+      "entries": [
+        {
+          "source_slot": 12,
+          "stage": "ps",
+          "roles": [
+            "GTACompositePostFx/10"
+          ],
+          "missing_roles": [],
+          "target_slots": [
+            12
+          ],
+          "candidates": [
+            {
+              "target_slot": 12,
+              "changed_bindings": {},
+              "target_extra_bindings": {},
+              "source_writes_depth": false,
+              "target_writes_depth": false,
+              "declarations_equal": true,
+              "changed_pass_states": [],
+              "source_bindings_preserved": true
+            }
+          ],
+          "mapping_unambiguous": true
+        },
+        {
+          "source_slot": 13,
+          "stage": "ps",
+          "roles": [
+            "GTACompositePostFx/11"
+          ],
+          "missing_roles": [],
+          "target_slots": [
+            13
+          ],
+          "candidates": [
+            {
+              "target_slot": 13,
+              "changed_bindings": {},
+              "target_extra_bindings": {},
+              "source_writes_depth": false,
+              "target_writes_depth": false,
+              "declarations_equal": true,
+              "changed_pass_states": [],
+              "source_bindings_preserved": true
+            }
+          ],
+          "mapping_unambiguous": true
+        },
+        {
+          "source_slot": 29,
+          "stage": "ps",
+          "roles": [
+            "GTACompositePostFx/27"
+          ],
+          "missing_roles": [],
+          "target_slots": [
+            29
+          ],
+          "candidates": [
+            {
+              "target_slot": 29,
+              "changed_bindings": {},
+              "target_extra_bindings": {},
+              "source_writes_depth": false,
+              "target_writes_depth": false,
+              "declarations_equal": true,
+              "changed_pass_states": [],
+              "source_bindings_preserved": true
+            }
+          ],
+          "mapping_unambiguous": true
+        }
+      ]
+    },
+    {
+      "container": "deferred_lighting.fxc",
+      "target": "fusionfix-5.0.1",
+      "source_xml_sha256": "ae0dbaf807a5dbe7e14845623ca62ab6eaec57a7af384e06082371a0770d6674",
+      "target_xml_sha256": "61fb7632558c1141b44459c0ebabf6dc80dc4a4d0754becf97b4d04bbee8613f",
+      "method": "named technique/pass and stage; never assume equal slot numbers",
+      "rendering_validated": false,
+      "entries": [
+        {
+          "source_slot": 7,
+          "stage": "vs",
+          "roles": [
+            "lightShafts/0",
+            "lightShafts/1",
+            "lightShafts/4",
+            "lightShafts/5"
+          ],
+          "missing_roles": [],
+          "target_slots": [
+            7
+          ],
+          "candidates": [
+            {
+              "target_slot": 7,
+              "changed_bindings": {},
+              "target_extra_bindings": {},
+              "source_writes_depth": false,
+              "target_writes_depth": false,
+              "declarations_equal": false,
+              "changed_pass_states": [],
+              "source_bindings_preserved": true
+            }
+          ],
+          "mapping_unambiguous": true
+        },
+        {
+          "source_slot": 8,
+          "stage": "vs",
+          "roles": [
+            "lightShafts/2",
+            "lightShafts/3",
+            "lightShafts/6",
+            "lightShafts/7"
+          ],
+          "missing_roles": [],
+          "target_slots": [
+            8
+          ],
+          "candidates": [
+            {
+              "target_slot": 8,
+              "changed_bindings": {
+                "gDeferredLightSampler2": {
+                  "source": [
+                    "sampler",
+                    0
+                  ],
+                  "target": null
+                }
+              },
+              "target_extra_bindings": {
+                "gDeferredLightSampler1": [
+                  "sampler",
+                  0
+                ]
+              },
+              "source_writes_depth": false,
+              "target_writes_depth": false,
+              "declarations_equal": false,
+              "changed_pass_states": [],
+              "source_bindings_preserved": false
+            }
+          ],
+          "mapping_unambiguous": true
+        }
+      ]
+    },
+    {
+      "container": "deferred_lighting.fxc",
+      "target": "legacy-shaders-9d86139",
+      "source_xml_sha256": "ae0dbaf807a5dbe7e14845623ca62ab6eaec57a7af384e06082371a0770d6674",
+      "target_xml_sha256": "2df9b17c20f9da5cd92b804a5fd34cf0dc7df239d11e92df9e235f9875f58138",
+      "method": "named technique/pass and stage; never assume equal slot numbers",
+      "rendering_validated": false,
+      "entries": [
+        {
+          "source_slot": 7,
+          "stage": "vs",
+          "roles": [
+            "lightShafts/0",
+            "lightShafts/1",
+            "lightShafts/4",
+            "lightShafts/5"
+          ],
+          "missing_roles": [],
+          "target_slots": [
+            7
+          ],
+          "candidates": [
+            {
+              "target_slot": 7,
+              "changed_bindings": {},
+              "target_extra_bindings": {},
+              "source_writes_depth": false,
+              "target_writes_depth": false,
+              "declarations_equal": true,
+              "changed_pass_states": [],
+              "source_bindings_preserved": true
+            }
+          ],
+          "mapping_unambiguous": true
+        },
+        {
+          "source_slot": 8,
+          "stage": "vs",
+          "roles": [
+            "lightShafts/2",
+            "lightShafts/3",
+            "lightShafts/6",
+            "lightShafts/7"
+          ],
+          "missing_roles": [],
+          "target_slots": [
+            8
+          ],
+          "candidates": [
+            {
+              "target_slot": 8,
+              "changed_bindings": {
+                "gDeferredLightSampler2": {
+                  "source": [
+                    "sampler",
+                    0
+                  ],
+                  "target": null
+                }
+              },
+              "target_extra_bindings": {
+                "gDeferredLightSampler1": [
+                  "sampler",
+                  0
+                ]
+              },
+              "source_writes_depth": false,
+              "target_writes_depth": false,
+              "declarations_equal": true,
+              "changed_pass_states": [],
+              "source_bindings_preserved": false
+            }
+          ],
+          "mapping_unambiguous": true
+        }
+      ]
+    },
+    {
+      "container": "gta_terrain_va_2lyr.fxc",
+      "target": "fusionfix-5.0.1",
+      "source_xml_sha256": "2e8f3351f6f589878c4aaff235d6fb3b5d65e9f006a7df451a15f7523ee09626",
+      "target_xml_sha256": "7dd9fd40cbd731a0201c01af21f9634c1fe40fc61535ab304546a70f6754adc7",
+      "method": "named technique/pass and stage; never assume equal slot numbers",
+      "rendering_validated": false,
+      "entries": [
+        {
+          "source_slot": 5,
+          "stage": "ps",
+          "roles": [
+            "deferred_draw/0"
+          ],
+          "missing_roles": [],
+          "target_slots": [
+            5
+          ],
+          "candidates": [
+            {
+              "target_slot": 5,
+              "changed_bindings": {},
+              "target_extra_bindings": {
+                "NearFarPlane": [
+                  "float4",
+                  128
+                ]
+              },
+              "source_writes_depth": false,
+              "target_writes_depth": true,
+              "declarations_equal": false,
+              "changed_pass_states": [
+                "deferred_draw/0"
+              ],
+              "source_bindings_preserved": true
+            }
+          ],
+          "mapping_unambiguous": true
+        }
+      ]
+    },
+    {
+      "container": "gta_terrain_va_3lyr.fxc",
+      "target": "fusionfix-5.0.1",
+      "source_xml_sha256": "215670edec3d5ed0a1558240afc34611df82503063bf14a361a4e2e99b36909b",
+      "target_xml_sha256": "ded83c4677d59d8e1cca1988e7f10dbe186ab60924903d695fa07b8d80516046",
+      "method": "named technique/pass and stage; never assume equal slot numbers",
+      "rendering_validated": false,
+      "entries": [
+        {
+          "source_slot": 7,
+          "stage": "ps",
+          "roles": [
+            "deferred_draw/0"
+          ],
+          "missing_roles": [],
+          "target_slots": [
+            7
+          ],
+          "candidates": [
+            {
+              "target_slot": 7,
+              "changed_bindings": {},
+              "target_extra_bindings": {
+                "NearFarPlane": [
+                  "float4",
+                  128
+                ]
+              },
+              "source_writes_depth": false,
+              "target_writes_depth": true,
+              "declarations_equal": false,
+              "changed_pass_states": [
+                "deferred_draw/0"
+              ],
+              "source_bindings_preserved": true
+            }
+          ],
+          "mapping_unambiguous": true
+        }
+      ]
+    },
+    {
+      "container": "gta_terrain_va_4lyr.fxc",
+      "target": "fusionfix-5.0.1",
+      "source_xml_sha256": "ffd0c4f5cfb2f0a899569a5647ae605ba53a96375f0881239a52811c6463cc8f",
+      "target_xml_sha256": "3ba6aa67ad78acd3347f19d7f1df968c2404f1b10e8181495a9024acb7151bb5",
+      "method": "named technique/pass and stage; never assume equal slot numbers",
+      "rendering_validated": false,
+      "entries": [
+        {
+          "source_slot": 9,
+          "stage": "ps",
+          "roles": [
+            "deferred_draw/0"
+          ],
+          "missing_roles": [],
+          "target_slots": [
+            9
+          ],
+          "candidates": [
+            {
+              "target_slot": 9,
+              "changed_bindings": {},
+              "target_extra_bindings": {
+                "NearFarPlane": [
+                  "float4",
+                  128
+                ]
+              },
+              "source_writes_depth": false,
+              "target_writes_depth": true,
+              "declarations_equal": false,
+              "changed_pass_states": [
+                "deferred_draw/0"
+              ],
+              "source_bindings_preserved": true
+            }
+          ],
+          "mapping_unambiguous": true
+        }
+      ]
+    },
+    {
+      "container": "gta_grass.fxc",
+      "target": "fusionfix-5.0.1",
+      "source_xml_sha256": "bd643f3421936bd0f8be0cc129b31a18e46710288f91440180366e8e67ec2396",
+      "target_xml_sha256": "ef08651c6e0d869449361a0513307ba9b949d571c6b25bc2789c47e17e598b44",
+      "method": "named technique/pass and stage; never assume equal slot numbers",
+      "rendering_validated": false,
+      "entries": [
+        {
+          "source_slot": 2,
+          "stage": "ps",
+          "roles": [
+            "deferred_draw/0",
+            "deferred_drawskinned/0",
+            "deferredalphaclip_draw/0",
+            "deferredalphaclip_drawskinned/0"
+          ],
+          "missing_roles": [],
+          "target_slots": [
+            2
+          ],
+          "candidates": [
+            {
+              "target_slot": 2,
+              "changed_bindings": {},
+              "target_extra_bindings": {
+                "NearFarPlane": [
+                  "float4",
+                  128
+                ]
+              },
+              "source_writes_depth": false,
+              "target_writes_depth": true,
+              "declarations_equal": false,
+              "changed_pass_states": [],
+              "source_bindings_preserved": true
+            }
+          ],
+          "mapping_unambiguous": true
+        }
+      ]
+    },
+    {
+      "container": "gta_cutout_fence.fxc",
+      "target": "fusionfix-5.0.1",
+      "source_xml_sha256": "1ed4fb44c1b66bd4ba079247bfa62bf23df070b90b7843dfddddbccfd19f421b",
+      "target_xml_sha256": "1f8126c546f6c334d81cdec01f867c67969474818b47118dbb5a0199cc154797",
+      "method": "named technique/pass and stage; never assume equal slot numbers",
+      "rendering_validated": false,
+      "entries": [
+        {
+          "source_slot": 15,
+          "stage": "ps",
+          "roles": [
+            "deferredalphaclip_draw/0",
+            "deferredalphaclip_drawskinned/0"
+          ],
+          "missing_roles": [],
+          "target_slots": [
+            15
+          ],
+          "candidates": [
+            {
+              "target_slot": 15,
+              "changed_bindings": {},
+              "target_extra_bindings": {
+                "NearFarPlane": [
+                  "float4",
+                  128
+                ]
+              },
+              "source_writes_depth": false,
+              "target_writes_depth": true,
+              "declarations_equal": false,
+              "changed_pass_states": [],
+              "source_bindings_preserved": true
+            }
+          ],
+          "mapping_unambiguous": true
+        }
+      ]
+    },
+    {
+      "container": "gta_cutout_fence.fxc",
+      "target": "legacy-shaders-9d86139",
+      "source_xml_sha256": "1ed4fb44c1b66bd4ba079247bfa62bf23df070b90b7843dfddddbccfd19f421b",
+      "target_xml_sha256": "9ccf54b4ce5af4508ed75729687c61ca3cebeae6385708217cba2facc9770852",
+      "method": "named technique/pass and stage; never assume equal slot numbers",
+      "rendering_validated": false,
+      "entries": [
+        {
+          "source_slot": 15,
+          "stage": "ps",
+          "roles": [
+            "deferredalphaclip_draw/0",
+            "deferredalphaclip_drawskinned/0"
+          ],
+          "missing_roles": [],
+          "target_slots": [
+            15
+          ],
+          "candidates": [
+            {
+              "target_slot": 15,
+              "changed_bindings": {},
+              "target_extra_bindings": {},
+              "source_writes_depth": false,
+              "target_writes_depth": false,
+              "declarations_equal": true,
+              "changed_pass_states": [],
+              "source_bindings_preserved": true
+            }
+          ],
+          "mapping_unambiguous": true
+        }
+      ]
+    },
+    {
+      "container": "gta_default.fxc",
+      "target": "fusionfix-5.0.1",
+      "source_xml_sha256": "8c7be2ad0b426e689006d173f32de20e73e94baa24c70d5e729a480632bd79ff",
+      "target_xml_sha256": "c446e27e03afa98ad31bf6a3dc83d17a77e89a04f6e65df04a0ff28c5793ee09",
+      "method": "named technique/pass and stage; never assume equal slot numbers",
+      "rendering_validated": false,
+      "entries": [
+        {
+          "source_slot": 15,
+          "stage": "ps",
+          "roles": [
+            "deferredalphaclip_draw/0",
+            "deferredalphaclip_drawskinned/0"
+          ],
+          "missing_roles": [],
+          "target_slots": [
+            15
+          ],
+          "candidates": [
+            {
+              "target_slot": 15,
+              "changed_bindings": {},
+              "target_extra_bindings": {
+                "NearFarPlane": [
+                  "float4",
+                  128
+                ]
+              },
+              "source_writes_depth": false,
+              "target_writes_depth": true,
+              "declarations_equal": false,
+              "changed_pass_states": [],
+              "source_bindings_preserved": true
+            }
+          ],
+          "mapping_unambiguous": true
+        }
+      ]
+    },
+    {
+      "container": "gta_default.fxc",
+      "target": "legacy-shaders-9d86139",
+      "source_xml_sha256": "8c7be2ad0b426e689006d173f32de20e73e94baa24c70d5e729a480632bd79ff",
+      "target_xml_sha256": "0898325ea6c5f196a7ece0da3bef2007ca33a89a9942483315964cf3e4d09bf2",
+      "method": "named technique/pass and stage; never assume equal slot numbers",
+      "rendering_validated": false,
+      "entries": [
+        {
+          "source_slot": 15,
+          "stage": "ps",
+          "roles": [
+            "deferredalphaclip_draw/0",
+            "deferredalphaclip_drawskinned/0"
+          ],
+          "missing_roles": [],
+          "target_slots": [
+            15
+          ],
+          "candidates": [
+            {
+              "target_slot": 15,
+              "changed_bindings": {},
+              "target_extra_bindings": {},
+              "source_writes_depth": false,
+              "target_writes_depth": false,
+              "declarations_equal": true,
+              "changed_pass_states": [],
+              "source_bindings_preserved": true
+            }
+          ],
+          "mapping_unambiguous": true
+        }
+      ]
+    },
+    {
+      "container": "gta_wire.fxc",
+      "target": "fusionfix-5.0.1",
+      "source_xml_sha256": "a0a2e868ce385625f0470cee737a531c84e858bdea19504b31998aa839b2633f",
+      "target_xml_sha256": "f71f479c83da3a21af51c7c2fd35984825d019d4197ca6c53dd6b4f761b4263c",
+      "method": "named technique/pass and stage; never assume equal slot numbers",
+      "rendering_validated": false,
+      "entries": [
+        {
+          "source_slot": 14,
+          "stage": "ps",
+          "roles": [
+            "deferred_draw/0",
+            "deferred_drawskinned/0"
+          ],
+          "missing_roles": [],
+          "target_slots": [
+            14
+          ],
+          "candidates": [
+            {
+              "target_slot": 14,
+              "changed_bindings": {},
+              "target_extra_bindings": {
+                "NearFarPlane": [
+                  "float4",
+                  128
+                ]
+              },
+              "source_writes_depth": false,
+              "target_writes_depth": true,
+              "declarations_equal": false,
+              "changed_pass_states": [
+                "deferred_draw/0",
+                "deferred_drawskinned/0"
+              ],
+              "source_bindings_preserved": true
+            }
+          ],
+          "mapping_unambiguous": true
+        }
+      ]
+    },
+    {
+      "container": "gta_wire.fxc",
+      "target": "legacy-shaders-9d86139",
+      "source_xml_sha256": "a0a2e868ce385625f0470cee737a531c84e858bdea19504b31998aa839b2633f",
+      "target_xml_sha256": "a0a2e868ce385625f0470cee737a531c84e858bdea19504b31998aa839b2633f",
+      "method": "named technique/pass and stage; never assume equal slot numbers",
+      "rendering_validated": false,
+      "entries": [
+        {
+          "source_slot": 14,
+          "stage": "ps",
+          "roles": [
+            "deferred_draw/0",
+            "deferred_drawskinned/0"
+          ],
+          "missing_roles": [],
+          "target_slots": [
+            14
+          ],
+          "candidates": [
+            {
+              "target_slot": 14,
+              "changed_bindings": {},
+              "target_extra_bindings": {},
+              "source_writes_depth": false,
+              "target_writes_depth": false,
+              "declarations_equal": true,
+              "changed_pass_states": [],
+              "source_bindings_preserved": true
+            }
+          ],
+          "mapping_unambiguous": true
+        }
+      ]
+    }
+  ]
+}

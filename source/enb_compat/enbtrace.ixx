@@ -195,6 +195,19 @@ namespace ENBTrace
         return file;
     }
 
+    std::ofstream& FirstBindFile()
+    {
+        static std::ofstream file = []
+        {
+            std::error_code ec;
+            std::filesystem::create_directories(DumpDir(), ec);
+            std::ofstream f(DumpDir() / L"shader_first_binds.csv", std::ios::trunc);
+            f << "stage,crc32,crc32_stripped,first_frame\n";
+            return f;
+        }();
+        return file;
+    }
+
     // --- state ----------------------------------------------------------
 
     std::atomic<int> gFrame{ 0 };
@@ -226,6 +239,21 @@ namespace ENBTrace
     {
         static std::unordered_map<void*, uint32_t> hashes;
         return hashes;
+    }
+
+    // Keep the raw hash as well as the comment-stripped identity. The former
+    // identifies an assembled shaderinput replacement byte-for-byte; the latter
+    // remains stable when only compiler/comment metadata differs.
+    std::unordered_map<void*, uint32_t>& ShaderRawHashes()
+    {
+        static std::unordered_map<void*, uint32_t> hashes;
+        return hashes;
+    }
+
+    std::unordered_set<uint64_t>& FirstBoundShaders()
+    {
+        static std::unordered_set<uint64_t> shaders;
+        return shaders;
     }
 
     std::atomic<uint32_t> gCurrentPS{ 0 };
@@ -333,7 +361,7 @@ namespace ENBTrace
 
     // --- shader fingerprinting ------------------------------------------
 
-    uint32_t RecordShader(const char* stage, const DWORD* function)
+    uint32_t RecordShader(const char* stage, const DWORD* function, uint32_t* rawOut = nullptr)
     {
         auto tokens = ShaderTokenCount(function);
         if (!tokens)
@@ -341,6 +369,8 @@ namespace ENBTrace
 
         auto bytes = tokens * sizeof(DWORD);
         auto raw = Crc32(reinterpret_cast<const uint8_t*>(function), bytes);
+        if (rawOut)
+            *rawOut = raw;
         auto stripped = StripComments(function, tokens);
         auto strippedCrc = Crc32(reinterpret_cast<const uint8_t*>(stripped.data()),
                                  stripped.size() * sizeof(DWORD));
@@ -459,13 +489,15 @@ namespace ENBTrace
     HRESULT WINAPI Hook_CreatePixelShader(IDirect3DDevice9* device, const DWORD* function,
                                           IDirect3DPixelShader9** shader)
     {
-        auto hash = RecordShader("ps", function);
+        uint32_t raw{};
+        auto hash = RecordShader("ps", function, &raw);
         using Fn = HRESULT(WINAPI*)(IDirect3DDevice9*, const DWORD*, IDirect3DPixelShader9**);
         auto hr = Original<Fn>(Slot_CreatePixelShader)(device, function, shader);
         if (SUCCEEDED(hr) && shader && *shader)
         {
             std::scoped_lock lock(OutMutex());
             ShaderHashes()[*shader] = hash;
+            ShaderRawHashes()[*shader] = raw;
         }
         return hr;
     }
@@ -473,13 +505,15 @@ namespace ENBTrace
     HRESULT WINAPI Hook_CreateVertexShader(IDirect3DDevice9* device, const DWORD* function,
                                            IDirect3DVertexShader9** shader)
     {
-        auto hash = RecordShader("vs", function);
+        uint32_t raw{};
+        auto hash = RecordShader("vs", function, &raw);
         using Fn = HRESULT(WINAPI*)(IDirect3DDevice9*, const DWORD*, IDirect3DVertexShader9**);
         auto hr = Original<Fn>(Slot_CreateVertexShader)(device, function, shader);
         if (SUCCEEDED(hr) && shader && *shader)
         {
             std::scoped_lock lock(OutMutex());
             ShaderHashes()[*shader] = hash;
+            ShaderRawHashes()[*shader] = raw;
         }
         return hr;
     }
@@ -494,6 +528,34 @@ namespace ENBTrace
         return it == hashes.end() ? 0 : it->second;
     }
 
+    uint32_t RecordFirstBind(const char* stage, void* shader)
+    {
+        if (!shader)
+            return 0;
+        std::scoped_lock lock(OutMutex());
+        auto strippedIt = ShaderHashes().find(shader);
+        auto rawIt = ShaderRawHashes().find(shader);
+        if (strippedIt == ShaderHashes().end() || rawIt == ShaderRawHashes().end())
+            return 0;
+
+        auto stripped = strippedIt->second;
+        auto raw = rawIt->second;
+        auto stageBit = stage[0] == 'v' ? (uint64_t{ 1 } << 63) : 0;
+        if (FirstBoundShaders().insert(stageBit | raw).second)
+        {
+            auto& file = FirstBindFile();
+            if (file)
+            {
+                file << stage << ',' << std::hex << std::uppercase << std::setfill('0')
+                     << std::setw(8) << raw << ',' << std::setw(8) << stripped
+                     << std::dec << std::nouppercase << std::setfill(' ')
+                     << ',' << gFrame.load(std::memory_order_relaxed) << '\n';
+                file.flush();
+            }
+        }
+        return stripped;
+    }
+
     std::string Hex8(uint32_t value)
     {
         std::ostringstream out;
@@ -503,7 +565,7 @@ namespace ENBTrace
 
     HRESULT WINAPI Hook_SetPixelShader(IDirect3DDevice9* device, IDirect3DPixelShader9* shader)
     {
-        auto hash = HashOf(shader);
+        auto hash = RecordFirstBind("ps", shader);
         auto previous = gCurrentPS.exchange(hash, std::memory_order_relaxed);
         if (Cfg().traceShaderBinds && Tracing() && hash != previous)
             Write("SetPixelShader " + Hex8(hash));
@@ -513,7 +575,7 @@ namespace ENBTrace
 
     HRESULT WINAPI Hook_SetVertexShader(IDirect3DDevice9* device, IDirect3DVertexShader9* shader)
     {
-        gCurrentVS.store(HashOf(shader), std::memory_order_relaxed);
+        gCurrentVS.store(RecordFirstBind("vs", shader), std::memory_order_relaxed);
         using Fn = HRESULT(WINAPI*)(IDirect3DDevice9*, IDirect3DVertexShader9*);
         return Original<Fn>(Slot_SetVertexShader)(device, shader);
     }

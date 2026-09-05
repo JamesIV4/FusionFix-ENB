@@ -1,0 +1,58 @@
+{
+  "dump_file": "GTAIV.exe.22832.dmp",
+  "dump_sha256": "2dc4edb105d8e72c5d9a383ca4bb7444f54458a02a995fdad6075e61d82f7e88",
+  "exe_sha256": "08759a5516f9837920ea504436236bbab89d0826a8e4d04ff106345177b5345d",
+  "exception_code": "C0000005",
+  "exception_address": "00BC6D22",
+  "exception_information": [
+    "00000000",
+    "7CAF9FCC"
+  ],
+  "registers": {
+    "edi": "06CA2590",
+    "esi": "0037955C",
+    "ebx": "045004C5",
+    "edx": "00001000",
+    "ecx": "F5250000",
+    "eax": "00BC6D20",
+    "ebp": "022FDE80",
+    "eip": "00BC6D22",
+    "esp": "022FDE58"
+  },
+  "instruction_comparison": {
+    "module": "GTAIV.exe",
+    "rva": "008D6D22",
+    "disk_bytes": "83be700a00000174128b862802000083",
+    "runtime_bytes": "83be700a787cc906128b862802000083",
+    "differing_rvas": [
+      "008D6D26",
+      "008D6D27",
+      "008D6D28",
+      "008D6D29"
+    ]
+  },
+  "relevant_modules": [
+    {
+      "name": "GTAIV.exe",
+      "base": "002F0000",
+      "size": 29254656
+    },
+    {
+      "name": "d3d9.dll",
+      "base": "10000000",
+      "size": 1863680
+    },
+    {
+      "name": "GTAIV.EFLC.FusionFix.asi",
+      "base": "68AF0000",
+      "size": 5992448
+    },
+    {
+      "name": "icenhancer.enbcompat",
+      "base": "6F930000",
+      "size": 835584
+    }
+  ],
+  "writer_identified": false,
+  "process_started_or_attached": false
+}

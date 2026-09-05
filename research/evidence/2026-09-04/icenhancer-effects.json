@@ -1,0 +1,802 @@
+{
+  "tool": "tools/shader_dump/inspect_effect.cpp",
+  "test": "D3D9 HAL CreateEffect, ValidateTechnique, Begin/BeginPass/EndPass/End, reflection and disassembly; no draw or game render",
+  "device_type": 1,
+  "d3d9": "C:/Windows/SYSTEM32/d3d9.dll",
+  "d3dx9_sha256": "0b28546be22c71834501f7d7185ede5d79742457331c7ee09efc14490dd64f5f",
+  "enb_loaded": false,
+  "icenhancer_asi_loaded": false,
+  "effects": [
+    {
+      "file": "enbeffect.fx",
+      "sha256": "da7f697611c62dded78ca347965bc60cdd0377d762fb5be96a9b6c36d95f74ee",
+      "size": 15024,
+      "header": "0109fffe",
+      "parameters": [
+        {
+          "kind": "parameter",
+          "name": "ScreenSize",
+          "semantic": "",
+          "type": "3",
+          "class": "1",
+          "rows": "1",
+          "columns": "4",
+          "elements": "0",
+          "bytes": "16"
+        },
+        {
+          "kind": "parameter",
+          "name": "_c44",
+          "semantic": "",
+          "type": "3",
+          "class": "1",
+          "rows": "1",
+          "columns": "4",
+          "elements": "0",
+          "bytes": "16"
+        },
+        {
+          "kind": "parameter",
+          "name": "_c66",
+          "semantic": "",
+          "type": "3",
+          "class": "1",
+          "rows": "1",
+          "columns": "4",
+          "elements": "0",
+          "bytes": "16"
+        },
+        {
+          "kind": "parameter",
+          "name": "_c72",
+          "semantic": "",
+          "type": "3",
+          "class": "1",
+          "rows": "1",
+          "columns": "4",
+          "elements": "0",
+          "bytes": "16"
+        },
+        {
+          "kind": "parameter",
+          "name": "_c73",
+          "semantic": "",
+          "type": "3",
+          "class": "1",
+          "rows": "1",
+          "columns": "4",
+          "elements": "0",
+          "bytes": "16"
+        },
+        {
+          "kind": "parameter",
+          "name": "_c74",
+          "semantic": "",
+          "type": "3",
+          "class": "1",
+          "rows": "1",
+          "columns": "4",
+          "elements": "0",
+          "bytes": "16"
+        },
+        {
+          "kind": "parameter",
+          "name": "_c75",
+          "semantic": "",
+          "type": "3",
+          "class": "1",
+          "rows": "1",
+          "columns": "4",
+          "elements": "0",
+          "bytes": "16"
+        },
+        {
+          "kind": "parameter",
+          "name": "_c76",
+          "semantic": "",
+          "type": "3",
+          "class": "1",
+          "rows": "1",
+          "columns": "4",
+          "elements": "0",
+          "bytes": "16"
+        },
+        {
+          "kind": "parameter",
+          "name": "_c77",
+          "semantic": "",
+          "type": "3",
+          "class": "1",
+          "rows": "1",
+          "columns": "4",
+          "elements": "0",
+          "bytes": "16"
+        },
+        {
+          "kind": "parameter",
+          "name": "_c78",
+          "semantic": "",
+          "type": "3",
+          "class": "1",
+          "rows": "1",
+          "columns": "4",
+          "elements": "0",
+          "bytes": "16"
+        },
+        {
+          "kind": "parameter",
+          "name": "_c79",
+          "semantic": "",
+          "type": "3",
+          "class": "1",
+          "rows": "1",
+          "columns": "4",
+          "elements": "0",
+          "bytes": "16"
+        },
+        {
+          "kind": "parameter",
+          "name": "_c80",
+          "semantic": "",
+          "type": "3",
+          "class": "1",
+          "rows": "1",
+          "columns": "4",
+          "elements": "0",
+          "bytes": "16"
+        },
+        {
+          "kind": "parameter",
+          "name": "_c81",
+          "semantic": "",
+          "type": "3",
+          "class": "1",
+          "rows": "1",
+          "columns": "4",
+          "elements": "0",
+          "bytes": "16"
+        },
+        {
+          "kind": "parameter",
+          "name": "_c82",
+          "semantic": "",
+          "type": "3",
+          "class": "1",
+          "rows": "1",
+          "columns": "4",
+          "elements": "0",
+          "bytes": "16"
+        },
+        {
+          "kind": "parameter",
+          "name": "_c83",
+          "semantic": "",
+          "type": "3",
+          "class": "1",
+          "rows": "1",
+          "columns": "4",
+          "elements": "0",
+          "bytes": "16"
+        },
+        {
+          "kind": "parameter",
+          "name": "_c84",
+          "semantic": "",
+          "type": "3",
+          "class": "1",
+          "rows": "1",
+          "columns": "4",
+          "elements": "0",
+          "bytes": "16"
+        },
+        {
+          "kind": "parameter",
+          "name": "_c85",
+          "semantic": "",
+          "type": "3",
+          "class": "1",
+          "rows": "1",
+          "columns": "4",
+          "elements": "0",
+          "bytes": "16"
+        },
+        {
+          "kind": "parameter",
+          "name": "texs0",
+          "semantic": "",
+          "type": "7",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "4"
+        },
+        {
+          "kind": "parameter",
+          "name": "texs1",
+          "semantic": "",
+          "type": "7",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "4"
+        },
+        {
+          "kind": "parameter",
+          "name": "texs2",
+          "semantic": "",
+          "type": "7",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "4"
+        },
+        {
+          "kind": "parameter",
+          "name": "texs3",
+          "semantic": "",
+          "type": "7",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "4"
+        },
+        {
+          "kind": "parameter",
+          "name": "texs4",
+          "semantic": "",
+          "type": "7",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "4"
+        },
+        {
+          "kind": "parameter",
+          "name": "texs5",
+          "semantic": "",
+          "type": "7",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "4"
+        },
+        {
+          "kind": "parameter",
+          "name": "texs6",
+          "semantic": "",
+          "type": "7",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "4"
+        },
+        {
+          "kind": "parameter",
+          "name": "texs7",
+          "semantic": "",
+          "type": "7",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "4"
+        },
+        {
+          "kind": "parameter",
+          "name": "texs13",
+          "semantic": "",
+          "type": "7",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "4"
+        },
+        {
+          "kind": "parameter",
+          "name": "texs15",
+          "semantic": "",
+          "type": "7",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "4"
+        },
+        {
+          "kind": "parameter",
+          "name": "s2",
+          "semantic": "",
+          "type": "12",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "0"
+        },
+        {
+          "kind": "parameter",
+          "name": "s4",
+          "semantic": "",
+          "type": "12",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "0"
+        },
+        {
+          "kind": "parameter",
+          "name": "s7",
+          "semantic": "",
+          "type": "12",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "0"
+        },
+        {
+          "kind": "parameter",
+          "name": "s15",
+          "semantic": "",
+          "type": "12",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "0"
+        },
+        {
+          "kind": "parameter",
+          "name": "s0",
+          "semantic": "",
+          "type": "12",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "0"
+        },
+        {
+          "kind": "parameter",
+          "name": "s1",
+          "semantic": "",
+          "type": "12",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "0"
+        },
+        {
+          "kind": "parameter",
+          "name": "s3",
+          "semantic": "",
+          "type": "12",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "0"
+        },
+        {
+          "kind": "parameter",
+          "name": "s5",
+          "semantic": "",
+          "type": "12",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "0"
+        },
+        {
+          "kind": "parameter",
+          "name": "s6",
+          "semantic": "",
+          "type": "12",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "0"
+        },
+        {
+          "kind": "parameter",
+          "name": "s13",
+          "semantic": "",
+          "type": "12",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "0"
+        }
+      ],
+      "techniques": [
+        "Shader_C215BE6E"
+      ],
+      "passes": [
+        [
+          "0_0",
+          "p0"
+        ]
+      ],
+      "validation": [
+        {
+          "technique": "Shader_C215BE6E",
+          "validate_hresult": "0",
+          "begin_hresult": "0",
+          "passes_bound": "1"
+        }
+      ],
+      "shaders": [
+        {
+          "pass_stage": "0_0_ps",
+          "size": 9540,
+          "sha256": "cb2c609d40c26521c749cd0685cbd725172b3d30c05300a9f2c8f4006e28bc34",
+          "contains_preshader": true
+        }
+      ]
+    },
+    {
+      "file": "enbbloom.fx",
+      "sha256": "b1050a92be7b1bd03bb33e70d8fe8c46e5d764c1700c0227ce4917bef55a06a4",
+      "size": 13544,
+      "header": "0109fffe",
+      "parameters": [
+        {
+          "kind": "parameter",
+          "name": "ScreenSize",
+          "semantic": "",
+          "type": "3",
+          "class": "1",
+          "rows": "1",
+          "columns": "4",
+          "elements": "0",
+          "bytes": "16"
+        },
+        {
+          "kind": "parameter",
+          "name": "TempParameters",
+          "semantic": "",
+          "type": "3",
+          "class": "1",
+          "rows": "1",
+          "columns": "4",
+          "elements": "0",
+          "bytes": "16"
+        },
+        {
+          "kind": "parameter",
+          "name": "BloomParameters",
+          "semantic": "",
+          "type": "3",
+          "class": "1",
+          "rows": "1",
+          "columns": "4",
+          "elements": "0",
+          "bytes": "16"
+        },
+        {
+          "kind": "parameter",
+          "name": "texBloom1",
+          "semantic": "",
+          "type": "7",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "4"
+        },
+        {
+          "kind": "parameter",
+          "name": "texBloom2",
+          "semantic": "",
+          "type": "7",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "4"
+        },
+        {
+          "kind": "parameter",
+          "name": "texBloom3",
+          "semantic": "",
+          "type": "7",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "4"
+        },
+        {
+          "kind": "parameter",
+          "name": "texBloom4",
+          "semantic": "",
+          "type": "7",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "4"
+        },
+        {
+          "kind": "parameter",
+          "name": "texBloom5",
+          "semantic": "",
+          "type": "7",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "4"
+        },
+        {
+          "kind": "parameter",
+          "name": "SamplerBloom1",
+          "semantic": "",
+          "type": "12",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "0"
+        },
+        {
+          "kind": "parameter",
+          "name": "SamplerBloom2",
+          "semantic": "",
+          "type": "12",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "0"
+        },
+        {
+          "kind": "parameter",
+          "name": "SamplerBloom3",
+          "semantic": "",
+          "type": "12",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "0"
+        },
+        {
+          "kind": "parameter",
+          "name": "SamplerBloom4",
+          "semantic": "",
+          "type": "12",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "0"
+        },
+        {
+          "kind": "parameter",
+          "name": "SamplerBloom5",
+          "semantic": "",
+          "type": "12",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "0"
+        }
+      ],
+      "techniques": [
+        "BloomPrePass",
+        "BloomTexture1",
+        "BloomTexture2",
+        "BloomPostPass"
+      ],
+      "passes": [
+        [
+          "0_0",
+          "p0"
+        ],
+        [
+          "1_0",
+          "p0"
+        ],
+        [
+          "2_0",
+          "p0"
+        ],
+        [
+          "3_0",
+          "p0"
+        ]
+      ],
+      "validation": [
+        {
+          "technique": "BloomPrePass",
+          "validate_hresult": "0",
+          "begin_hresult": "0",
+          "passes_bound": "1"
+        },
+        {
+          "technique": "BloomTexture1",
+          "validate_hresult": "0",
+          "begin_hresult": "0",
+          "passes_bound": "1"
+        },
+        {
+          "technique": "BloomTexture2",
+          "validate_hresult": "0",
+          "begin_hresult": "0",
+          "passes_bound": "1"
+        },
+        {
+          "technique": "BloomPostPass",
+          "validate_hresult": "0",
+          "begin_hresult": "0",
+          "passes_bound": "1"
+        }
+      ],
+      "shaders": [
+        {
+          "pass_stage": "0_0_ps",
+          "size": 1092,
+          "sha256": "2cc32c2e78b6b740458a39f639d523dc82388f594b67679b543fb09c9d2af561",
+          "contains_preshader": true
+        },
+        {
+          "pass_stage": "0_0_vs",
+          "size": 280,
+          "sha256": "904a8de792d85aa5be0b071245e6cf504663365c811b3418684f99716a902c84",
+          "contains_preshader": false
+        },
+        {
+          "pass_stage": "1_0_ps",
+          "size": 2640,
+          "sha256": "f176f00a0d09d2796ab32fa2e7df51d781c6b9db746044632691e787cb20781f",
+          "contains_preshader": true
+        },
+        {
+          "pass_stage": "1_0_vs",
+          "size": 280,
+          "sha256": "904a8de792d85aa5be0b071245e6cf504663365c811b3418684f99716a902c84",
+          "contains_preshader": false
+        },
+        {
+          "pass_stage": "2_0_ps",
+          "size": 2680,
+          "sha256": "37f54168752bf5b8c4bd19c8b8143abc50248d0637b0d2366f3a31af304ca85b",
+          "contains_preshader": true
+        },
+        {
+          "pass_stage": "2_0_vs",
+          "size": 280,
+          "sha256": "904a8de792d85aa5be0b071245e6cf504663365c811b3418684f99716a902c84",
+          "contains_preshader": false
+        },
+        {
+          "pass_stage": "3_0_ps",
+          "size": 756,
+          "sha256": "452dcf11eafdce0bdf37a6e0bd67aa622bfbc476006c038118372ada24ddc937",
+          "contains_preshader": false
+        },
+        {
+          "pass_stage": "3_0_vs",
+          "size": 280,
+          "sha256": "904a8de792d85aa5be0b071245e6cf504663365c811b3418684f99716a902c84",
+          "contains_preshader": false
+        }
+      ]
+    },
+    {
+      "file": "enbclouds.fx",
+      "sha256": "ca1a7ded9c7c046cbd97383687db12c4369e79d74a64fc65aea943a419aae736",
+      "size": 18272,
+      "header": "0109fffe",
+      "parameters": [
+        {
+          "kind": "parameter",
+          "name": "CameraPosition",
+          "semantic": "",
+          "type": "3",
+          "class": "1",
+          "rows": "1",
+          "columns": "4",
+          "elements": "0",
+          "bytes": "16"
+        },
+        {
+          "kind": "parameter",
+          "name": "Timer",
+          "semantic": "",
+          "type": "3",
+          "class": "1",
+          "rows": "1",
+          "columns": "4",
+          "elements": "0",
+          "bytes": "16"
+        },
+        {
+          "kind": "parameter",
+          "name": "texColor",
+          "semantic": "",
+          "type": "7",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "4"
+        },
+        {
+          "kind": "parameter",
+          "name": "SamplerColor",
+          "semantic": "",
+          "type": "12",
+          "class": "4",
+          "rows": "0",
+          "columns": "0",
+          "elements": "0",
+          "bytes": "0"
+        }
+      ],
+      "techniques": [
+        "Shader_Clouds",
+        "ShiftClouds"
+      ],
+      "passes": [
+        [
+          "0_0",
+          "p0"
+        ],
+        [
+          "1_0",
+          "p0"
+        ]
+      ],
+      "validation": [
+        {
+          "technique": "Shader_Clouds",
+          "validate_hresult": "0",
+          "begin_hresult": "0",
+          "passes_bound": "1"
+        },
+        {
+          "technique": "ShiftClouds",
+          "validate_hresult": "0",
+          "begin_hresult": "0",
+          "passes_bound": "1"
+        }
+      ],
+      "shaders": [
+        {
+          "pass_stage": "0_0_ps",
+          "size": 1364,
+          "sha256": "c3a04e9315af3621686ae503abbe162488a87c36e71895e33fa60c1ed03695f7",
+          "contains_preshader": false
+        },
+        {
+          "pass_stage": "1_0_ps",
+          "size": 15300,
+          "sha256": "744f0661bf7465522863c5983482ec098360c79da5c369b7dd55cf96826ef611",
+          "contains_preshader": true
+        },
+        {
+          "pass_stage": "1_0_vs",
+          "size": 208,
+          "sha256": "ee2a363887128a0497aaf54e2db4330ad02cf6a54b64ebaa96b9b1875b597c9d",
+          "contains_preshader": false
+        }
+      ]
+    }
+  ]
+}

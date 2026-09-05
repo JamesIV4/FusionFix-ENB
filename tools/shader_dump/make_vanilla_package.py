@@ -32,10 +32,11 @@ FusionFix keeps the rest. Measured against CE 1.2.0.59, the default set gives up
 ``ShaderConstantInjection = 1`` in this mode: most of the FusionFix shaders are
 still there and still read c208..c223 / c227..c237.
 
-**``--stage-extras`` -- all stock.** Copies only ``gta_trees_extended.fxc``, the
-one shader FusionFix genuinely adds rather than replaces and which its content
-packages reference. Everything else falls through, so the game runs entirely on
-stock shaders. One file.
+**``--stage-extras`` -- all stock.** Builds only a stock-depth-compatible
+``gta_trees_extended.fxc``, the one shader FusionFix genuinely adds rather than
+replaces and which its content packages reference. Its alpha/wind provider stays
+enabled, while its modern explicit-depth writes are removed. Everything else
+falls through, so the game runs on stock shaders. One file.
 
 **``--out``/``--install`` -- rebuild the package in place.** Replaces
 ``update/common/shaders`` itself with stock bytecode plus the FusionFix-only
@@ -61,9 +62,13 @@ Nothing is written into the game folder without ``--selective``,
 
 import argparse
 import os
+from pathlib import Path
 import shutil
 import sys
+import tempfile
 import time
+
+from make_legacy_tree_shader import DEFAULT_XML, build as build_legacy_tree
 
 FUSION_ONLY = {
     "win32_30/gta_trees_extended.fxc",
@@ -112,6 +117,14 @@ def rel_files(root):
     return out
 
 
+def copy_legacy_tree(destination):
+    """Build/copy the required extended-tree shader without logarithmic depth."""
+    with tempfile.TemporaryDirectory(prefix="enb-legacy-tree-") as temp:
+        compiled, manifest = build_legacy_tree(DEFAULT_XML, Path(temp) / "build")
+        shutil.copy2(compiled, destination)
+    return manifest
+
+
 def stage_extras(current, variant):
     """Copy the FusionFix-only shader into one variant folder's update overlay.
 
@@ -122,17 +135,11 @@ def stage_extras(current, variant):
     src_dir = os.path.join(current, "win32_30")
     dst_dir = os.path.join(current, variant)
     name = "gta_trees_extended.fxc"
-    src = os.path.join(src_dir, name)
-
-    if not os.path.isfile(src):
-        print("not found: %s" % src)
-        print("Nothing to stage -- is the FusionFix shader package installed?")
-        return 1
-
     os.makedirs(dst_dir, exist_ok=True)
     dst = os.path.join(dst_dir, name)
-    shutil.copy2(src, dst)
+    manifest = copy_legacy_tree(dst)
     print("staged %s" % dst)
+    print("  stock-depth extended tree: %s" % manifest["compiled_sha256"])
 
     # db/ and dcl/ are not variant-specific, so they are already reachable.
     for rel in ("db/gta_trees_extended.sps", "dcl/gta_trees_extended.dcl"):
@@ -142,6 +149,8 @@ def stage_extras(current, variant):
     print("\nSet these in [ENBCompatibility]:")
     print("  FusionShaderPackage = 0")
     print("  StockShaderFolder   = %s" % variant)
+    print("  ShadowPipelineFixes = 0")
+    print("  ShaderConstantInjection = 1   ; extended tree alpha/wind")
     print("\nTo undo, delete %s" % dst_dir)
     return 0
 
@@ -269,6 +278,7 @@ def main(argv=None):
         copied += 1
 
     kept = []
+    legacy_tree_manifest = None
     if not args.pure:
         if not os.path.isdir(current):
             print("warning: %s does not exist, so there are no FusionFix-only shaders to keep"
@@ -281,12 +291,17 @@ def main(argv=None):
                     continue
                 dst = os.path.join(out, rel.replace("/", os.sep))
                 os.makedirs(os.path.dirname(dst), exist_ok=True)
-                shutil.copy2(src, dst)
+                if rel == "win32_30/gta_trees_extended.fxc":
+                    legacy_tree_manifest = copy_legacy_tree(dst)
+                else:
+                    shutil.copy2(src, dst)
                 kept.append(rel)
 
     print("staged %s" % out)
     print("  %d stock .fxc containers from common/shaders/win32_30" % copied)
     print("  %d FusionFix-only files kept: %s" % (len(kept), ", ".join(kept) or "none"))
+    if legacy_tree_manifest:
+        print("  stock-depth extended tree: %s" % legacy_tree_manifest["compiled_sha256"])
 
     if os.path.isdir(current):
         before, after = rel_files(current), rel_files(out)

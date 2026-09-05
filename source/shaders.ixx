@@ -315,7 +315,9 @@ public:
                 }
             }
 
-            // Override reflection multiplier that resulted in weaker reflections on PC, a fix/workaround used to be in place on the shader side, move it in here instead.
+            // Paired with FusionShaders' reflection behavior. Stock shaders in
+            // legacy ENB mode retain the game's original 0.6 multiplier.
+            if (ENBCompat::Renderer().FusionShaderTweaks)
             {
                 static float dw103F984 = 1.0f; // 0.6f -> 1.0f
                 auto pattern = find_pattern("F3 0F 10 05 ? ? ? ? F3 0F 59 C1 51 F3 0F 11 04 24 E8", "F3 0F 10 0D ? ? ? ? 51 F3 0F 59 C8 F3 0F 11 0C 24 E8");
@@ -338,7 +340,8 @@ public:
                 injector::WriteMemory(pattern.get_first(4), &dwMirrorOffset, true);
             }
 
-            // Contrast slider value is actually one tick lower internally on the Xbox 360 version (n ticks visually, actually n-1 in game code). Implement this behavior to get proper console gamma w/ FusionShaders
+            // Implement the console offset only with the FusionShader pipeline.
+            if (ENBCompat::Renderer().FusionShaderTweaks)
             {
                 auto pattern = find_pattern("F3 0F 10 05 ? ? ? ? F3 0F 59 C6 F3 0F 11 4C 24", "F3 0F 10 05 ? ? ? ? F3 0F 59 C6 F3 0F 11 44 24 ? F3 0F 10 05");
                 static auto PostFXContrastHook = safetyhook::create_mid(pattern.get_first(8), [](SafetyHookContext& regs)
@@ -663,12 +666,16 @@ public:
 
         FusionFix::onInitEventAsync() += []()
         {
-            // Skip SetRenderState D3DRS_ADAPTIVETESS_* entirely (silences warnings in DXVK logs)
+            // This only suppresses unsupported-state warnings on DXVK. Legacy
+            // ENB forces native D3D9, where these states may carry vendor
+            // alpha-to-coverage controls, so leave the original calls intact.
             auto pattern = find_pattern("74 24 F3 0F 10 44 24 ? 51 8D 44 24 44", "74 1C D9 44 24 14 51 8D 4C 24 44");
-            injector::WriteMemory<uint8_t>(pattern.get_first(0), 0xEB, true);
-
-            pattern = find_pattern("74 0A 6A 00 E8 ? ? ? ? 83 C4 04 8B 7C 24 1C 83 EF 80", "74 0A 6A 00 E8 ? ? ? ? 83 C4 04 8B 5C 24 20 81 C6");
-            injector::WriteMemory<uint8_t>(pattern.get_first(0), 0xEB, true);
+            if (ENBCompat::Renderer().FusionShaderTweaks)
+            {
+                injector::WriteMemory<uint8_t>(pattern.get_first(0), 0xEB, true);
+                pattern = find_pattern("74 0A 6A 00 E8 ? ? ? ? 83 C4 04 8B 7C 24 1C 83 EF 80", "74 0A 6A 00 E8 ? ? ? ? 83 C4 04 8B 5C 24 20 81 C6");
+                injector::WriteMemory<uint8_t>(pattern.get_first(0), 0xEB, true);
+            }
 
             //rain drop refraction fix
             pattern = find_pattern("E8 ? ? ? ? 8B 5E 74 8B 46 0C", "E8 ? ? ? ? 8B 4D 50 85 C9 5F 5E");

@@ -17,6 +17,8 @@ import re
 import struct
 import zlib
 
+from enb163_hash import shader_hash
+
 END_TOKEN = 0x0000FFFF
 COMMENT_MASK = 0x0000FFFF
 COMMENT_ID = 0x0000FFFE
@@ -100,6 +102,7 @@ class Shader:
         raw = self.data
         clean = self.stripped()
         return {
+            "enb163": "%08X" % shader_hash(raw),
             "crc32": "%08X" % (zlib.crc32(raw) & 0xFFFFFFFF),
             "crc32_stripped": "%08X" % (zlib.crc32(clean) & 0xFFFFFFFF),
             "fnv1a_stripped": "%08X" % fnv1a32(clean),

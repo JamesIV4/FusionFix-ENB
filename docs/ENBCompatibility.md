@@ -1,11 +1,24 @@
 # ENB compatibility mode
 
+**September 5 review:** the current baseline has unresolved tree constant/depth
+and shadow/G-buffer compatibility gaps. It loads and runs shader probes, but
+its visual correctness is not established. Further preset tests are paused;
+see [the review](../research/regular-enb-review.md) before using these setup
+instructions as a validated configuration.
+
 A way to run an old GTA IV ENB preset on Complete Edition 1.2.0.59 alongside
 FusionFix, keeping the parts of FusionFix that have nothing to do with the
 renderer.
 
-**This is unfinished work.** The switch, the instrumentation and the tooling
-exist and build; the combination has not yet been run in the game. What is known
+**This is unfinished work.** Earlier tests rendered ENB 0.163 on CE with stock
+shaders and DOF enabled. The user has since confirmed that a recovered stock-CE
+terrain alias triggers ENB substitution: the combined diagnostic rendered a
+localized magenta ground strip. The unchanged aliases restore textured terrain
+at that location, but broader rendering failures prevent a quality verdict.
+The individual 2-/3-/4-layer member, selective package and full iCEnhancer 4
+setup remain unverified. September 4 tests recovered and validated iCEnhancer's compiled
+effect interfaces independently of its ASI; see
+[the reopened investigation](../research/legacy-shader-bridge.md). What is known
 and what is guessed is set out in [research/](../research/). Read
 [research/feature-conflicts.md](../research/feature-conflicts.md) before
 concluding anything from a result.
@@ -17,20 +30,20 @@ to on, so no hook that upstream FusionFix installs is skipped.
 
 ## The problem in one paragraph
 
-ENBSeries recognises a GTA IV shader by hashing its compiled bytecode, and when
-a hash matches one of the files in its `shaderinput/` folder it compiles that
-file instead. FusionFix ships a replacement for every shader in the game. Not
-one of them keeps its original bytecode, so no hash matches, so none of the
-preset's shader replacements ever apply — while the rest of ENB still runs, on
-a scene it never got to modify. On top of that, both mods want to own the end of
-the frame: FusionFix replaces the game's post-process draw and can blit to the
-back buffer at EndScene, which is exactly where ENB applies its effect.
+ENBSeries hashes the exact shader bytecode submitted to D3D9. CE's stock
+postfx pass is already recognized as AA1C0C36, one of six accepted hashes.
+However, none of iCEnhancer 4's twelve original shaderinput filenames matches
+stock CE's on-disk shader bytes. Three normalized terrain instruction bodies
+match, supporting a filename alias bridge. A combined runtime probe has now
+confirmed that at least one recovered terrain filename is accepted; this does
+not mean every individual mapping is confirmed.
 
-Complete Edition itself is not the problem. Measured against the interface ENB
-documents in its own `enbeffect.fx`, four of CE's post-process shaders match on
-all twenty parameters, and three of the twelve shaders these presets target are
-identical to CE's — similarity 1.000, instruction for instruction. See
-[research/enb-contract.md](../research/enb-contract.md).
+Modern FusionFix also changes the renderer's pass ownership, resource bindings
+and depth representation. A stock pixel shader cannot simply replace its modern
+counterpart while keeping incompatible samplers or paired vertex outputs.
+See [the recovered mapping](../research/legacy-shader-bridge.md) and
+[the user-run alias test](../research/alias-test.md). Full iCEnhancer rendering
+and the mixed stock/FusionFix shader package remain unverified.
 
 ## Setting it up
 
@@ -116,10 +129,12 @@ python tools/shader_dump/make_vanilla_package.py ^
     --stage-extras
 ```
 
-Copies one file: `gta_trees_extended`, the single shader FusionFix genuinely
-adds rather than replaces. Its content packages reference it, and without it the
-game throws a resource error before the main menu. Everything else falls through
-to stock.
+Builds and copies one file: a compatibility variant of `gta_trees_extended`,
+the single shader FusionFix genuinely adds rather than replaces. Its content
+packages reference it, and without it the game throws a resource error before
+the main menu. The compatibility build removes FusionShaders' five explicit
+log-depth writes so it can share the stock depth pipeline; its alpha and wind
+still require the high-register provider. Everything else falls through to stock.
 
 Either way, undoing it is deleting the folder the tool names.
 
@@ -132,7 +147,9 @@ In `GTAIV/plugins/GTAIV.EFLC.FusionFix.ini`:
 Mode = 1
 FusionShaderPackage = 0
 StockShaderFolder = win32_30_nv8
-ShaderConstantInjection = 1   ; only with --selective; leave at the Mode default for all-stock
+ShaderConstantInjection = 1   ; required by the compatibility extended-tree shader
+ShadowPipelineFixes = 0
+FusionShaderTweaks = 0
 ```
 
 `StockShaderFolder` picks which variant the stock shaders come from. It matters
@@ -196,7 +213,7 @@ Keys as configured by these instructions:
 
 `KeyCombination=16` is Shift, which is why the toggle needs the modifier held.
 
-## What the mode turns off
+## What the mode changes
 
 | Switch | What stops happening |
 |---|---|
@@ -207,7 +224,9 @@ Keys as configured by these instructions:
 | `PreAlphaDepthCopy` | no depth copy before the alpha pass |
 | `SkyDiffuseSplit` | the sky is drawn once, not twice |
 | `ConsoleGammaBlit` | no gamma blit to the back buffer at EndScene |
-| `ShaderConstantInjection` | no uploads to pixel c208..c223 / vertex c227..c237 |
+| `ShadowPipelineFixes` | preserve stock shadow/G-buffer formats, cascade ranges and matrices |
+| `FusionShaderTweaks` | preserve native-D3D9 adaptive states and stock reflection/contrast behavior |
+| `ShaderConstantInjection` | uploads to pixel c208..c223 / vertex c227..c237; remains on for extended-tree alpha/wind |
 | `FusionShaderPackage` | shader lookups point at `StockShaderFolder`, so the game loads its own shaders instead of FusionFix's |
 
 Everything else stays: gameplay and input fixes, camera, menus and UI, text,

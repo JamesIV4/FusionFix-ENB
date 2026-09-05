@@ -63,6 +63,16 @@ export namespace ENBCompat
         // The ambient-occlusion pass appended after ped/vehicle fake shadows.
         bool AmbientOcclusion = true;
 
+        // FusionFix changes the cascade-atlas/G-buffer formats, cascade ranges
+        // and shadow matrices as one contract with its replacement lighting
+        // shaders. Stock shaders need the stock resource layout.
+        bool ShadowPipelineFixes = true;
+
+        // Executable/render-state tweaks authored for FusionShaders: reflection
+        // multiplier, console-gamma contrast offset and DXVK adaptive-state
+        // suppression. Stock D3D9 shaders should retain the game's behavior.
+        bool FusionShaderTweaks = true;
+
         // Sun shafts (prepass/draw/add) inside the post-process chain.
         bool SunShafts = true;
 
@@ -80,9 +90,9 @@ export namespace ENBCompat
         // decides what reaches the screen.
         bool ConsoleGammaBlit = true;
 
-        // Uploads to c208..c223 (pixel) and c227..c237 (vertex). These registers
-        // are only read by the FusionFix replacement shaders, so this should
-        // follow whether that shader package is installed.
+        // Uploads to c208..c223 (pixel) and c227..c237 (vertex). The replacement
+        // package reads them, as does FusionFix-only gta_trees_extended, which
+        // remains reachable in the otherwise-stock ENB package.
         bool ShaderConstantInjection = true;
 
         // Whether the game should load the FusionFix replacement shader
@@ -209,9 +219,11 @@ export namespace ENBCompat
     inline ShaderPackage DetectShaderPackage(const std::string& folder)
     {
         // gta_default is one an ENB preset is likely to want from stock;
-        // the other two are not targeted by either preset in ENB resources/.
+        // the next two are untargeted controls, and gta_trees_extended exposes
+        // the required FusionFix-only exception instead of logging all-stock.
         static const wchar_t* probes[] = {
             L"gta_default.fxc", L"gta_normal_spec.fxc", L"gta_ped.fxc",
+            L"gta_trees_extended.fxc",
         };
 
         auto dir = GetExeModulePath() / L"update" / L"common" / L"shaders"
@@ -303,11 +315,16 @@ export namespace ENBCompat
             renderer.ReplacePostFX = false;
             renderer.PostProcessAA = false;
             renderer.AmbientOcclusion = false;
+            renderer.ShadowPipelineFixes = false;
+            renderer.FusionShaderTweaks = false;
             renderer.SunShafts = false;
             renderer.PreAlphaDepthCopy = false;
             renderer.SkyDiffuseSplit = false;
             renderer.ConsoleGammaBlit = false;
-            renderer.ShaderConstantInjection = false;
+            // gta_trees_extended still needs c221/c233 in the stock package.
+            // Stock shaders do not read these high registers, so retaining the
+            // provider is harmless for them and required for correct tree alpha.
+            renderer.ShaderConstantInjection = true;
             renderer.FusionShaderPackage = false;
         }
 
@@ -320,6 +337,8 @@ export namespace ENBCompat
         readFeature("ReplacePostFX", renderer.ReplacePostFX);
         readFeature("PostProcessAA", renderer.PostProcessAA);
         readFeature("AmbientOcclusion", renderer.AmbientOcclusion);
+        readFeature("ShadowPipelineFixes", renderer.ShadowPipelineFixes);
+        readFeature("FusionShaderTweaks", renderer.FusionShaderTweaks);
         readFeature("SunShafts", renderer.SunShafts);
         readFeature("PreAlphaDepthCopy", renderer.PreAlphaDepthCopy);
         readFeature("SkyDiffuseSplit", renderer.SkyDiffuseSplit);
@@ -361,7 +380,7 @@ export namespace ENBCompat
         Log("shaders loaded from " + activeFolder + ": "
             + (installed == ShaderPackage::FusionFix ? "FusionFix"
              : installed == ShaderPackage::Stock ? "stock"
-             : installed == ShaderPackage::Mixed ? "mixed (a selective package)" : "unknown"));
+             : installed == ShaderPackage::Mixed ? "mixed (FusionFix additions/selective package)" : "unknown"));
 
         // A mixed package is a deliberate arrangement, not a mistake: FusionFix
         // shaders everywhere except the containers an ENB preset needs to
@@ -400,6 +419,8 @@ export namespace ENBCompat
         features << "  ReplacePostFX=" << renderer.ReplacePostFX
                  << " PostProcessAA=" << renderer.PostProcessAA
                  << " AmbientOcclusion=" << renderer.AmbientOcclusion
+                 << " ShadowPipelineFixes=" << renderer.ShadowPipelineFixes
+                 << " FusionShaderTweaks=" << renderer.FusionShaderTweaks
                  << " SunShafts=" << renderer.SunShafts
                  << " PreAlphaDepthCopy=" << renderer.PreAlphaDepthCopy
                  << " SkyDiffuseSplit=" << renderer.SkyDiffuseSplit

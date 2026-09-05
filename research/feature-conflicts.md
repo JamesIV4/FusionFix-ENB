@@ -1,5 +1,13 @@
 # FusionFix feature map and ENB conflict classification
 
+> **2026-09-05 correction:** the earlier table omitted the unconditional
+> shadow/G-buffer resource contract and the FusionShader-only state tweaks.
+> ENBLegacy now gates them. Its required extended-tree exception uses a
+> stock-depth rebuild while retaining c221/c233 uploads. ENB's actual hash was
+> also recovered after the historical analysis below; see
+> [regular-enb-review.md](regular-enb-review.md) and
+> [legacy-shader-bridge.md](legacy-shader-bridge.md).
+
 Which parts of FusionFix can survive alongside an old ENB preset, which cannot,
 and which are still unknown.
 
@@ -25,6 +33,8 @@ packages (see [research-log.md](research-log.md)).
 | Post-process replacement (tone map path, final blit) | `postfx.ixx` | yes | yes | yes | **D** | `ReplacePostFX` |
 | FXAA / SMAA | `postfx.ixx` | own shaders | yes | via above | **D** | `PostProcessAA` |
 | Ambient occlusion | `postfx.ixx` | own `AO.fx` | yes | yes | **D** | `AmbientOcclusion` |
+| Shadow/G-buffer formats, cascade/matrix changes | `shadows.ixx` | yes | no | yes | **C** | `ShadowPipelineFixes` |
+| Reflection/contrast and DXVK state tweaks paired with FusionShaders | `shaders.ixx` | yes | no | yes | **C** | `FusionShaderTweaks` |
 | Sun shafts | `postfx.ixx` | own shaders | yes | via above | **D** | `SunShafts` |
 | Pre-alpha depth copy | `postfx.ixx` | yes | yes | yes | **C** | `PreAlphaDepthCopy` |
 | Sky drawn twice into GBuffer diffuse | `postfx.ixx` | yes | yes | yes | **C** | `SkyDiffuseSplit` |
@@ -33,11 +43,11 @@ packages (see [research-log.md](research-log.md)).
 | Replacement shader package | `shaders/` submodule | is the dep. | no | path hook | **D** | `FusionShaderPackage` + `StockShaderFolder` |
 | Reflection MSAA | `reflectionmsaa.ixx` | no | no | yes | **B** | off by default |
 | Seasonal snow overlay | `seasonal/snow.ixx` | own shaders | yes | yes | **B** | seasonal, event-gated |
-| Extra dynamic shadows | `shadows.ixx` | yes | no | yes | **B** | `[SHADOWS] ExtraDynamicShadows` |
+| Extra dynamic shadows | `shadows.ixx` | yes | no | yes | **C** | `ShadowPipelineFixes` + `[SHADOWS] ExtraDynamicShadows` |
 | Night shadows | `nightshadows.ixx` | yes | no | yes | **B** | -- |
 | LOD lights / coronas (Project2DFX) | `lodlights.ixx`, `coronas.ixx` | no | some | yes | **B** | `[PROJECT2DFX]` |
 | Timecycle extensions | `timecyc.ixx`, `timecycext.ixx` | yes | no | yes | **B** | -- |
-| Shader-adjacent memory patches (reflection multiplier, mirror plane, car dirt, water RT size, contrast offset, rain lighting) | `shaders.ixx` | no | no | yes | **B** | -- |
+| Other shader-adjacent patches (mirror plane, car dirt, water RT size, rain lighting) | `shaders.ixx` | mixed | no | yes | **B** pending audit | individual settings / -- |
 | VRAM reporting | `vram.ixx` | no | trivial | yes | **A** | -- |
 
 The `D3D9Trace` instrumentation in `source/enb_compat/enbtrace.ixx` is not in

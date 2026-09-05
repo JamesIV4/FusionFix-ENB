@@ -1,0 +1,64 @@
+{
+  "reviewed_commit": "c18e6cf9194437c7fb8639ac87b16a0f28a25b31",
+  "method": "Source review and read-only inspection of installed files; no game execution or live-memory inspection",
+  "game_modified": false,
+  "extended_tree": {
+    "file": "update/common/shaders/win32_30_nv8/gta_trees_extended.fxc",
+    "bytes": 13796,
+    "sha256": "ee6a564b8d06b9d27cf0beaf6df30d196ef9ca40c3d77fe31aa55be779abc6e2",
+    "external_constant_read_method": "Existing d3d9bc token walker; register type 2 operands excluding DEF, DEFI, DEFB and DCL; locally defined float constants excluded",
+    "slots": [
+      {"index": 0, "stage": "vs", "external_constants_ge_208": [233], "depth_output_operand": false},
+      {"index": 1, "stage": "vs", "external_constants_ge_208": [], "depth_output_operand": false},
+      {"index": 2, "stage": "vs", "external_constants_ge_208": [], "depth_output_operand": false},
+      {"index": 3, "stage": "vs", "external_constants_ge_208": [233], "depth_output_operand": false},
+      {"index": 4, "stage": "vs", "external_constants_ge_208": [], "depth_output_operand": false},
+      {"index": 5, "stage": "ps", "external_constants_ge_208": [209, 221], "depth_output_operand": true},
+      {"index": 6, "stage": "ps", "external_constants_ge_208": [209], "depth_output_operand": true},
+      {"index": 7, "stage": "ps", "external_constants_ge_208": [209], "depth_output_operand": true},
+      {"index": 8, "stage": "ps", "external_constants_ge_208": [209], "depth_output_operand": true},
+      {"index": 9, "stage": "ps", "external_constants_ge_208": [], "depth_output_operand": false},
+      {"index": 10, "stage": "ps", "external_constants_ge_208": [209], "depth_output_operand": true}
+    ],
+    "shader_constant_injection_enabled_in_latest_log": false,
+    "specific_visible_tree_draw_identified": false
+  },
+  "resource_patches": {
+    "exe_sha256": "08759a5516f9837920ea504436236bbab89d0826a8e4d04ff106345177b5345d",
+    "source": "source/shadows.ixx:215-327; enum mapping source/comvars.ixx",
+    "consults_enb_profile": false,
+    "sites": [
+      {"name": "shadow atlas", "instruction_rva": "0071D260", "file_offset": "0071C660", "immediate_offset": 6, "disk_enum": 3, "disk_format": "R16F", "source_replacement_enum": 4, "source_replacement_format": "R32F"},
+      {"name": "conditional G-buffer format selection", "instruction_rva": "006D15C2", "file_offset": "006D09C2", "immediate_offset": 1, "disk_enum": 5, "disk_format": "A2R10G10B10", "source_replacement_enum": 2, "source_replacement_format": "A8R8G8B8"}
+    ],
+    "runtime_resource_formats_captured": false
+  },
+  "postfx": {
+    "enbeffect_sha256": "5676d6393cb82983f0a23a85c20919549a6a95093188fb36e289ce35acce4d63",
+    "matches_original_enb163_effect": true,
+    "active_path": "POSTPROCESS_V2",
+    "brightness": 0.076,
+    "coloring": 0.45,
+    "gray_exponent": 0.34,
+    "adaptation_sample": "tex2D(s4, 0).x; direct reciprocal",
+    "adaptation_or_hdr_texture_contents_measured": false,
+    "brightness_root_cause_confirmed": false
+  },
+  "register_audit_blind_spot": {
+    "source": "tools/shader_dump/check_interface.py CONST_RE",
+    "matches_c221_dot_w": true,
+    "matches_c221_abs_dot_w": false,
+    "matches_c209_abs_dot_z": false,
+    "cause": "Word boundary fails between the register number and underscore modifier"
+  },
+  "implementation": {
+    "fusionfix_asi_sha256": "ec91097b991a3f1d181f53c58d1d8d255a38f74732536dd5fe501b4429ef2da4",
+    "fusionfix_asi_bytes": 5923328,
+    "legacy_tree_sha256": "8e6ef1dfd44a87603b3160b20b5e565be73272cbd9bcf6ebbb7b80663de5142a",
+    "legacy_tree_bytes": 13276,
+    "offline_tests_passed": 25,
+    "synthetic_fixedbaseline_setup_restore": "passed",
+    "game_runtime_validated": false
+  },
+  "next_step": "User runs FixedBaseline and compares the same daytime tree-and-ground scene before exposure analysis"
+}

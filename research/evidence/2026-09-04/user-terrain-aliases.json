@@ -1,0 +1,43 @@
+{
+  "date": "2026-09-04",
+  "performed_by": "user",
+  "phase": "Aliases",
+  "user_result": "The former magenta terrain strip renders without the diagnostic color. It appears faded, especially at the street boundary and toward the right, but other broken shaders make visual evaluation difficult.",
+  "screenshot": {
+    "source_file": "C:/Games/Steam/userdata/34944319/760/remote/12210/screenshots/20260904230235_1.jpg",
+    "evidence_copy": "research/evidence/2026-09-04/user-terrain-aliases.jpg",
+    "sha256": "ef5961aef3530915dc58792a6428eee371b3c9516f6c9436ce3b159ccf251adf",
+    "bytes": 598592,
+    "width": 2560,
+    "height": 1440,
+    "observations": "Same building-side terrain corridor as the positive magenta probe, from a closer angle. The corridor is textured and shaded, with a visible fade near the street and to the right. A simple threshold finds zero magenta-like pixels, versus 82423 in the probe screenshot. Broader scene exposure remains incorrect."
+  },
+  "installed_alias_checks": [
+    {
+      "file": "shaderinput/pshA5F4E880.txt",
+      "role": "stock CE terrain 2-layer alias for iCEnhancer psh0CBF49C5.txt",
+      "sha256": "4c0cddd226c8a16a8cbe6b8859ea59d190d704dda0574ee06bdcb589ac80545d",
+      "matches_staged_alias": true
+    },
+    {
+      "file": "shaderinput/pshFDFF185D.txt",
+      "role": "stock CE terrain 3-layer alias for iCEnhancer psh405ABC1B.txt",
+      "sha256": "ac7ddbba137b192b509b1893f694209d6bdc293783e9b915c483573fcbff1cb2",
+      "matches_staged_alias": true
+    },
+    {
+      "file": "shaderinput/psh1D661524.txt",
+      "role": "stock CE terrain 4-layer alias for iCEnhancer psh841FD9AE.txt",
+      "sha256": "f2ee6ff902604a0e1deecf302089108b600122f32dcd8234c8ee29d3664cc1bd",
+      "matches_staged_alias": true
+    }
+  ],
+  "log": [
+    "22:59:28.724  stock shaders requested: shader-variant lookups redirected to common/shaders/win32_30_nv8",
+    "22:59:28.725  shaders loaded from win32_30_nv8: stock",
+    "22:59:28.725  ENBCompatibility mode=1 profile=ENBLegacy",
+    "22:59:28.725    ReplacePostFX=0 PostProcessAA=0 AmbientOcclusion=0 SunShafts=0 PreAlphaDepthCopy=0 SkyDiffuseSplit=0 ConsoleGammaBlit=0 ShaderConstantInjection=0 FusionShaderPackage=0",
+    "22:59:29.688  version spoof: SpoofGameVersion unset or unparsable (''), not installed"
+  ],
+  "conclusion": "Replacing the diagnostic probe with the unchanged iCEnhancer terrain assemblies removes the forced magenta and produces textured terrain at the confirmed location. Visual correctness is not established because fullscreen/postfx and other shader failures contaminate the scene. Automatic runtime creation/bind capture is the next validation step."
+}

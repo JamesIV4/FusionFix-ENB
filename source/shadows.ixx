@@ -7,6 +7,7 @@ export module shadows;
 import common;
 import comvars;
 import settings;
+import enbcompat;
 
 import <bitset>;
 
@@ -96,7 +97,7 @@ public:
             bHighResolutionShadows  = iniReader.ReadInteger("SHADOWS", "HighResolutionShadows",  0) != 0;
 
             // Dynamic shadows for trees
-            if (bDynamicShadowsForTrees)
+            if (bDynamicShadowsForTrees && ENBCompat::Renderer().ShadowPipelineFixes)
             {
                 auto pattern = find_pattern("E8 ? ? ? ? EB 11 8D 44 24 54", "E8 ? ? ? ? EB 0E 09 4C 24 08");
                 CModelInfoStore__allocateBaseModel = injector::GetBranchDestination(pattern.get_first(0));
@@ -108,7 +109,7 @@ public:
             }
 
             // Extra dynamic shadows
-            if (bExtraDynamicShadows)
+            if (bExtraDynamicShadows && ENBCompat::Renderer().ShadowPipelineFixes)
             {
                 if (bExtraDynamicShadows >= 1)
                 {
@@ -212,7 +213,10 @@ public:
                 injector::MakeCALL(pattern.get_first(5), CBaseModelInfo__setFlagsHook, true);
             }
 
-            // Fix cascaded shadow mapping
+            // This is a resource/producer/consumer contract, not a standalone
+            // quality tweak. Stock lighting shaders used by legacy ENB expect
+            // the original atlas/G-buffer formats, ranges and matrices.
+            if (ENBCompat::Renderer().ShadowPipelineFixes)
             {
                 // Switch texture formats
                 // CASCADE_ATLAS
