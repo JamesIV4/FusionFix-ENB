@@ -1,0 +1,37 @@
+{
+  "dump_file": "GTAIV.exe.26800.dmp",
+  "dump_sha256": "a5b85c5641f08ccd118ce0383f9f75557b28f3e182c6676bd5de4c45276ffceb",
+  "exe_sha256": "08759a5516f9837920ea504436236bbab89d0826a8e4d04ff106345177b5345d",
+  "exception_code": "C0000005",
+  "exception_address": "FFFFFFFF819E1A46",
+  "exception_information": [
+    "00000008",
+    "FFFFFFFF819E1A46"
+  ],
+  "registers": {
+    "edi": "719E25F0",
+    "esi": "719E25F0",
+    "ebx": "00000000",
+    "edx": "719E0000",
+    "ecx": "058CF204",
+    "eax": "00000001",
+    "ebp": "058CFB4C",
+    "eip": "819E1A46",
+    "esp": "058CF208"
+  },
+  "instruction_comparison": null,
+  "relevant_modules": [
+    {
+      "name": "GTAIV.exe",
+      "base": "002E0000",
+      "size": 29254656
+    },
+    {
+      "name": "d3d9.dll",
+      "base": "10000000",
+      "size": 1863680
+    }
+  ],
+  "writer_identified": false,
+  "process_started_or_attached": false
+}

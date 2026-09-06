@@ -1,0 +1,3702 @@
+{
+  "enb_wrapper_sha256": "280e2bc15485bb7b944d47bad9e7d553b6e63eba3afb97bdbc546d45fcc203c4",
+  "method": "raw container bytes; not runtime capture",
+  "containers": [
+    {
+      "file": "win32_30/gta_atmoscatt_clouds.fxc",
+      "sha256": "4ed8303e98b9b4809053685eaf787bd516cdc7d4e537ba479084f1398448b97f",
+      "shaders": 18
+    },
+    {
+      "file": "win32_30/gta_cubemap_reflect.fxc",
+      "sha256": "80d0944e071107ce3822c9d9018c9f122382eb6e54636ba0548ce6b1c7c5ae7b",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_cutout_fence.fxc",
+      "sha256": "dc384e898aa2cf4aba5fc20cdaf3c9e515a06592435595c1ef7a5a3c8bd3bd87",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30/gta_decal.fxc",
+      "sha256": "9ed141ed7cf4c381fc21cd4b2988ed16e53d853fb35d5f8b47365913c21d0f64",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_decal_amb_only.fxc",
+      "sha256": "b989ecd2005f1bcae57fa664077936faa54aaea45605dc7b0850889ac7fb990e",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30/gta_decal_dirt.fxc",
+      "sha256": "47b63c055fad95f4a072bb912eea2327c6b2e57d0165f7cd8525ea5489291c59",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_decal_glue.fxc",
+      "sha256": "a481c5025795fe598a073fa545dbfa328cf36966e02cada383e2c4cc8c013e1c",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_decal_normal_only.fxc",
+      "sha256": "9f42dbaa698b2e0400c75e4c2a9be486df15d99f8eb75d89f53a37c359f209b4",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30/gta_default.fxc",
+      "sha256": "6598d78eeb82429ebc632602d822e55dce10061002675030275bbd0d6f339a36",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30/gta_diffuse_instance.fxc",
+      "sha256": "5373f33aa799dba182ff5a05728225512ae8984b8914614386b9fc595685be91",
+      "shaders": 10
+    },
+    {
+      "file": "win32_30/gta_emissive.fxc",
+      "sha256": "46c7eb3b8c21eb84855c4850a21e54bbdc38f5ad5af298c0400827fedbe9e144",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30/gta_emissivenight.fxc",
+      "sha256": "1210625c0595129a6fd0628ab8976b515a156282679a6127babacf51b49b7b59",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30/gta_emissivestrong.fxc",
+      "sha256": "7833c7c8f14acc86ebb244ef108530a757b9cbad102ca92b01573e760645aab4",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30/gta_glass.fxc",
+      "sha256": "dae926336682214c785c23153879342148b1ded03918c06478d525395f0b16f1",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_glass_emissive.fxc",
+      "sha256": "0d040715d984e4590dba646e6e5277bf059577f6d9e9620a327f8856d9035154",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_glass_emissivenight.fxc",
+      "sha256": "8748a330384b8fae9e91ff3349c3455d8f8c10ef78a43e1beb2553f91dcab4c8",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_glass_normal_spec_reflect.fxc",
+      "sha256": "5147f154fd142b8aebe77c51e90309532a51af87c5b91858a86675b724f1883b",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_glass_reflect.fxc",
+      "sha256": "bd88153c8780357aa92d3d25b60ee9b973244d0ad364bd11372d09aeca2ad392",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_glass_spec.fxc",
+      "sha256": "d3a904cbe11e0c3f3e10a141b0fae07dd7875860bd600de65b60cd13e7171e4a",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_grass.fxc",
+      "sha256": "d807202503f38a47136c03daf2fa415e00d71c1d0e804ed34df91a7fd4e3b481",
+      "shaders": 3
+    },
+    {
+      "file": "win32_30/gta_hair_sorted_alpha.fxc",
+      "sha256": "8640ab30f46413114e4ec01161a9d945f002851c8c54663dfea5d1650d200590",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30/gta_hair_sorted_alpha_exp.fxc",
+      "sha256": "dcc5fae0ba38d234e44e7dcc54e397c929954d73b57b4e9f7fc92725245fa33d",
+      "shaders": 12
+    },
+    {
+      "file": "win32_30/gta_im.fxc",
+      "sha256": "efe01ae94327e9d2047674fc843b59bd8fcab4965782f156c2dba87e0be6963e",
+      "shaders": 15
+    },
+    {
+      "file": "win32_30/gta_normal.fxc",
+      "sha256": "db60a9f1f380ee5de597fab49b536561485fb0b3ac65be7b84aa56ee0bd3a2d7",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30/gta_normal_cubemap_reflect.fxc",
+      "sha256": "52867a4c7adf780f718f2f4920eada4c872e59c5c5bd814b47d6efc7405218b2",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_normal_decal.fxc",
+      "sha256": "8c73c14ada823da002a3ee50a535db2aeff68245b55c26b96daed0a1e592a59f",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30/gta_normal_reflect.fxc",
+      "sha256": "7201c213a658c2eb962c9717d85af21005c2d7db26482e6166345e1d49538e82",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_normal_reflect_alpha.fxc",
+      "sha256": "237ca903446e38377a2b1fc8e50de2fc5b1ab0ca798d3f2cf79382fcf2b2fabd",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_normal_reflect_decal.fxc",
+      "sha256": "5058b0b2d8ddc089f67f38b6d05a2eb2a8b2c1c67d91a5aa4ed85844eaf4ffc5",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_normal_spec.fxc",
+      "sha256": "ffecae45b05b86a9033a49032cec59e94a228d0d5f91ef35dd26fb293549a06b",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30/gta_normal_spec_cubemap_reflect.fxc",
+      "sha256": "d89fc09c11a1bff76dd86fd8fb8b800759d3603a826b129096ea1601a49d40ae",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_normal_spec_decal.fxc",
+      "sha256": "0599a2f23b03abd69da4a1c48f712e7a88bb8d80b6ff5bdab3acccd0039880ca",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30/gta_normal_spec_reflect.fxc",
+      "sha256": "41046d8699b2101c9abbacf030a76cb172b331da8fb3f7b2f35bdf98df241591",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_normal_spec_reflect_decal.fxc",
+      "sha256": "2bf9efda3eaccf778dc6f5b575a9461bdf5cf92a3c0bed785aa409803e820353",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_normal_spec_reflect_emissive.fxc",
+      "sha256": "4fc40fbcafbb23d9aeae908d464a7dabfa8ad11a320bc1316a4c627d6c9054be",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_normal_spec_reflect_emissivenight.fxc",
+      "sha256": "4120a6a4bddb992a6054ec53c82ff0cce130842992bab53281c0d14e4461ccd0",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_parallax.fxc",
+      "sha256": "e71dee3a030bf51ac837f6b37ca9091de55349ecba4ce1df9500553a28850fee",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_parallax_specmap.fxc",
+      "sha256": "ddc22dd61effdb8dacb15c53afd49ce283b843865a491d0cb26f6c9f359752c6",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_parallax_steep.fxc",
+      "sha256": "a558b22471e25ea15338e04927e43b9e4bc7264eb7cd4bdd0633f37a3ca882ca",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_ped.fxc",
+      "sha256": "1a03abce5b592ea1a16f074bfada6c0444f98c27c952f372bd29c940a2264314",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30/gta_ped_face.fxc",
+      "sha256": "415dd510aaa0141195e4117b2ede34030b70cb0a38aa6a5cb1e0118d13365987",
+      "shaders": 2
+    },
+    {
+      "file": "win32_30/gta_ped_reflect.fxc",
+      "sha256": "8d909154cfdb4a4133b85c6ac2e160c4eac3ff6d5b99550b0a4527d3965cbc53",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30/gta_ped_skin.fxc",
+      "sha256": "9c67665bc33b54479c0d31cca14ab76e0df00b584bb70655e440c75fb1f46aed",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30/gta_ped_skin_blendshape.fxc",
+      "sha256": "c76b666bad76739122d1cf819aba1be1338be63ca98612dafeb3bd5329e0ef15",
+      "shaders": 15
+    },
+    {
+      "file": "win32_30/gta_projtex.fxc",
+      "sha256": "dc82a6d717eff1fb2825552c79dcc0ddf631577ac259fe56791530a7f2061457",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_projtex_steep.fxc",
+      "sha256": "d2d49eca4b8b4072074b7d339b5c0ce595c471bdbfb3cc4c4c08109854c6c133",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_radar.fxc",
+      "sha256": "dba32dc3b3a178cb81c1bc8745c424933f91724b0c73d0fbd509b27ef05a07b9",
+      "shaders": 2
+    },
+    {
+      "file": "win32_30/gta_reflect.fxc",
+      "sha256": "291ea3fa20e64cacd0e27f5ccca1a856c1f08286c04f53fb029ff79073f9dc0f",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_reflect_decal.fxc",
+      "sha256": "0f44dfbfd2563ef5c27b59bad58162a9b249a4f0e0770442d83dccc9745770a1",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_rmptfx_gpurender.fxc",
+      "sha256": "d167a53891812d676ea9cc9f0fa7556a3c5139849a6c68044e1dd627b8ddfd1c",
+      "shaders": 4
+    },
+    {
+      "file": "win32_30/gta_rmptfx_litsprite.fxc",
+      "sha256": "2ca2d6448bdd68e03efaa4a2ef3e6be3d365235f7df7a9ef2625b40900da1747",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30/gta_rmptfx_mesh.fxc",
+      "sha256": "39ff159cd7663f09ba9774bea8825666919ac9347bb309ad0ad1c5475d07774b",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_rmptfx_raindrops.fxc",
+      "sha256": "70fd69d2f016ea3caf2026541bec738feedb1823cf0736310cafdcc525bc3a6a",
+      "shaders": 6
+    },
+    {
+      "file": "win32_30/gta_spec.fxc",
+      "sha256": "a51c58e15f734fad5a82a54c42d0c8112f520636f2714ede4a45aaac61c653a7",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_spec_decal.fxc",
+      "sha256": "df0e1f4a85827655d2aa3d296e122371a2a9f0baef4c507a3c130e3f5ff4b9c2",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_spec_reflect.fxc",
+      "sha256": "a86442051c56690c83b2360781a515db4e81e6a79b4866aa294be4f8a387193e",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_spec_reflect_decal.fxc",
+      "sha256": "e2e34e3c7c4f5dda05ca17f24d5022ce5734223e50c65bfca6008e3e257bf5ad",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/gta_terrain_va_2lyr.fxc",
+      "sha256": "2ea598228c2f5586a83a7cab1e8f060d9c6df97f7e326f68b4f7e5ba1a5dbc6f",
+      "shaders": 6
+    },
+    {
+      "file": "win32_30/gta_terrain_va_3lyr.fxc",
+      "sha256": "85be2666d3d4645d53be472f5090dea6839f34fc73bb45fc4d483cb4a020ad22",
+      "shaders": 8
+    },
+    {
+      "file": "win32_30/gta_terrain_va_4lyr.fxc",
+      "sha256": "54dca74336941e15efc9db083a3685e9baee5ebf138396312a47cef59d64f0ca",
+      "shaders": 10
+    },
+    {
+      "file": "win32_30/gta_trees.fxc",
+      "sha256": "0b5fa02831249d5c3ce785a4037bd184d959d6e0f7ded450525b0cadfdb761e4",
+      "shaders": 12
+    },
+    {
+      "file": "win32_30/gta_vehicle_badges.fxc",
+      "sha256": "20dac5f6e8e54585a92b590a963c93c5f95789b4222da572b75351291f38ee24",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30/gta_vehicle_basic.fxc",
+      "sha256": "c5e287a51c03bbec1af4d1524a4e98b80253fbc340cd0b2802769f2573c58a7a",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30/gta_vehicle_chrome.fxc",
+      "sha256": "759cfd188b922c53108311663e0431a36619e75fb01d27c89059c408e07210a7",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30/gta_vehicle_disc.fxc",
+      "sha256": "f5289b043e2acde899157e30fc1966a017f03992648b3f86816ba48feb1e23de",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30/gta_vehicle_generic.fxc",
+      "sha256": "b10c472e0aad4d876a90c9e8d115415e67d4d1c81bd16d44552a1804d36be327",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30/gta_vehicle_interior.fxc",
+      "sha256": "0d495a4ffd156afda18c20c2a52a111507153270b673bd38cd18e9c69c00caf5",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30/gta_vehicle_interior2.fxc",
+      "sha256": "1b02fe8faf204ec8dc66dc35c797d6dffe74fc83c67f942b926b5daa6d1e84f6",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30/gta_vehicle_lightsemissive.fxc",
+      "sha256": "b1bb7eb58c1e4e771740366f17a26c32efb7aa154643b6d750f47524756c579c",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30/gta_vehicle_mesh.fxc",
+      "sha256": "c9b2b2f5cb942a93f3a3ef38e69e516c63a74642c47b273b4a50619343e87b97",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30/gta_vehicle_paint1.fxc",
+      "sha256": "73677c0ba158e740bb0b10063f70ca181f9c92ef7b10750f99d0a06023c3a4f3",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30/gta_vehicle_paint2.fxc",
+      "sha256": "79cf566226b165179b61d8c025aa387ea81c4a940dba933bfb9ff9f7b7b795fe",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30/gta_vehicle_paint3.fxc",
+      "sha256": "ac390289a86d4d4b6e9edead70f650977b2fcc287cdd6c525cf56477340c939e",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30/gta_vehicle_rims1.fxc",
+      "sha256": "58f6529a287366b0b157e763383e5c839ce006cc698a1660a904f914dab28084",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30/gta_vehicle_rims2.fxc",
+      "sha256": "a5718b9bb62c1ca403dfd761dbd955cd52494cee3f7f32a84d228dfdd951e4b5",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30/gta_vehicle_rubber.fxc",
+      "sha256": "45ac0f519c03954a4995e2dacba68e832689fe6e612f05fd6d7d2b1870e8490f",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30/gta_vehicle_shuts.fxc",
+      "sha256": "95bf9b1708130b067a7e7b231c01bbb983143bf84b682f9ab3cc7c632faa1789",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30/gta_vehicle_tire.fxc",
+      "sha256": "af9ac775d9f67ca184aa563f30f4ff456b3e247249fba225c40510b35be6d098",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30/gta_vehicle_vehglass.fxc",
+      "sha256": "d4451417595b207e98d0b4daef9a57a4eed120a92bba58401036d394f2aec42c",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30/gta_wire.fxc",
+      "sha256": "16232a4e30fb6548609719c3541e8a2e3d93398f40c9557b50c6e41641761c53",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30/mirror.fxc",
+      "sha256": "e7b614c4f9276b2e82439c1bc895f49a0798e388896424c766281c55fa1507b2",
+      "shaders": 2
+    },
+    {
+      "file": "win32_30/rage_billboard_nobump.fxc",
+      "sha256": "06afa5690cb06573c662cf71f7c9829c56e6b193f23e17fd842a27d5c7475d87",
+      "shaders": 7
+    },
+    {
+      "file": "win32_30/rage_default.fxc",
+      "sha256": "aa0ff2d6054b109cd95835633ed2f756964eb4994a44b2035c3968170bdfdea3",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30/rage_postfx.fxc",
+      "sha256": "d2c1bb4af552fcee259da3fa3dc9938f1fe3aad92b6e8009c185ad538e6b0ac1",
+      "shaders": 24
+    },
+    {
+      "file": "win32_30/shadowSmartBlit.fxc",
+      "sha256": "b4bbfe84e4b33401d32cf68cd11b32cddbee3d62056afa3c65b468dc7ad06dd9",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30/shadowZ.fxc",
+      "sha256": "b771d8f8147f33f1be62c2f512e199df57328261f29ea35cc05796a72abe8846",
+      "shaders": 3
+    },
+    {
+      "file": "win32_30/shadowZDir.fxc",
+      "sha256": "9268e49229b869ac6e635354595840317bbb47d70e7145edc24296100e4633e2",
+      "shaders": 4
+    },
+    {
+      "file": "win32_30/water.fxc",
+      "sha256": "a118625b5834ab86d85d3f62a474616033a77576e0d519dbcec6aaae8cafe7b5",
+      "shaders": 4
+    },
+    {
+      "file": "win32_30/waterTex.fxc",
+      "sha256": "1dc1bb7a3ab4ce2fee28ae63a06a4a20c96262eecd03e221c14787ad58874e51",
+      "shaders": 2
+    },
+    {
+      "file": "win32_30_atidx10/deferred_lighting.fxc",
+      "sha256": "5846381930121571a30c5752baead9cb8609f6f1e86e689c687906da87821e1d",
+      "shaders": 62
+    },
+    {
+      "file": "win32_30_atidx10/gta_atmoscatt_clouds.fxc",
+      "sha256": "4ed8303e98b9b4809053685eaf787bd516cdc7d4e537ba479084f1398448b97f",
+      "shaders": 18
+    },
+    {
+      "file": "win32_30_atidx10/gta_cubemap_reflect.fxc",
+      "sha256": "80d0944e071107ce3822c9d9018c9f122382eb6e54636ba0548ce6b1c7c5ae7b",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_cutout_fence.fxc",
+      "sha256": "dc384e898aa2cf4aba5fc20cdaf3c9e515a06592435595c1ef7a5a3c8bd3bd87",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_atidx10/gta_decal.fxc",
+      "sha256": "9ed141ed7cf4c381fc21cd4b2988ed16e53d853fb35d5f8b47365913c21d0f64",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_decal_amb_only.fxc",
+      "sha256": "b989ecd2005f1bcae57fa664077936faa54aaea45605dc7b0850889ac7fb990e",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_atidx10/gta_decal_dirt.fxc",
+      "sha256": "47b63c055fad95f4a072bb912eea2327c6b2e57d0165f7cd8525ea5489291c59",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_decal_glue.fxc",
+      "sha256": "a481c5025795fe598a073fa545dbfa328cf36966e02cada383e2c4cc8c013e1c",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_decal_normal_only.fxc",
+      "sha256": "9f42dbaa698b2e0400c75e4c2a9be486df15d99f8eb75d89f53a37c359f209b4",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_atidx10/gta_default.fxc",
+      "sha256": "6598d78eeb82429ebc632602d822e55dce10061002675030275bbd0d6f339a36",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_atidx10/gta_diffuse_instance.fxc",
+      "sha256": "5373f33aa799dba182ff5a05728225512ae8984b8914614386b9fc595685be91",
+      "shaders": 10
+    },
+    {
+      "file": "win32_30_atidx10/gta_emissive.fxc",
+      "sha256": "46c7eb3b8c21eb84855c4850a21e54bbdc38f5ad5af298c0400827fedbe9e144",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_atidx10/gta_emissivenight.fxc",
+      "sha256": "1210625c0595129a6fd0628ab8976b515a156282679a6127babacf51b49b7b59",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_atidx10/gta_emissivestrong.fxc",
+      "sha256": "7833c7c8f14acc86ebb244ef108530a757b9cbad102ca92b01573e760645aab4",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_atidx10/gta_glass.fxc",
+      "sha256": "dae926336682214c785c23153879342148b1ded03918c06478d525395f0b16f1",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_glass_emissive.fxc",
+      "sha256": "0d040715d984e4590dba646e6e5277bf059577f6d9e9620a327f8856d9035154",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_glass_emissivenight.fxc",
+      "sha256": "8748a330384b8fae9e91ff3349c3455d8f8c10ef78a43e1beb2553f91dcab4c8",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_glass_normal_spec_reflect.fxc",
+      "sha256": "5147f154fd142b8aebe77c51e90309532a51af87c5b91858a86675b724f1883b",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_glass_reflect.fxc",
+      "sha256": "bd88153c8780357aa92d3d25b60ee9b973244d0ad364bd11372d09aeca2ad392",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_glass_spec.fxc",
+      "sha256": "d3a904cbe11e0c3f3e10a141b0fae07dd7875860bd600de65b60cd13e7171e4a",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_grass.fxc",
+      "sha256": "d807202503f38a47136c03daf2fa415e00d71c1d0e804ed34df91a7fd4e3b481",
+      "shaders": 3
+    },
+    {
+      "file": "win32_30_atidx10/gta_hair_sorted_alpha.fxc",
+      "sha256": "8640ab30f46413114e4ec01161a9d945f002851c8c54663dfea5d1650d200590",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_atidx10/gta_hair_sorted_alpha_exp.fxc",
+      "sha256": "dcc5fae0ba38d234e44e7dcc54e397c929954d73b57b4e9f7fc92725245fa33d",
+      "shaders": 12
+    },
+    {
+      "file": "win32_30_atidx10/gta_im.fxc",
+      "sha256": "efe01ae94327e9d2047674fc843b59bd8fcab4965782f156c2dba87e0be6963e",
+      "shaders": 15
+    },
+    {
+      "file": "win32_30_atidx10/gta_normal.fxc",
+      "sha256": "db60a9f1f380ee5de597fab49b536561485fb0b3ac65be7b84aa56ee0bd3a2d7",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_atidx10/gta_normal_cubemap_reflect.fxc",
+      "sha256": "52867a4c7adf780f718f2f4920eada4c872e59c5c5bd814b47d6efc7405218b2",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_normal_decal.fxc",
+      "sha256": "8c73c14ada823da002a3ee50a535db2aeff68245b55c26b96daed0a1e592a59f",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_atidx10/gta_normal_reflect.fxc",
+      "sha256": "7201c213a658c2eb962c9717d85af21005c2d7db26482e6166345e1d49538e82",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_normal_reflect_alpha.fxc",
+      "sha256": "237ca903446e38377a2b1fc8e50de2fc5b1ab0ca798d3f2cf79382fcf2b2fabd",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_normal_reflect_decal.fxc",
+      "sha256": "5058b0b2d8ddc089f67f38b6d05a2eb2a8b2c1c67d91a5aa4ed85844eaf4ffc5",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_normal_spec.fxc",
+      "sha256": "ffecae45b05b86a9033a49032cec59e94a228d0d5f91ef35dd26fb293549a06b",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_atidx10/gta_normal_spec_cubemap_reflect.fxc",
+      "sha256": "d89fc09c11a1bff76dd86fd8fb8b800759d3603a826b129096ea1601a49d40ae",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_normal_spec_decal.fxc",
+      "sha256": "0599a2f23b03abd69da4a1c48f712e7a88bb8d80b6ff5bdab3acccd0039880ca",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_atidx10/gta_normal_spec_reflect.fxc",
+      "sha256": "41046d8699b2101c9abbacf030a76cb172b331da8fb3f7b2f35bdf98df241591",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_normal_spec_reflect_decal.fxc",
+      "sha256": "2bf9efda3eaccf778dc6f5b575a9461bdf5cf92a3c0bed785aa409803e820353",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_normal_spec_reflect_emissive.fxc",
+      "sha256": "4fc40fbcafbb23d9aeae908d464a7dabfa8ad11a320bc1316a4c627d6c9054be",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_normal_spec_reflect_emissivenight.fxc",
+      "sha256": "4120a6a4bddb992a6054ec53c82ff0cce130842992bab53281c0d14e4461ccd0",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_parallax.fxc",
+      "sha256": "e71dee3a030bf51ac837f6b37ca9091de55349ecba4ce1df9500553a28850fee",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_parallax_specmap.fxc",
+      "sha256": "ddc22dd61effdb8dacb15c53afd49ce283b843865a491d0cb26f6c9f359752c6",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_parallax_steep.fxc",
+      "sha256": "a558b22471e25ea15338e04927e43b9e4bc7264eb7cd4bdd0633f37a3ca882ca",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_ped.fxc",
+      "sha256": "1a03abce5b592ea1a16f074bfada6c0444f98c27c952f372bd29c940a2264314",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_atidx10/gta_ped_face.fxc",
+      "sha256": "415dd510aaa0141195e4117b2ede34030b70cb0a38aa6a5cb1e0118d13365987",
+      "shaders": 2
+    },
+    {
+      "file": "win32_30_atidx10/gta_ped_reflect.fxc",
+      "sha256": "8d909154cfdb4a4133b85c6ac2e160c4eac3ff6d5b99550b0a4527d3965cbc53",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_atidx10/gta_ped_skin.fxc",
+      "sha256": "9c67665bc33b54479c0d31cca14ab76e0df00b584bb70655e440c75fb1f46aed",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_atidx10/gta_ped_skin_blendshape.fxc",
+      "sha256": "c76b666bad76739122d1cf819aba1be1338be63ca98612dafeb3bd5329e0ef15",
+      "shaders": 15
+    },
+    {
+      "file": "win32_30_atidx10/gta_projtex.fxc",
+      "sha256": "dc82a6d717eff1fb2825552c79dcc0ddf631577ac259fe56791530a7f2061457",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_projtex_steep.fxc",
+      "sha256": "d2d49eca4b8b4072074b7d339b5c0ce595c471bdbfb3cc4c4c08109854c6c133",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_radar.fxc",
+      "sha256": "dba32dc3b3a178cb81c1bc8745c424933f91724b0c73d0fbd509b27ef05a07b9",
+      "shaders": 2
+    },
+    {
+      "file": "win32_30_atidx10/gta_reflect.fxc",
+      "sha256": "291ea3fa20e64cacd0e27f5ccca1a856c1f08286c04f53fb029ff79073f9dc0f",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_reflect_decal.fxc",
+      "sha256": "0f44dfbfd2563ef5c27b59bad58162a9b249a4f0e0770442d83dccc9745770a1",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_rmptfx_gpurender.fxc",
+      "sha256": "d167a53891812d676ea9cc9f0fa7556a3c5139849a6c68044e1dd627b8ddfd1c",
+      "shaders": 4
+    },
+    {
+      "file": "win32_30_atidx10/gta_rmptfx_litsprite.fxc",
+      "sha256": "2ca2d6448bdd68e03efaa4a2ef3e6be3d365235f7df7a9ef2625b40900da1747",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_atidx10/gta_rmptfx_mesh.fxc",
+      "sha256": "39ff159cd7663f09ba9774bea8825666919ac9347bb309ad0ad1c5475d07774b",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_rmptfx_raindrops.fxc",
+      "sha256": "70fd69d2f016ea3caf2026541bec738feedb1823cf0736310cafdcc525bc3a6a",
+      "shaders": 6
+    },
+    {
+      "file": "win32_30_atidx10/gta_spec.fxc",
+      "sha256": "a51c58e15f734fad5a82a54c42d0c8112f520636f2714ede4a45aaac61c653a7",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_spec_decal.fxc",
+      "sha256": "df0e1f4a85827655d2aa3d296e122371a2a9f0baef4c507a3c130e3f5ff4b9c2",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_spec_reflect.fxc",
+      "sha256": "a86442051c56690c83b2360781a515db4e81e6a79b4866aa294be4f8a387193e",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_spec_reflect_decal.fxc",
+      "sha256": "e2e34e3c7c4f5dda05ca17f24d5022ce5734223e50c65bfca6008e3e257bf5ad",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/gta_terrain_va_2lyr.fxc",
+      "sha256": "2ea598228c2f5586a83a7cab1e8f060d9c6df97f7e326f68b4f7e5ba1a5dbc6f",
+      "shaders": 6
+    },
+    {
+      "file": "win32_30_atidx10/gta_terrain_va_3lyr.fxc",
+      "sha256": "85be2666d3d4645d53be472f5090dea6839f34fc73bb45fc4d483cb4a020ad22",
+      "shaders": 8
+    },
+    {
+      "file": "win32_30_atidx10/gta_terrain_va_4lyr.fxc",
+      "sha256": "54dca74336941e15efc9db083a3685e9baee5ebf138396312a47cef59d64f0ca",
+      "shaders": 10
+    },
+    {
+      "file": "win32_30_atidx10/gta_trees.fxc",
+      "sha256": "0b5fa02831249d5c3ce785a4037bd184d959d6e0f7ded450525b0cadfdb761e4",
+      "shaders": 12
+    },
+    {
+      "file": "win32_30_atidx10/gta_vehicle_badges.fxc",
+      "sha256": "20dac5f6e8e54585a92b590a963c93c5f95789b4222da572b75351291f38ee24",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30_atidx10/gta_vehicle_basic.fxc",
+      "sha256": "c5e287a51c03bbec1af4d1524a4e98b80253fbc340cd0b2802769f2573c58a7a",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_atidx10/gta_vehicle_chrome.fxc",
+      "sha256": "759cfd188b922c53108311663e0431a36619e75fb01d27c89059c408e07210a7",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_atidx10/gta_vehicle_disc.fxc",
+      "sha256": "f5289b043e2acde899157e30fc1966a017f03992648b3f86816ba48feb1e23de",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30_atidx10/gta_vehicle_generic.fxc",
+      "sha256": "b10c472e0aad4d876a90c9e8d115415e67d4d1c81bd16d44552a1804d36be327",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_atidx10/gta_vehicle_interior.fxc",
+      "sha256": "0d495a4ffd156afda18c20c2a52a111507153270b673bd38cd18e9c69c00caf5",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_atidx10/gta_vehicle_interior2.fxc",
+      "sha256": "1b02fe8faf204ec8dc66dc35c797d6dffe74fc83c67f942b926b5daa6d1e84f6",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_atidx10/gta_vehicle_lightsemissive.fxc",
+      "sha256": "b1bb7eb58c1e4e771740366f17a26c32efb7aa154643b6d750f47524756c579c",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_atidx10/gta_vehicle_mesh.fxc",
+      "sha256": "c9b2b2f5cb942a93f3a3ef38e69e516c63a74642c47b273b4a50619343e87b97",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_atidx10/gta_vehicle_paint1.fxc",
+      "sha256": "73677c0ba158e740bb0b10063f70ca181f9c92ef7b10750f99d0a06023c3a4f3",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_atidx10/gta_vehicle_paint2.fxc",
+      "sha256": "79cf566226b165179b61d8c025aa387ea81c4a940dba933bfb9ff9f7b7b795fe",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_atidx10/gta_vehicle_paint3.fxc",
+      "sha256": "ac390289a86d4d4b6e9edead70f650977b2fcc287cdd6c525cf56477340c939e",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_atidx10/gta_vehicle_rims1.fxc",
+      "sha256": "58f6529a287366b0b157e763383e5c839ce006cc698a1660a904f914dab28084",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_atidx10/gta_vehicle_rims2.fxc",
+      "sha256": "a5718b9bb62c1ca403dfd761dbd955cd52494cee3f7f32a84d228dfdd951e4b5",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_atidx10/gta_vehicle_rubber.fxc",
+      "sha256": "45ac0f519c03954a4995e2dacba68e832689fe6e612f05fd6d7d2b1870e8490f",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30_atidx10/gta_vehicle_shuts.fxc",
+      "sha256": "95bf9b1708130b067a7e7b231c01bbb983143bf84b682f9ab3cc7c632faa1789",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30_atidx10/gta_vehicle_tire.fxc",
+      "sha256": "af9ac775d9f67ca184aa563f30f4ff456b3e247249fba225c40510b35be6d098",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_atidx10/gta_vehicle_vehglass.fxc",
+      "sha256": "d4451417595b207e98d0b4daef9a57a4eed120a92bba58401036d394f2aec42c",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30_atidx10/gta_wire.fxc",
+      "sha256": "16232a4e30fb6548609719c3541e8a2e3d93398f40c9557b50c6e41641761c53",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_atidx10/mirror.fxc",
+      "sha256": "e7b614c4f9276b2e82439c1bc895f49a0798e388896424c766281c55fa1507b2",
+      "shaders": 2
+    },
+    {
+      "file": "win32_30_atidx10/rage_billboard_nobump.fxc",
+      "sha256": "06afa5690cb06573c662cf71f7c9829c56e6b193f23e17fd842a27d5c7475d87",
+      "shaders": 7
+    },
+    {
+      "file": "win32_30_atidx10/rage_default.fxc",
+      "sha256": "aa0ff2d6054b109cd95835633ed2f756964eb4994a44b2035c3968170bdfdea3",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_atidx10/rage_postfx.fxc",
+      "sha256": "d2c1bb4af552fcee259da3fa3dc9938f1fe3aad92b6e8009c185ad538e6b0ac1",
+      "shaders": 24
+    },
+    {
+      "file": "win32_30_atidx10/shadowSmartBlit.fxc",
+      "sha256": "b4bbfe84e4b33401d32cf68cd11b32cddbee3d62056afa3c65b468dc7ad06dd9",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_atidx10/shadowZ.fxc",
+      "sha256": "b771d8f8147f33f1be62c2f512e199df57328261f29ea35cc05796a72abe8846",
+      "shaders": 3
+    },
+    {
+      "file": "win32_30_atidx10/shadowZDir.fxc",
+      "sha256": "9268e49229b869ac6e635354595840317bbb47d70e7145edc24296100e4633e2",
+      "shaders": 4
+    },
+    {
+      "file": "win32_30_atidx10/water.fxc",
+      "sha256": "97048a78ff64bdbc9152309a6dedd9e4f75a9cd4e42f3dfdec63e87f0d112c29",
+      "shaders": 4
+    },
+    {
+      "file": "win32_30_atidx10/waterTex.fxc",
+      "sha256": "1dc1bb7a3ab4ce2fee28ae63a06a4a20c96262eecd03e221c14787ad58874e51",
+      "shaders": 2
+    },
+    {
+      "file": "win32_30_low_ati/deferred_lighting.fxc",
+      "sha256": "0f13d3d67a7e9851f274361b5d4fb961501dbf8a31695de1c9075d8ee7e69769",
+      "shaders": 62
+    },
+    {
+      "file": "win32_30_low_ati/gta_atmoscatt_clouds.fxc",
+      "sha256": "4ed8303e98b9b4809053685eaf787bd516cdc7d4e537ba479084f1398448b97f",
+      "shaders": 18
+    },
+    {
+      "file": "win32_30_low_ati/gta_cubemap_reflect.fxc",
+      "sha256": "80d0944e071107ce3822c9d9018c9f122382eb6e54636ba0548ce6b1c7c5ae7b",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_cutout_fence.fxc",
+      "sha256": "dc384e898aa2cf4aba5fc20cdaf3c9e515a06592435595c1ef7a5a3c8bd3bd87",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_low_ati/gta_decal.fxc",
+      "sha256": "9ed141ed7cf4c381fc21cd4b2988ed16e53d853fb35d5f8b47365913c21d0f64",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_decal_amb_only.fxc",
+      "sha256": "b989ecd2005f1bcae57fa664077936faa54aaea45605dc7b0850889ac7fb990e",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_low_ati/gta_decal_dirt.fxc",
+      "sha256": "47b63c055fad95f4a072bb912eea2327c6b2e57d0165f7cd8525ea5489291c59",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_decal_glue.fxc",
+      "sha256": "a481c5025795fe598a073fa545dbfa328cf36966e02cada383e2c4cc8c013e1c",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_decal_normal_only.fxc",
+      "sha256": "9f42dbaa698b2e0400c75e4c2a9be486df15d99f8eb75d89f53a37c359f209b4",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_low_ati/gta_default.fxc",
+      "sha256": "6598d78eeb82429ebc632602d822e55dce10061002675030275bbd0d6f339a36",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_low_ati/gta_diffuse_instance.fxc",
+      "sha256": "5373f33aa799dba182ff5a05728225512ae8984b8914614386b9fc595685be91",
+      "shaders": 10
+    },
+    {
+      "file": "win32_30_low_ati/gta_emissive.fxc",
+      "sha256": "46c7eb3b8c21eb84855c4850a21e54bbdc38f5ad5af298c0400827fedbe9e144",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_low_ati/gta_emissivenight.fxc",
+      "sha256": "1210625c0595129a6fd0628ab8976b515a156282679a6127babacf51b49b7b59",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_low_ati/gta_emissivestrong.fxc",
+      "sha256": "7833c7c8f14acc86ebb244ef108530a757b9cbad102ca92b01573e760645aab4",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_low_ati/gta_glass.fxc",
+      "sha256": "dae926336682214c785c23153879342148b1ded03918c06478d525395f0b16f1",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_glass_emissive.fxc",
+      "sha256": "0d040715d984e4590dba646e6e5277bf059577f6d9e9620a327f8856d9035154",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_glass_emissivenight.fxc",
+      "sha256": "8748a330384b8fae9e91ff3349c3455d8f8c10ef78a43e1beb2553f91dcab4c8",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_glass_normal_spec_reflect.fxc",
+      "sha256": "5147f154fd142b8aebe77c51e90309532a51af87c5b91858a86675b724f1883b",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_glass_reflect.fxc",
+      "sha256": "bd88153c8780357aa92d3d25b60ee9b973244d0ad364bd11372d09aeca2ad392",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_glass_spec.fxc",
+      "sha256": "d3a904cbe11e0c3f3e10a141b0fae07dd7875860bd600de65b60cd13e7171e4a",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_grass.fxc",
+      "sha256": "d807202503f38a47136c03daf2fa415e00d71c1d0e804ed34df91a7fd4e3b481",
+      "shaders": 3
+    },
+    {
+      "file": "win32_30_low_ati/gta_hair_sorted_alpha.fxc",
+      "sha256": "8640ab30f46413114e4ec01161a9d945f002851c8c54663dfea5d1650d200590",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_low_ati/gta_hair_sorted_alpha_exp.fxc",
+      "sha256": "dcc5fae0ba38d234e44e7dcc54e397c929954d73b57b4e9f7fc92725245fa33d",
+      "shaders": 12
+    },
+    {
+      "file": "win32_30_low_ati/gta_im.fxc",
+      "sha256": "efe01ae94327e9d2047674fc843b59bd8fcab4965782f156c2dba87e0be6963e",
+      "shaders": 15
+    },
+    {
+      "file": "win32_30_low_ati/gta_normal.fxc",
+      "sha256": "db60a9f1f380ee5de597fab49b536561485fb0b3ac65be7b84aa56ee0bd3a2d7",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_low_ati/gta_normal_cubemap_reflect.fxc",
+      "sha256": "52867a4c7adf780f718f2f4920eada4c872e59c5c5bd814b47d6efc7405218b2",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_normal_decal.fxc",
+      "sha256": "8c73c14ada823da002a3ee50a535db2aeff68245b55c26b96daed0a1e592a59f",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_low_ati/gta_normal_reflect.fxc",
+      "sha256": "7201c213a658c2eb962c9717d85af21005c2d7db26482e6166345e1d49538e82",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_normal_reflect_alpha.fxc",
+      "sha256": "237ca903446e38377a2b1fc8e50de2fc5b1ab0ca798d3f2cf79382fcf2b2fabd",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_normal_reflect_decal.fxc",
+      "sha256": "5058b0b2d8ddc089f67f38b6d05a2eb2a8b2c1c67d91a5aa4ed85844eaf4ffc5",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_normal_spec.fxc",
+      "sha256": "ffecae45b05b86a9033a49032cec59e94a228d0d5f91ef35dd26fb293549a06b",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_low_ati/gta_normal_spec_cubemap_reflect.fxc",
+      "sha256": "d89fc09c11a1bff76dd86fd8fb8b800759d3603a826b129096ea1601a49d40ae",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_normal_spec_decal.fxc",
+      "sha256": "0599a2f23b03abd69da4a1c48f712e7a88bb8d80b6ff5bdab3acccd0039880ca",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_low_ati/gta_normal_spec_reflect.fxc",
+      "sha256": "41046d8699b2101c9abbacf030a76cb172b331da8fb3f7b2f35bdf98df241591",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_normal_spec_reflect_decal.fxc",
+      "sha256": "2bf9efda3eaccf778dc6f5b575a9461bdf5cf92a3c0bed785aa409803e820353",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_normal_spec_reflect_emissive.fxc",
+      "sha256": "4fc40fbcafbb23d9aeae908d464a7dabfa8ad11a320bc1316a4c627d6c9054be",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_normal_spec_reflect_emissivenight.fxc",
+      "sha256": "4120a6a4bddb992a6054ec53c82ff0cce130842992bab53281c0d14e4461ccd0",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_parallax.fxc",
+      "sha256": "e71dee3a030bf51ac837f6b37ca9091de55349ecba4ce1df9500553a28850fee",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_parallax_specmap.fxc",
+      "sha256": "ddc22dd61effdb8dacb15c53afd49ce283b843865a491d0cb26f6c9f359752c6",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_parallax_steep.fxc",
+      "sha256": "a558b22471e25ea15338e04927e43b9e4bc7264eb7cd4bdd0633f37a3ca882ca",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_ped.fxc",
+      "sha256": "1a03abce5b592ea1a16f074bfada6c0444f98c27c952f372bd29c940a2264314",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_low_ati/gta_ped_face.fxc",
+      "sha256": "415dd510aaa0141195e4117b2ede34030b70cb0a38aa6a5cb1e0118d13365987",
+      "shaders": 2
+    },
+    {
+      "file": "win32_30_low_ati/gta_ped_reflect.fxc",
+      "sha256": "8d909154cfdb4a4133b85c6ac2e160c4eac3ff6d5b99550b0a4527d3965cbc53",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_low_ati/gta_ped_skin.fxc",
+      "sha256": "9c67665bc33b54479c0d31cca14ab76e0df00b584bb70655e440c75fb1f46aed",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_low_ati/gta_ped_skin_blendshape.fxc",
+      "sha256": "c76b666bad76739122d1cf819aba1be1338be63ca98612dafeb3bd5329e0ef15",
+      "shaders": 15
+    },
+    {
+      "file": "win32_30_low_ati/gta_projtex.fxc",
+      "sha256": "b75d0213f7161060d202fcf6a73fea95c8653051f4c61a349f8eb3ddd701536d",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_projtex_steep.fxc",
+      "sha256": "d8dfcee1b812a6a4ac1e5154c6d01c717852b37d66cbf9f51c8abe8d1b2dc044",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_radar.fxc",
+      "sha256": "dba32dc3b3a178cb81c1bc8745c424933f91724b0c73d0fbd509b27ef05a07b9",
+      "shaders": 2
+    },
+    {
+      "file": "win32_30_low_ati/gta_reflect.fxc",
+      "sha256": "291ea3fa20e64cacd0e27f5ccca1a856c1f08286c04f53fb029ff79073f9dc0f",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_reflect_decal.fxc",
+      "sha256": "0f44dfbfd2563ef5c27b59bad58162a9b249a4f0e0770442d83dccc9745770a1",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_rmptfx_gpurender.fxc",
+      "sha256": "da7cc3c8cd718b93cf41b775b0bc10696362cdfee804e48442ae3a24f0b76839",
+      "shaders": 4
+    },
+    {
+      "file": "win32_30_low_ati/gta_rmptfx_litsprite.fxc",
+      "sha256": "a76ac2de75958dd8aff51ebffad68eeb01905809bc44760b7b4852f2e68da618",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_low_ati/gta_rmptfx_mesh.fxc",
+      "sha256": "39ff159cd7663f09ba9774bea8825666919ac9347bb309ad0ad1c5475d07774b",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_rmptfx_raindrops.fxc",
+      "sha256": "70fd69d2f016ea3caf2026541bec738feedb1823cf0736310cafdcc525bc3a6a",
+      "shaders": 6
+    },
+    {
+      "file": "win32_30_low_ati/gta_spec.fxc",
+      "sha256": "a51c58e15f734fad5a82a54c42d0c8112f520636f2714ede4a45aaac61c653a7",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_spec_decal.fxc",
+      "sha256": "df0e1f4a85827655d2aa3d296e122371a2a9f0baef4c507a3c130e3f5ff4b9c2",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_spec_reflect.fxc",
+      "sha256": "a86442051c56690c83b2360781a515db4e81e6a79b4866aa294be4f8a387193e",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_spec_reflect_decal.fxc",
+      "sha256": "e2e34e3c7c4f5dda05ca17f24d5022ce5734223e50c65bfca6008e3e257bf5ad",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/gta_terrain_va_2lyr.fxc",
+      "sha256": "2ea598228c2f5586a83a7cab1e8f060d9c6df97f7e326f68b4f7e5ba1a5dbc6f",
+      "shaders": 6
+    },
+    {
+      "file": "win32_30_low_ati/gta_terrain_va_3lyr.fxc",
+      "sha256": "85be2666d3d4645d53be472f5090dea6839f34fc73bb45fc4d483cb4a020ad22",
+      "shaders": 8
+    },
+    {
+      "file": "win32_30_low_ati/gta_terrain_va_4lyr.fxc",
+      "sha256": "54dca74336941e15efc9db083a3685e9baee5ebf138396312a47cef59d64f0ca",
+      "shaders": 10
+    },
+    {
+      "file": "win32_30_low_ati/gta_trees.fxc",
+      "sha256": "0b5fa02831249d5c3ce785a4037bd184d959d6e0f7ded450525b0cadfdb761e4",
+      "shaders": 12
+    },
+    {
+      "file": "win32_30_low_ati/gta_vehicle_badges.fxc",
+      "sha256": "688b98b981d2dd0c38fa47187931aa20cdc93be75f0f1e3de3b1e2c794ee4474",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30_low_ati/gta_vehicle_basic.fxc",
+      "sha256": "c5e287a51c03bbec1af4d1524a4e98b80253fbc340cd0b2802769f2573c58a7a",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_low_ati/gta_vehicle_chrome.fxc",
+      "sha256": "8aa1adb9b3df4d7b0a29423f33334e3c03afa0924c4e79c93fef7d5577079f1f",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_low_ati/gta_vehicle_disc.fxc",
+      "sha256": "f5289b043e2acde899157e30fc1966a017f03992648b3f86816ba48feb1e23de",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30_low_ati/gta_vehicle_generic.fxc",
+      "sha256": "64e60769a1d61ee04081c6884c8bc1a165ac914d312beb7d95e48cb4c8e52ba1",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_low_ati/gta_vehicle_interior.fxc",
+      "sha256": "d06e25afb7dc2853552e3518ea53a8e9f9688900361fcc89f637b81ddde43266",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_low_ati/gta_vehicle_interior2.fxc",
+      "sha256": "f63d588073c958244ae0325b58dc6ca63b97e29d45fb5c242d2a21a72ac4d398",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_low_ati/gta_vehicle_lightsemissive.fxc",
+      "sha256": "c7a5ac61c83c15c61e73852f91ff1f86ab3611155ab71675689ced19f63b1658",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_low_ati/gta_vehicle_mesh.fxc",
+      "sha256": "a1941f7a59cbc3fe00c6936516655f3d8f0e6a516e9b60d8ca285a9b918ffad2",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_low_ati/gta_vehicle_paint1.fxc",
+      "sha256": "3b39f240cdfd5dac05423c718874b517c449c2d6f68171e5666b8b3d929aa54a",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_low_ati/gta_vehicle_paint2.fxc",
+      "sha256": "5b5ab1f11b42bdafc6ac82e4c25eaed1a5db6a471189890cc724b167041be169",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_low_ati/gta_vehicle_paint3.fxc",
+      "sha256": "3e8c58239d4514ec89a6e657467f70d09b8010bbc285a8303943de0cf2e69cc9",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_low_ati/gta_vehicle_rims1.fxc",
+      "sha256": "58f6529a287366b0b157e763383e5c839ce006cc698a1660a904f914dab28084",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_low_ati/gta_vehicle_rims2.fxc",
+      "sha256": "a5718b9bb62c1ca403dfd761dbd955cd52494cee3f7f32a84d228dfdd951e4b5",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_low_ati/gta_vehicle_rubber.fxc",
+      "sha256": "24cdd12d6a12ff8c2c1a0199084dbfeaecff9141a73d12b6ce36bdb4ec4bf792",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30_low_ati/gta_vehicle_shuts.fxc",
+      "sha256": "05daf70f54c903040ffd6259558aeca2a6a32343f63b5524e919d4571f537b2a",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30_low_ati/gta_vehicle_tire.fxc",
+      "sha256": "af9ac775d9f67ca184aa563f30f4ff456b3e247249fba225c40510b35be6d098",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_low_ati/gta_vehicle_vehglass.fxc",
+      "sha256": "af76849778d6225f58a80489c6471fdc7e3ed6f2d81bc7d4d8085a2b3e9f9c3b",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30_low_ati/gta_wire.fxc",
+      "sha256": "16232a4e30fb6548609719c3541e8a2e3d93398f40c9557b50c6e41641761c53",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_low_ati/mirror.fxc",
+      "sha256": "e7b614c4f9276b2e82439c1bc895f49a0798e388896424c766281c55fa1507b2",
+      "shaders": 2
+    },
+    {
+      "file": "win32_30_low_ati/rage_billboard_nobump.fxc",
+      "sha256": "06afa5690cb06573c662cf71f7c9829c56e6b193f23e17fd842a27d5c7475d87",
+      "shaders": 7
+    },
+    {
+      "file": "win32_30_low_ati/rage_default.fxc",
+      "sha256": "aa0ff2d6054b109cd95835633ed2f756964eb4994a44b2035c3968170bdfdea3",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_low_ati/rage_postfx.fxc",
+      "sha256": "d2c1bb4af552fcee259da3fa3dc9938f1fe3aad92b6e8009c185ad538e6b0ac1",
+      "shaders": 24
+    },
+    {
+      "file": "win32_30_low_ati/shadowSmartBlit.fxc",
+      "sha256": "b4bbfe84e4b33401d32cf68cd11b32cddbee3d62056afa3c65b468dc7ad06dd9",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_low_ati/shadowZ.fxc",
+      "sha256": "b771d8f8147f33f1be62c2f512e199df57328261f29ea35cc05796a72abe8846",
+      "shaders": 3
+    },
+    {
+      "file": "win32_30_low_ati/shadowZDir.fxc",
+      "sha256": "9268e49229b869ac6e635354595840317bbb47d70e7145edc24296100e4633e2",
+      "shaders": 4
+    },
+    {
+      "file": "win32_30_low_ati/water.fxc",
+      "sha256": "846bc952f4cc2d9970ee713f2b8dc6df59157a79531fded3c5de48f57e251480",
+      "shaders": 4
+    },
+    {
+      "file": "win32_30_low_ati/waterTex.fxc",
+      "sha256": "1dc1bb7a3ab4ce2fee28ae63a06a4a20c96262eecd03e221c14787ad58874e51",
+      "shaders": 2
+    },
+    {
+      "file": "win32_30_nv6/deferred_lighting.fxc",
+      "sha256": "35e0f06e099cee1b73a90939931eed2e5c2c930423f8ca33f865a229140a194c",
+      "shaders": 62
+    },
+    {
+      "file": "win32_30_nv6/gta_atmoscatt_clouds.fxc",
+      "sha256": "e406b50762f5667c08240cbf1039fb77ac2fb805fc4bc6ea8f74e5fed360dc73",
+      "shaders": 18
+    },
+    {
+      "file": "win32_30_nv6/gta_cubemap_reflect.fxc",
+      "sha256": "a271bf991486463440fccd43548f16a9566fa2c09aad8ffe9fc3bb8350779606",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_cutout_fence.fxc",
+      "sha256": "8e48d8b28358cce5ab5bb1133c2f604bc09d70ba1d2bf8d102199dbcdc70d3b4",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv6/gta_decal.fxc",
+      "sha256": "cf987f20198438519ac6e3dec8923de2276945d09ca4380094b0a2a1e0ac11cf",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_decal_amb_only.fxc",
+      "sha256": "2618eda92f85ff8383fbcf2ff68ed79c021b941bc5694d7d417f51d1ca02df3f",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv6/gta_decal_dirt.fxc",
+      "sha256": "2146572ddb0238e9e6693f7f2b0f101baaa4c0ba99fe87936cd48ddf74c90d54",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_decal_glue.fxc",
+      "sha256": "3852382ca4df7fea7ce7c391e212e741c33f9e064150a477523770b3bb7edde8",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_decal_normal_only.fxc",
+      "sha256": "5be2d51428e108c76bde6ed090d50ff48aff70fc198df89550d2a59e46ab2a36",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv6/gta_default.fxc",
+      "sha256": "3ce52f4faef9dc66e7def0169a858ad7fb5454b6c7ad98768f6dd8457dd990fe",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv6/gta_diffuse_instance.fxc",
+      "sha256": "66c3fe24318ad55c6e31d8ddc4cc23f51ae2477faa8bd9de6276364fb4d77da8",
+      "shaders": 10
+    },
+    {
+      "file": "win32_30_nv6/gta_emissive.fxc",
+      "sha256": "46c7eb3b8c21eb84855c4850a21e54bbdc38f5ad5af298c0400827fedbe9e144",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv6/gta_emissivenight.fxc",
+      "sha256": "1210625c0595129a6fd0628ab8976b515a156282679a6127babacf51b49b7b59",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv6/gta_emissivestrong.fxc",
+      "sha256": "7833c7c8f14acc86ebb244ef108530a757b9cbad102ca92b01573e760645aab4",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv6/gta_glass.fxc",
+      "sha256": "4d5b78a53b8d6f9cd4981b4c14edd69da8cd7642f7e492e13042a843e42d48b7",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_glass_emissive.fxc",
+      "sha256": "32a2834f86c2b6ea692af15feb74ec7961744c87cc7121ed41a8ee53a0631a01",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_glass_emissivenight.fxc",
+      "sha256": "8f59cee773d410d693145517d19aef8cc641d67efb9c977ccb2eb9b8cb61d8f5",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_glass_normal_spec_reflect.fxc",
+      "sha256": "70ed0199f9518fdc17e8a917fd4abdf8b40fa35a33c62129da0bf695b7203c36",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_glass_reflect.fxc",
+      "sha256": "1534947a4df71500b828ee8418075b07c1027edb032ffa216968039046d511e7",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_glass_spec.fxc",
+      "sha256": "9c82805efbd05281815e811f2a35efde600b58fa8a44c6f4333d0850fd46e0fb",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_grass.fxc",
+      "sha256": "d807202503f38a47136c03daf2fa415e00d71c1d0e804ed34df91a7fd4e3b481",
+      "shaders": 3
+    },
+    {
+      "file": "win32_30_nv6/gta_hair_sorted_alpha.fxc",
+      "sha256": "c44a160df5d14cb269174dcb90356b298a1cf416281e6eefbdaaeebadb9889cc",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_nv6/gta_hair_sorted_alpha_exp.fxc",
+      "sha256": "22899e62ba928c7ade6cb4b1ba1ed8a4da030ee1673b4b847b75a871b61cf33f",
+      "shaders": 12
+    },
+    {
+      "file": "win32_30_nv6/gta_im.fxc",
+      "sha256": "c0906ff9cc4abd2ec6b9a77c14ccf2c3120e5a6dcecee3d67ff2faeb7a832c5b",
+      "shaders": 15
+    },
+    {
+      "file": "win32_30_nv6/gta_normal.fxc",
+      "sha256": "53960e728ea81f216934a47be951cef96319fa1b85dfe9015b911bcc02f7e7fe",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv6/gta_normal_cubemap_reflect.fxc",
+      "sha256": "278c6322941243a0e01f16a04c6a64f82946311b3435de4c50a9c6561f0cf497",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_normal_decal.fxc",
+      "sha256": "84e1104432aa94968043d2927ce5ebde75d01487ec06f32891ea627b7a52b839",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv6/gta_normal_reflect.fxc",
+      "sha256": "9c8294a16822f4107e50a64b8152df61bf9d369e78f8a1a472b99940742ebf44",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_normal_reflect_alpha.fxc",
+      "sha256": "e44d60ad35d8444377c39344753cbc710012d543ab762229b53ff4cf5e605b32",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_normal_reflect_decal.fxc",
+      "sha256": "0775eb99135a505572269cf2f46637b58dde29e6870c14fe77b0045c8d37ad1a",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_normal_spec.fxc",
+      "sha256": "96748154c2ff484a1019c796707a8a9a5cf894fcfe87c8baa5eeff7de55e09e2",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv6/gta_normal_spec_cubemap_reflect.fxc",
+      "sha256": "00dfcb906ada4a204551cecec7700f8aa14b2b5eddfc41fe7584c9a4e87ac144",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_normal_spec_decal.fxc",
+      "sha256": "6541816ca5bff55c8a2cd83435b821c9b73c34d92bda0352be7238a3d60b3a92",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv6/gta_normal_spec_reflect.fxc",
+      "sha256": "8398a9887862905e43ceed54ff23e6caa60980f634017f61d4f78c4cccb7d345",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_normal_spec_reflect_decal.fxc",
+      "sha256": "94d95b91b7db8b58efb7db61b7a25df0317d8d4f2137c128eb5379ad2f174a65",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_normal_spec_reflect_emissive.fxc",
+      "sha256": "3131f388712ef134ef1ba387c325f18b2bb2fabe3d71afe3387764e26ae22335",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_normal_spec_reflect_emissivenight.fxc",
+      "sha256": "68bf164be56563816b85b9c51405b27e54c45ef7eeab2328d815dc7f0098d5ef",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_parallax.fxc",
+      "sha256": "0b84c12a58fdc6b190450eba94b3589e7e84d517fe0a941faf635c68025a4ef6",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_parallax_specmap.fxc",
+      "sha256": "379db9329d972eff933f9a2ebdf99e431959ed602cdd5007d23382f83613ac2a",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_parallax_steep.fxc",
+      "sha256": "cff93370c05729b4782b90b6cab09dbd79d7012f73ec82842450b68da49ae4fa",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_ped.fxc",
+      "sha256": "74b5896c01714771c3a9b714b9c95efec88f9193c8711665680ee792964726c8",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_nv6/gta_ped_face.fxc",
+      "sha256": "415dd510aaa0141195e4117b2ede34030b70cb0a38aa6a5cb1e0118d13365987",
+      "shaders": 2
+    },
+    {
+      "file": "win32_30_nv6/gta_ped_reflect.fxc",
+      "sha256": "519cd6789f3f1fc9568483d13c548bfb48e22ce653ff4e8d1242516d89d17fac",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_nv6/gta_ped_skin.fxc",
+      "sha256": "6db50c53caaa89499dea22121044caa84dc0b26ca6bbacfc543753760840b101",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_nv6/gta_ped_skin_blendshape.fxc",
+      "sha256": "c1f7a735b2475879c71de60224941820817ef90db73d4eb48fa7eb200ad8e36b",
+      "shaders": 15
+    },
+    {
+      "file": "win32_30_nv6/gta_projtex.fxc",
+      "sha256": "b8c7d0dda5cc8f7c9eb6ef76fb3989f936f6b277302e92175da790e36adf75d0",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_projtex_steep.fxc",
+      "sha256": "ba509ccd596d17e06092487720ffa6acbcc578b12ed720446afd2517a6738142",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_radar.fxc",
+      "sha256": "dba32dc3b3a178cb81c1bc8745c424933f91724b0c73d0fbd509b27ef05a07b9",
+      "shaders": 2
+    },
+    {
+      "file": "win32_30_nv6/gta_reflect.fxc",
+      "sha256": "7c45e9a50a8d80e0b9d8e0b25abdffa6e107e90ea9c23474f0951b42e81f10c5",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_reflect_decal.fxc",
+      "sha256": "c63c7ce21e41aec076db595a21d528ab0a8f1fef0f07b6534363babdaf096e23",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_rmptfx_gpurender.fxc",
+      "sha256": "d167a53891812d676ea9cc9f0fa7556a3c5139849a6c68044e1dd627b8ddfd1c",
+      "shaders": 4
+    },
+    {
+      "file": "win32_30_nv6/gta_rmptfx_litsprite.fxc",
+      "sha256": "96f6d88c45c6003d6b1c973c8e2bb808e6356c3b90dbd82c349f25b5706260ce",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_nv6/gta_rmptfx_mesh.fxc",
+      "sha256": "6758ce2d418e6d99e0ac1823f9a0da49d82b8b9d450be14c1d7ca9482a40339b",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_rmptfx_raindrops.fxc",
+      "sha256": "485716280c3c62a0f4fc786f4c9a9d9f235859d671564e775405f85ce064b49c",
+      "shaders": 6
+    },
+    {
+      "file": "win32_30_nv6/gta_spec.fxc",
+      "sha256": "ffbbcf68e4c6e93f7b98f76c2d78262ef08e2d350886c65c875019748e7c4180",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_spec_decal.fxc",
+      "sha256": "def2b55cb281e6014471122d479fab3fe5bedd383cf70a723d7862808ec5483e",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_spec_reflect.fxc",
+      "sha256": "2fa8753d669984c56894b4f12848f1524cfc9bd07518f3ef33ee1922117190fb",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_spec_reflect_decal.fxc",
+      "sha256": "0a8cbddfdca356750955ebbec5fe132e48288510f3e40e65372075bfb53b04dc",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/gta_terrain_va_2lyr.fxc",
+      "sha256": "742630b94d3bf5d9c0646e19454a069ff39f5c652205c976ea95cfd59d34d2de",
+      "shaders": 6
+    },
+    {
+      "file": "win32_30_nv6/gta_terrain_va_3lyr.fxc",
+      "sha256": "9bdd441710db748ac853f54fe4ba11b35440f1449028af49737d61fe3b7f1297",
+      "shaders": 8
+    },
+    {
+      "file": "win32_30_nv6/gta_terrain_va_4lyr.fxc",
+      "sha256": "cdf743df8c74c709bad8250abea44186adc4e5353d97baba6630c1f13d9446f4",
+      "shaders": 10
+    },
+    {
+      "file": "win32_30_nv6/gta_trees.fxc",
+      "sha256": "0b5fa02831249d5c3ce785a4037bd184d959d6e0f7ded450525b0cadfdb761e4",
+      "shaders": 12
+    },
+    {
+      "file": "win32_30_nv6/gta_vehicle_badges.fxc",
+      "sha256": "6636972da638537d3c9b8b836c5566294cd57cde11db9f4e8e8702e271fa8d9e",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30_nv6/gta_vehicle_basic.fxc",
+      "sha256": "e35681e16312aea83e17a968d97dcea6dba0799fc83d60a507d118ae5557f136",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv6/gta_vehicle_chrome.fxc",
+      "sha256": "0c7e47b3947ee8319acce9d906775c2da5677665dd23b3a510113e4c75e93e6c",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv6/gta_vehicle_disc.fxc",
+      "sha256": "45532056ce2b517ae9f91c77c11893a43e416420fbe6e818c5c2fdf3874795c8",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30_nv6/gta_vehicle_generic.fxc",
+      "sha256": "d9b1627d1269a24aca70e50c0b0a16d2fa6f8e3a608ff382616a140d610dec3b",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv6/gta_vehicle_interior.fxc",
+      "sha256": "91110a240b230a900aaa098352e7bbc208126501612019f6f0b37adad636c3e7",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv6/gta_vehicle_interior2.fxc",
+      "sha256": "a980fee1cc32f0f9bb136a47dc38b84bedf0ad298a85f0f854ea9431528edd81",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv6/gta_vehicle_lightsemissive.fxc",
+      "sha256": "ec72ade50a4e8e133e5c73d8bf80cc85999732632b8ad7ee2a5f7e3e3b4e2964",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv6/gta_vehicle_mesh.fxc",
+      "sha256": "ca45531c6d897174f5adf61027e7b81d185ca25a7038669bed0120491472ceb7",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv6/gta_vehicle_paint1.fxc",
+      "sha256": "4cb05fd05a11b12a66da9f3d4c3b2e0c134b1753a566af35d182f417c5905b94",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv6/gta_vehicle_paint2.fxc",
+      "sha256": "a20020230b59820035121e7378ad56e15a3b683416f27275a71a56df0089e20e",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv6/gta_vehicle_paint3.fxc",
+      "sha256": "9d9eb3c1017da8497f9c253518c63a12c6845919113799f55bca7c1ce03dd880",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv6/gta_vehicle_rims1.fxc",
+      "sha256": "b30d561cffe54089be031a1188d8d871ba702005e6e85a7237f32f1edfed0d8f",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv6/gta_vehicle_rims2.fxc",
+      "sha256": "aed9b619887a76cc0575b773557a89a06c9cdde4450ed4c23b66539d5deb5cca",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv6/gta_vehicle_rubber.fxc",
+      "sha256": "4fd783d4e6bf071aac7764e895f274b09804bc000adbb10e9fc9af761bd9cef2",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30_nv6/gta_vehicle_shuts.fxc",
+      "sha256": "d73895d921560839ed4020ddc6b109823084d7c369ee435fd86df967fc60c320",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30_nv6/gta_vehicle_tire.fxc",
+      "sha256": "0990f020cd15246b239e436648254a9cfa2376820304481982079bad2c38f63a",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv6/gta_vehicle_vehglass.fxc",
+      "sha256": "7abf91a1685fed1b8ae4b88a53db99624e561e6aa864ece960b6854decb09ff5",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30_nv6/gta_wire.fxc",
+      "sha256": "986a1791752025f9d638a4a1b6f407709baf22bcb3f64f33bfd334d336bc86a3",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv6/mirror.fxc",
+      "sha256": "e7b614c4f9276b2e82439c1bc895f49a0798e388896424c766281c55fa1507b2",
+      "shaders": 2
+    },
+    {
+      "file": "win32_30_nv6/rage_billboard_nobump.fxc",
+      "sha256": "06afa5690cb06573c662cf71f7c9829c56e6b193f23e17fd842a27d5c7475d87",
+      "shaders": 7
+    },
+    {
+      "file": "win32_30_nv6/rage_default.fxc",
+      "sha256": "ef9026c16120ab9581ba1c8b417d44427205a426d7f0bd6b7ff44c94ba6c95fe",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv6/rage_postfx.fxc",
+      "sha256": "b61e0ed4f30b11d3eda8e36faf7304879dedba114074bf24e73913bcc339bdac",
+      "shaders": 24
+    },
+    {
+      "file": "win32_30_nv6/shadowSmartBlit.fxc",
+      "sha256": "e3569e4ce5fe3499048d612e0373dbe9a089f0035a35932442e74cc8c0e3d399",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_nv6/shadowZ.fxc",
+      "sha256": "b771d8f8147f33f1be62c2f512e199df57328261f29ea35cc05796a72abe8846",
+      "shaders": 3
+    },
+    {
+      "file": "win32_30_nv6/shadowZDir.fxc",
+      "sha256": "9268e49229b869ac6e635354595840317bbb47d70e7145edc24296100e4633e2",
+      "shaders": 4
+    },
+    {
+      "file": "win32_30_nv6/water.fxc",
+      "sha256": "3533595a7e9a0e6bdf9ee7964ea179aeca3664fb2068783afe8af5d165eb8a17",
+      "shaders": 4
+    },
+    {
+      "file": "win32_30_nv6/waterTex.fxc",
+      "sha256": "1dc1bb7a3ab4ce2fee28ae63a06a4a20c96262eecd03e221c14787ad58874e51",
+      "shaders": 2
+    },
+    {
+      "file": "win32_30_nv7/deferred_lighting.fxc",
+      "sha256": "35e0f06e099cee1b73a90939931eed2e5c2c930423f8ca33f865a229140a194c",
+      "shaders": 62
+    },
+    {
+      "file": "win32_30_nv7/gta_atmoscatt_clouds.fxc",
+      "sha256": "e406b50762f5667c08240cbf1039fb77ac2fb805fc4bc6ea8f74e5fed360dc73",
+      "shaders": 18
+    },
+    {
+      "file": "win32_30_nv7/gta_cubemap_reflect.fxc",
+      "sha256": "a271bf991486463440fccd43548f16a9566fa2c09aad8ffe9fc3bb8350779606",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_cutout_fence.fxc",
+      "sha256": "8e48d8b28358cce5ab5bb1133c2f604bc09d70ba1d2bf8d102199dbcdc70d3b4",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv7/gta_decal.fxc",
+      "sha256": "cf987f20198438519ac6e3dec8923de2276945d09ca4380094b0a2a1e0ac11cf",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_decal_amb_only.fxc",
+      "sha256": "2618eda92f85ff8383fbcf2ff68ed79c021b941bc5694d7d417f51d1ca02df3f",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv7/gta_decal_dirt.fxc",
+      "sha256": "2146572ddb0238e9e6693f7f2b0f101baaa4c0ba99fe87936cd48ddf74c90d54",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_decal_glue.fxc",
+      "sha256": "3852382ca4df7fea7ce7c391e212e741c33f9e064150a477523770b3bb7edde8",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_decal_normal_only.fxc",
+      "sha256": "5be2d51428e108c76bde6ed090d50ff48aff70fc198df89550d2a59e46ab2a36",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv7/gta_default.fxc",
+      "sha256": "3ce52f4faef9dc66e7def0169a858ad7fb5454b6c7ad98768f6dd8457dd990fe",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv7/gta_diffuse_instance.fxc",
+      "sha256": "66c3fe24318ad55c6e31d8ddc4cc23f51ae2477faa8bd9de6276364fb4d77da8",
+      "shaders": 10
+    },
+    {
+      "file": "win32_30_nv7/gta_emissive.fxc",
+      "sha256": "46c7eb3b8c21eb84855c4850a21e54bbdc38f5ad5af298c0400827fedbe9e144",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv7/gta_emissivenight.fxc",
+      "sha256": "1210625c0595129a6fd0628ab8976b515a156282679a6127babacf51b49b7b59",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv7/gta_emissivestrong.fxc",
+      "sha256": "7833c7c8f14acc86ebb244ef108530a757b9cbad102ca92b01573e760645aab4",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv7/gta_glass.fxc",
+      "sha256": "4d5b78a53b8d6f9cd4981b4c14edd69da8cd7642f7e492e13042a843e42d48b7",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_glass_emissive.fxc",
+      "sha256": "32a2834f86c2b6ea692af15feb74ec7961744c87cc7121ed41a8ee53a0631a01",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_glass_emissivenight.fxc",
+      "sha256": "8f59cee773d410d693145517d19aef8cc641d67efb9c977ccb2eb9b8cb61d8f5",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_glass_normal_spec_reflect.fxc",
+      "sha256": "70ed0199f9518fdc17e8a917fd4abdf8b40fa35a33c62129da0bf695b7203c36",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_glass_reflect.fxc",
+      "sha256": "1534947a4df71500b828ee8418075b07c1027edb032ffa216968039046d511e7",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_glass_spec.fxc",
+      "sha256": "9c82805efbd05281815e811f2a35efde600b58fa8a44c6f4333d0850fd46e0fb",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_grass.fxc",
+      "sha256": "d807202503f38a47136c03daf2fa415e00d71c1d0e804ed34df91a7fd4e3b481",
+      "shaders": 3
+    },
+    {
+      "file": "win32_30_nv7/gta_hair_sorted_alpha.fxc",
+      "sha256": "c44a160df5d14cb269174dcb90356b298a1cf416281e6eefbdaaeebadb9889cc",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_nv7/gta_hair_sorted_alpha_exp.fxc",
+      "sha256": "22899e62ba928c7ade6cb4b1ba1ed8a4da030ee1673b4b847b75a871b61cf33f",
+      "shaders": 12
+    },
+    {
+      "file": "win32_30_nv7/gta_im.fxc",
+      "sha256": "c0906ff9cc4abd2ec6b9a77c14ccf2c3120e5a6dcecee3d67ff2faeb7a832c5b",
+      "shaders": 15
+    },
+    {
+      "file": "win32_30_nv7/gta_normal.fxc",
+      "sha256": "53960e728ea81f216934a47be951cef96319fa1b85dfe9015b911bcc02f7e7fe",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv7/gta_normal_cubemap_reflect.fxc",
+      "sha256": "278c6322941243a0e01f16a04c6a64f82946311b3435de4c50a9c6561f0cf497",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_normal_decal.fxc",
+      "sha256": "84e1104432aa94968043d2927ce5ebde75d01487ec06f32891ea627b7a52b839",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv7/gta_normal_reflect.fxc",
+      "sha256": "9c8294a16822f4107e50a64b8152df61bf9d369e78f8a1a472b99940742ebf44",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_normal_reflect_alpha.fxc",
+      "sha256": "e44d60ad35d8444377c39344753cbc710012d543ab762229b53ff4cf5e605b32",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_normal_reflect_decal.fxc",
+      "sha256": "0775eb99135a505572269cf2f46637b58dde29e6870c14fe77b0045c8d37ad1a",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_normal_spec.fxc",
+      "sha256": "96748154c2ff484a1019c796707a8a9a5cf894fcfe87c8baa5eeff7de55e09e2",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv7/gta_normal_spec_cubemap_reflect.fxc",
+      "sha256": "00dfcb906ada4a204551cecec7700f8aa14b2b5eddfc41fe7584c9a4e87ac144",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_normal_spec_decal.fxc",
+      "sha256": "6541816ca5bff55c8a2cd83435b821c9b73c34d92bda0352be7238a3d60b3a92",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv7/gta_normal_spec_reflect.fxc",
+      "sha256": "8398a9887862905e43ceed54ff23e6caa60980f634017f61d4f78c4cccb7d345",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_normal_spec_reflect_decal.fxc",
+      "sha256": "94d95b91b7db8b58efb7db61b7a25df0317d8d4f2137c128eb5379ad2f174a65",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_normal_spec_reflect_emissive.fxc",
+      "sha256": "3131f388712ef134ef1ba387c325f18b2bb2fabe3d71afe3387764e26ae22335",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_normal_spec_reflect_emissivenight.fxc",
+      "sha256": "68bf164be56563816b85b9c51405b27e54c45ef7eeab2328d815dc7f0098d5ef",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_parallax.fxc",
+      "sha256": "0b84c12a58fdc6b190450eba94b3589e7e84d517fe0a941faf635c68025a4ef6",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_parallax_specmap.fxc",
+      "sha256": "379db9329d972eff933f9a2ebdf99e431959ed602cdd5007d23382f83613ac2a",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_parallax_steep.fxc",
+      "sha256": "cff93370c05729b4782b90b6cab09dbd79d7012f73ec82842450b68da49ae4fa",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_ped.fxc",
+      "sha256": "74b5896c01714771c3a9b714b9c95efec88f9193c8711665680ee792964726c8",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_nv7/gta_ped_face.fxc",
+      "sha256": "415dd510aaa0141195e4117b2ede34030b70cb0a38aa6a5cb1e0118d13365987",
+      "shaders": 2
+    },
+    {
+      "file": "win32_30_nv7/gta_ped_reflect.fxc",
+      "sha256": "519cd6789f3f1fc9568483d13c548bfb48e22ce653ff4e8d1242516d89d17fac",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_nv7/gta_ped_skin.fxc",
+      "sha256": "6db50c53caaa89499dea22121044caa84dc0b26ca6bbacfc543753760840b101",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_nv7/gta_ped_skin_blendshape.fxc",
+      "sha256": "c1f7a735b2475879c71de60224941820817ef90db73d4eb48fa7eb200ad8e36b",
+      "shaders": 15
+    },
+    {
+      "file": "win32_30_nv7/gta_projtex.fxc",
+      "sha256": "b8c7d0dda5cc8f7c9eb6ef76fb3989f936f6b277302e92175da790e36adf75d0",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_projtex_steep.fxc",
+      "sha256": "ba509ccd596d17e06092487720ffa6acbcc578b12ed720446afd2517a6738142",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_radar.fxc",
+      "sha256": "dba32dc3b3a178cb81c1bc8745c424933f91724b0c73d0fbd509b27ef05a07b9",
+      "shaders": 2
+    },
+    {
+      "file": "win32_30_nv7/gta_reflect.fxc",
+      "sha256": "7c45e9a50a8d80e0b9d8e0b25abdffa6e107e90ea9c23474f0951b42e81f10c5",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_reflect_decal.fxc",
+      "sha256": "c63c7ce21e41aec076db595a21d528ab0a8f1fef0f07b6534363babdaf096e23",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_rmptfx_gpurender.fxc",
+      "sha256": "d167a53891812d676ea9cc9f0fa7556a3c5139849a6c68044e1dd627b8ddfd1c",
+      "shaders": 4
+    },
+    {
+      "file": "win32_30_nv7/gta_rmptfx_litsprite.fxc",
+      "sha256": "96f6d88c45c6003d6b1c973c8e2bb808e6356c3b90dbd82c349f25b5706260ce",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_nv7/gta_rmptfx_mesh.fxc",
+      "sha256": "6758ce2d418e6d99e0ac1823f9a0da49d82b8b9d450be14c1d7ca9482a40339b",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_rmptfx_raindrops.fxc",
+      "sha256": "485716280c3c62a0f4fc786f4c9a9d9f235859d671564e775405f85ce064b49c",
+      "shaders": 6
+    },
+    {
+      "file": "win32_30_nv7/gta_spec.fxc",
+      "sha256": "ffbbcf68e4c6e93f7b98f76c2d78262ef08e2d350886c65c875019748e7c4180",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_spec_decal.fxc",
+      "sha256": "def2b55cb281e6014471122d479fab3fe5bedd383cf70a723d7862808ec5483e",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_spec_reflect.fxc",
+      "sha256": "2fa8753d669984c56894b4f12848f1524cfc9bd07518f3ef33ee1922117190fb",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_spec_reflect_decal.fxc",
+      "sha256": "0a8cbddfdca356750955ebbec5fe132e48288510f3e40e65372075bfb53b04dc",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/gta_terrain_va_2lyr.fxc",
+      "sha256": "742630b94d3bf5d9c0646e19454a069ff39f5c652205c976ea95cfd59d34d2de",
+      "shaders": 6
+    },
+    {
+      "file": "win32_30_nv7/gta_terrain_va_3lyr.fxc",
+      "sha256": "9bdd441710db748ac853f54fe4ba11b35440f1449028af49737d61fe3b7f1297",
+      "shaders": 8
+    },
+    {
+      "file": "win32_30_nv7/gta_terrain_va_4lyr.fxc",
+      "sha256": "cdf743df8c74c709bad8250abea44186adc4e5353d97baba6630c1f13d9446f4",
+      "shaders": 10
+    },
+    {
+      "file": "win32_30_nv7/gta_trees.fxc",
+      "sha256": "0b5fa02831249d5c3ce785a4037bd184d959d6e0f7ded450525b0cadfdb761e4",
+      "shaders": 12
+    },
+    {
+      "file": "win32_30_nv7/gta_vehicle_badges.fxc",
+      "sha256": "6636972da638537d3c9b8b836c5566294cd57cde11db9f4e8e8702e271fa8d9e",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30_nv7/gta_vehicle_basic.fxc",
+      "sha256": "e35681e16312aea83e17a968d97dcea6dba0799fc83d60a507d118ae5557f136",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv7/gta_vehicle_chrome.fxc",
+      "sha256": "0c7e47b3947ee8319acce9d906775c2da5677665dd23b3a510113e4c75e93e6c",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv7/gta_vehicle_disc.fxc",
+      "sha256": "45532056ce2b517ae9f91c77c11893a43e416420fbe6e818c5c2fdf3874795c8",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30_nv7/gta_vehicle_generic.fxc",
+      "sha256": "d9b1627d1269a24aca70e50c0b0a16d2fa6f8e3a608ff382616a140d610dec3b",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv7/gta_vehicle_interior.fxc",
+      "sha256": "91110a240b230a900aaa098352e7bbc208126501612019f6f0b37adad636c3e7",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv7/gta_vehicle_interior2.fxc",
+      "sha256": "a980fee1cc32f0f9bb136a47dc38b84bedf0ad298a85f0f854ea9431528edd81",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv7/gta_vehicle_lightsemissive.fxc",
+      "sha256": "ec72ade50a4e8e133e5c73d8bf80cc85999732632b8ad7ee2a5f7e3e3b4e2964",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv7/gta_vehicle_mesh.fxc",
+      "sha256": "ca45531c6d897174f5adf61027e7b81d185ca25a7038669bed0120491472ceb7",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv7/gta_vehicle_paint1.fxc",
+      "sha256": "4cb05fd05a11b12a66da9f3d4c3b2e0c134b1753a566af35d182f417c5905b94",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv7/gta_vehicle_paint2.fxc",
+      "sha256": "a20020230b59820035121e7378ad56e15a3b683416f27275a71a56df0089e20e",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv7/gta_vehicle_paint3.fxc",
+      "sha256": "9d9eb3c1017da8497f9c253518c63a12c6845919113799f55bca7c1ce03dd880",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv7/gta_vehicle_rims1.fxc",
+      "sha256": "b30d561cffe54089be031a1188d8d871ba702005e6e85a7237f32f1edfed0d8f",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv7/gta_vehicle_rims2.fxc",
+      "sha256": "aed9b619887a76cc0575b773557a89a06c9cdde4450ed4c23b66539d5deb5cca",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv7/gta_vehicle_rubber.fxc",
+      "sha256": "4fd783d4e6bf071aac7764e895f274b09804bc000adbb10e9fc9af761bd9cef2",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30_nv7/gta_vehicle_shuts.fxc",
+      "sha256": "d73895d921560839ed4020ddc6b109823084d7c369ee435fd86df967fc60c320",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30_nv7/gta_vehicle_tire.fxc",
+      "sha256": "0990f020cd15246b239e436648254a9cfa2376820304481982079bad2c38f63a",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv7/gta_vehicle_vehglass.fxc",
+      "sha256": "7abf91a1685fed1b8ae4b88a53db99624e561e6aa864ece960b6854decb09ff5",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30_nv7/gta_wire.fxc",
+      "sha256": "986a1791752025f9d638a4a1b6f407709baf22bcb3f64f33bfd334d336bc86a3",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv7/mirror.fxc",
+      "sha256": "e7b614c4f9276b2e82439c1bc895f49a0798e388896424c766281c55fa1507b2",
+      "shaders": 2
+    },
+    {
+      "file": "win32_30_nv7/rage_billboard_nobump.fxc",
+      "sha256": "06afa5690cb06573c662cf71f7c9829c56e6b193f23e17fd842a27d5c7475d87",
+      "shaders": 7
+    },
+    {
+      "file": "win32_30_nv7/rage_default.fxc",
+      "sha256": "ef9026c16120ab9581ba1c8b417d44427205a426d7f0bd6b7ff44c94ba6c95fe",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv7/rage_postfx.fxc",
+      "sha256": "b61e0ed4f30b11d3eda8e36faf7304879dedba114074bf24e73913bcc339bdac",
+      "shaders": 24
+    },
+    {
+      "file": "win32_30_nv7/shadowSmartBlit.fxc",
+      "sha256": "e3569e4ce5fe3499048d612e0373dbe9a089f0035a35932442e74cc8c0e3d399",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_nv7/shadowZ.fxc",
+      "sha256": "b771d8f8147f33f1be62c2f512e199df57328261f29ea35cc05796a72abe8846",
+      "shaders": 3
+    },
+    {
+      "file": "win32_30_nv7/shadowZDir.fxc",
+      "sha256": "9268e49229b869ac6e635354595840317bbb47d70e7145edc24296100e4633e2",
+      "shaders": 4
+    },
+    {
+      "file": "win32_30_nv7/water.fxc",
+      "sha256": "3533595a7e9a0e6bdf9ee7964ea179aeca3664fb2068783afe8af5d165eb8a17",
+      "shaders": 4
+    },
+    {
+      "file": "win32_30_nv7/waterTex.fxc",
+      "sha256": "1dc1bb7a3ab4ce2fee28ae63a06a4a20c96262eecd03e221c14787ad58874e51",
+      "shaders": 2
+    },
+    {
+      "file": "win32_30_nv8/deferred_lighting.fxc",
+      "sha256": "e93eb96fe27547fa01a161d4b729ef2e05406f8b7d00a3bcb9ac54dd3a493bd3",
+      "shaders": 62
+    },
+    {
+      "file": "win32_30_nv8/gta_atmoscatt_clouds.fxc",
+      "sha256": "4ed8303e98b9b4809053685eaf787bd516cdc7d4e537ba479084f1398448b97f",
+      "shaders": 18
+    },
+    {
+      "file": "win32_30_nv8/gta_cubemap_reflect.fxc",
+      "sha256": "80d0944e071107ce3822c9d9018c9f122382eb6e54636ba0548ce6b1c7c5ae7b",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_cutout_fence.fxc",
+      "sha256": "dc384e898aa2cf4aba5fc20cdaf3c9e515a06592435595c1ef7a5a3c8bd3bd87",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv8/gta_decal.fxc",
+      "sha256": "9ed141ed7cf4c381fc21cd4b2988ed16e53d853fb35d5f8b47365913c21d0f64",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_decal_amb_only.fxc",
+      "sha256": "b989ecd2005f1bcae57fa664077936faa54aaea45605dc7b0850889ac7fb990e",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv8/gta_decal_dirt.fxc",
+      "sha256": "47b63c055fad95f4a072bb912eea2327c6b2e57d0165f7cd8525ea5489291c59",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_decal_glue.fxc",
+      "sha256": "a481c5025795fe598a073fa545dbfa328cf36966e02cada383e2c4cc8c013e1c",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_decal_normal_only.fxc",
+      "sha256": "9f42dbaa698b2e0400c75e4c2a9be486df15d99f8eb75d89f53a37c359f209b4",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv8/gta_default.fxc",
+      "sha256": "6598d78eeb82429ebc632602d822e55dce10061002675030275bbd0d6f339a36",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv8/gta_diffuse_instance.fxc",
+      "sha256": "5373f33aa799dba182ff5a05728225512ae8984b8914614386b9fc595685be91",
+      "shaders": 10
+    },
+    {
+      "file": "win32_30_nv8/gta_emissive.fxc",
+      "sha256": "46c7eb3b8c21eb84855c4850a21e54bbdc38f5ad5af298c0400827fedbe9e144",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv8/gta_emissivenight.fxc",
+      "sha256": "1210625c0595129a6fd0628ab8976b515a156282679a6127babacf51b49b7b59",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv8/gta_emissivestrong.fxc",
+      "sha256": "7833c7c8f14acc86ebb244ef108530a757b9cbad102ca92b01573e760645aab4",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv8/gta_glass.fxc",
+      "sha256": "dae926336682214c785c23153879342148b1ded03918c06478d525395f0b16f1",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_glass_emissive.fxc",
+      "sha256": "0d040715d984e4590dba646e6e5277bf059577f6d9e9620a327f8856d9035154",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_glass_emissivenight.fxc",
+      "sha256": "8748a330384b8fae9e91ff3349c3455d8f8c10ef78a43e1beb2553f91dcab4c8",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_glass_normal_spec_reflect.fxc",
+      "sha256": "5147f154fd142b8aebe77c51e90309532a51af87c5b91858a86675b724f1883b",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_glass_reflect.fxc",
+      "sha256": "bd88153c8780357aa92d3d25b60ee9b973244d0ad364bd11372d09aeca2ad392",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_glass_spec.fxc",
+      "sha256": "d3a904cbe11e0c3f3e10a141b0fae07dd7875860bd600de65b60cd13e7171e4a",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_grass.fxc",
+      "sha256": "d807202503f38a47136c03daf2fa415e00d71c1d0e804ed34df91a7fd4e3b481",
+      "shaders": 3
+    },
+    {
+      "file": "win32_30_nv8/gta_hair_sorted_alpha.fxc",
+      "sha256": "8640ab30f46413114e4ec01161a9d945f002851c8c54663dfea5d1650d200590",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_nv8/gta_hair_sorted_alpha_exp.fxc",
+      "sha256": "dcc5fae0ba38d234e44e7dcc54e397c929954d73b57b4e9f7fc92725245fa33d",
+      "shaders": 12
+    },
+    {
+      "file": "win32_30_nv8/gta_im.fxc",
+      "sha256": "efe01ae94327e9d2047674fc843b59bd8fcab4965782f156c2dba87e0be6963e",
+      "shaders": 15
+    },
+    {
+      "file": "win32_30_nv8/gta_normal.fxc",
+      "sha256": "db60a9f1f380ee5de597fab49b536561485fb0b3ac65be7b84aa56ee0bd3a2d7",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv8/gta_normal_cubemap_reflect.fxc",
+      "sha256": "52867a4c7adf780f718f2f4920eada4c872e59c5c5bd814b47d6efc7405218b2",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_normal_decal.fxc",
+      "sha256": "8c73c14ada823da002a3ee50a535db2aeff68245b55c26b96daed0a1e592a59f",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv8/gta_normal_reflect.fxc",
+      "sha256": "7201c213a658c2eb962c9717d85af21005c2d7db26482e6166345e1d49538e82",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_normal_reflect_alpha.fxc",
+      "sha256": "237ca903446e38377a2b1fc8e50de2fc5b1ab0ca798d3f2cf79382fcf2b2fabd",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_normal_reflect_decal.fxc",
+      "sha256": "5058b0b2d8ddc089f67f38b6d05a2eb2a8b2c1c67d91a5aa4ed85844eaf4ffc5",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_normal_spec.fxc",
+      "sha256": "ffecae45b05b86a9033a49032cec59e94a228d0d5f91ef35dd26fb293549a06b",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv8/gta_normal_spec_cubemap_reflect.fxc",
+      "sha256": "d89fc09c11a1bff76dd86fd8fb8b800759d3603a826b129096ea1601a49d40ae",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_normal_spec_decal.fxc",
+      "sha256": "0599a2f23b03abd69da4a1c48f712e7a88bb8d80b6ff5bdab3acccd0039880ca",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv8/gta_normal_spec_reflect.fxc",
+      "sha256": "41046d8699b2101c9abbacf030a76cb172b331da8fb3f7b2f35bdf98df241591",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_normal_spec_reflect_decal.fxc",
+      "sha256": "2bf9efda3eaccf778dc6f5b575a9461bdf5cf92a3c0bed785aa409803e820353",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_normal_spec_reflect_emissive.fxc",
+      "sha256": "4fc40fbcafbb23d9aeae908d464a7dabfa8ad11a320bc1316a4c627d6c9054be",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_normal_spec_reflect_emissivenight.fxc",
+      "sha256": "4120a6a4bddb992a6054ec53c82ff0cce130842992bab53281c0d14e4461ccd0",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_parallax.fxc",
+      "sha256": "e71dee3a030bf51ac837f6b37ca9091de55349ecba4ce1df9500553a28850fee",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_parallax_specmap.fxc",
+      "sha256": "ddc22dd61effdb8dacb15c53afd49ce283b843865a491d0cb26f6c9f359752c6",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_parallax_steep.fxc",
+      "sha256": "a558b22471e25ea15338e04927e43b9e4bc7264eb7cd4bdd0633f37a3ca882ca",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_ped.fxc",
+      "sha256": "1a03abce5b592ea1a16f074bfada6c0444f98c27c952f372bd29c940a2264314",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_nv8/gta_ped_face.fxc",
+      "sha256": "415dd510aaa0141195e4117b2ede34030b70cb0a38aa6a5cb1e0118d13365987",
+      "shaders": 2
+    },
+    {
+      "file": "win32_30_nv8/gta_ped_reflect.fxc",
+      "sha256": "8d909154cfdb4a4133b85c6ac2e160c4eac3ff6d5b99550b0a4527d3965cbc53",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_nv8/gta_ped_skin.fxc",
+      "sha256": "9c67665bc33b54479c0d31cca14ab76e0df00b584bb70655e440c75fb1f46aed",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_nv8/gta_ped_skin_blendshape.fxc",
+      "sha256": "c76b666bad76739122d1cf819aba1be1338be63ca98612dafeb3bd5329e0ef15",
+      "shaders": 15
+    },
+    {
+      "file": "win32_30_nv8/gta_projtex.fxc",
+      "sha256": "dc82a6d717eff1fb2825552c79dcc0ddf631577ac259fe56791530a7f2061457",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_projtex_steep.fxc",
+      "sha256": "d2d49eca4b8b4072074b7d339b5c0ce595c471bdbfb3cc4c4c08109854c6c133",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_radar.fxc",
+      "sha256": "dba32dc3b3a178cb81c1bc8745c424933f91724b0c73d0fbd509b27ef05a07b9",
+      "shaders": 2
+    },
+    {
+      "file": "win32_30_nv8/gta_reflect.fxc",
+      "sha256": "291ea3fa20e64cacd0e27f5ccca1a856c1f08286c04f53fb029ff79073f9dc0f",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_reflect_decal.fxc",
+      "sha256": "0f44dfbfd2563ef5c27b59bad58162a9b249a4f0e0770442d83dccc9745770a1",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_rmptfx_gpurender.fxc",
+      "sha256": "d167a53891812d676ea9cc9f0fa7556a3c5139849a6c68044e1dd627b8ddfd1c",
+      "shaders": 4
+    },
+    {
+      "file": "win32_30_nv8/gta_rmptfx_litsprite.fxc",
+      "sha256": "2ca2d6448bdd68e03efaa4a2ef3e6be3d365235f7df7a9ef2625b40900da1747",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_nv8/gta_rmptfx_mesh.fxc",
+      "sha256": "39ff159cd7663f09ba9774bea8825666919ac9347bb309ad0ad1c5475d07774b",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_rmptfx_raindrops.fxc",
+      "sha256": "70fd69d2f016ea3caf2026541bec738feedb1823cf0736310cafdcc525bc3a6a",
+      "shaders": 6
+    },
+    {
+      "file": "win32_30_nv8/gta_spec.fxc",
+      "sha256": "a51c58e15f734fad5a82a54c42d0c8112f520636f2714ede4a45aaac61c653a7",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_spec_decal.fxc",
+      "sha256": "df0e1f4a85827655d2aa3d296e122371a2a9f0baef4c507a3c130e3f5ff4b9c2",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_spec_reflect.fxc",
+      "sha256": "a86442051c56690c83b2360781a515db4e81e6a79b4866aa294be4f8a387193e",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_spec_reflect_decal.fxc",
+      "sha256": "e2e34e3c7c4f5dda05ca17f24d5022ce5734223e50c65bfca6008e3e257bf5ad",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/gta_terrain_va_2lyr.fxc",
+      "sha256": "2ea598228c2f5586a83a7cab1e8f060d9c6df97f7e326f68b4f7e5ba1a5dbc6f",
+      "shaders": 6
+    },
+    {
+      "file": "win32_30_nv8/gta_terrain_va_3lyr.fxc",
+      "sha256": "85be2666d3d4645d53be472f5090dea6839f34fc73bb45fc4d483cb4a020ad22",
+      "shaders": 8
+    },
+    {
+      "file": "win32_30_nv8/gta_terrain_va_4lyr.fxc",
+      "sha256": "54dca74336941e15efc9db083a3685e9baee5ebf138396312a47cef59d64f0ca",
+      "shaders": 10
+    },
+    {
+      "file": "win32_30_nv8/gta_trees.fxc",
+      "sha256": "0b5fa02831249d5c3ce785a4037bd184d959d6e0f7ded450525b0cadfdb761e4",
+      "shaders": 12
+    },
+    {
+      "file": "win32_30_nv8/gta_vehicle_badges.fxc",
+      "sha256": "20dac5f6e8e54585a92b590a963c93c5f95789b4222da572b75351291f38ee24",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30_nv8/gta_vehicle_basic.fxc",
+      "sha256": "c5e287a51c03bbec1af4d1524a4e98b80253fbc340cd0b2802769f2573c58a7a",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv8/gta_vehicle_chrome.fxc",
+      "sha256": "759cfd188b922c53108311663e0431a36619e75fb01d27c89059c408e07210a7",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv8/gta_vehicle_disc.fxc",
+      "sha256": "f5289b043e2acde899157e30fc1966a017f03992648b3f86816ba48feb1e23de",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30_nv8/gta_vehicle_generic.fxc",
+      "sha256": "b10c472e0aad4d876a90c9e8d115415e67d4d1c81bd16d44552a1804d36be327",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv8/gta_vehicle_interior.fxc",
+      "sha256": "0d495a4ffd156afda18c20c2a52a111507153270b673bd38cd18e9c69c00caf5",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv8/gta_vehicle_interior2.fxc",
+      "sha256": "1b02fe8faf204ec8dc66dc35c797d6dffe74fc83c67f942b926b5daa6d1e84f6",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv8/gta_vehicle_lightsemissive.fxc",
+      "sha256": "b1bb7eb58c1e4e771740366f17a26c32efb7aa154643b6d750f47524756c579c",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv8/gta_vehicle_mesh.fxc",
+      "sha256": "c9b2b2f5cb942a93f3a3ef38e69e516c63a74642c47b273b4a50619343e87b97",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv8/gta_vehicle_paint1.fxc",
+      "sha256": "73677c0ba158e740bb0b10063f70ca181f9c92ef7b10750f99d0a06023c3a4f3",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv8/gta_vehicle_paint2.fxc",
+      "sha256": "79cf566226b165179b61d8c025aa387ea81c4a940dba933bfb9ff9f7b7b795fe",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv8/gta_vehicle_paint3.fxc",
+      "sha256": "ac390289a86d4d4b6e9edead70f650977b2fcc287cdd6c525cf56477340c939e",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv8/gta_vehicle_rims1.fxc",
+      "sha256": "58f6529a287366b0b157e763383e5c839ce006cc698a1660a904f914dab28084",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv8/gta_vehicle_rims2.fxc",
+      "sha256": "a5718b9bb62c1ca403dfd761dbd955cd52494cee3f7f32a84d228dfdd951e4b5",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv8/gta_vehicle_rubber.fxc",
+      "sha256": "45ac0f519c03954a4995e2dacba68e832689fe6e612f05fd6d7d2b1870e8490f",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30_nv8/gta_vehicle_shuts.fxc",
+      "sha256": "95bf9b1708130b067a7e7b231c01bbb983143bf84b682f9ab3cc7c632faa1789",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30_nv8/gta_vehicle_tire.fxc",
+      "sha256": "af9ac775d9f67ca184aa563f30f4ff456b3e247249fba225c40510b35be6d098",
+      "shaders": 17
+    },
+    {
+      "file": "win32_30_nv8/gta_vehicle_vehglass.fxc",
+      "sha256": "d4451417595b207e98d0b4daef9a57a4eed120a92bba58401036d394f2aec42c",
+      "shaders": 13
+    },
+    {
+      "file": "win32_30_nv8/gta_wire.fxc",
+      "sha256": "16232a4e30fb6548609719c3541e8a2e3d93398f40c9557b50c6e41641761c53",
+      "shaders": 23
+    },
+    {
+      "file": "win32_30_nv8/mirror.fxc",
+      "sha256": "e7b614c4f9276b2e82439c1bc895f49a0798e388896424c766281c55fa1507b2",
+      "shaders": 2
+    },
+    {
+      "file": "win32_30_nv8/rage_billboard_nobump.fxc",
+      "sha256": "06afa5690cb06573c662cf71f7c9829c56e6b193f23e17fd842a27d5c7475d87",
+      "shaders": 7
+    },
+    {
+      "file": "win32_30_nv8/rage_default.fxc",
+      "sha256": "aa0ff2d6054b109cd95835633ed2f756964eb4994a44b2035c3968170bdfdea3",
+      "shaders": 22
+    },
+    {
+      "file": "win32_30_nv8/rage_postfx.fxc",
+      "sha256": "d2c1bb4af552fcee259da3fa3dc9938f1fe3aad92b6e8009c185ad538e6b0ac1",
+      "shaders": 24
+    },
+    {
+      "file": "win32_30_nv8/shadowSmartBlit.fxc",
+      "sha256": "b4bbfe84e4b33401d32cf68cd11b32cddbee3d62056afa3c65b468dc7ad06dd9",
+      "shaders": 11
+    },
+    {
+      "file": "win32_30_nv8/shadowZ.fxc",
+      "sha256": "b771d8f8147f33f1be62c2f512e199df57328261f29ea35cc05796a72abe8846",
+      "shaders": 3
+    },
+    {
+      "file": "win32_30_nv8/shadowZDir.fxc",
+      "sha256": "9268e49229b869ac6e635354595840317bbb47d70e7145edc24296100e4633e2",
+      "shaders": 4
+    },
+    {
+      "file": "win32_30_nv8/water.fxc",
+      "sha256": "a118625b5834ab86d85d3f62a474616033a77576e0d519dbcec6aaae8cafe7b5",
+      "shaders": 4
+    },
+    {
+      "file": "win32_30_nv8/waterTex.fxc",
+      "sha256": "1dc1bb7a3ab4ce2fee28ae63a06a4a20c96262eecd03e221c14787ad58874e51",
+      "shaders": 2
+    }
+  ],
+  "shader_count": 9316,
+  "postfx_recognized_hashes": [
+    "7BC57CE4",
+    "7D9A776E",
+    "AA1C0C36",
+    "B2497014",
+    "C215BE6E",
+    "C50103F3"
+  ],
+  "postfx_matches": [
+    {
+      "file": "win32_30/rage_postfx.fxc",
+      "index": 13,
+      "stage": "ps",
+      "enb_hash": "C215BE6E",
+      "size": 3688,
+      "hashed_bytes": 3684,
+      "shader_sha256": "efb5ef6ca1c345390a94a8dbc556cf6f93ce393d74c5946a8ceb72aa01e58354"
+    },
+    {
+      "file": "win32_30/rage_postfx.fxc",
+      "index": 15,
+      "stage": "ps",
+      "enb_hash": "C50103F3",
+      "size": 3824,
+      "hashed_bytes": 3820,
+      "shader_sha256": "85d5a3d871393fb93055f7dbebd91b3820e2581b3c451652bc57831c02f8d053"
+    },
+    {
+      "file": "win32_30/rage_postfx.fxc",
+      "index": 17,
+      "stage": "ps",
+      "enb_hash": "7D9A776E",
+      "size": 3704,
+      "hashed_bytes": 3700,
+      "shader_sha256": "5115c193d0b1eeef0add709b7aca9e590f58c5d416f525e64ca0e71d92e94a8a"
+    },
+    {
+      "file": "win32_30/rage_postfx.fxc",
+      "index": 19,
+      "stage": "ps",
+      "enb_hash": "B2497014",
+      "size": 3840,
+      "hashed_bytes": 3836,
+      "shader_sha256": "6ef3634fa9c08051e3a73613183fc27a51291e4cafbc2925461a7c78841781de"
+    },
+    {
+      "file": "win32_30_atidx10/rage_postfx.fxc",
+      "index": 13,
+      "stage": "ps",
+      "enb_hash": "C215BE6E",
+      "size": 3688,
+      "hashed_bytes": 3684,
+      "shader_sha256": "efb5ef6ca1c345390a94a8dbc556cf6f93ce393d74c5946a8ceb72aa01e58354"
+    },
+    {
+      "file": "win32_30_atidx10/rage_postfx.fxc",
+      "index": 15,
+      "stage": "ps",
+      "enb_hash": "C50103F3",
+      "size": 3824,
+      "hashed_bytes": 3820,
+      "shader_sha256": "85d5a3d871393fb93055f7dbebd91b3820e2581b3c451652bc57831c02f8d053"
+    },
+    {
+      "file": "win32_30_atidx10/rage_postfx.fxc",
+      "index": 17,
+      "stage": "ps",
+      "enb_hash": "7D9A776E",
+      "size": 3704,
+      "hashed_bytes": 3700,
+      "shader_sha256": "5115c193d0b1eeef0add709b7aca9e590f58c5d416f525e64ca0e71d92e94a8a"
+    },
+    {
+      "file": "win32_30_atidx10/rage_postfx.fxc",
+      "index": 19,
+      "stage": "ps",
+      "enb_hash": "B2497014",
+      "size": 3840,
+      "hashed_bytes": 3836,
+      "shader_sha256": "6ef3634fa9c08051e3a73613183fc27a51291e4cafbc2925461a7c78841781de"
+    },
+    {
+      "file": "win32_30_low_ati/rage_postfx.fxc",
+      "index": 13,
+      "stage": "ps",
+      "enb_hash": "C215BE6E",
+      "size": 3688,
+      "hashed_bytes": 3684,
+      "shader_sha256": "efb5ef6ca1c345390a94a8dbc556cf6f93ce393d74c5946a8ceb72aa01e58354"
+    },
+    {
+      "file": "win32_30_low_ati/rage_postfx.fxc",
+      "index": 15,
+      "stage": "ps",
+      "enb_hash": "C50103F3",
+      "size": 3824,
+      "hashed_bytes": 3820,
+      "shader_sha256": "85d5a3d871393fb93055f7dbebd91b3820e2581b3c451652bc57831c02f8d053"
+    },
+    {
+      "file": "win32_30_low_ati/rage_postfx.fxc",
+      "index": 17,
+      "stage": "ps",
+      "enb_hash": "7D9A776E",
+      "size": 3704,
+      "hashed_bytes": 3700,
+      "shader_sha256": "5115c193d0b1eeef0add709b7aca9e590f58c5d416f525e64ca0e71d92e94a8a"
+    },
+    {
+      "file": "win32_30_low_ati/rage_postfx.fxc",
+      "index": 19,
+      "stage": "ps",
+      "enb_hash": "B2497014",
+      "size": 3840,
+      "hashed_bytes": 3836,
+      "shader_sha256": "6ef3634fa9c08051e3a73613183fc27a51291e4cafbc2925461a7c78841781de"
+    },
+    {
+      "file": "win32_30_nv8/rage_postfx.fxc",
+      "index": 13,
+      "stage": "ps",
+      "enb_hash": "C215BE6E",
+      "size": 3688,
+      "hashed_bytes": 3684,
+      "shader_sha256": "efb5ef6ca1c345390a94a8dbc556cf6f93ce393d74c5946a8ceb72aa01e58354"
+    },
+    {
+      "file": "win32_30_nv8/rage_postfx.fxc",
+      "index": 15,
+      "stage": "ps",
+      "enb_hash": "C50103F3",
+      "size": 3824,
+      "hashed_bytes": 3820,
+      "shader_sha256": "85d5a3d871393fb93055f7dbebd91b3820e2581b3c451652bc57831c02f8d053"
+    },
+    {
+      "file": "win32_30_nv8/rage_postfx.fxc",
+      "index": 17,
+      "stage": "ps",
+      "enb_hash": "7D9A776E",
+      "size": 3704,
+      "hashed_bytes": 3700,
+      "shader_sha256": "5115c193d0b1eeef0add709b7aca9e590f58c5d416f525e64ca0e71d92e94a8a"
+    },
+    {
+      "file": "win32_30_nv8/rage_postfx.fxc",
+      "index": 19,
+      "stage": "ps",
+      "enb_hash": "B2497014",
+      "size": 3840,
+      "hashed_bytes": 3836,
+      "shader_sha256": "6ef3634fa9c08051e3a73613183fc27a51291e4cafbc2925461a7c78841781de"
+    }
+  ],
+  "shaderinput_matches": {
+    "psh0cbf49c5.txt": [
+      {
+        "file": "win32_30/gta_terrain_va_2lyr.fxc",
+        "index": 5,
+        "stage": "ps",
+        "enb_hash": "0CBF49C5",
+        "size": 576,
+        "hashed_bytes": 572,
+        "shader_sha256": "4b374ca606aa4f68b4a22f07e470c5b0905c6c4282e33e455ce9397e9c9660b9"
+      },
+      {
+        "file": "win32_30_atidx10/gta_terrain_va_2lyr.fxc",
+        "index": 5,
+        "stage": "ps",
+        "enb_hash": "0CBF49C5",
+        "size": 576,
+        "hashed_bytes": 572,
+        "shader_sha256": "4b374ca606aa4f68b4a22f07e470c5b0905c6c4282e33e455ce9397e9c9660b9"
+      },
+      {
+        "file": "win32_30_low_ati/gta_terrain_va_2lyr.fxc",
+        "index": 5,
+        "stage": "ps",
+        "enb_hash": "0CBF49C5",
+        "size": 576,
+        "hashed_bytes": 572,
+        "shader_sha256": "4b374ca606aa4f68b4a22f07e470c5b0905c6c4282e33e455ce9397e9c9660b9"
+      },
+      {
+        "file": "win32_30_nv6/gta_terrain_va_2lyr.fxc",
+        "index": 5,
+        "stage": "ps",
+        "enb_hash": "0CBF49C5",
+        "size": 576,
+        "hashed_bytes": 572,
+        "shader_sha256": "4b374ca606aa4f68b4a22f07e470c5b0905c6c4282e33e455ce9397e9c9660b9"
+      },
+      {
+        "file": "win32_30_nv7/gta_terrain_va_2lyr.fxc",
+        "index": 5,
+        "stage": "ps",
+        "enb_hash": "0CBF49C5",
+        "size": 576,
+        "hashed_bytes": 572,
+        "shader_sha256": "4b374ca606aa4f68b4a22f07e470c5b0905c6c4282e33e455ce9397e9c9660b9"
+      },
+      {
+        "file": "win32_30_nv8/gta_terrain_va_2lyr.fxc",
+        "index": 5,
+        "stage": "ps",
+        "enb_hash": "0CBF49C5",
+        "size": 576,
+        "hashed_bytes": 572,
+        "shader_sha256": "4b374ca606aa4f68b4a22f07e470c5b0905c6c4282e33e455ce9397e9c9660b9"
+      }
+    ],
+    "psh22dcdb69.txt": [
+      {
+        "file": "win32_30/rage_postfx.fxc",
+        "index": 12,
+        "stage": "ps",
+        "enb_hash": "22DCDB69",
+        "size": 2268,
+        "hashed_bytes": 2264,
+        "shader_sha256": "41d6bc76f8f62838b3b7268268dabc253ab7c35314d89cb370dc764ff5959794"
+      },
+      {
+        "file": "win32_30_atidx10/rage_postfx.fxc",
+        "index": 12,
+        "stage": "ps",
+        "enb_hash": "22DCDB69",
+        "size": 2268,
+        "hashed_bytes": 2264,
+        "shader_sha256": "41d6bc76f8f62838b3b7268268dabc253ab7c35314d89cb370dc764ff5959794"
+      },
+      {
+        "file": "win32_30_low_ati/rage_postfx.fxc",
+        "index": 12,
+        "stage": "ps",
+        "enb_hash": "22DCDB69",
+        "size": 2268,
+        "hashed_bytes": 2264,
+        "shader_sha256": "41d6bc76f8f62838b3b7268268dabc253ab7c35314d89cb370dc764ff5959794"
+      },
+      {
+        "file": "win32_30_nv8/rage_postfx.fxc",
+        "index": 12,
+        "stage": "ps",
+        "enb_hash": "22DCDB69",
+        "size": 2268,
+        "hashed_bytes": 2264,
+        "shader_sha256": "41d6bc76f8f62838b3b7268268dabc253ab7c35314d89cb370dc764ff5959794"
+      }
+    ],
+    "psh2df967c6.txt": [
+      {
+        "file": "win32_30/gta_cutout_fence.fxc",
+        "index": 14,
+        "stage": "ps",
+        "enb_hash": "2DF967C6",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "0e955b7ececcfde81e0a355d7152da4eaee7aa42e39f65bbf083acff20a686b2"
+      },
+      {
+        "file": "win32_30/gta_default.fxc",
+        "index": 14,
+        "stage": "ps",
+        "enb_hash": "2DF967C6",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "0e955b7ececcfde81e0a355d7152da4eaee7aa42e39f65bbf083acff20a686b2"
+      },
+      {
+        "file": "win32_30/gta_wire.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "2DF967C6",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "0e955b7ececcfde81e0a355d7152da4eaee7aa42e39f65bbf083acff20a686b2"
+      },
+      {
+        "file": "win32_30/gta_wire.fxc",
+        "index": 14,
+        "stage": "ps",
+        "enb_hash": "2DF967C6",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "0e955b7ececcfde81e0a355d7152da4eaee7aa42e39f65bbf083acff20a686b2"
+      },
+      {
+        "file": "win32_30_atidx10/gta_cutout_fence.fxc",
+        "index": 14,
+        "stage": "ps",
+        "enb_hash": "2DF967C6",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "0e955b7ececcfde81e0a355d7152da4eaee7aa42e39f65bbf083acff20a686b2"
+      },
+      {
+        "file": "win32_30_atidx10/gta_default.fxc",
+        "index": 14,
+        "stage": "ps",
+        "enb_hash": "2DF967C6",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "0e955b7ececcfde81e0a355d7152da4eaee7aa42e39f65bbf083acff20a686b2"
+      },
+      {
+        "file": "win32_30_atidx10/gta_wire.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "2DF967C6",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "0e955b7ececcfde81e0a355d7152da4eaee7aa42e39f65bbf083acff20a686b2"
+      },
+      {
+        "file": "win32_30_atidx10/gta_wire.fxc",
+        "index": 14,
+        "stage": "ps",
+        "enb_hash": "2DF967C6",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "0e955b7ececcfde81e0a355d7152da4eaee7aa42e39f65bbf083acff20a686b2"
+      },
+      {
+        "file": "win32_30_low_ati/gta_cutout_fence.fxc",
+        "index": 14,
+        "stage": "ps",
+        "enb_hash": "2DF967C6",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "0e955b7ececcfde81e0a355d7152da4eaee7aa42e39f65bbf083acff20a686b2"
+      },
+      {
+        "file": "win32_30_low_ati/gta_default.fxc",
+        "index": 14,
+        "stage": "ps",
+        "enb_hash": "2DF967C6",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "0e955b7ececcfde81e0a355d7152da4eaee7aa42e39f65bbf083acff20a686b2"
+      },
+      {
+        "file": "win32_30_low_ati/gta_wire.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "2DF967C6",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "0e955b7ececcfde81e0a355d7152da4eaee7aa42e39f65bbf083acff20a686b2"
+      },
+      {
+        "file": "win32_30_low_ati/gta_wire.fxc",
+        "index": 14,
+        "stage": "ps",
+        "enb_hash": "2DF967C6",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "0e955b7ececcfde81e0a355d7152da4eaee7aa42e39f65bbf083acff20a686b2"
+      },
+      {
+        "file": "win32_30_nv6/gta_cutout_fence.fxc",
+        "index": 14,
+        "stage": "ps",
+        "enb_hash": "2DF967C6",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "0e955b7ececcfde81e0a355d7152da4eaee7aa42e39f65bbf083acff20a686b2"
+      },
+      {
+        "file": "win32_30_nv6/gta_default.fxc",
+        "index": 14,
+        "stage": "ps",
+        "enb_hash": "2DF967C6",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "0e955b7ececcfde81e0a355d7152da4eaee7aa42e39f65bbf083acff20a686b2"
+      },
+      {
+        "file": "win32_30_nv6/gta_wire.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "2DF967C6",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "0e955b7ececcfde81e0a355d7152da4eaee7aa42e39f65bbf083acff20a686b2"
+      },
+      {
+        "file": "win32_30_nv6/gta_wire.fxc",
+        "index": 14,
+        "stage": "ps",
+        "enb_hash": "2DF967C6",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "0e955b7ececcfde81e0a355d7152da4eaee7aa42e39f65bbf083acff20a686b2"
+      },
+      {
+        "file": "win32_30_nv7/gta_cutout_fence.fxc",
+        "index": 14,
+        "stage": "ps",
+        "enb_hash": "2DF967C6",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "0e955b7ececcfde81e0a355d7152da4eaee7aa42e39f65bbf083acff20a686b2"
+      },
+      {
+        "file": "win32_30_nv7/gta_default.fxc",
+        "index": 14,
+        "stage": "ps",
+        "enb_hash": "2DF967C6",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "0e955b7ececcfde81e0a355d7152da4eaee7aa42e39f65bbf083acff20a686b2"
+      },
+      {
+        "file": "win32_30_nv7/gta_wire.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "2DF967C6",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "0e955b7ececcfde81e0a355d7152da4eaee7aa42e39f65bbf083acff20a686b2"
+      },
+      {
+        "file": "win32_30_nv7/gta_wire.fxc",
+        "index": 14,
+        "stage": "ps",
+        "enb_hash": "2DF967C6",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "0e955b7ececcfde81e0a355d7152da4eaee7aa42e39f65bbf083acff20a686b2"
+      },
+      {
+        "file": "win32_30_nv8/gta_cutout_fence.fxc",
+        "index": 14,
+        "stage": "ps",
+        "enb_hash": "2DF967C6",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "0e955b7ececcfde81e0a355d7152da4eaee7aa42e39f65bbf083acff20a686b2"
+      },
+      {
+        "file": "win32_30_nv8/gta_default.fxc",
+        "index": 14,
+        "stage": "ps",
+        "enb_hash": "2DF967C6",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "0e955b7ececcfde81e0a355d7152da4eaee7aa42e39f65bbf083acff20a686b2"
+      },
+      {
+        "file": "win32_30_nv8/gta_wire.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "2DF967C6",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "0e955b7ececcfde81e0a355d7152da4eaee7aa42e39f65bbf083acff20a686b2"
+      },
+      {
+        "file": "win32_30_nv8/gta_wire.fxc",
+        "index": 14,
+        "stage": "ps",
+        "enb_hash": "2DF967C6",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "0e955b7ececcfde81e0a355d7152da4eaee7aa42e39f65bbf083acff20a686b2"
+      }
+    ],
+    "psh323e9bb8.txt": [
+      {
+        "file": "win32_30/gta_cutout_fence.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "323E9BB8",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "e0fcd61ba6036d1d946f1f870a4d5975aec12b8f86c6e91b8b212fb612ba511d"
+      },
+      {
+        "file": "win32_30/gta_default.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "323E9BB8",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "e0fcd61ba6036d1d946f1f870a4d5975aec12b8f86c6e91b8b212fb612ba511d"
+      },
+      {
+        "file": "win32_30_atidx10/gta_cutout_fence.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "323E9BB8",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "e0fcd61ba6036d1d946f1f870a4d5975aec12b8f86c6e91b8b212fb612ba511d"
+      },
+      {
+        "file": "win32_30_atidx10/gta_default.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "323E9BB8",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "e0fcd61ba6036d1d946f1f870a4d5975aec12b8f86c6e91b8b212fb612ba511d"
+      },
+      {
+        "file": "win32_30_low_ati/gta_cutout_fence.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "323E9BB8",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "e0fcd61ba6036d1d946f1f870a4d5975aec12b8f86c6e91b8b212fb612ba511d"
+      },
+      {
+        "file": "win32_30_low_ati/gta_default.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "323E9BB8",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "e0fcd61ba6036d1d946f1f870a4d5975aec12b8f86c6e91b8b212fb612ba511d"
+      },
+      {
+        "file": "win32_30_nv6/gta_cutout_fence.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "323E9BB8",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "e0fcd61ba6036d1d946f1f870a4d5975aec12b8f86c6e91b8b212fb612ba511d"
+      },
+      {
+        "file": "win32_30_nv6/gta_default.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "323E9BB8",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "e0fcd61ba6036d1d946f1f870a4d5975aec12b8f86c6e91b8b212fb612ba511d"
+      },
+      {
+        "file": "win32_30_nv7/gta_cutout_fence.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "323E9BB8",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "e0fcd61ba6036d1d946f1f870a4d5975aec12b8f86c6e91b8b212fb612ba511d"
+      },
+      {
+        "file": "win32_30_nv7/gta_default.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "323E9BB8",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "e0fcd61ba6036d1d946f1f870a4d5975aec12b8f86c6e91b8b212fb612ba511d"
+      },
+      {
+        "file": "win32_30_nv8/gta_cutout_fence.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "323E9BB8",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "e0fcd61ba6036d1d946f1f870a4d5975aec12b8f86c6e91b8b212fb612ba511d"
+      },
+      {
+        "file": "win32_30_nv8/gta_default.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "323E9BB8",
+        "size": 836,
+        "hashed_bytes": 832,
+        "shader_sha256": "e0fcd61ba6036d1d946f1f870a4d5975aec12b8f86c6e91b8b212fb612ba511d"
+      }
+    ],
+    "psh405abc1b.txt": [
+      {
+        "file": "win32_30/gta_terrain_va_3lyr.fxc",
+        "index": 7,
+        "stage": "ps",
+        "enb_hash": "405ABC1B",
+        "size": 696,
+        "hashed_bytes": 692,
+        "shader_sha256": "7df8520badcab36b702576085d823e5ec08427e9cdc88f3f7b99afba0ee0ce75"
+      },
+      {
+        "file": "win32_30_atidx10/gta_terrain_va_3lyr.fxc",
+        "index": 7,
+        "stage": "ps",
+        "enb_hash": "405ABC1B",
+        "size": 696,
+        "hashed_bytes": 692,
+        "shader_sha256": "7df8520badcab36b702576085d823e5ec08427e9cdc88f3f7b99afba0ee0ce75"
+      },
+      {
+        "file": "win32_30_low_ati/gta_terrain_va_3lyr.fxc",
+        "index": 7,
+        "stage": "ps",
+        "enb_hash": "405ABC1B",
+        "size": 696,
+        "hashed_bytes": 692,
+        "shader_sha256": "7df8520badcab36b702576085d823e5ec08427e9cdc88f3f7b99afba0ee0ce75"
+      },
+      {
+        "file": "win32_30_nv6/gta_terrain_va_3lyr.fxc",
+        "index": 7,
+        "stage": "ps",
+        "enb_hash": "405ABC1B",
+        "size": 696,
+        "hashed_bytes": 692,
+        "shader_sha256": "7df8520badcab36b702576085d823e5ec08427e9cdc88f3f7b99afba0ee0ce75"
+      },
+      {
+        "file": "win32_30_nv7/gta_terrain_va_3lyr.fxc",
+        "index": 7,
+        "stage": "ps",
+        "enb_hash": "405ABC1B",
+        "size": 696,
+        "hashed_bytes": 692,
+        "shader_sha256": "7df8520badcab36b702576085d823e5ec08427e9cdc88f3f7b99afba0ee0ce75"
+      },
+      {
+        "file": "win32_30_nv8/gta_terrain_va_3lyr.fxc",
+        "index": 7,
+        "stage": "ps",
+        "enb_hash": "405ABC1B",
+        "size": 696,
+        "hashed_bytes": 692,
+        "shader_sha256": "7df8520badcab36b702576085d823e5ec08427e9cdc88f3f7b99afba0ee0ce75"
+      }
+    ],
+    "psh46a43a9f.txt": [
+      {
+        "file": "win32_30/rage_billboard_nobump.fxc",
+        "index": 4,
+        "stage": "ps",
+        "enb_hash": "46A43A9F",
+        "size": 452,
+        "hashed_bytes": 448,
+        "shader_sha256": "f1ff8d265895e21273fdad0c962ba8e196daf8854214fe6f3dacf5db7caa4a51"
+      },
+      {
+        "file": "win32_30_atidx10/rage_billboard_nobump.fxc",
+        "index": 4,
+        "stage": "ps",
+        "enb_hash": "46A43A9F",
+        "size": 452,
+        "hashed_bytes": 448,
+        "shader_sha256": "f1ff8d265895e21273fdad0c962ba8e196daf8854214fe6f3dacf5db7caa4a51"
+      },
+      {
+        "file": "win32_30_low_ati/rage_billboard_nobump.fxc",
+        "index": 4,
+        "stage": "ps",
+        "enb_hash": "46A43A9F",
+        "size": 452,
+        "hashed_bytes": 448,
+        "shader_sha256": "f1ff8d265895e21273fdad0c962ba8e196daf8854214fe6f3dacf5db7caa4a51"
+      },
+      {
+        "file": "win32_30_nv6/rage_billboard_nobump.fxc",
+        "index": 4,
+        "stage": "ps",
+        "enb_hash": "46A43A9F",
+        "size": 452,
+        "hashed_bytes": 448,
+        "shader_sha256": "f1ff8d265895e21273fdad0c962ba8e196daf8854214fe6f3dacf5db7caa4a51"
+      },
+      {
+        "file": "win32_30_nv7/rage_billboard_nobump.fxc",
+        "index": 4,
+        "stage": "ps",
+        "enb_hash": "46A43A9F",
+        "size": 452,
+        "hashed_bytes": 448,
+        "shader_sha256": "f1ff8d265895e21273fdad0c962ba8e196daf8854214fe6f3dacf5db7caa4a51"
+      },
+      {
+        "file": "win32_30_nv8/rage_billboard_nobump.fxc",
+        "index": 4,
+        "stage": "ps",
+        "enb_hash": "46A43A9F",
+        "size": 452,
+        "hashed_bytes": 448,
+        "shader_sha256": "f1ff8d265895e21273fdad0c962ba8e196daf8854214fe6f3dacf5db7caa4a51"
+      }
+    ],
+    "psh71cc11cf.txt": [
+      {
+        "file": "win32_30/gta_grass.fxc",
+        "index": 2,
+        "stage": "ps",
+        "enb_hash": "71CC11CF",
+        "size": 800,
+        "hashed_bytes": 796,
+        "shader_sha256": "55ac9e98c57e847be8e45cc48424cd05b48848a15f6fa556aeba9b19aa95b2fc"
+      },
+      {
+        "file": "win32_30_atidx10/gta_grass.fxc",
+        "index": 2,
+        "stage": "ps",
+        "enb_hash": "71CC11CF",
+        "size": 800,
+        "hashed_bytes": 796,
+        "shader_sha256": "55ac9e98c57e847be8e45cc48424cd05b48848a15f6fa556aeba9b19aa95b2fc"
+      },
+      {
+        "file": "win32_30_low_ati/gta_grass.fxc",
+        "index": 2,
+        "stage": "ps",
+        "enb_hash": "71CC11CF",
+        "size": 800,
+        "hashed_bytes": 796,
+        "shader_sha256": "55ac9e98c57e847be8e45cc48424cd05b48848a15f6fa556aeba9b19aa95b2fc"
+      },
+      {
+        "file": "win32_30_nv6/gta_grass.fxc",
+        "index": 2,
+        "stage": "ps",
+        "enb_hash": "71CC11CF",
+        "size": 800,
+        "hashed_bytes": 796,
+        "shader_sha256": "55ac9e98c57e847be8e45cc48424cd05b48848a15f6fa556aeba9b19aa95b2fc"
+      },
+      {
+        "file": "win32_30_nv7/gta_grass.fxc",
+        "index": 2,
+        "stage": "ps",
+        "enb_hash": "71CC11CF",
+        "size": 800,
+        "hashed_bytes": 796,
+        "shader_sha256": "55ac9e98c57e847be8e45cc48424cd05b48848a15f6fa556aeba9b19aa95b2fc"
+      },
+      {
+        "file": "win32_30_nv8/gta_grass.fxc",
+        "index": 2,
+        "stage": "ps",
+        "enb_hash": "71CC11CF",
+        "size": 800,
+        "hashed_bytes": 796,
+        "shader_sha256": "55ac9e98c57e847be8e45cc48424cd05b48848a15f6fa556aeba9b19aa95b2fc"
+      }
+    ],
+    "psh841fd9ae.txt": [
+      {
+        "file": "win32_30/gta_terrain_va_4lyr.fxc",
+        "index": 9,
+        "stage": "ps",
+        "enb_hash": "841FD9AE",
+        "size": 812,
+        "hashed_bytes": 808,
+        "shader_sha256": "8c204cf98b85ed9a0ba72b92c1bc6275cefb0156d59c444e14f2e7ca79d484be"
+      },
+      {
+        "file": "win32_30_atidx10/gta_terrain_va_4lyr.fxc",
+        "index": 9,
+        "stage": "ps",
+        "enb_hash": "841FD9AE",
+        "size": 812,
+        "hashed_bytes": 808,
+        "shader_sha256": "8c204cf98b85ed9a0ba72b92c1bc6275cefb0156d59c444e14f2e7ca79d484be"
+      },
+      {
+        "file": "win32_30_low_ati/gta_terrain_va_4lyr.fxc",
+        "index": 9,
+        "stage": "ps",
+        "enb_hash": "841FD9AE",
+        "size": 812,
+        "hashed_bytes": 808,
+        "shader_sha256": "8c204cf98b85ed9a0ba72b92c1bc6275cefb0156d59c444e14f2e7ca79d484be"
+      },
+      {
+        "file": "win32_30_nv6/gta_terrain_va_4lyr.fxc",
+        "index": 9,
+        "stage": "ps",
+        "enb_hash": "841FD9AE",
+        "size": 812,
+        "hashed_bytes": 808,
+        "shader_sha256": "8c204cf98b85ed9a0ba72b92c1bc6275cefb0156d59c444e14f2e7ca79d484be"
+      },
+      {
+        "file": "win32_30_nv7/gta_terrain_va_4lyr.fxc",
+        "index": 9,
+        "stage": "ps",
+        "enb_hash": "841FD9AE",
+        "size": 812,
+        "hashed_bytes": 808,
+        "shader_sha256": "8c204cf98b85ed9a0ba72b92c1bc6275cefb0156d59c444e14f2e7ca79d484be"
+      },
+      {
+        "file": "win32_30_nv8/gta_terrain_va_4lyr.fxc",
+        "index": 9,
+        "stage": "ps",
+        "enb_hash": "841FD9AE",
+        "size": 812,
+        "hashed_bytes": 808,
+        "shader_sha256": "8c204cf98b85ed9a0ba72b92c1bc6275cefb0156d59c444e14f2e7ca79d484be"
+      }
+    ],
+    "psh8db4cdb2.txt": [
+      {
+        "file": "win32_30/gta_normal_spec.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "8DB4CDB2",
+        "size": 1452,
+        "hashed_bytes": 1448,
+        "shader_sha256": "de87c3164c3a22e711f47a4c223c74bd590b2aaab02c9cea460eadd0e47ccf6b"
+      },
+      {
+        "file": "win32_30_atidx10/gta_normal_spec.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "8DB4CDB2",
+        "size": 1452,
+        "hashed_bytes": 1448,
+        "shader_sha256": "de87c3164c3a22e711f47a4c223c74bd590b2aaab02c9cea460eadd0e47ccf6b"
+      },
+      {
+        "file": "win32_30_low_ati/gta_normal_spec.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "8DB4CDB2",
+        "size": 1452,
+        "hashed_bytes": 1448,
+        "shader_sha256": "de87c3164c3a22e711f47a4c223c74bd590b2aaab02c9cea460eadd0e47ccf6b"
+      },
+      {
+        "file": "win32_30_nv6/gta_normal_spec.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "8DB4CDB2",
+        "size": 1452,
+        "hashed_bytes": 1448,
+        "shader_sha256": "de87c3164c3a22e711f47a4c223c74bd590b2aaab02c9cea460eadd0e47ccf6b"
+      },
+      {
+        "file": "win32_30_nv7/gta_normal_spec.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "8DB4CDB2",
+        "size": 1452,
+        "hashed_bytes": 1448,
+        "shader_sha256": "de87c3164c3a22e711f47a4c223c74bd590b2aaab02c9cea460eadd0e47ccf6b"
+      },
+      {
+        "file": "win32_30_nv8/gta_normal_spec.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "8DB4CDB2",
+        "size": 1452,
+        "hashed_bytes": 1448,
+        "shader_sha256": "de87c3164c3a22e711f47a4c223c74bd590b2aaab02c9cea460eadd0e47ccf6b"
+      }
+    ],
+    "pshf5256b40.txt": [
+      {
+        "file": "win32_30/gta_spec.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "F5256B40",
+        "size": 1132,
+        "hashed_bytes": 1128,
+        "shader_sha256": "4d6ca6ce0394c991ef1dbf8201dd7010d9e421ee9602be4d84aecf64f5e133c0"
+      },
+      {
+        "file": "win32_30_atidx10/gta_spec.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "F5256B40",
+        "size": 1132,
+        "hashed_bytes": 1128,
+        "shader_sha256": "4d6ca6ce0394c991ef1dbf8201dd7010d9e421ee9602be4d84aecf64f5e133c0"
+      },
+      {
+        "file": "win32_30_low_ati/gta_spec.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "F5256B40",
+        "size": 1132,
+        "hashed_bytes": 1128,
+        "shader_sha256": "4d6ca6ce0394c991ef1dbf8201dd7010d9e421ee9602be4d84aecf64f5e133c0"
+      },
+      {
+        "file": "win32_30_nv6/gta_spec.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "F5256B40",
+        "size": 1132,
+        "hashed_bytes": 1128,
+        "shader_sha256": "4d6ca6ce0394c991ef1dbf8201dd7010d9e421ee9602be4d84aecf64f5e133c0"
+      },
+      {
+        "file": "win32_30_nv7/gta_spec.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "F5256B40",
+        "size": 1132,
+        "hashed_bytes": 1128,
+        "shader_sha256": "4d6ca6ce0394c991ef1dbf8201dd7010d9e421ee9602be4d84aecf64f5e133c0"
+      },
+      {
+        "file": "win32_30_nv8/gta_spec.fxc",
+        "index": 13,
+        "stage": "ps",
+        "enb_hash": "F5256B40",
+        "size": 1132,
+        "hashed_bytes": 1128,
+        "shader_sha256": "4d6ca6ce0394c991ef1dbf8201dd7010d9e421ee9602be4d84aecf64f5e133c0"
+      }
+    ],
+    "vsh54f25463.txt": [
+      {
+        "file": "win32_30_atidx10/deferred_lighting.fxc",
+        "index": 7,
+        "stage": "vs",
+        "enb_hash": "54F25463",
+        "size": 2332,
+        "hashed_bytes": 2328,
+        "shader_sha256": "643dc4d8f0b955c549305351947c61e2ab1c5faf4bc38f0a0112100a56e67f30"
+      },
+      {
+        "file": "win32_30_low_ati/deferred_lighting.fxc",
+        "index": 7,
+        "stage": "vs",
+        "enb_hash": "54F25463",
+        "size": 2332,
+        "hashed_bytes": 2328,
+        "shader_sha256": "643dc4d8f0b955c549305351947c61e2ab1c5faf4bc38f0a0112100a56e67f30"
+      },
+      {
+        "file": "win32_30_nv6/deferred_lighting.fxc",
+        "index": 7,
+        "stage": "vs",
+        "enb_hash": "54F25463",
+        "size": 2332,
+        "hashed_bytes": 2328,
+        "shader_sha256": "643dc4d8f0b955c549305351947c61e2ab1c5faf4bc38f0a0112100a56e67f30"
+      },
+      {
+        "file": "win32_30_nv7/deferred_lighting.fxc",
+        "index": 7,
+        "stage": "vs",
+        "enb_hash": "54F25463",
+        "size": 2332,
+        "hashed_bytes": 2328,
+        "shader_sha256": "643dc4d8f0b955c549305351947c61e2ab1c5faf4bc38f0a0112100a56e67f30"
+      },
+      {
+        "file": "win32_30_nv8/deferred_lighting.fxc",
+        "index": 7,
+        "stage": "vs",
+        "enb_hash": "54F25463",
+        "size": 2332,
+        "hashed_bytes": 2328,
+        "shader_sha256": "643dc4d8f0b955c549305351947c61e2ab1c5faf4bc38f0a0112100a56e67f30"
+      }
+    ],
+    "vshc35a5e05.txt": [
+      {
+        "file": "win32_30_atidx10/deferred_lighting.fxc",
+        "index": 8,
+        "stage": "vs",
+        "enb_hash": "C35A5E05",
+        "size": 3040,
+        "hashed_bytes": 3036,
+        "shader_sha256": "8231b9cdba9c0aecbc105461fa1e230c473ad902eec627aca556c2d9287d8c51"
+      },
+      {
+        "file": "win32_30_nv6/deferred_lighting.fxc",
+        "index": 8,
+        "stage": "vs",
+        "enb_hash": "C35A5E05",
+        "size": 3040,
+        "hashed_bytes": 3036,
+        "shader_sha256": "8231b9cdba9c0aecbc105461fa1e230c473ad902eec627aca556c2d9287d8c51"
+      },
+      {
+        "file": "win32_30_nv7/deferred_lighting.fxc",
+        "index": 8,
+        "stage": "vs",
+        "enb_hash": "C35A5E05",
+        "size": 3040,
+        "hashed_bytes": 3036,
+        "shader_sha256": "8231b9cdba9c0aecbc105461fa1e230c473ad902eec627aca556c2d9287d8c51"
+      },
+      {
+        "file": "win32_30_nv8/deferred_lighting.fxc",
+        "index": 8,
+        "stage": "vs",
+        "enb_hash": "C35A5E05",
+        "size": 3040,
+        "hashed_bytes": 3036,
+        "shader_sha256": "8231b9cdba9c0aecbc105461fa1e230c473ad902eec627aca556c2d9287d8c51"
+      }
+    ]
+  },
+  "runtime_verified": false
+}

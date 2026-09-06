@@ -1,0 +1,14 @@
+{
+  "screenshot": "20260905193951_1.jpg",
+  "screenshot_sha256": "2a7a694d2f51ae59eb568b940b61de3abc46bbda4a38d590b01e2a822a8f5a8b",
+  "installed_asi_sha256": "5df954a5b28ed2fa615bc4a7e66c8e5f4e7439781275fe44fe1f2c14ef1e2f6f",
+  "installed_effect_sha256": "da7f697611c62dded78ca347965bc60cdd0377d762fb5be96a9b6c36d95f74ee",
+  "user_report": "It was very dark",
+  "observed": "Nearly black room with faint scene detail; HUD and ENB text remain visible",
+  "translated_draw_logged_at": "19:39:42.516",
+  "effect": "Original iCEnhancer 4 compiled main effect only; original ENB 0.163 configuration and other effects retained",
+  "icenhancer_asi_installed": false,
+  "cause_proven": false,
+  "next_test": "Automatic raw input/output capture at the actual backend draw boundary",
+  "full_rendering_compatibility": false
+}

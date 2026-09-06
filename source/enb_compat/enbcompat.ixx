@@ -56,6 +56,10 @@ export namespace ENBCompat
         // biggest overlap with ENB, which wants to own the same pass.
         bool ReplacePostFX = true;
 
+        // Experimental final-composite adapter for a complete modern shader
+        // pipeline. Explicit opt-in; never enabled by ENBLegacy defaults.
+        bool PostFxBridge = false;
+
         // The FXAA / SMAA passes inside that chain. ENB presets normally bring
         // their own AA and expect an unfiltered image.
         bool PostProcessAA = true;
@@ -345,6 +349,13 @@ export namespace ENBCompat
         readFeature("ConsoleGammaBlit", renderer.ConsoleGammaBlit);
         readFeature("ShaderConstantInjection", renderer.ShaderConstantInjection);
         readFeature("FusionShaderPackage", renderer.FusionShaderPackage);
+        readFeature("PostFxBridge", renderer.PostFxBridge);
+        if (renderer.PostFxBridge && (state.profile != Profile::ENBLegacy || renderer.ReplacePostFX ||
+            !renderer.FusionShaderPackage || !renderer.ShaderConstantInjection || !renderer.ShadowPipelineFixes))
+        {
+            Log("postfx bridge disabled: requires ENBLegacy, modern shaders/constants/shadows and ReplacePostFX=0");
+            renderer.PostFxBridge = false;
+        }
 
         auto folder = TrimIniValue(iniReader.ReadString("ENBCompatibility", "StockShaderFolder", ""));
         if (!folder.empty())
@@ -417,6 +428,7 @@ export namespace ENBCompat
 
         std::ostringstream features;
         features << "  ReplacePostFX=" << renderer.ReplacePostFX
+                 << " PostFxBridge=" << renderer.PostFxBridge
                  << " PostProcessAA=" << renderer.PostProcessAA
                  << " AmbientOcclusion=" << renderer.AmbientOcclusion
                  << " ShadowPipelineFixes=" << renderer.ShadowPipelineFixes

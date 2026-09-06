@@ -1,0 +1,6 @@
+17:32:53.067  shaders loaded from win32_30: FusionFix
+17:32:53.067  ENBCompatibility mode=1 profile=ENBLegacy
+17:32:53.067    ReplacePostFX=0 PostFxBridge=1 PostProcessAA=0 AmbientOcclusion=0 ShadowPipelineFixes=1 FusionShaderTweaks=1 SunShafts=0 PreAlphaDepthCopy=0 SkyDiffuseSplit=1 ConsoleGammaBlit=0 ShaderConstantInjection=1 FusionShaderPackage=1
+17:32:53.077  postfx bridge: game composite hooks installed (experimental)
+17:32:53.703  version spoof: SpoofGameVersion unset or unparsable (''), not installed
+17:33:09.712  postfx bridge: unsupported composite bytes=2788 fnv64=890312432892644450; original draw retained

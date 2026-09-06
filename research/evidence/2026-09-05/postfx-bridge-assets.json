@@ -1,0 +1,543 @@
+{
+  "format": 1,
+  "runtime_validated": false,
+  "game_modified": false,
+  "modern_container_sha256": "49bbe2b5caceed660711ab2b653ccd181aebdd3fda75d8afef2f010c119adf6a",
+  "canonical": {
+    "bytes": 3800,
+    "fnv64": "05080A0DC2BF80B3",
+    "sha256": "2780e157105840b1226fff8ca72b5729652e75bc29fe3aa5f053ce9b9b8b96b9"
+  },
+  "depth_conversion": {
+    "bytes": 456,
+    "fnv64": "81BC637FB46B15D2",
+    "sha256": "34969b1134b1bd3d2d8d2f22c259e16444a5831342aec966203fa9b64f740a28"
+  },
+  "modern_passes": [
+    {
+      "slot": 13,
+      "role": "GTACompositePostFx/11",
+      "bytes": 2880,
+      "fnv64": "0F8207935837F1E8",
+      "sha256": "f69ed17603c9d10a8ccf5a0fab1f80dd16897707de2d1bb5df66bf8a8b6c0782",
+      "bindings": {
+        "StippleTexture": [
+          "sampler",
+          10
+        ],
+        "AdapLumSampler": [
+          "sampler",
+          5
+        ],
+        "BloomSampler": [
+          "sampler",
+          4
+        ],
+        "BlurSampler": [
+          "sampler",
+          3
+        ],
+        "ColorCorrect": [
+          "float4",
+          83
+        ],
+        "ColorShift": [
+          "float4",
+          84
+        ],
+        "Exposure": [
+          "float",
+          66
+        ],
+        "GBufferTextureSampler2": [
+          "sampler",
+          0
+        ],
+        "GBufferTextureSampler3": [
+          "sampler",
+          1
+        ],
+        "HDRSampler": [
+          "sampler",
+          2
+        ],
+        "JitterSampler": [
+          "sampler",
+          6
+        ],
+        "NoiseParams": [
+          "float4",
+          85
+        ],
+        "PLAYER_MASK": [
+          "float",
+          86
+        ],
+        "StencilCopySampler": [
+          "sampler",
+          7
+        ],
+        "TexelSize": [
+          "float4",
+          76
+        ],
+        "ToneMapParams": [
+          "float4",
+          81
+        ],
+        "deSatContrastGamma": [
+          "float4",
+          82
+        ],
+        "dofBlur": [
+          "float4",
+          79
+        ],
+        "dofDist": [
+          "float4",
+          78
+        ],
+        "dofProj": [
+          "float4",
+          77
+        ],
+        "gDirectionalMotionBlurLength": [
+          "float",
+          80
+        ],
+        "globalScreenSize": [
+          "float4",
+          44
+        ],
+        "motionBlurMatrix": [
+          "float4x4",
+          72
+        ],
+        "NearFarPlane": [
+          "float4",
+          128
+        ]
+      }
+    },
+    {
+      "slot": 15,
+      "role": "GTACompositePostFx/13",
+      "bytes": 2880,
+      "fnv64": "1908E3196DA19522",
+      "sha256": "5330f245ca8451276b481547ad53de0ce79779cb0d3d6781417383a175e3df38",
+      "bindings": {
+        "StippleTexture": [
+          "sampler",
+          10
+        ],
+        "AdapLumSampler": [
+          "sampler",
+          5
+        ],
+        "BloomSampler": [
+          "sampler",
+          4
+        ],
+        "BlurSampler": [
+          "sampler",
+          3
+        ],
+        "ColorCorrect": [
+          "float4",
+          83
+        ],
+        "ColorShift": [
+          "float4",
+          84
+        ],
+        "Exposure": [
+          "float",
+          66
+        ],
+        "GBufferTextureSampler2": [
+          "sampler",
+          0
+        ],
+        "GBufferTextureSampler3": [
+          "sampler",
+          1
+        ],
+        "HDRSampler": [
+          "sampler",
+          2
+        ],
+        "JitterSampler": [
+          "sampler",
+          6
+        ],
+        "NoiseParams": [
+          "float4",
+          85
+        ],
+        "PLAYER_MASK": [
+          "float",
+          86
+        ],
+        "StencilCopySampler": [
+          "sampler",
+          7
+        ],
+        "TexelSize": [
+          "float4",
+          76
+        ],
+        "ToneMapParams": [
+          "float4",
+          81
+        ],
+        "deSatContrastGamma": [
+          "float4",
+          82
+        ],
+        "dofBlur": [
+          "float4",
+          79
+        ],
+        "dofDist": [
+          "float4",
+          78
+        ],
+        "dofProj": [
+          "float4",
+          77
+        ],
+        "gDirectionalMotionBlurLength": [
+          "float",
+          80
+        ],
+        "globalScreenSize": [
+          "float4",
+          44
+        ],
+        "motionBlurMatrix": [
+          "float4x4",
+          72
+        ],
+        "NearFarPlane": [
+          "float4",
+          128
+        ]
+      }
+    },
+    {
+      "slot": 25,
+      "role": "GTACompositePostFx/23",
+      "bytes": 3024,
+      "fnv64": "082BA71FB2BFA6A6",
+      "sha256": "404f15f1b859a465e2f8112a85d9129a6367e57c92ba443be512c4ba4ad247b7",
+      "bindings": {
+        "StippleTexture": [
+          "sampler",
+          10
+        ],
+        "AdapLumSampler": [
+          "sampler",
+          5
+        ],
+        "BloomSampler": [
+          "sampler",
+          4
+        ],
+        "BlurSampler": [
+          "sampler",
+          3
+        ],
+        "ColorCorrect": [
+          "float4",
+          83
+        ],
+        "ColorShift": [
+          "float4",
+          84
+        ],
+        "Exposure": [
+          "float",
+          66
+        ],
+        "GBufferTextureSampler2": [
+          "sampler",
+          0
+        ],
+        "GBufferTextureSampler3": [
+          "sampler",
+          1
+        ],
+        "HDRSampler": [
+          "sampler",
+          2
+        ],
+        "JitterSampler": [
+          "sampler",
+          6
+        ],
+        "NoiseParams": [
+          "float4",
+          85
+        ],
+        "PLAYER_MASK": [
+          "float",
+          86
+        ],
+        "StencilCopySampler": [
+          "sampler",
+          7
+        ],
+        "TexelSize": [
+          "float4",
+          76
+        ],
+        "ToneMapParams": [
+          "float4",
+          81
+        ],
+        "deSatContrastGamma": [
+          "float4",
+          82
+        ],
+        "dofBlur": [
+          "float4",
+          79
+        ],
+        "dofDist": [
+          "float4",
+          78
+        ],
+        "dofProj": [
+          "float4",
+          77
+        ],
+        "gDirectionalMotionBlurLength": [
+          "float",
+          80
+        ],
+        "globalScreenSize": [
+          "float4",
+          44
+        ],
+        "motionBlurMatrix": [
+          "float4x4",
+          72
+        ],
+        "NearFarPlane": [
+          "float4",
+          128
+        ]
+      }
+    },
+    {
+      "slot": 27,
+      "role": "GTACompositePostFx/25",
+      "bytes": 3024,
+      "fnv64": "57B281F0F252D6D8",
+      "sha256": "866a839114cb45037e150d652a80c8ec47d543266f82f24c5ad252d8efe3cbdd",
+      "bindings": {
+        "StippleTexture": [
+          "sampler",
+          10
+        ],
+        "AdapLumSampler": [
+          "sampler",
+          5
+        ],
+        "BloomSampler": [
+          "sampler",
+          4
+        ],
+        "BlurSampler": [
+          "sampler",
+          3
+        ],
+        "ColorCorrect": [
+          "float4",
+          83
+        ],
+        "ColorShift": [
+          "float4",
+          84
+        ],
+        "Exposure": [
+          "float",
+          66
+        ],
+        "GBufferTextureSampler2": [
+          "sampler",
+          0
+        ],
+        "GBufferTextureSampler3": [
+          "sampler",
+          1
+        ],
+        "HDRSampler": [
+          "sampler",
+          2
+        ],
+        "JitterSampler": [
+          "sampler",
+          6
+        ],
+        "NoiseParams": [
+          "float4",
+          85
+        ],
+        "PLAYER_MASK": [
+          "float",
+          86
+        ],
+        "StencilCopySampler": [
+          "sampler",
+          7
+        ],
+        "TexelSize": [
+          "float4",
+          76
+        ],
+        "ToneMapParams": [
+          "float4",
+          81
+        ],
+        "deSatContrastGamma": [
+          "float4",
+          82
+        ],
+        "dofBlur": [
+          "float4",
+          79
+        ],
+        "dofDist": [
+          "float4",
+          78
+        ],
+        "dofProj": [
+          "float4",
+          77
+        ],
+        "gDirectionalMotionBlurLength": [
+          "float",
+          80
+        ],
+        "globalScreenSize": [
+          "float4",
+          44
+        ],
+        "motionBlurMatrix": [
+          "float4x4",
+          72
+        ],
+        "NearFarPlane": [
+          "float4",
+          128
+        ]
+      }
+    },
+    {
+      "slot": 29,
+      "role": "GTACompositePostFx/27",
+      "bytes": 2584,
+      "fnv64": "84F21E21C975D165",
+      "sha256": "45316af67683e515431786fa8c476a7924b6de42fc778619e73e4604a63d9883",
+      "bindings": {
+        "StippleTexture": [
+          "sampler",
+          10
+        ],
+        "AdapLumSampler": [
+          "sampler",
+          5
+        ],
+        "BloomSampler": [
+          "sampler",
+          4
+        ],
+        "BlurSampler": [
+          "sampler",
+          3
+        ],
+        "ColorCorrect": [
+          "float4",
+          83
+        ],
+        "ColorShift": [
+          "float4",
+          84
+        ],
+        "Exposure": [
+          "float",
+          66
+        ],
+        "GBufferTextureSampler2": [
+          "sampler",
+          0
+        ],
+        "GBufferTextureSampler3": [
+          "sampler",
+          1
+        ],
+        "HDRSampler": [
+          "sampler",
+          2
+        ],
+        "JitterSampler": [
+          "sampler",
+          6
+        ],
+        "NoiseParams": [
+          "float4",
+          85
+        ],
+        "PLAYER_MASK": [
+          "float",
+          86
+        ],
+        "StencilCopySampler": [
+          "sampler",
+          7
+        ],
+        "TexelSize": [
+          "float4",
+          76
+        ],
+        "ToneMapParams": [
+          "float4",
+          81
+        ],
+        "deSatContrastGamma": [
+          "float4",
+          82
+        ],
+        "dofBlur": [
+          "float4",
+          79
+        ],
+        "dofDist": [
+          "float4",
+          78
+        ],
+        "dofProj": [
+          "float4",
+          77
+        ],
+        "gDirectionalMotionBlurLength": [
+          "float",
+          80
+        ],
+        "globalScreenSize": [
+          "float4",
+          44
+        ],
+        "motionBlurMatrix": [
+          "float4x4",
+          72
+        ],
+        "NearFarPlane": [
+          "float4",
+          128
+        ]
+      }
+    }
+  ]
+}

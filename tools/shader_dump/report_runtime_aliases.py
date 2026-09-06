@@ -85,7 +85,12 @@ def report(trace_dir, contract):
                "created_dump_mismatch", "not_created", "not_installed")}
     return {
         "format": 1,
-        "method": "ENBTrace CreateShader dump plus automatic first-bind capture",
+        "method": "Game-facing CreateShader input dump plus automatic bind capture",
+        "rendering_validated": False,
+        "replacement_visibility": "unknown: an outer ENB device can hide internally assembled replacements",
+        "limitations": ["A missing replacement identity is not evidence that ENB failed to substitute it.",
+                        "Creation rows record input before HRESULT; they do not alone prove successful creation.",
+                        "Older tracer builds recorded bind attempts before HRESULT; current builds record successful binds."],
         "trace_dir": str(trace_dir),
         "trace_files": {p.name: file_sha(p) for p in
                         (trace_dir / "shaders.csv", bind_path, trace_dir / "d3d9_trace.log", session_path)

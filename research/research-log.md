@@ -1,5 +1,148 @@
 # Research log
 
+## 2026-09-05 20:07 - reported normals regression; preserve recovery checkpoint
+
+User reports normals/seams broken again and brightness unresolved. Screenshot
+20260905200743_1.jpg is again almost black. The installed ASI is still 5DF954A5
+(same as the earlier seam-improved pair), not the AA316CE1 diagnostic build.
+No capture request or automatic capture directory exists. The installed main
+effect is the iCEnhancer DA7F6976 file. Preserve these facts without attributing
+the regression to diagnostics that have not run, or claiming the exact normal
+bug is understood from this very dark image.
+
+Copied the earlier bridge ASI and original ENB main-effect backup into
+build/seam-improved-checkpoint and verified both hashes against the 19:04
+evidence. The immediate user-run recovery is RestoreEffect, which changes only
+the effect and keeps the already-installed earlier bridge. Brightness remains
+unfinished. No real-game files were modified by the assistant.
+
+## 2026-09-05 19:39 - iCEnhancer effect darkens; automatic measurements prepared
+
+The user ran IceEffect and reported a very dark scene. Verified the actual
+DA7F6976... effect and preserved screenshot/log as user-ice-effect.*. The
+5DF954A5... bridge still submits a translated composite. This rules out a
+failed file swap, but does not establish the correctness of the effect inputs.
+
+Inspected the compiled main effect's standard D3D9 disassembly. Named s2 is HDR,
+s4 is adaptation, s1 is depth and s3 is bloom (physical shader registers differ).
+It divides HDR by adaptation red and scales by 0.06; c82.x affects motion blur,
+c82.y the blurred-color exponent, c83.w the color-temperature calculation,
+c84.xyz the blurred color, and c82.z the final power. ScreenSize also drives a
+preshader. Some uses differ from stock parameter meanings; neither their
+runtime values nor responsibility for the darkness are proven. No arbitrary
+brightness, gamma, or parameter override was added.
+
+Added opt-in capture.request diagnostics at the actual backend draw boundary:
+three delayed snapshots of constants and unmodified raw texel grids from inputs,
+converted depth and final render target. Unsupported formats/MSAA/readback
+failures are recorded and leave rendering unchanged. A CPU reader decodes float
+and UNORM data with explicit component ordering and reports grid statistics.
+Captures may briefly stall the GPU, so this is a bounded diagnostic only.
+
+Release ASI AA316CE1D01296E7AE738930D286ED9EE4DD0B617C5A55F871D5D768D60B3238.
+42 Python tests passed. Headless production-header checks cover padded pitch,
+raw HDR preservation, failed readback cleanup, MSAA rejection and bounded timing,
+alongside prior state/dispatch/shader-router tests. Synthetic Diagnose preserves
+iCEnhancer effect; Apply disables capture; Restore restores the original files
+and removes the request. No real-game writes or launches by the assistant.
+
+## 2026-09-05 19:04 - user seam improvement and ENB toggle pair
+
+The user supplied ENB-on and ENB-off indoor screenshots and reports that visible
+world seams/normals appear fixed. The earlier sharp diagonal boundaries are
+much less apparent in this pair. A dark gray veil remains with ENB enabled;
+the disabled view is clearer. The same 5DF954A5... bridge build is installed and
+logs a translated draw at 19:03:45.166. The effect file is still original ENB
+0.163 (5676D639...), so the next stage tests iCEnhancer's actual main effect.
+
+Added guarded IceEffect/RestoreEffect actions and a separate effect snapshot.
+The full Restore also restores that effect when backed up. Staged original
+iCEnhancer effect in build/postfx-bridge-v4, with its inspected SHA256 unchanged.
+Synthetic switching and both restoration paths passed. No real game files or
+computer-use sessions were changed for this stage.
+
+## 2026-09-05 18:38 - first successful translated composite
+
+User ran the latest bridge build and saved 20260905183832_1.jpg. Installed ASI
+matches 5DF954A5B28ED2FA615BC4A7E66C8E5F4E7439781275FE44FE1F2C14EF1E2F6F.
+The backend installed and recognized slot 13. Initial clip mismatch at
+18:38:19.553 was followed by a successful translated draw at 18:38:19.604.
+The screenshot remains dark/hazy with triangular wall artifacts, so rendering
+is not fixed. Preserved metadata, screenshot and log as user-bridge-draw.*.
+Next check uses verified Shift+F11 to disable ENB effects in the same indoor
+view, without installing another build or doing outdoor movement. No computer
+use or game launch was performed by the assistant for this check.
+
+## 2026-09-05 - queued rendering boundary, user-run tests resumed
+
+Recovered all twelve original preset hashes from the archived 1.0.4.0 update;
+see patch1040-reference.md. With temporary user authorization for computer use,
+the indoor scene revealed that modern GetFunction bytecode omits a 92-byte
+comment block. Token-based identity checking fixed that rejection. The next
+run exposed a GTA IV command façade rather than the ENB device at the game
+hook. Read-only method inspection verified the +0x11AC inner pointer and both
+sets of getter methods. The latest implementation installs the bridge on the
+inner ENB DrawPrimitive boundary, preserving original call parameters and results
+and guarding recursive conversion draws.
+
+The user stopped computer use because of its allowance cost. All further game
+launches/screenshots are user-run; movement automation is paused. No game input,
+launch or installation was performed after that instruction. The queued-draw
+correction was completed offline. Native Release build, 37 Python tests and
+headless production state/dispatch/router/getter checks pass. Latest ASI:
+5DF954A5B28ED2FA615BC4A7E66C8E5F4E7439781275FE44FE1F2C14EF1E2F6F.
+Next required evidence is one indoor screenshot and the resulting ENBCompat.log.
+
+## 2026-09-05 - modern shader adapter and composite input boundary
+
+User confirmed the correctly applied FixedBaseline leaves trees unchanged, then
+redirected work to the compatibility layer. Recorded the valid 15:38:56 run;
+the earlier 15:32 screenshot predates submission of the setup command.
+
+Implemented a guarded semantic-delta backend for three modern terrain shaders.
+For each, the complete stock-to-iCEnhancer change is one c0.w literal; applying
+it to the modern program retains coverage, stencil and logarithmic depth.
+Independent binary patching and D3DX assembly agree on all program tokens.
+Scanned all 103 modern containers for alias collisions. Five mapped inputs are
+reported as requiring custom adapters; four original inputs remain unmapped.
+Artifacts/evidence: [modern-shader-adapter.md](modern-shader-adapter.md).
+
+Added opt-in `TracePostFxInputs` snapshots before known composite draws, with
+texture descriptions, constants, HRESULTs and a bounded capture window.
+`TracePostFx` prepares the fixed stock baseline for F10 capture. Shader-bind
+tracking now advances after successful calls, and reports state the outer-device
+visibility limit: unseen ENB replacement hashes do not prove failed substitution.
+
+Validation: 32 Python tests pass, three real modern adapters assemble, sixteen
+postfx diagnostic hashes match exports, and Win32 Release builds. Synthetic
+TracePostFx setup, bad-artifact preflight rejection and full snapshot restoration
+pass. New ASI hash F4D397AA5ED4D2D38E4028BC741814EE583217FD85CF1034B30C3A0DBC57F0A0.
+No real game files changed and no game/device was launched. Next: establish
+composite inputs and bridge recognition, named bindings and depth together.
+
+## 2026-09-05 — downloaded Steam 1.0.8.0 reference
+
+User reported completion of main depot 12211 manifest 4406763129603688303.
+Read-only inspection confirms GTAIV.exe version 1.0.8.0 and SHA256
+3d90e7c516fa450ca002e5031e62c0f66b404590f33e6cc9793b0da4fffbfd0f.
+Compared all 612 containers with installed original CE shader files: 564 entire
+containers equal. Every variant has 1,636 raw-equal blobs, 23 comment-only
+differences and 30 program-byte differences out of 1,689. The important terrain,
+tree, deferred-lighting, postfx, default/cutout/wire containers are identical;
+base timecycle and visualsettings also match. Eight differing container families
+are recorded, with sky spot-checks showing compiler/register/scheduling changes.
+No semantic-equivalence claim was made for all differing programs.
+
+The twelve preset filenames still find no raw shader match in the old set;
+AA1C0C36 still recognizes the same postfx pass in four variants. Six historical
+FusionFix patterns match the executable. Static old shadow-atlas/G-buffer
+format values match original CE (R16F / A2R10G10B10), supporting the recent
+profile repair. These are instruction sites and bytecode identities, not live
+hook/resource validation. No game was launched and neither input tree changed.
+
+Added a reproducible raw-container comparison with two focused regression tests.
+Full reports and next-step implications: [steam1080-reference.md](steam1080-reference.md).
+
 ## 2026-09-05 — review of the ordinary ENB baseline
 
 At the user's request, paused the next alias capture and reviewed c18e6cf's

@@ -6,7 +6,7 @@
   "shader_sets": {
     "ce-vanilla": "Grand Theft Auto IV/GTAIV/common/shaders/win32_30 (CE 1.2.0.59, 102 containers, 1689 shaders)",
     "ce-fusionfix": "Grand Theft Auto IV/GTAIV/update/common/shaders/win32_30 (FusionFix 5.0.1, 103 containers, 1739 shaders)",
-    "old-reference": "Historical FusionFix shader submodule 9d8613917d492720cd1192372dc16674c49cd6ec inspected; no old executable or complete original old-patch shader set available."
+    "old-reference": "Steam 1.0.8.0 main depot 12211 manifest 4406763129603688303 downloaded September 5; executable version verified and all six shader variants compared. The mapped candidate containers are byte-identical to stock CE. See steam1080-reference.md. No 1.0.4.0 executable/shader set is available."
   },
   "presets": {
     "enbseries-0.163": "ENB resources/enbseries_gta4_v0163.zip -- 4 pixel shader replacements",
@@ -76,7 +76,7 @@
       "enb_hash": "54F25463",
       "stage": "vs",
       "preset": "icenhancer-4.0",
-      "role": "vegetation wind sway vertex shader",
+      "role": "light-shaft geometry vertex shader (named lightShafts technique)",
       "enb_instructions": 99,
       "ce_vanilla": {
         "candidate": "deferred_lighting.fxc#7",
@@ -95,7 +95,7 @@
       "enb_hash": "C35A5E05",
       "stage": "vs",
       "preset": "icenhancer-4.0",
-      "role": "vegetation wind sway vertex shader, texture-sampling variant",
+      "role": "light-shaft geometry vertex shader, texture-sampling variant (named lightShafts technique)",
       "enb_instructions": 129,
       "ce_vanilla": {
         "candidate": "deferred_lighting.fxc#8",

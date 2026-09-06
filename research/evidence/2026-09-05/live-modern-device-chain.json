@@ -1,0 +1,85 @@
+{
+  "pid": 29944,
+  "read_only": true,
+  "device": "017BC2B8",
+  "vtable": "00EAA26C",
+  "methods": [
+    {
+      "slot": 0,
+      "address": "003010F0",
+      "module": "GTAIV.exe",
+      "module_rva": "210F0",
+      "code_prefix": null
+    },
+    {
+      "slot": 81,
+      "address": "00301DE0",
+      "module": "GTAIV.exe",
+      "module_rva": "21DE0",
+      "code_prefix": "8b54240483bab41100000476468b82b0110000c700070400008b8ab01100008b4424088941048b8ab01100008b44240c8941088b8ab01100008b44241089410c8382b4110000fc8382b01100001033c0c210008b82ac110000c782b411000000"
+    },
+    {
+      "slot": 82,
+      "address": "00301E50",
+      "module": "GTAIV.exe",
+      "module_rva": "21E50",
+      "code_prefix": null
+    },
+    {
+      "slot": 106,
+      "address": "00302510",
+      "module": "GTAIV.exe",
+      "module_rva": "22510",
+      "code_prefix": null
+    },
+    {
+      "slot": 107,
+      "address": "00302530",
+      "module": "GTAIV.exe",
+      "module_rva": "22530",
+      "code_prefix": null
+    },
+    {
+      "slot": 108,
+      "address": "00302590",
+      "module": "GTAIV.exe",
+      "module_rva": "22590",
+      "code_prefix": "8b4424048b80ac1100008b0889442404ffa1b0010000cccccccccccccccccccc8b542404578b7c24148d04bd030000003982b41100000f86810000008b82b01100008bcfc1e10a81c10003000083c90e89088b8ab01100008b44240c8941048b"
+    },
+    {
+      "slot": 109,
+      "address": "003025B0",
+      "module": "GTAIV.exe",
+      "module_rva": "225B0",
+      "code_prefix": null
+    },
+    {
+      "slot": 110,
+      "address": "00302670",
+      "module": "GTAIV.exe",
+      "module_rva": "22670",
+      "code_prefix": "8b4424048b80ac1100008b0889442404ffa1b8010000cccccccccccccccccccc8b542404578b7c24148d04bd030000003982b41100000f86810000008b82b01100008bcfc1e10a81c10003000083c90f89088b8ab01100008b44240c8941048b"
+    }
+  ],
+  "verified_facade_inner": {
+    "device": "17530048",
+    "vtable": "10091A4C",
+    "methods": [
+      {
+        "slot": 81,
+        "module": "d3d9.dll",
+        "module_rva": "6990"
+      },
+      {
+        "slot": 108,
+        "module": "d3d9.dll",
+        "module_rva": "11E0"
+      },
+      {
+        "slot": 110,
+        "module": "d3d9.dll",
+        "module_rva": "28E70"
+      }
+    ]
+  }
+}

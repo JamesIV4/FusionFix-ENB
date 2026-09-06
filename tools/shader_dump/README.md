@@ -5,6 +5,7 @@ Offline analysis of GTA IV shader packages. Nothing here needs the game running.
 | Script | Does |
 |---|---|
 | `d3d9bc.py` | shared library: D3D9 bytecode token walker, blob extraction from `.fxc`, comment stripping, hashing, assembly normalisation |
+| `compare_depot_shaders.py` | compares legacy/CE raw containers and shader programs, distinguishing byte equality from comment-only changes |
 | `dump_fxc.py` | extracts and fingerprints every shader in a set of `.fxc` containers; `--asm` also writes `.cso` blobs and disassembly |
 | `compare_sets.py` | compares two dumped sets and reports how many shaders keep their bytecode |
 | `match_enb.py` | identifies which game shader each ENB `shaderinput` file replaces, by disassembly similarity |
@@ -196,3 +197,29 @@ python tools\shader_dump\map_hook_patterns.py "<game>\GTAIV.exe" research\contra
 
 Checked results and source revisions:
 [legacy-shader-bridge.md](../../research/legacy-shader-bridge.md).
+
+## Modern shader delta adapter
+
+`build_shader_adapter.py` ports reviewed preset changes into the matching modern
+FusionFix program. Its first backend supports three terrain constant deltas;
+other mapped inputs produce explicit unresolved entries. It assembles and checks
+every accepted result against an independently patched modern bytecode blob,
+preserving depth/coverage instructions. The full corpus is scanned for routing
+hash collisions. It only publishes to a new directory outside the game.
+
+```powershell
+python tools/shader_dump/build_shader_adapter.py --stock-exports '<stock RSE exports>' --modern-exports '<modern RSE exports>' --modern-corpus '<full modern variant>' --preset '<iCEnhancer shaderinput>' --assembler '<assemble_shader.exe>' --out '<new staging directory>'
+```
+
+Use both exports and original `.fxc` files; the selected export programs are
+reassembled to verify their relationship to the binaries. Generated aliases
+target the modern pipeline, not the stock FixedBaseline. These are experimental
+building blocks, not a complete ENB-compatible shader package.
+See [modern-shader-adapter.md](../../research/modern-shader-adapter.md) for
+current artifacts, postfx input capture and the remaining translation work.
+
+`read_postfx_capture.py <directory> --out <report.json>` decodes the automatic
+backend capture's PFX1 grids. It reports raw per-channel ranges, median, mean
+and non-finite counts without creating a graphics device. These are sampled
+texture values, not display-referred colors. Capture setup and its bounded
+readback limitations are documented in [postfx-bridge.md](../../research/postfx-bridge.md#automatic-measurement-of-the-dark-output).

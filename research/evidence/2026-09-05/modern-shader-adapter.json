@@ -1,0 +1,685 @@
+{
+  "format": 1,
+  "backend": "reviewed_local_def_delta",
+  "rendering_validated": false,
+  "requires": "matching full modern FusionFix shader/resource/depth pipeline; not FixedBaseline",
+  "effect_bridge_complete": false,
+  "game_modified": false,
+  "collision_scan_containers": 103,
+  "affected_slots": {
+    "pshC0223F26.txt": [
+      {
+        "container": "gta_terrain_va_2lyr.fxc",
+        "index": 5
+      }
+    ],
+    "psh07FE34FB.txt": [
+      {
+        "container": "gta_terrain_va_3lyr.fxc",
+        "index": 7
+      }
+    ],
+    "pshD3E7B05D.txt": [
+      {
+        "container": "gta_terrain_va_4lyr.fxc",
+        "index": 9
+      }
+    ]
+  },
+  "entries": [
+    {
+      "preset_file": "psh0CBF49C5.txt",
+      "container": "gta_terrain_va_2lyr.fxc",
+      "source_sha256": "f74244479986809d0bc89c1c9950f1735e1205bbeea448ebc702678308626457",
+      "preset_sha256": "4c0cddd226c8a16a8cbe6b8859ea59d190d704dda0574ee06bdcb589ac80545d",
+      "interface_audit": {
+        "source_slot": 5,
+        "stage": "ps",
+        "roles": [
+          "deferred_draw/0"
+        ],
+        "missing_roles": [],
+        "target_slots": [
+          5
+        ],
+        "candidates": [
+          {
+            "target_slot": 5,
+            "changed_bindings": {},
+            "target_extra_bindings": {
+              "NearFarPlane": [
+                "float4",
+                128
+              ]
+            },
+            "source_writes_depth": false,
+            "target_writes_depth": true,
+            "declarations_equal": false,
+            "changed_pass_states": [
+              "deferred_draw/0"
+            ],
+            "source_bindings_preserved": true
+          }
+        ],
+        "mapping_unambiguous": true
+      },
+      "delta": [
+        "--- ",
+        "+++ ",
+        "@@ -2 +2 @@",
+        "-def c0, 0.5, 0, 1, 0.25",
+        "+def c0, 0.5, 0, 1, 0"
+      ],
+      "status": "built_offline",
+      "modern_slot": 5,
+      "alias": "pshC0223F26.txt",
+      "modern_sha256": "51103ce311180483847d36aaaf360cf81d1c055549de911edb1245ca90d2f338",
+      "adapted_sha256": "5ec7f747db7034a31a5603cde0a8003c02b84ab8355c32d84df3c4a2ed394dae",
+      "adapted_crc32": "3EBBD436",
+      "literal_byte_offset": 212,
+      "delta_recipe": {
+        "preset_file": "psh0CBF49C5.txt",
+        "roles": [
+          "deferred_draw/0"
+        ],
+        "modern_shader_sha256": "51103ce311180483847d36aaaf360cf81d1c055549de911edb1245ca90d2f338",
+        "register": 0,
+        "component": 3,
+        "before": 0.25,
+        "after": 0.0
+      },
+      "retained": "All modern instructions, declarations and other literal tokens",
+      "rendering_validated": false
+    },
+    {
+      "preset_file": "psh405ABC1B.txt",
+      "container": "gta_terrain_va_3lyr.fxc",
+      "source_sha256": "b7172ce35b4fcb07005bee26c3097613e92b70b6046f3399862230c90562353a",
+      "preset_sha256": "ac7ddbba137b192b509b1893f694209d6bdc293783e9b915c483573fcbff1cb2",
+      "interface_audit": {
+        "source_slot": 7,
+        "stage": "ps",
+        "roles": [
+          "deferred_draw/0"
+        ],
+        "missing_roles": [],
+        "target_slots": [
+          7
+        ],
+        "candidates": [
+          {
+            "target_slot": 7,
+            "changed_bindings": {},
+            "target_extra_bindings": {
+              "NearFarPlane": [
+                "float4",
+                128
+              ]
+            },
+            "source_writes_depth": false,
+            "target_writes_depth": true,
+            "declarations_equal": false,
+            "changed_pass_states": [
+              "deferred_draw/0"
+            ],
+            "source_bindings_preserved": true
+          }
+        ],
+        "mapping_unambiguous": true
+      },
+      "delta": [
+        "--- ",
+        "+++ ",
+        "@@ -2 +2 @@",
+        "-def c0, 0.5, 0, 1, 0.25",
+        "+def c0, 0.5, 0, 1, 0"
+      ],
+      "status": "built_offline",
+      "modern_slot": 7,
+      "alias": "psh07FE34FB.txt",
+      "modern_sha256": "5f5b3e7e0c15c37746d35cc8a419bf3160377cff28b85700c851836c990e7aae",
+      "adapted_sha256": "c3b39cfb4d00b56c69289066b405afdc52e61d12146bc524c17ed3db4561629f",
+      "adapted_crc32": "20403F1E",
+      "literal_byte_offset": 212,
+      "delta_recipe": {
+        "preset_file": "psh405ABC1B.txt",
+        "roles": [
+          "deferred_draw/0"
+        ],
+        "modern_shader_sha256": "5f5b3e7e0c15c37746d35cc8a419bf3160377cff28b85700c851836c990e7aae",
+        "register": 0,
+        "component": 3,
+        "before": 0.25,
+        "after": 0.0
+      },
+      "retained": "All modern instructions, declarations and other literal tokens",
+      "rendering_validated": false
+    },
+    {
+      "preset_file": "psh841FD9AE.txt",
+      "container": "gta_terrain_va_4lyr.fxc",
+      "source_sha256": "29e50d84858272c037e1a731252c18760b812d05998d228027119bfab96aa449",
+      "preset_sha256": "f2ee6ff902604a0e1deecf302089108b600122f32dcd8234c8ee29d3664cc1bd",
+      "interface_audit": {
+        "source_slot": 9,
+        "stage": "ps",
+        "roles": [
+          "deferred_draw/0"
+        ],
+        "missing_roles": [],
+        "target_slots": [
+          9
+        ],
+        "candidates": [
+          {
+            "target_slot": 9,
+            "changed_bindings": {},
+            "target_extra_bindings": {
+              "NearFarPlane": [
+                "float4",
+                128
+              ]
+            },
+            "source_writes_depth": false,
+            "target_writes_depth": true,
+            "declarations_equal": false,
+            "changed_pass_states": [
+              "deferred_draw/0"
+            ],
+            "source_bindings_preserved": true
+          }
+        ],
+        "mapping_unambiguous": true
+      },
+      "delta": [
+        "--- ",
+        "+++ ",
+        "@@ -2 +2 @@",
+        "-def c0, 0.5, 0, 1, 0.25",
+        "+def c0, 0.5, 0, 1, 0"
+      ],
+      "status": "built_offline",
+      "modern_slot": 9,
+      "alias": "pshD3E7B05D.txt",
+      "modern_sha256": "a8e1cea56c700287f38e323d8ded03116cdad964460000c5cbe5312b37ee1ed7",
+      "adapted_sha256": "f7ddecfc0acb4e2b60254f4e3a4745039b2f6759248992722c9afeb351adae06",
+      "adapted_crc32": "EFE30367",
+      "literal_byte_offset": 212,
+      "delta_recipe": {
+        "preset_file": "psh841FD9AE.txt",
+        "roles": [
+          "deferred_draw/0"
+        ],
+        "modern_shader_sha256": "a8e1cea56c700287f38e323d8ded03116cdad964460000c5cbe5312b37ee1ed7",
+        "register": 0,
+        "component": 3,
+        "before": 0.25,
+        "after": 0.0
+      },
+      "retained": "All modern instructions, declarations and other literal tokens",
+      "rendering_validated": false
+    },
+    {
+      "preset_file": "vsh54F25463.txt",
+      "container": "deferred_lighting.fxc",
+      "source_sha256": "96e0e0f79f98616247f944bb40a662f158695265240901e83092736dba4f377b",
+      "preset_sha256": "07b1b306e969f8969afe3d9fe1ed7fffe46137a23abe4f6ab7776850f6e9bb5a",
+      "interface_audit": {
+        "source_slot": 7,
+        "stage": "vs",
+        "roles": [
+          "lightShafts/0",
+          "lightShafts/1",
+          "lightShafts/4",
+          "lightShafts/5"
+        ],
+        "missing_roles": [],
+        "target_slots": [
+          7
+        ],
+        "candidates": [
+          {
+            "target_slot": 7,
+            "changed_bindings": {},
+            "target_extra_bindings": {},
+            "source_writes_depth": false,
+            "target_writes_depth": false,
+            "declarations_equal": false,
+            "changed_pass_states": [],
+            "source_bindings_preserved": true
+          }
+        ],
+        "mapping_unambiguous": true
+      },
+      "delta": [
+        "--- ",
+        "+++ ",
+        "@@ -4 +4 @@",
+        "-def c2, 9.99999975e-005, -2, 9.99999975e-006, 0.662",
+        "+def c2, 9.99999975e-005, -2, 9.99999975e-006, 2",
+        "@@ -77 +76,0 @@",
+        "-sge r1.x, v0_abs.z, c2.x"
+      ],
+      "status": "requires_custom_adapter",
+      "reason": "No reviewed semantic recipe; legacy program is not copied into modern shaders."
+    },
+    {
+      "preset_file": "vshC35A5E05.txt",
+      "container": "deferred_lighting.fxc",
+      "source_sha256": "6589ac0fe5b332fef5b20dbff87b21df2d09cfa20b3ee695642175b54d1861e0",
+      "preset_sha256": "0f749b766602f446032130f4b2df3e6e2ee58b9a6e0f3fb926436110a077c4df",
+      "interface_audit": {
+        "source_slot": 8,
+        "stage": "vs",
+        "roles": [
+          "lightShafts/2",
+          "lightShafts/3",
+          "lightShafts/6",
+          "lightShafts/7"
+        ],
+        "missing_roles": [],
+        "target_slots": [
+          8
+        ],
+        "candidates": [
+          {
+            "target_slot": 8,
+            "changed_bindings": {
+              "gDeferredLightSampler2": {
+                "source": [
+                  "sampler",
+                  0
+                ],
+                "target": null
+              }
+            },
+            "target_extra_bindings": {
+              "gDeferredLightSampler1": [
+                "sampler",
+                0
+              ]
+            },
+            "source_writes_depth": false,
+            "target_writes_depth": false,
+            "declarations_equal": false,
+            "changed_pass_states": [],
+            "source_bindings_preserved": false
+          }
+        ],
+        "mapping_unambiguous": true
+      },
+      "delta": [
+        "--- ",
+        "+++ ",
+        "@@ -3,4 +3,4 @@",
+        "-def c1, 6.28318548, -3.14159274, -1.57079637, 1.57079637",
+        "-def c2, 9.99999975e-005, -2, 9.99999975e-006, 0.662",
+        "-def c3, 0, -1, 1, 0.000244140625",
+        "-def c4, 0.5, -0.5, 0.25, 0",
+        "+def c1, 9.28318548, -3.14159274, -1.57079637, 1.57079637",
+        "+def c2, 9.99999975e-005, -2, 9.99999975e-006, 100",
+        "+def c3, 1, -1, 1, 0.000244140625",
+        "+def c4, 0, 0, 0, 0",
+        "@@ -121 +120,0 @@",
+        "-min r0.x, r0.x, c0.w",
+        "@@ -132 +131 @@",
+        "-mul r0.x, r0.x, c4.z",
+        "+mul r0.x, r0.x, c0.z"
+      ],
+      "status": "requires_custom_adapter",
+      "reason": "No reviewed semantic recipe; legacy program is not copied into modern shaders."
+    },
+    {
+      "preset_file": "psh22DCDB69.txt",
+      "container": "rage_postfx.fxc",
+      "source_sha256": "25fde16dc7d6a7e7f9d82bbfb027ee532768371c41dcea6f44b917691fcd35f0",
+      "preset_sha256": "b9e2eaf3a530a3f9c62767f5a899c60cdf97cd6ff42bd118c3048c7d354cc86f",
+      "interface_audit": {
+        "source_slot": 12,
+        "stage": "ps",
+        "roles": [
+          "GTACompositePostFx/10"
+        ],
+        "missing_roles": [],
+        "target_slots": [
+          12
+        ],
+        "candidates": [
+          {
+            "target_slot": 12,
+            "changed_bindings": {
+              "AdapLumSampler": {
+                "source": [
+                  "sampler",
+                  4
+                ],
+                "target": [
+                  "sampler",
+                  5
+                ]
+              },
+              "BloomSampler": {
+                "source": [
+                  "sampler",
+                  3
+                ],
+                "target": [
+                  "sampler",
+                  4
+                ]
+              },
+              "ColorCorrect": {
+                "source": [
+                  "float4",
+                  78
+                ],
+                "target": [
+                  "float4",
+                  83
+                ]
+              },
+              "ColorShift": {
+                "source": [
+                  "float4",
+                  79
+                ],
+                "target": [
+                  "float4",
+                  84
+                ]
+              },
+              "TexelSize": {
+                "source": [
+                  "float4",
+                  72
+                ],
+                "target": [
+                  "float4",
+                  76
+                ]
+              },
+              "ToneMapParams": {
+                "source": [
+                  "float4",
+                  76
+                ],
+                "target": [
+                  "float4",
+                  81
+                ]
+              },
+              "deSatContrastGamma": {
+                "source": [
+                  "float4",
+                  77
+                ],
+                "target": [
+                  "float4",
+                  82
+                ]
+              },
+              "dofBlur": {
+                "source": [
+                  "float4",
+                  75
+                ],
+                "target": [
+                  "float4",
+                  79
+                ]
+              },
+              "dofDist": {
+                "source": [
+                  "float4",
+                  74
+                ],
+                "target": [
+                  "float4",
+                  78
+                ]
+              },
+              "dofProj": {
+                "source": [
+                  "float4",
+                  73
+                ],
+                "target": [
+                  "float4",
+                  77
+                ]
+              }
+            },
+            "target_extra_bindings": {
+              "StippleTexture": [
+                "sampler",
+                10
+              ],
+              "BlurSampler": [
+                "sampler",
+                3
+              ],
+              "JitterSampler": [
+                "sampler",
+                6
+              ],
+              "NoiseParams": [
+                "float4",
+                85
+              ],
+              "PLAYER_MASK": [
+                "float",
+                86
+              ],
+              "StencilCopySampler": [
+                "sampler",
+                7
+              ],
+              "gDirectionalMotionBlurLength": [
+                "float",
+                80
+              ],
+              "globalScreenSize": [
+                "float4",
+                44
+              ],
+              "motionBlurMatrix": [
+                "float4x4",
+                72
+              ],
+              "NearFarPlane": [
+                "float4",
+                128
+              ]
+            },
+            "source_writes_depth": false,
+            "target_writes_depth": false,
+            "declarations_equal": false,
+            "changed_pass_states": [],
+            "source_bindings_preserved": false
+          }
+        ],
+        "mapping_unambiguous": true
+      },
+      "delta": [
+        "--- ",
+        "+++ ",
+        "@@ -4 +4 @@",
+        "-def c2, 0.25, 1, 256, 0",
+        "+def c2, 0.1, 1, 256, 0",
+        "@@ -6 +6 @@",
+        "-def c4, 256, 2, 4, 8",
+        "+def c4, 256, 2, 4, 0.45",
+        "@@ -80,3 +80,2 @@",
+        "-mul r2.xyz, r1, c76.z",
+        "-mul r2.xyz, r2, c2.x",
+        "-cmp r1.xyz, r1, r2, c1.x",
+        "+max r2.xyz, r1, c1.x",
+        "+mul r1.xyz, r1, c2.x",
+        "@@ -86,3 +84,0 @@",
+        "-mad r0.xyz, r0, r0.w, -r1.x",
+        "-mad r0.xyz, c77.x, r0, r1.x",
+        "-mul r0.w, r1.x, c79.w",
+        "@@ -90,2 +85,0 @@",
+        "-mad r0.xyz, c79, -r0.w, r0",
+        "-mul r1.yzw, r0.w, c79.xxyz",
+        "@@ -93,3 +86,0 @@",
+        "-mad r0.xyz, r0.w, r0, r1.yzww",
+        "-mul r0.xyz, r0, c78",
+        "-add r0.xyz, r0, r0",
+        "@@ -97,0 +89,3 @@",
+        "+pow r0.x, r0.x, c4.w",
+        "+pow r0.y, r0.y, c4.w",
+        "+pow r0.z, r0.z, c4.w"
+      ],
+      "status": "requires_custom_adapter",
+      "reason": "No reviewed semantic recipe; legacy program is not copied into modern shaders."
+    },
+    {
+      "preset_file": "psh71CC11CF.txt",
+      "container": "gta_grass.fxc",
+      "source_sha256": "dad0e1aee388c89942f74e676992297df99686c18888f186c99d740d950a3698",
+      "preset_sha256": "5c64fa78bda74586fae6f05a079cbaf3c376871a9f27890e19ea4a59538ef7bf",
+      "interface_audit": {
+        "source_slot": 2,
+        "stage": "ps",
+        "roles": [
+          "deferred_draw/0",
+          "deferred_drawskinned/0",
+          "deferredalphaclip_draw/0",
+          "deferredalphaclip_drawskinned/0"
+        ],
+        "missing_roles": [],
+        "target_slots": [
+          2
+        ],
+        "candidates": [
+          {
+            "target_slot": 2,
+            "changed_bindings": {},
+            "target_extra_bindings": {
+              "NearFarPlane": [
+                "float4",
+                128
+              ]
+            },
+            "source_writes_depth": false,
+            "target_writes_depth": true,
+            "declarations_equal": false,
+            "changed_pass_states": [],
+            "source_bindings_preserved": true
+          }
+        ],
+        "mapping_unambiguous": true
+      },
+      "delta": [
+        "--- ",
+        "+++ ",
+        "@@ -2 +2 @@",
+        "-def c0, 0, -1, -0, 9.99999975e-006",
+        "+def c0, -1, -0, 9.99999975e-006, 1",
+        "@@ -26,3 +26,2 @@",
+        "-mov r1.zw, c0.x",
+        "-texldl r1, r1, s10",
+        "-cmp r1, -r1.y, c0.y, c0.z",
+        "+texld r1, r1, s10",
+        "+cmp r1, -r1.y, c0.x, c0.y",
+        "@@ -30 +29 @@",
+        "-add r1.xyz, c0.w, v1",
+        "+add r1.xyz, c0.z, v1",
+        "@@ -33 +32 @@",
+        "-mad r1.xyz, r1, r1.w, -c0.y",
+        "+mad r1.xyz, r1, r1.w, c0.w",
+        "@@ -38,2 +37,2 @@",
+        "-mov r0.yz, c0",
+        "-mul oC3, -r0.yzzz, c52.x",
+        "+mov r0.xy, c0",
+        "+mul oC3, -r0.xyyy, c52.x"
+      ],
+      "status": "requires_custom_adapter",
+      "reason": "No reviewed semantic recipe; legacy program is not copied into modern shaders."
+    },
+    {
+      "preset_file": "psh2DF967C6.txt",
+      "container": "gta_cutout_fence.fxc",
+      "source_sha256": "9df3a3b8351b1b4a262f9de27feedf7e8539126ea79ef01865a4e19006ae541b",
+      "preset_sha256": "c2e0c344085f98801d78a2b49d4b20f32691664223ce99f64a2a1fa398e76167",
+      "interface_audit": {
+        "source_slot": 15,
+        "stage": "ps",
+        "roles": [
+          "deferredalphaclip_draw/0",
+          "deferredalphaclip_drawskinned/0"
+        ],
+        "missing_roles": [],
+        "target_slots": [
+          15
+        ],
+        "candidates": [
+          {
+            "target_slot": 15,
+            "changed_bindings": {},
+            "target_extra_bindings": {
+              "NearFarPlane": [
+                "float4",
+                128
+              ]
+            },
+            "source_writes_depth": false,
+            "target_writes_depth": true,
+            "declarations_equal": false,
+            "changed_pass_states": [],
+            "source_bindings_preserved": true
+          }
+        ],
+        "mapping_unambiguous": true
+      },
+      "delta": [
+        "--- ",
+        "+++ ",
+        "@@ -2 +2 @@",
+        "-def c0, 0, -1, -0, 9.99999975e-006",
+        "+def c0, -1, 0, 9.99999975e-006, 1",
+        "@@ -4,0 +5,3 @@",
+        "+def c150, 0.0, 1.0, 0.0, 0.0",
+        "+def c175, 0.0, 0.5, 2.0, -1.0",
+        "+def c177, 1.0, 4.0, 3.0, 0.0",
+        "@@ -10,0 +14 @@",
+        "+dcl_2d s13",
+        "@@ -22,3 +26,2 @@",
+        "-mov r0.zw, c0.x",
+        "-texldl r0, r0, s10",
+        "-cmp r0, -r0.y, c0.y, c0.z",
+        "+texld r0, r0, s10",
+        "+cmp r0, -r0.y, c0.x, c0.y",
+        "@@ -27 +30,16 @@",
+        "-add r1.xyz, c0.w, v1",
+        "+mov r10.zw, c150.x",
+        "+mov r10.xy, v0",
+        "+mul r10.xy, r10, c177.z",
+        "+texld r11, r10, s13",
+        "+mad r11, r11, c175.z, c175.w",
+        "+mov r10.xyz, r11.w",
+        "+mul r10, r10, c177.w",
+        "+add r10, r10, -c175.w",
+        "+mul r10, r0, r10",
+        "+mov r9.xyz, r0",
+        "+max r9.w, r0.x, r0.y",
+        "+max r9.w, r9.w, r0.z",
+        "+mul_sat r9.w, r9.w, c177.x",
+        "+pow r9.w, r9.w, c177.x",
+        "+lrp r0.xyz, r9.w, r9, r10",
+        "+add r1.xyz, c0.z, v1",
+        "@@ -31 +49 @@",
+        "-mad r1.xyz, r1, r1.w, -c0.y",
+        "+mad r1.xyz, r1, r1.w, c0.w",
+        "@@ -38,2 +56,2 @@",
+        "-mov r0.yz, c0",
+        "-mul oC3, -r0.yzzz, c52.x",
+        "+mov r0.xy, c0",
+        "+mul oC3, -r0.xyyy, c52.x"
+      ],
+      "status": "requires_custom_adapter",
+      "reason": "No reviewed semantic recipe; legacy program is not copied into modern shaders."
+    }
+  ]
+}

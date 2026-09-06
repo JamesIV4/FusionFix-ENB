@@ -1,5 +1,40 @@
 # GTA IV Complete Edition + FusionFix ENB Compatibility Project Plan
 
+> **Latest checkpoint, September 5:** computer use is stopped at the user's
+> request; the user runs all further game checks and supplies screenshots.
+> [The 1.0.4.0 reference](research/patch1040-reference.md) resolves all twelve
+> preset shader identities. Indoor runtime inspection confirmed that GTA IV
+> records commands through a façade with the ENB device at +0x11AC. The bridge
+> now installs at ENB's real draw boundary, validates program tokens independently
+> of comment metadata, and preserves the original call's arguments/result.
+> The user confirmed improved seams and supplied an ENB toggle pair. The
+> translated draw succeeds, but the original iCEnhancer main effect produces
+> almost-black world rendering. A bounded automatic input/output diagnostic
+> build is ready for the next user-run indoor check. Release build, 42 Python
+> tests and headless native state/readback checks pass. **Full rendering
+> compatibility remains unfinished; the darkening's cause is not yet proven.**
+> Current instructions: [postfx-bridge.md](research/postfx-bridge.md).
+
+> **September 5: compatibility-layer development takes priority.** The user
+> tested FixedBaseline successfully and reports unchanged trees, then requested
+> work on the main compatibility layer. Three modern shader delta adapters now
+> carry the preset's material change into FusionFix while retaining its depth
+> and coverage instructions. All three assemble and pass independent bytecode
+> checks. Five mapped inputs need custom translation. Targeted composite-input
+> capture is also built; the next major bridge is postfx recognition, sampler/
+> constant layout and depth representation together. See
+> [the implementation and validation](research/modern-shader-adapter.md).
+> The earlier requirement to pause all broader work for tree comparisons is
+> superseded. Exposure remains unresolved; nothing new was installed or launched.
+
+> **Steam 1.0.8.0 reference acquired and inspected, September 5.** The original
+> executable and shader set are now available separately. Main terrain/tree/
+> lighting/postfx containers match CE byte-for-byte, six historical hook patterns
+> match the old executable, and original shadow/G-buffer format values agree.
+> This supports the baseline repair and supplies a concrete renderer reference;
+> it does not establish a working 1.0.8.0 ENB setup. See
+> [the comparison and addresses](research/steam1080-reference.md).
+
 > **2026-09-05: repair the regular ENB baseline before further preset tests.**
 > [The review](research/regular-enb-review.md) found a retained modern tree shader
 > with disabled constant providers and ungated shadow/G-buffer format/matrix

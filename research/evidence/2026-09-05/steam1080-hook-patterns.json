@@ -1,0 +1,113 @@
+{
+  "exe_sha256": "3d90e7c516fa450ca002e5031e62c0f66b404590f33e6cc9793b0da4fffbfd0f",
+  "preferred_image_base": "0x400000",
+  "method": "on-disk executable PE sections only; no patching",
+  "entries": [
+    {
+      "name": "legacy_CreatePixelShader",
+      "pattern": "50 8B 82 A8 01 00 00 56 51 FF D0",
+      "source_line": 1577,
+      "active_in_legacy_source": false,
+      "d3d9_vtable_index": 106,
+      "matches": [
+        {
+          "section": ".text",
+          "rva": "0x00009CB3",
+          "file_offset": "0x00009CB3"
+        }
+      ],
+      "runtime_validated": false
+    },
+    {
+      "name": "legacy_SetPixelShader",
+      "pattern": "8B 0D ? ? ? ? 8B 11 50 A3 ? ? ? ? 8B 82 AC 01 00 00 51 FF D0",
+      "source_line": 1633,
+      "active_in_legacy_source": false,
+      "d3d9_vtable_index": 107,
+      "matches": [
+        {
+          "section": ".text",
+          "rva": "0x0000B78C",
+          "file_offset": "0x0000B78C"
+        }
+      ],
+      "runtime_validated": false
+    },
+    {
+      "name": "legacy_SetVertexShaderConstantF",
+      "pattern": "8B 81 AC 11 00 00 8B 4C 24 2C 8B 10 8B 92 78 01 00 00 83 C4 0C 51",
+      "source_line": 1703,
+      "active_in_legacy_source": true,
+      "d3d9_vtable_index": 94,
+      "matches": [
+        {
+          "section": ".text",
+          "rva": "0x000178A7",
+          "file_offset": "0x000178A7"
+        }
+      ],
+      "runtime_validated": false
+    },
+    {
+      "name": "legacy_SetPixelShaderConstantF",
+      "pattern": "8B 81 AC 11 00 00 8B 4C 24 2C 8B 10 8B 92 B4 01 00 00",
+      "source_line": 1753,
+      "active_in_legacy_source": true,
+      "d3d9_vtable_index": 109,
+      "matches": [
+        {
+          "section": ".text",
+          "rva": "0x00017607",
+          "file_offset": "0x00017607"
+        }
+      ],
+      "runtime_validated": false
+    },
+    {
+      "name": "legacy_CreateTexture_1080",
+      "pattern": "8B 80 AC 11 00 00 8B 10 8B 52 5C",
+      "source_line": 1824,
+      "active_in_legacy_source": true,
+      "d3d9_vtable_index": 23,
+      "matches": [
+        {
+          "section": ".text",
+          "rva": "0x000105FC",
+          "file_offset": "0x000105FC"
+        }
+      ],
+      "runtime_validated": false
+    },
+    {
+      "name": "legacy_CreateTexture_1070",
+      "pattern": "8B 80 AC 11 00 00 8B 08 6A 00 8D 9F 8C 00 00 00 53 52 8B 57 58 52 8B 57 0C 52 8B 57 20 52 8B 57 10 52 8B 57",
+      "source_line": 1868,
+      "active_in_legacy_source": true,
+      "d3d9_vtable_index": 23,
+      "matches": [],
+      "runtime_validated": false
+    },
+    {
+      "name": "gfwl_ShaderPath_CE",
+      "pattern": "8B 04 8D ? ? ? ? A3 ? ? ? ? 8B 44 24 04",
+      "source": "https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/blob/aee995b0181feea58ed3682417d48a0c125beb06/source/shaders.ixx#L98",
+      "active_in_legacy_source": true,
+      "matches": [],
+      "runtime_validated": false
+    },
+    {
+      "name": "gfwl_ShaderPath_fallback",
+      "pattern": "8B 14 85 ? ? ? ? A3 ? ? ? ? 8B 44 24 04",
+      "source": "https://github.com/gillian-guide/GTAIV.EFLC.FusionFix-GFWL/blob/aee995b0181feea58ed3682417d48a0c125beb06/source/shaders.ixx#L113",
+      "active_in_legacy_source": true,
+      "matches": [
+        {
+          "section": ".text",
+          "rva": "0x006C4DE8",
+          "file_offset": "0x006C4DE8"
+        }
+      ],
+      "runtime_validated": false
+    }
+  ]
+}

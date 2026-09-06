@@ -200,15 +200,17 @@ The first repair is now implemented and built:
   `8e6ef1dfd44a87603b3160b20b5e565be73272cbd9bcf6ebbb7b80663de5142a`.
 * `check_interface.py` now recognizes `_abs` source modifiers.
 
-The native Release build and 25 offline tests pass. A synthetic FixedBaseline
+The initial native Release build and 25 offline tests passed. A synthetic FixedBaseline
 setup/restore verified the intended ASI, tree and ini hashes and restored its
-original test files. Rendering remains unverified until the user runs the
-prepared FixedBaseline against the same scene.
+original test files. The user subsequently ran FixedBaseline successfully;
+the 15:38:56 screenshot and installed hashes confirm that run. The user reports
+trees look exactly the same. Correct rendering is not established. See
+[the run evidence](evidence/2026-09-05/user-fixed-baseline.json).
 
-Keep the alias/effect capture paused for that comparison. If foliage, faceting
-or exposure remain, next isolate the postfx curve and actual luminance/HDR
-inputs. Resume broader shader mapping after the baseline supports a meaningful
-visual comparison.
+The user then requested compatibility-layer development instead of further
+tree diagnosis. Work now continues through [modern shader delta adapters and
+targeted postfx input capture](modern-shader-adapter.md). Exposure remains an
+unresolved acceptance condition, not a reason to suspend that development.
 
 The earlier hook-gating work, DOF discovery, extractor and reversible staging
 remain useful. The review changes the acceptance criterion: **loading and

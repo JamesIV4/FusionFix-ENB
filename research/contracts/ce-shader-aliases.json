@@ -1,6 +1,13 @@
 {
   "format": 1,
   "mapping_evidence": "research/shader-map.json: static assembly candidates, not proven original hash identities; SHA256 pins stock CE 1.2.0.59 win32_30 and supplied iCEnhancer 4 inputs",
+  "legacy_reference": {
+    "version": "1.0.8.0",
+    "main_depot_manifest": "4406763129603688303",
+    "candidate_containers_byte_identical_to_ce": true,
+    "evidence": "research/evidence/2026-09-05/steam1080-ce-comparison.json",
+    "legacy_runtime_tested": false
+  },
   "runtime_evidence": {
     "terrain_group": {
       "status": "at_least_one_alias_confirmed",

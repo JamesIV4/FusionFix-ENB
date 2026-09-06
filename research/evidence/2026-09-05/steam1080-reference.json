@@ -1,0 +1,33 @@
+{
+  "depot": {"app": "12210", "depot": "12211", "manifest": "4406763129603688303"},
+  "root": "C:/Games/Steam/steamapps/content/app_12210/depot_12211/GTAIV",
+  "exe": {
+    "file_version": "1, 0, 8, 0",
+    "product_version": "1, 0, 8, 0",
+    "bytes": 15628696,
+    "sha256": "3d90e7c516fa450ca002e5031e62c0f66b404590f33e6cc9793b0da4fffbfd0f"
+  },
+  "download_finished_reported_by_user": true,
+  "executable_launched": false,
+  "installed_ce_modified": false,
+  "renderer_format_sites": [
+    {"purpose": "cascade atlas format", "old_rva": "006C4C33", "ce_rva": "0071D260", "old_original_enum": 3, "ce_original_enum": 3, "format": "R16F"},
+    {"purpose": "G-buffer format selection", "old_rva": "00695D24", "ce_rva": "006D15C2", "old_original_enum": 5, "ce_original_enum": 5, "format": "A2R10G10B10"}
+  ],
+  "renderer_format_method": "On-disk immediates at known FusionFix pattern sites; values use source/comvars.ixx grcTextureFormat; not runtime texture capture",
+  "renderer_patterns": {
+    "atlas_legacy": "C7 05 ? ? ? ? ? ? ? ? C7 05 ? ? ? ? ? ? ? ? 8B 08",
+    "atlas_ce": "C7 05 ? ? ? ? ? ? ? ? C7 05 ? ? ? ? ? ? ? ? 8B 08 50 FF 51 08 5E 59 C3 8B 44 24 04 6A 72",
+    "gbuffer_legacy": "40 05 00 00 00 8B 0D ? ? ? ? 8B 11 8B 52 38 8D 74 24 14 56 50 A1",
+    "gbuffer_ce": "BA ? ? ? ? 84 C0 0F 45 CA 8B 15"
+  },
+  "sky_disassembly_spot_check": {
+    "container": "win32_30/rage_atmoscatt_clouds.fxc",
+    "old_compiler_stamp": "9.26.952.2844",
+    "ce_compiler_stamp": "9.29.952.3111",
+    "slots_examined": [0, 8],
+    "observed_changes": "Local constant register allocation, instruction scheduling and commuted multiply operands",
+    "all_changed_shaders_proven_semantically_equal": false
+  },
+  "reports": ["steam1080-ce-comparison.json", "steam1080-enb-hashes.json", "steam1080-hook-patterns.json"]
+}

@@ -2,6 +2,11 @@ module;
 
 #include <common.hxx>
 #include <d3dx9tex.h>
+#include <fstream>
+#include <vector>
+#include <cmath>
+#include <atomic>
+#include <cstdio>
 
 export module postfx;
 
@@ -13,6 +18,8 @@ import fusiondxhook;
 import settings;
 import d3dx9_43;
 import enbcompat;
+
+#include "enb_compat/postfxbridge.hxx"
 
 #define IDR_FXAA                                 101
 #define IDR_SMAA                                 102
@@ -1703,6 +1710,12 @@ private:
         else if (bInsteadDrawPrimitivePostFX)
         {
             bInsteadDrawPrimitivePostFX = false;
+            if (ENBCompat::Renderer().PostFxBridge)
+            {
+                ENBPostFxBridge::Install(rage::grcDevice::GetD3DDevice());
+                hbDrawPrimitivePostFX.fun();
+                return;
+            }
             Init();
             NewPostFX();
         }
@@ -1720,10 +1733,19 @@ private:
         HRESULT hr = S_FALSE;
         pDevice->GetPixelShader(&pShader);
         // atmoscatt clouds
-        if (PostFxResources.DiffuseTex != nullptr)
+        auto diffuseTexture = PostFxResources.DiffuseTex;
+        if (ENBCompat::Renderer().PostFxBridge)
+        {
+            // The bridge does not initialize FusionFix's replacement postfx
+            // chain. Resolve the game's existing target directly for the sky
+            // split instead of relying on NewPostFX to populate DiffuseTex.
+            auto target = rage::grcTextureFactoryPC::GetRTByName("_DEFERRED_GBUFFER_0_");
+            diffuseTexture = target ? target->mD3DTexture : nullptr;
+        }
+        if (diffuseTexture != nullptr)
         {
             IDirect3DSurface9* DiffuseSurf = nullptr;
-            PostFxResources.DiffuseTex->GetSurfaceLevel(0, &DiffuseSurf);
+            diffuseTexture->GetSurfaceLevel(0, &DiffuseSurf);
             if (DiffuseSurf)
             {
                 IDirect3DSurface9* oldRenderTarget1 = 0;
@@ -1741,6 +1763,7 @@ private:
             SAFE_RELEASE(DiffuseSurf);
             SAFE_RELEASE(pShader);
         }
+        SAFE_RELEASE(pShader);
         return hbDrawSkyHook.fun(_this, edx, a2, a3, a4, a5, a6, a7);
     }
 
@@ -1784,13 +1807,17 @@ public:
 
                 //if(PostFxResources.EnablePostfx)
                 {
-                    if (profile.ReplacePostFX)
+                    if (profile.ReplacePostFX || profile.PostFxBridge)
                     {
                         auto pattern = find_pattern("E8 ? ? ? ? 8B 4F 60 E8 ? ? ? ? 8B 4F 60", "E8 ? ? ? ? 8B 4F 60 E8 ? ? ? ? 8B 4F 60");
                         hbDrawPrimitivePostFX.fun = injector::MakeCALL(pattern.get_first(0), DrawPrimitivePostFX).get();
 
                         pattern = find_pattern("E8 ? ? ? ? 6A 0A FF B7", "E8 ? ? ? ? 8B 8E ? ? ? ? 8B 56 10");
                         hbDrawCallPostFX.fun = injector::MakeCALL(pattern.get_first(0), DrawCallPostFX).get();
+                        if (profile.PostFxBridge)
+                        {
+                            ENBCompat::Log("postfx bridge: game composite hooks installed (experimental)");
+                        }
                     }
 
                     if (profile.SkyDiffuseSplit)

@@ -1,11 +1,15 @@
 # Research
 
+Current development: [runtime postfx bridge](postfx-bridge.md) and
+[the recovered 1.0.4.0 shader reference](patch1040-reference.md).
+
 Evidence for the ENB compatibility work. Kept separate from `docs/` on purpose:
 `docs/` says how to use the thing, this says what is actually known.
 
 | File | What it holds |
 |---|---|
 | [STATUS.md](STATUS.md) | where the project stands, what is settled, what is open, what to do next |
+| [steam1080-reference.md](steam1080-reference.md) | downloaded 1.0.8.0 executable, exact CE shader comparison, renderer formats and historical hook sites |
 | [regular-enb-review.md](regular-enb-review.md) | September 5 review: ordinary ENB baseline defects, omitted renderer dependencies, and exposure evidence limits |
 | [legacy-shader-bridge.md](legacy-shader-bridge.md) | September 4 reopening: historical shader mappings, standard D3DX effect validation, and concrete translation boundaries |
 | [research-log.md](research-log.md) | one entry per session: configuration, hypotheses, observations, conclusions, next experiment |

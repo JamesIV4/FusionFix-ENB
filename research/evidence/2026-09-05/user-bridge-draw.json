@@ -1,0 +1,20 @@
+{
+  "phase": "modern PostFxBridge, ENB 0.163 original preset",
+  "screenshot": "20260905183832_1.jpg",
+  "screenshot_sha256": "a31eff4033ab59e61da9727d7817d4c9d7d21b060cf64fe755911f7aef3ce237",
+  "installed_asi_sha256": "5df954a5b28ed2fa615bc4a7e66c8e5f4e7439781275fe44fe1f2c14ef1e2f6f",
+  "build_matches_installed": true,
+  "scene_loaded": true,
+  "backend_installed": true,
+  "modern_composite_slot": 13,
+  "initial_clip_mismatch_at": "18:38:19.553",
+  "successful_translated_draw_at": "18:38:19.604",
+  "visual_observation": "Indoor scene remains dark and hazy, with triangular wall artifacts visible.",
+  "rendering_fixed": false,
+  "limits": [
+    "Deduplicated log proves at least one translated draw succeeded, not the proportion of frames handled.",
+    "Successful D3D calls do not establish texture contents or visual correctness.",
+    "Triangular artifacts were already visible in the earlier modern run before the bridge handled its composite."
+  ],
+  "next_test": "Same room with ENB effect toggled off via verified Shift+F11; no file changes."
+}

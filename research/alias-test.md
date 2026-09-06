@@ -1,15 +1,18 @@
 # User-run test: CE terrain shader filename bridge
 
-**Paused on 2026-09-05 at the user's request.** Review of the regular ENB
-baseline found tree-provider and shadow/G-buffer compatibility gaps. A repaired
-FixedBaseline is now staged for user validation; run that before continuing
-these identity/effect tests. See [regular-enb-review.md](regular-enb-review.md).
+**September 5 update:** FixedBaseline was tested successfully; trees look
+unchanged and exposure remains unresolved. The user requested compatibility-layer
+development instead of more tree diagnosis. New modern shader delta adapters
+and `TracePostFx` input capture are described in
+[modern-shader-adapter.md](modern-shader-adapter.md). The historical alias phases
+below remain available; do not install the new modern aliases into this stock
+baseline. The current game-facing tracer cannot establish that ENB's private
+replacement shaders are absent merely because their hashes are missing.
 
 With GTAIV closed:
 
 ```powershell
-$kit = 'C:\temp\enb-revisit\user-test-kit'
-& 'S:\Repos\FusionFix-ENB\tools\gamesetup\Invoke-ShaderAliasTest.ps1' -Kit $kit -Action FixedBaseline
+& 'S:\Repos\FusionFix-ENB\tools\gamesetup\Invoke-ShaderAliasTest.ps1' -Kit 'C:\temp\enb-revisit\user-test-kit' -Action FixedBaseline
 ```
 
 This restores regular ENB shaderinput, installs the rebuilt stock-depth tree

@@ -1,0 +1,56 @@
+{
+  "pid": 29944,
+  "read_only": true,
+  "device": "017BC2B8",
+  "vtable": "00EAA26C",
+  "methods": [
+    {
+      "slot": 0,
+      "address": "003010F0",
+      "module": "GTAIV.exe",
+      "module_rva": "210F0"
+    },
+    {
+      "slot": 81,
+      "address": "00301DE0",
+      "module": "GTAIV.exe",
+      "module_rva": "21DE0"
+    },
+    {
+      "slot": 82,
+      "address": "00301E50",
+      "module": "GTAIV.exe",
+      "module_rva": "21E50"
+    },
+    {
+      "slot": 106,
+      "address": "00302510",
+      "module": "GTAIV.exe",
+      "module_rva": "22510"
+    },
+    {
+      "slot": 107,
+      "address": "00302530",
+      "module": "GTAIV.exe",
+      "module_rva": "22530"
+    },
+    {
+      "slot": 108,
+      "address": "00302590",
+      "module": "GTAIV.exe",
+      "module_rva": "22590"
+    },
+    {
+      "slot": 109,
+      "address": "003025B0",
+      "module": "GTAIV.exe",
+      "module_rva": "225B0"
+    },
+    {
+      "slot": 110,
+      "address": "00302670",
+      "module": "GTAIV.exe",
+      "module_rva": "22670"
+    }
+  ]
+}

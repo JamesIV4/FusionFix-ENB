@@ -1,0 +1,19 @@
+{
+  "phase": "FixedBaseline",
+  "screenshot": "20260905153856_1.jpg",
+  "screenshot_sha256": "5361fe1ce61b765eb0ff6b6e75b8acd45bf11110e4c615ff951fa12d4e95c211",
+  "installed_asi_sha256": "ec91097b991a3f1d181f53c58d1d8d255a38f74732536dd5fe501b4429ef2da4",
+  "installed_tree_sha256": "8e6ef1dfd44a87603b3160b20b5e565be73272cbd9bcf6ebbb7b80663de5142a",
+  "installed_enbeffect_sha256": "5676d6393cb82983f0a23a85c20919549a6a95093188fb36e289ce35acce4d63",
+  "log_time": "15:37:10",
+  "profile": "ENBLegacy",
+  "ShadowPipelineFixes": 0,
+  "FusionShaderTweaks": 0,
+  "ShaderConstantInjection": 1,
+  "startup_and_scene_loaded": true,
+  "user_tree_assessment": "Exactly the same, neither worse nor better",
+  "rendering_fixed": false,
+  "exposure_cause": "unresolved",
+  "excluded_earlier_screenshot": "20260905153248_1.jpg: user had not submitted the setup command's second line",
+  "next_direction": "User requested compatibility-layer development instead of further tree diagnosis"
+}

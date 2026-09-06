@@ -10,7 +10,7 @@ restoration completes. See research/alias-test.md.
 #>
 [CmdletBinding()]
 param(
-    [Parameter(Mandatory)][ValidateSet('Baseline', 'FixedBaseline', 'Probe', 'Aliases', 'Effect', 'TraceAliases', 'CollectTrace', 'Restore')][string]$Action,
+    [Parameter(Mandatory)][ValidateSet('Baseline', 'FixedBaseline', 'Probe', 'Aliases', 'Effect', 'TraceAliases', 'TracePostFx', 'CollectTrace', 'Restore')][string]$Action,
     [Parameter(Mandatory)][string]$Kit,
     [string]$Game = 'C:\Games\Steam\steamapps\common\Grand Theft Auto IV\GTAIV'
 )
@@ -90,7 +90,7 @@ if ($Action -eq 'CollectTrace') {
     $diagnostics = Game-Path 'ENBCompat'
     foreach ($required in 'shaders.csv', 'shader_first_binds.csv', 'trace-session.json') {
         if (-not (Test-Path -LiteralPath (Join-Path $diagnostics $required) -PathType Leaf)) {
-            throw "Trace is incomplete; missing $required. Run TraceAliases with the new build, launch a scene, and exit normally."
+            throw "Trace is incomplete; missing $required. Run TraceAliases or TracePostFx with the new build, launch a scene, and exit normally."
         }
     }
     $runRoot = Join-Path $kitRoot 'trace-runs'
@@ -109,7 +109,7 @@ if ($Action -eq 'CollectTrace') {
 $phases = @('baseline')
 if ($Action -eq 'TraceAliases') {
     $phases += 'aliases'
-} elseif ($Action -notin @('Baseline', 'FixedBaseline', 'Restore')) {
+} elseif ($Action -notin @('Baseline', 'FixedBaseline', 'TracePostFx', 'Restore')) {
     $phases += $Action.ToLowerInvariant()
 }
 $expectedInstalled = @{}
@@ -132,6 +132,21 @@ if ($Action -ne 'Restore') {
                 }
             }
         }
+    }
+}
+# Preflight fixed/trace artifacts before changing any installed files.
+if ($Action -in @('FixedBaseline', 'TraceAliases', 'TracePostFx')) {
+    $newAsi = Join-Path $repoRoot 'bin\GTAIV.EFLC.FusionFix.asi'
+    if (-not (Test-Path -LiteralPath $newAsi -PathType Leaf)) { throw "Build is missing: $newAsi" }
+    $fixedTree = Join-Path $kitRoot 'fixed\gta_trees_extended.fxc'
+    $fixedManifest = Join-Path $kitRoot 'fixed\manifest.json'
+    if (-not (Test-Path -LiteralPath $fixedTree -PathType Leaf) -or
+        -not (Test-Path -LiteralPath $fixedManifest -PathType Leaf)) {
+        throw 'Fixed tree package is missing. Rebuild the test kit with prepare_alias_test.py.'
+    }
+    $treeInfo = Get-Content -LiteralPath $fixedManifest -Raw | ConvertFrom-Json
+    if ((Get-FileHash -LiteralPath $fixedTree -Algorithm SHA256).Hash -ne $treeInfo.compiled_sha256) {
+        throw 'Fixed tree package hash does not match its manifest.'
     }
 }
 # Validate all backup files and target paths before any restoration/mutation.
@@ -187,9 +202,7 @@ if ($Action -eq 'Probe') {
     Write-Host '  pshA5F4E880.txt, pshFDFF185D.txt, psh1D661524.txt'
 }
 
-if ($Action -in @('FixedBaseline', 'TraceAliases')) {
-    $newAsi = Join-Path $repoRoot 'bin\GTAIV.EFLC.FusionFix.asi'
-    if (-not (Test-Path -LiteralPath $newAsi -PathType Leaf)) { throw "Build is missing: $newAsi" }
+if ($Action -in @('FixedBaseline', 'TraceAliases', 'TracePostFx')) {
     $targetAsi = Game-Path 'plugins\GTAIV.EFLC.FusionFix.asi'
     Copy-Item -LiteralPath $newAsi -Destination $targetAsi -Force
     if ((Get-FileHash -LiteralPath $newAsi -Algorithm SHA256).Hash -ne
@@ -197,16 +210,6 @@ if ($Action -in @('FixedBaseline', 'TraceAliases')) {
         throw 'Trace ASI installation verification failed.'
     }
 
-    $fixedTree = Join-Path $kitRoot 'fixed\gta_trees_extended.fxc'
-    $fixedManifest = Join-Path $kitRoot 'fixed\manifest.json'
-    if (-not (Test-Path -LiteralPath $fixedTree -PathType Leaf) -or
-        -not (Test-Path -LiteralPath $fixedManifest -PathType Leaf)) {
-        throw 'Fixed tree package is missing. Rebuild the test kit with prepare_alias_test.py.'
-    }
-    $treeInfo = Get-Content -LiteralPath $fixedManifest -Raw | ConvertFrom-Json
-    if ((Get-FileHash -LiteralPath $fixedTree -Algorithm SHA256).Hash -ne $treeInfo.compiled_sha256) {
-        throw 'Fixed tree package hash does not match its manifest.'
-    }
     $targetTree = Game-Path 'update\common\shaders\win32_30_nv8\gta_trees_extended.fxc'
     Copy-Item -LiteralPath $fixedTree -Destination $targetTree -Force
 
@@ -235,7 +238,7 @@ if ($Action -in @('FixedBaseline', 'TraceAliases')) {
     }
 }
 
-if ($Action -eq 'TraceAliases') {
+if ($Action -in @('TraceAliases', 'TracePostFx')) {
 
     $diagnostics = Game-Path 'ENBCompat'
     if (Test-Path -LiteralPath $diagnostics) {
@@ -255,14 +258,30 @@ if ($Action -eq 'TraceAliases') {
         TraceShaderBinds = '0'; TraceTextures = '0'; TraceConstants = '0';
         TraceDraws = '0'; TraceKey = '0'; TraceStartFrame = '0'; TraceFrameCount = '0'
     }
+    # Existing kits predate this setting. Insert it into ENBCompatibility.
+    $values['TracePostFxInputs'] = '0'
+    if ($Action -eq 'TracePostFx') {
+        $values['TracePostFxInputs'] = '1'
+        $values['TraceKey'] = '121' # F10, one three-frame capture per press
+        $values['TraceFrameCount'] = '3'
+    }
     foreach ($key in $values.Keys) {
         $pattern = '(?m)^' + [regex]::Escape($key) + '\s*=.*$'
-        if ([regex]::Matches($text, $pattern).Count -ne 1) { throw "Expected one $key setting in FusionFix ini." }
-        $text = [regex]::Replace($text, $pattern, "$key = $($values[$key])")
+        $matches = [regex]::Matches($text, $pattern).Count
+        if ($matches -eq 0) {
+            if ([regex]::Matches($text, '(?m)^\[ENBCompatibility\]\s*$').Count -ne 1) {
+                throw 'Expected one ENBCompatibility section.'
+            }
+            $text = [regex]::Replace($text, '(?m)^\[ENBCompatibility\]\s*$', "[ENBCompatibility]`n$key = $($values[$key])")
+        } else {
+            if ($matches -ne 1) { throw "Expected one $key setting in FusionFix ini." }
+            $text = [regex]::Replace($text, $pattern, "$key = $($values[$key])")
+        }
     }
     [IO.File]::WriteAllText($ini, $text, [Text.UTF8Encoding]::new($false))
     $activeAliases = @()
-    foreach ($name in 'pshA5F4E880.txt', 'pshFDFF185D.txt', 'psh1D661524.txt') {
+    foreach ($file in Get-ChildItem -LiteralPath (Game-Path 'shaderinput') -File -Filter '*sh*.txt') {
+        $name = $file.Name
         $path = Game-Path "shaderinput\$name"
         $activeAliases += [pscustomobject]@{
             file = $name
@@ -271,7 +290,7 @@ if ($Action -eq 'TraceAliases') {
     }
     $session = [pscustomobject]@{
         format = 1
-        action = 'TraceAliases'
+        action = $Action
         prepared_utc = [DateTime]::UtcNow.ToString('o')
         fusionfix_asi_sha256 = (Get-FileHash -LiteralPath $targetAsi -Algorithm SHA256).Hash
         aliases = $activeAliases
@@ -279,7 +298,11 @@ if ($Action -eq 'TraceAliases') {
     [IO.File]::WriteAllText((Join-Path $diagnostics 'trace-session.json'),
                             ($session | ConvertTo-Json -Depth 4),
                             [Text.UTF8Encoding]::new($false))
-    Write-Host 'TraceAliases files verified. Launch GTAIV yourself, load any normal scene, move around briefly, then exit normally.'
+    if ($Action -eq 'TracePostFx') {
+        Write-Host 'TracePostFx ready on FixedBaseline. Launch GTAIV yourself, load a normal scene, press F10 once, then exit normally.'
+    } else {
+        Write-Host 'TraceAliases files verified. Launch GTAIV yourself, load any normal scene, move around briefly, then exit normally.'
+    }
     Write-Host "After exit run: & '$PSCommandPath' -Kit '$kitRoot' -Game '$gameRoot' -Action CollectTrace"
     exit
 }

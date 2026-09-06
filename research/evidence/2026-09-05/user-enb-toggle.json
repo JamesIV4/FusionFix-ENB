@@ -1,0 +1,16 @@
+{
+  "on_screenshot": "20260905190355_1.jpg",
+  "on_sha256": "8fabc35633842425e6236183a9e662b3cf26177a684d016b0a6f6ff1401a814d",
+  "off_screenshot": "20260905190401_1.jpg",
+  "off_sha256": "c370db2620670ad4545293db6fd185a297c8ec62bb15238fff6e2a07f142a9a1",
+  "ordering_source": "User reported taking ENB-on first and ENB-off second",
+  "installed_asi_sha256": "5df954a5b28ed2fa615bc4a7e66c8e5f4e7439781275fe44fe1f2c14ef1e2f6f",
+  "installed_effect_sha256": "5676d6393cb82983f0a23a85c20919549a6a95093188fb36e289ce35acce4d63",
+  "installed_effect": "Original ENB 0.163 effect, not iCEnhancer",
+  "user_report": "Normals/seam issue appears fixed across the world",
+  "observed": "Earlier sharp diagonal wall boundaries are much less apparent in this pair. ENB-on has a strong dark gray veil; ENB-off is clearer and more saturated.",
+  "translated_draw_logged_at": "19:03:45.166",
+  "all_material_normals_verified": false,
+  "full_rendering_compatibility": false,
+  "next_test": "Original compiled iCEnhancer main effect only, on the same bridge and indoor scene"
+}
