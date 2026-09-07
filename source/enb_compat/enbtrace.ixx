@@ -13,7 +13,6 @@ import common;
 import comvars;
 import enbcompat;
 
-#include "enb163_flush.hxx"
 
 // D3D9 instrumentation for the ENB compatibility investigation.
 //
@@ -149,7 +148,6 @@ namespace ENBTrace
         bool traceTextures = false;     // every SetTexture
         bool traceConstants = false;    // every Set*ShaderConstantF
         bool traceShaderBinds = false;  // every SetPixelShader, by creation hash
-        bool tracePostFxInputs = false; // bounded input-state snapshots before known composite draws
         int startFrame = 0;             // first frame to trace
         int frameCount = 3;             // frames to trace once triggered
         int traceKey = 0;               // virtual-key that arms a capture; 0 = use startFrame
@@ -707,116 +705,9 @@ namespace ENBTrace
         return Original<Fn>(Slot_SetVertexShaderConstantF)(device, start, data, count);
     }
 
-    const char* PostFxRole(uint32_t strippedCrc)
-    {
-        // Diagnostic identities, NOT ENB routing hashes. Regenerate/check with
-        // d3d9bc.py against the pinned stock and FF rage_postfx exports.
-        switch (strippedCrc)
-        {
-        case 0x195D28E3: return "stock/12";
-        case 0x1895B35D: return "stock/13";
-        case 0x8DB7EF39: return "stock/15";
-        case 0xA4B56361: return "stock/17";
-        case 0xA7E1631C: return "stock/19";
-        case 0x13D72698: return "stock/25";
-        case 0xFF7C285C: return "stock/27";
-        case 0xD3E8604C: return "stock/29";
-        case 0x85C6ADB6: return "fusion/12";
-        case 0x65352DE5: return "fusion/13";
-        case 0x9F6373B9: return "fusion/15";
-        case 0xE4B63EA1: return "fusion/17";
-        case 0x8B23FBDA: return "fusion/19";
-        case 0x1023696F: return "fusion/25";
-        case 0x6297D46B: return "fusion/27";
-        case 0x7CCB5EBF: return "fusion/29";
-        default: return nullptr;
-        }
-    }
-
-    void CapturePostFxInputs(IDirect3DDevice9* device)
-    {
-        if (!Cfg().tracePostFxInputs || !Tracing())
-            return;
-        auto hash = gCurrentPS.load(std::memory_order_relaxed);
-        auto role = PostFxRole(hash);
-        if (!role)
-            return;
-        const bool constantsFlushed = ENB163::FlushConstants(device);
-        // Read-only calls at the game-facing device boundary. With an ENB
-        // wrapper these are its exposed inputs, not its private replacement
-        // shader/resource state. Texture pixel contents are NOT read back.
-        static thread_local int lastFrame = -1;
-        static thread_local unsigned snapshots = 0;
-        const auto frame = gFrame.load(std::memory_order_relaxed);
-        if (frame != lastFrame)
-        {
-            lastFrame = frame;
-            snapshots = 0;
-        }
-        if (snapshots >= 16)
-            return;
-        ++snapshots;
-        std::ostringstream out;
-        out << "PostFxInputs role=" << role << " crc_stripped=" << Hex8(hash)
-            << " sample=" << snapshots << " boundary=game_device_before_draw"
-            << " enb163_constants_flushed=" << constantsFlushed;
-        for (UINT sampler : { 0u, 1u, 2u, 3u, 4u, 5u, 6u, 7u, 13u })
-        {
-            IDirect3DBaseTexture9* texture = nullptr;
-            auto hr = device->GetTexture(sampler, &texture);
-            out << "\n  s" << sampler << " get_hr=" << Hex8(static_cast<uint32_t>(hr));
-            if (SUCCEEDED(hr))
-            {
-                out << " object=" << texture;
-                if (texture && texture->GetType() == D3DRTYPE_TEXTURE)
-                {
-                    D3DSURFACE_DESC desc{};
-                    auto descHr = static_cast<IDirect3DTexture9*>(texture)->GetLevelDesc(0, &desc);
-                    out << " desc_hr=" << Hex8(static_cast<uint32_t>(descHr));
-                    if (SUCCEEDED(descHr))
-                        out << " size=" << desc.Width << 'x' << desc.Height
-                            << " format=" << FormatString(desc.Format);
-                }
-                DWORD srgb = 0;
-                auto stateHr = device->GetSamplerState(sampler, D3DSAMP_SRGBTEXTURE, &srgb);
-                out << " srgb_hr=" << Hex8(static_cast<uint32_t>(stateHr));
-                if (SUCCEEDED(stateHr))
-                    out << " srgb=" << srgb;
-            }
-            if (texture)
-                texture->Release();
-        }
-        for (UINT reg : { 44u, 66u, 72u, 73u, 74u, 75u, 76u, 77u, 78u, 79u,
-                          80u, 81u, 82u, 83u, 84u, 85u, 86u, 209u })
-        {
-            float value[4]{};
-            auto hr = device->GetPixelShaderConstantF(reg, value, 1);
-            out << "\n  c" << reg << " get_hr=" << Hex8(static_cast<uint32_t>(hr));
-            if (SUCCEEDED(hr))
-                out << " value=" << std::setprecision(9) << value[0] << ',' << value[1]
-                    << ',' << value[2] << ',' << value[3];
-        }
-        IDirect3DSurface9* surface = nullptr;
-        auto hr = device->GetRenderTarget(0, &surface);
-        out << "\n  rt0 get_hr=" << Hex8(static_cast<uint32_t>(hr));
-        if (SUCCEEDED(hr) && surface)
-        {
-            D3DSURFACE_DESC desc{};
-            auto descHr = surface->GetDesc(&desc);
-            out << " object=" << surface << " desc_hr=" << Hex8(static_cast<uint32_t>(descHr));
-            if (SUCCEEDED(descHr))
-                out << " size=" << desc.Width << 'x' << desc.Height
-                    << " format=" << FormatString(desc.Format);
-        }
-        if (surface)
-            surface->Release();
-        Write(out.str());
-    }
-
     HRESULT WINAPI Hook_DrawPrimitive(IDirect3DDevice9* device, D3DPRIMITIVETYPE type,
                                       UINT start, UINT count)
     {
-        CapturePostFxInputs(device);
         if (Cfg().traceDraws && Tracing())
         {
             std::ostringstream out;
@@ -833,7 +724,6 @@ namespace ENBTrace
                                              INT baseVertex, UINT minIndex, UINT numVertices,
                                              UINT startIndex, UINT primitiveCount)
     {
-        CapturePostFxInputs(device);
         if (Cfg().traceDraws && Tracing())
         {
             std::ostringstream out;
@@ -964,7 +854,6 @@ namespace ENBTrace
         cfg.traceTextures = iniReader.ReadInteger("ENBCompatibility", "TraceTextures", 0) != 0;
         cfg.traceConstants = iniReader.ReadInteger("ENBCompatibility", "TraceConstants", 0) != 0;
         cfg.traceShaderBinds = iniReader.ReadInteger("ENBCompatibility", "TraceShaderBinds", 0) != 0;
-        cfg.tracePostFxInputs = iniReader.ReadInteger("ENBCompatibility", "TracePostFxInputs", 0) != 0;
         cfg.startFrame = std::max(iniReader.ReadInteger("ENBCompatibility", "TraceStartFrame", 0), 0);
         cfg.frameCount = std::max(iniReader.ReadInteger("ENBCompatibility", "TraceFrameCount", 3), 0);
         cfg.traceKey = std::clamp(iniReader.ReadInteger("ENBCompatibility", "TraceKey", 0), 0, 255);

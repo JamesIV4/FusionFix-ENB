@@ -1,5 +1,7 @@
 # Modern shader adapter
 
+> **Historical; superseded September 7.** Modern-shader/mixed-pipeline workarounds and their setup commands are retired. Use [the stock CE strategy](stock-ce-strategy.md).
+
 **September 6 update:** all translations are implemented. The exact-1.0.4.0
 backend produces fifteen aliases covering eleven preset inputs, including both
 light-shaft inputs and composite `/10`. Grass needs no preset delta.

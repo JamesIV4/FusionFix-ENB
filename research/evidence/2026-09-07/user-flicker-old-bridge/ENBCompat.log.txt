@@ -1,0 +1,9 @@
+11:23:04.083  shaders loaded from win32_30: FusionFix
+11:23:04.083  ENBCompatibility mode=1 profile=ENBLegacy
+11:23:04.083    ReplacePostFX=0 PostFxBridge=1 PostProcessAA=0 AmbientOcclusion=0 ShadowPipelineFixes=1 FusionShaderTweaks=1 SunShafts=0 PreAlphaDepthCopy=0 SkyDiffuseSplit=1 ConsoleGammaBlit=0 ShaderConstantInjection=1 FusionShaderPackage=1
+11:23:04.093  postfx bridge: game composite hooks installed (experimental)
+11:23:04.592  version spoof: SpoofGameVersion unset or unparsable (''), not installed
+11:23:29.166  postfx bridge: ENB draw boundary installed after game command queue
+11:23:29.166  postfx bridge: recognized modern composite slot 13
+11:23:29.166  postfx bridge: clip/log-depth constants disagree; original draw retained
+11:23:29.219  postfx bridge: legacy composite draw submitted with converted depth and relocated inputs

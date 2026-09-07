@@ -1,0 +1,1 @@
+﻿PASS: 339 exact stock files and 11 aliases; Apply/reapply/Restore/repeated Restore; stale modern overrides and assets removed; non-shader settings/content preserved; changed stage/base/backup rejected before mutation. No game launched.

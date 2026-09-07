@@ -9,6 +9,7 @@ import common;
 import comvars;
 import d3dx9_43;
 import settings;
+import enbcompat;
 
 #ifndef SAFE_RELEASE
 #define SAFE_RELEASE(p) { if (p) { (p)->Release(); (p)=NULL; } }
@@ -369,6 +370,7 @@ public:
     {
         FusionFix::onInitEventAsync() += []()
         {
+            if (!ENBCompat::Renderer().ReflectionShaders) return;
             CIniReader iniReader("");
 
             static int nReflectionMSAAQuality = std::clamp(iniReader.ReadInteger("EXPERIMENTAL", "ReflectionMSAAQuality", 0), 0, 8);

@@ -1,5 +1,7 @@
 # Regular ENB baseline review — 2026-09-05
 
+> **Historical; superseded September 7.** Modern-shader/mixed-pipeline workarounds and their setup commands are retired. Use [the stock CE strategy](stock-ce-strategy.md).
+
 **Verdict: ENB loads and its postfx hook executes, but the baseline is not a
 validated, correctly rendering ENB setup.** The screenshots show more than an
 exposure preference: rectangular foliage cards, conspicuous ground triangles,

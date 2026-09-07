@@ -1,5 +1,44 @@
 # Research log
 
+## 2026-09-07 11:24 - user flicker/halo screenshots still use the old bridge
+
+Inspected all five Steam screenshots (112409, three at 112411, and 112415).
+They visibly show alternating blue/black bridge/building regions and pronounced
+edge outlines during camera movement, with strong overall darkening. Do not
+classify these as normal preset appearance or assign a specific cause from
+the images alone.
+
+The matching game log starts at 11:23:04 and identifies the retired modern
+FusionShaders/ENB bridge. The installed ASI hash is still 5DF954A5...; the
+prepared stock-only package is CED1E28B.... The stock cache and stock-ce-snapshot
+are absent. All 339 staged/original stock files, the eleven staged aliases and
+the staged ASI were verified read-only. The package has not been applied to
+this installation, so these shots do not test the new strategy.
+
+Preserved images, log, INI and exact hashes in
+[user-flicker-old-bridge](evidence/2026-09-07/user-flicker-old-bridge/report.json).
+The next action is the existing user-run Invoke-StockENBTest.ps1 Apply command,
+followed by confirmation of profile=StockENB in the new run log. No real-game
+files changed, no game launched and no computer-use tool was used.
+
+## 2026-09-07 - strict stock CE baseline replaces the modern strategy
+
+At the user's direction, disabled all FusionFix modern shader changes in ENB
+mode while preserving non-shader fixes. Removed the private ENB/postfx/depth
+bridge, extended-tree workaround, modern translators and old staging flows.
+Pinned 339 stock files in the ASI and selected them through the public loader
+mapping API; stale renderer overrides cannot restore a mixed pipeline.
+
+Retargeted all preset changes to original CE shaders. Eleven modified inputs
+produce eleven exact stock aliases; unchanged CE grass stays untouched. The
+two light-shaft executable streams match 1.0.4.0 exactly, with separate raw
+comment-inclusive identities. Every unedited CE instruction is byte-checked;
+six generated programs must equal the full original preset program exactly.
+Native build, headless profile/routing and shader checks pass. Synthetic setup
+and exact rollback preserve non-shader settings/content and remove the retired
+assets. No real-game writes, launch or computer use. Current strategy and
+remaining rendering validation: [stock-ce-strategy.md](stock-ce-strategy.md).
+
 ## 2026-09-06 - completed the remaining translations
 
 Finished both light-volume VS translations and composite /10. The VS adapters

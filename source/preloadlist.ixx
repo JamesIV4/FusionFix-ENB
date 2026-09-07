@@ -7,6 +7,7 @@ export module preloadlist;
 
 import common;
 import comvars;
+import enbcompat;
 
 std::vector<std::string> gFxcNames{};
 std::vector<std::string> gFxcLoadedNames{};
@@ -140,6 +141,7 @@ public:
     {
         FusionFix::onInitEvent() += []()
         {
+            if (!ENBCompat::Renderer().ShaderPreload) return;
             auto pattern = find_pattern("B9 ? ? ? ? E8 ? ? ? ? 8B F8 85 FF 0F 84 ? ? ? ? 83 EC", "B9 ? ? ? ? E8 ? ? ? ? 8B F8 3B FB");
             rage::ASSET = *pattern.get_first<void*>(1);
 

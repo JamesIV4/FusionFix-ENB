@@ -1,0 +1,1785 @@
+{
+  "format": 1,
+  "backend": "exact_1040_to_stock_ce_delta",
+  "game_modified": false,
+  "rendering_validated": false,
+  "requires": "Strict stock CE shader profile; no FusionShaders, extra FusionFix constants, depth conversion or interface bridge.",
+  "stock_corpus": {
+    "cascadeConvert.fxc": "c005b20c898e05c9ad9a4dc21c8ed6db885c419f0800a698d32279654a68d8af",
+    "cascadeGen.fxc": "275747baec019871d80b655948bfc1f3d21a746bc7126819486ad9a6d538adda",
+    "deferred_lighting.fxc": "8eb248207711b8195bc7d4fa7a5ffa173424ebe050bd780fd1091c2ec031d177",
+    "gpuptfx_simplerender.fxc": "652687ef889c773c3f5fc15a743e2f4036c8046507279deb119c056cecc3ca67",
+    "gpuptfx_update.fxc": "3ff71aba3fd3a0571041b8b7e3028c0a33caefd28f2d402d2f77a6a2282815e3",
+    "gta_atmoscatt_clouds.fxc": "97a1835bced86d6cf08ec4d01bfc8a537d2270afebeef8b13a56bae312c77161",
+    "gta_cubemap_reflect.fxc": "50b3a6691884ea0745fa44430d340b2895055c5808eca1dc63667762fb19a428",
+    "gta_cutout_fence.fxc": "ddb2ed779e1978ef455f8d5cdf33ea943ea566623e498c4d0322c6b1cdc1027c",
+    "gta_decal.fxc": "b040bccede9f3240d05ad2bf78659d2f2489724785c9d3ef6733ca31ea4cfd85",
+    "gta_decal_amb_only.fxc": "9b752f2132fcd4934c7a61c63a4f496de011bc296c29fb371923587e52c0b362",
+    "gta_decal_dirt.fxc": "9e0906e6a71878441aa085ad000625e2a69744bfd9a16672daade3187bc25c34",
+    "gta_decal_glue.fxc": "6939b92ff179284f14bb9c9cb327291d61293a5bb305cc189cff29dc9198c5ed",
+    "gta_decal_normal_only.fxc": "af405e3ff08b42ee70072d40245eaa7a9541835fa7bffc3d630473b15d5c2c53",
+    "gta_default.fxc": "ddb2ed779e1978ef455f8d5cdf33ea943ea566623e498c4d0322c6b1cdc1027c",
+    "gta_diffuse_instance.fxc": "d766d9921e000022022724dea30332cda57bbbbac58bb4e5f75d44c6f475af35",
+    "gta_emissive.fxc": "57d644a1f7f8566dce81e56f4947c7ef034ae4c8d7d2e754b7130d73d641dffb",
+    "gta_emissivenight.fxc": "79a1ace384753b03679c115bbca4ea68541303d1cc0ec5964004b4d8cc00aa54",
+    "gta_emissivestrong.fxc": "918cb4c325f6b8375b3264572dfc2284e51b5655e308e31cc8cbbf6aa22b281b",
+    "gta_glass.fxc": "9ae9769673e48121cda73bfe1034187ca929734cf7d1b23ba5481e87e8e66c11",
+    "gta_glass_emissive.fxc": "c6da1f2045ead69299878a3c7a80eafd85be9eec944664fb70f6c6efdf3a3002",
+    "gta_glass_emissivenight.fxc": "5a8ea40b31a6e023a0b41f6b4a7a3556fa2dbb9b3cc49cf5ba97d32e55b4fde6",
+    "gta_glass_normal_spec_reflect.fxc": "60465fb25d0c90b08a1586437d9f098e8ffeacc98616ef04adcfad80df4c2795",
+    "gta_glass_reflect.fxc": "966b1444f1f3dfeb329529bfd8d0c9b9d610e6d6fd7ef0330e71061dac143cf2",
+    "gta_glass_spec.fxc": "788e04407673e49cbf496578554e71c4fe4d042a732c1a7aeb984a6aa8d3cbc6",
+    "gta_grass.fxc": "52e1dff1f4e504f33c65afe550e612fd8a173854b160fa874c46e5713b406e40",
+    "gta_hair_sorted_alpha.fxc": "0b645edd2f898a09d4f056bd0d26cdff9a4dd6e11dfe10a4dd5a25f447589bce",
+    "gta_hair_sorted_alpha_exp.fxc": "64ec9a443b8f04b99105e2b4734ba7a9e9285650e4f5705528993c0904169d9b",
+    "gta_im.fxc": "8b66566ec939706c8041a97b659117463e57fa89947031e350256c0126733319",
+    "gta_normal.fxc": "0966396c7ad5ec5273138f9f49ec86b0f7be434362acc12cbdd00ddad116e636",
+    "gta_normal_cubemap_reflect.fxc": "0751f49d02aea371b6a39e26bf02efd1b97bb3f1afdb6d272a5b5fefc0da7f5a",
+    "gta_normal_decal.fxc": "8426b8802c3747ea98dd71e66c18647294f7e9a0e7a071e406fac7e5bf1a0ff4",
+    "gta_normal_reflect.fxc": "8b3888448f47b8eba40da45842fcc4433bff40b8b76371df2a2b981fb2b0b6ca",
+    "gta_normal_reflect_alpha.fxc": "b659d577783a11da2d4e2f59918bfe27f35842ad495b773d13110ccf423a3971",
+    "gta_normal_reflect_decal.fxc": "7eb2d209d45a0db2765b83344de6172eb4254d64c95ad63f05fdd05e634c993e",
+    "gta_normal_spec.fxc": "99926e54e88d6cff5b92683265a310a9cd1a7a16609c46dfb3f19ea6f321b3d7",
+    "gta_normal_spec_cubemap_reflect.fxc": "2cc99c7f092edeb78ab7524f790990ec0ef9a8e9d71a88679ae9292ad360267f",
+    "gta_normal_spec_decal.fxc": "987f0a72f8f9cd92f4012d718c2e7993b64d0de4d163a70699ff7436c9d8c930",
+    "gta_normal_spec_reflect.fxc": "a26d473268abcbea7bf8fe653651e41c7ec9b64a61c2529fd5739b5db2fada61",
+    "gta_normal_spec_reflect_decal.fxc": "c22e7dd95268ae14078e76373d9cc4b9fbcf7066f778c407427dc4c1856b225a",
+    "gta_normal_spec_reflect_emissive.fxc": "f0dc22e90bed56f562c991a18a6f7054951a581953f49828159dd7230fbfb64a",
+    "gta_normal_spec_reflect_emissivenight.fxc": "3b5ebea2fd44d5ae55bf53dd41cdf0fecfc1198ecac4de8ec41c13a349d8bc1c",
+    "gta_parallax.fxc": "2e7827e8f20794afbb73e5f3d3bc8dbbcce35557f0ffb5000a9f7a238cbcaa87",
+    "gta_parallax_specmap.fxc": "208ff3303585fb37468be2df487072d8b962abcb92d4ffdc956bdead54d780fa",
+    "gta_parallax_steep.fxc": "0d3c51abfcc586dfb3b520f5cb49f43223edce73e5f9d3b29f5c707fd816d945",
+    "gta_ped.fxc": "68d37a73aee3ac2d9a77a5145a4e8bfe4c33daa0d220cf9d8f942258b8e8e442",
+    "gta_ped_face.fxc": "1832e23972b1a0cb402c0525ffee6d035276ff30192c3c38bc83d8826c07b128",
+    "gta_ped_reflect.fxc": "aa22e4e4a5dd12c87e963d5dca495b4652f03e07714332a65117813d3342f335",
+    "gta_ped_skin.fxc": "019104aad63dc497bcf534af363c0475ba02bd92242b6fbbe923541353928953",
+    "gta_ped_skin_blendshape.fxc": "dcc2f84685a00a5fec8b7b178d4d9612dbf442c33dccb65ee0044bd5e19501c1",
+    "gta_projtex.fxc": "639f776d64a16cc276d3425c681b1b6b6689b9da54722cde4135787ea084e6e9",
+    "gta_projtex_steep.fxc": "b0bcae3294b845f4fd9d5f2890286bde3db80d23366e571617f5301d16d277b5",
+    "gta_radar.fxc": "fd555baee807b20b1dbc2651f95389c133056ec8cc3d2956ee9ec2b934a7035c",
+    "gta_reflect.fxc": "80fe402a90f220bd4577937a69429cc037eab0be6a20bea04d7f7c0e79a01e71",
+    "gta_reflect_decal.fxc": "c5760b57edc2bec59c2b79f61db2d269239cd1c5ae6e2d40862bc36a54652521",
+    "gta_rmptfx_gpurender.fxc": "57babed48c7a8f0fb87754585f69cff74fdafb1fad537034d917c093008213a7",
+    "gta_rmptfx_litsprite.fxc": "8b7d90ce0ec1d00808852ab8ac1dd6e86e1601ef3e01dc3871398e560ed00a62",
+    "gta_rmptfx_mesh.fxc": "6e98340d6a1d5eefcef8dbb993fefa4e2fad74dd270e5962fdf92a6acda95a1f",
+    "gta_rmptfx_raindrops.fxc": "a8f07ffc6c4a245297b912fe24751362feab6d3c83bc4aa447de471d0dcab68b",
+    "gta_spec.fxc": "965a4919b3d180664ad1ed786919e844c3682dcc26f1ec713d5433de902dd9df",
+    "gta_spec_decal.fxc": "1143819d61695ecd6e7c9041389fa85caba11689bbef48c1797995463d944e9f",
+    "gta_spec_reflect.fxc": "19fe4078c33145d432d4e8982cb5755f3e4c0d4a37159b889b3fec303ef65786",
+    "gta_spec_reflect_decal.fxc": "3d69ab511b50b2f75c76556957474e8cf35359aa792eb59d79b65a31393e21be",
+    "gta_terrain_va_2lyr.fxc": "5646a5bd8ffe124083bfa89c2ca4311d4687e4a6f34198138ed6714416dd3d8d",
+    "gta_terrain_va_3lyr.fxc": "e792af185f2ff64148b2b78f277cbc04dd72a72e0d344ba9396910b47f4b415f",
+    "gta_terrain_va_4lyr.fxc": "baa6a260d3649d1cba62a03fa7e01b3608994dffd176c0d95b1aed91852b3148",
+    "gta_trees.fxc": "1d3a0c6f4c1ff1725ece5101ef2e2962701a69514e66c6337ff42ef5de4f2d36",
+    "gta_vehicle_badges.fxc": "302d6c45256e1964cf209efd9725639ecd57353064901f8eaf9afdb61cf0c506",
+    "gta_vehicle_basic.fxc": "9ae935d8c3d20732ce673b0cbff433b58445097073ef963477acedfa5058c3bf",
+    "gta_vehicle_chrome.fxc": "5799d7a72e74cf287db70217931765e0a0e2075e01172d9ef5c970c252513ead",
+    "gta_vehicle_disc.fxc": "8754a34a4863b151b87b8c456394d146abd5299d5c901aed9700404f22661ecd",
+    "gta_vehicle_generic.fxc": "abd416734dfaa1757bc82c52a3e2a12cf80aa466f8a498350799fa59283ba690",
+    "gta_vehicle_interior.fxc": "010b34fb1428c067aa4b40930914b623c8a3ccf14b55456b96d008f2131e3a4c",
+    "gta_vehicle_interior2.fxc": "86086fe410e2764d58d325b3fb419ee277512ca38be1d87ce4f62e8a9a2a680c",
+    "gta_vehicle_lightsemissive.fxc": "541821b8d220c059f900ca9994b44da05bf9955a0e9e03ce9ebee9e6b68bd442",
+    "gta_vehicle_mesh.fxc": "22df6bf350edf2d6df5910b5b90b8107e75b02d0d295f2ece4e5215d1516e91d",
+    "gta_vehicle_paint1.fxc": "b24a399a81e63721bca9a2e29963bf4f1217cd5951a399a3bc8efe650487891a",
+    "gta_vehicle_paint2.fxc": "4d7ebdbe25aa196e857938c1e93626b62cccae141778de4b6d6684eba16545bb",
+    "gta_vehicle_paint3.fxc": "f9355cbebd3a7fbce4956422fc98b379154bf3da06c0443fb645a988cabca8d8",
+    "gta_vehicle_rims1.fxc": "6b032c14590c0892628a4879d89240c7ee70c33a372091e9a9bad16faf30865f",
+    "gta_vehicle_rims2.fxc": "c4aff75d647a6c541098057a6b052b55994990786e9063e2c2d80bb4f9d7843c",
+    "gta_vehicle_rubber.fxc": "5b90b1198b27512d53ebbbcf62e7b0648ba9135e15cfdee13d3c33e518ebcfe0",
+    "gta_vehicle_shuts.fxc": "375f5c62673a9e62acb2050833c66bdd4280c4ad75a8b6faf301a1c8fc145c09",
+    "gta_vehicle_tire.fxc": "9fa03b0baaa9d3a10862e1d2285cb5e8d003c7e7671d8d6fb18dba79cfb2cc9c",
+    "gta_vehicle_vehglass.fxc": "f6330cd8952c6d910c6222b5209faef32f3fa8789ff68073d2f629207692dd8f",
+    "gta_wire.fxc": "f0e3f4400ef8e4266662704c024b0c0c4105152827ff0d5ccd23e611b7efb5b6",
+    "mirror.fxc": "15e35eb5bc184f14b93926c05caa40ef14562a3ec9d3d62eb83e183b5bdbdd73",
+    "rage_atmoscatt_clouds.fxc": "1ea0354724fb37a1e96df487e4a6ef6398134c52dc700f58c035e1e1774ad6b1",
+    "rage_billboard_nobump.fxc": "de58d94954ff804336598a7cd5b73819bccb3486750266a18090ca46f2d750eb",
+    "rage_bink.fxc": "bd97fdbe6db65ffc0727eb02a4afc529dc0d38746be60c12dc035f8eb460a9de",
+    "rage_default.fxc": "d7d3f71e83dc3870f9a653fcdcc55ee8553208663f506200dafa73112252bfb7",
+    "rage_fastmipmap.fxc": "52fb145df99b03fe19a945e110509fa1bcfd8b647516b3edf3e6f6ec2c1b77ab",
+    "rage_im.fxc": "49ed4983f534edd21395f3a71cc0b0c48fea3619ef9d07d0aafcbd01e3f9b78c",
+    "rage_perlinnoise.fxc": "91368ebba2cc38bc8a65aaf14332b9dcbb21764377c902241fa5f499a513cb29",
+    "rage_postfx.fxc": "bb85684f8bc29d5018b005a211b04bf5f73cd9dc4874ad49c8cb7c5a423268f9",
+    "rmptfx_collision.fxc": "1c05927f7c95edac808ecf4087cafe4691cdb8cb7e7877b032494d6c65411ad2",
+    "rmptfx_default.fxc": "bde771e6627e51b27c661e1ce1244a038718fc1774be790a86c2e35cb7074843",
+    "rmptfx_litsprite.fxc": "aaf8e89712a1c8c61e6c67b87ffee9455aec0e27e91c69228c48d53a1a793f5d",
+    "shadowSmartBlit.fxc": "d4df7ba76ad923eb6616e9cfe5a29ab04ab25b4bf6047b89eee299799f44df55",
+    "shadowZ.fxc": "0a95ce0cff97d0fc0469596c50e03365b1d992cf14f817a15632e4c6fbc69007",
+    "shadowZDir.fxc": "2235193e5ff9c59e9e48f62e55aa3f1596e0e2c57aa4c93ac5d0ff944f59cd3a",
+    "water.fxc": "6284c84c4a6649582860d135b73722e3e2a59a3ce1623c164b367c6e83fc95b9",
+    "waterTex.fxc": "637c8843db03a57f70482c2d220bcc915c76fc0e61308ec2875c0f49c815e689"
+  },
+  "collision_scan_containers": 102,
+  "affected_slots": {
+    "pshA5F4E880.txt": [
+      {
+        "container": "gta_terrain_va_2lyr.fxc",
+        "slot": 5
+      }
+    ],
+    "psh3185A5E0.txt": [
+      {
+        "container": "rage_postfx.fxc",
+        "slot": 12
+      }
+    ],
+    "pshB3377693.txt": [
+      {
+        "container": "gta_cutout_fence.fxc",
+        "slot": 15
+      },
+      {
+        "container": "gta_default.fxc",
+        "slot": 15
+      },
+      {
+        "container": "gta_wire.fxc",
+        "slot": 14
+      },
+      {
+        "container": "gta_wire.fxc",
+        "slot": 15
+      }
+    ],
+    "psh12A8C432.txt": [
+      {
+        "container": "gta_cutout_fence.fxc",
+        "slot": 14
+      },
+      {
+        "container": "gta_default.fxc",
+        "slot": 14
+      }
+    ],
+    "pshFDFF185D.txt": [
+      {
+        "container": "gta_terrain_va_3lyr.fxc",
+        "slot": 7
+      }
+    ],
+    "psh18B040CA.txt": [
+      {
+        "container": "rage_billboard_nobump.fxc",
+        "slot": 4
+      },
+      {
+        "container": "rage_billboard_nobump.fxc",
+        "slot": 5
+      }
+    ],
+    "psh1D661524.txt": [
+      {
+        "container": "gta_terrain_va_4lyr.fxc",
+        "slot": 9
+      }
+    ],
+    "psh573DE346.txt": [
+      {
+        "container": "gta_normal_spec.fxc",
+        "slot": 14
+      }
+    ],
+    "psh216B7814.txt": [
+      {
+        "container": "gta_spec.fxc",
+        "slot": 14
+      }
+    ],
+    "vsh9EC48C3F.txt": [
+      {
+        "container": "deferred_lighting.fxc",
+        "slot": 7
+      }
+    ],
+    "vshF40198F6.txt": [
+      {
+        "container": "deferred_lighting.fxc",
+        "slot": 8
+      }
+    ]
+  },
+  "entries": [
+    {
+      "preset_file": "psh0CBF49C5.txt",
+      "preset_sha256": "4c0cddd226c8a16a8cbe6b8859ea59d190d704dda0574ee06bdcb589ac80545d",
+      "status": "built_offline",
+      "reason": "Exact reviewed iCEnhancer delta on pinned stock CE programs; no FusionFix shader code or providers.",
+      "sources": [
+        {
+          "container": "gta_terrain_va_2lyr.fxc",
+          "slot": 5,
+          "sha256": "4b374ca606aa4f68b4a22f07e470c5b0905c6c4282e33e455ce9397e9c9660b9",
+          "interface_audit": {
+            "source_slot": 5,
+            "stage": "ps",
+            "roles": [
+              "deferred_draw/0"
+            ],
+            "missing_roles": [],
+            "target_slots": [
+              5
+            ],
+            "candidates": [
+              {
+                "target_slot": 5,
+                "changed_bindings": {},
+                "target_extra_bindings": {},
+                "source_writes_depth": false,
+                "target_writes_depth": false,
+                "declarations_equal": true,
+                "changed_pass_states": [],
+                "source_bindings_preserved": true
+              }
+            ],
+            "mapping_unambiguous": true
+          }
+        }
+      ],
+      "targets": [
+        {
+          "container": "gta_terrain_va_2lyr.fxc",
+          "slot": 5,
+          "roles": [
+            "deferred_draw/0"
+          ],
+          "stage": "ps",
+          "alias": "pshA5F4E880.txt",
+          "stock_sha256": "f74244479986809d0bc89c1c9950f1735e1205bbeea448ebc702678308626457",
+          "adapted_sha256": "e576d2c8047382d1780b35888c3ba819951f3ea63073f795400ce15b535c9c68",
+          "assembly_sha256": "7a94a7117522ed6da1230d6fd0ef5f6568b2b61d68c3333f413ee1f30202378d",
+          "exact_preset_program": true,
+          "unedited_ce_instructions_byte_identical": true,
+          "paired_stage": false,
+          "edits": [
+            {
+              "before": [
+                "def c0, 0.5, 0, 1, 0.25"
+              ],
+              "after": [
+                "def c0, 0.5, 0, 1, 0"
+              ]
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "proof": "The entire generated executable token stream must exactly equal the assembled original preset program."
+      }
+    },
+    {
+      "preset_file": "psh22DCDB69.txt",
+      "preset_sha256": "b9e2eaf3a530a3f9c62767f5a899c60cdf97cd6ff42bd118c3048c7d354cc86f",
+      "status": "built_offline",
+      "reason": "Exact reviewed iCEnhancer delta on pinned stock CE programs; no FusionFix shader code or providers.",
+      "sources": [
+        {
+          "container": "rage_postfx.fxc",
+          "slot": 12,
+          "sha256": "41d6bc76f8f62838b3b7268268dabc253ab7c35314d89cb370dc764ff5959794",
+          "interface_audit": {
+            "source_slot": 12,
+            "stage": "ps",
+            "roles": [
+              "GTACompositePostFx/10"
+            ],
+            "missing_roles": [],
+            "target_slots": [
+              12
+            ],
+            "candidates": [
+              {
+                "target_slot": 12,
+                "changed_bindings": {},
+                "target_extra_bindings": {},
+                "source_writes_depth": false,
+                "target_writes_depth": false,
+                "declarations_equal": true,
+                "changed_pass_states": [],
+                "source_bindings_preserved": true
+              }
+            ],
+            "mapping_unambiguous": true
+          }
+        }
+      ],
+      "targets": [
+        {
+          "container": "rage_postfx.fxc",
+          "slot": 12,
+          "roles": [
+            "GTACompositePostFx/10"
+          ],
+          "stage": "ps",
+          "alias": "psh3185A5E0.txt",
+          "stock_sha256": "25fde16dc7d6a7e7f9d82bbfb027ee532768371c41dcea6f44b917691fcd35f0",
+          "adapted_sha256": "0087114767f0c7d676ec3d8a0b91e157ce63d3fa3ed6fb8d966695c03fc7ff75",
+          "assembly_sha256": "6b1d0ff238c0cf2067fd902fe2ddb2af1cdccbffb5e7b416b693a41f3e9a94da",
+          "exact_preset_program": true,
+          "unedited_ce_instructions_byte_identical": true,
+          "paired_stage": false,
+          "edits": [
+            {
+              "before": [
+                "def c2, 0.25, 1, 256, 0"
+              ],
+              "after": [
+                "def c2, 0.1, 1, 256, 0"
+              ]
+            },
+            {
+              "before": [
+                "def c4, 256, 2, 4, 8"
+              ],
+              "after": [
+                "def c4, 256, 2, 4, 0.45"
+              ]
+            },
+            {
+              "before": [
+                "mul r2.xyz, r1, c76.z",
+                "mul r2.xyz, r2, c2.x",
+                "cmp r1.xyz, r1, r2, c1.x"
+              ],
+              "after": [
+                "max r2.xyz, r1, c1.x",
+                "mul r1.xyz, r1, c2.x"
+              ]
+            },
+            {
+              "before": [
+                "mad r0.xyz, r0, r0.w, -r1.x",
+                "mad r0.xyz, c77.x, r0, r1.x",
+                "mul r0.w, r1.x, c79.w"
+              ],
+              "after": []
+            },
+            {
+              "before": [
+                "mad r0.xyz, c79, -r0.w, r0",
+                "mul r1.yzw, r0.w, c79.xxyz"
+              ],
+              "after": []
+            },
+            {
+              "before": [
+                "mad r0.xyz, r0.w, r0, r1.yzww",
+                "mul r0.xyz, r0, c78",
+                "add r0.xyz, r0, r0"
+              ],
+              "after": []
+            },
+            {
+              "before": [
+                "pow r2.x, r1.x, r0.w"
+              ],
+              "after": [
+                "pow r2.x, r1.x, r0.w",
+                "pow r0.x, r0.x, c4.w",
+                "pow r0.y, r0.y, c4.w",
+                "pow r0.z, r0.z, c4.w"
+              ]
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "proof": "The entire generated executable token stream must exactly equal the assembled original preset program."
+      }
+    },
+    {
+      "preset_file": "psh2DF967C6.txt",
+      "preset_sha256": "c2e0c344085f98801d78a2b49d4b20f32691664223ce99f64a2a1fa398e76167",
+      "status": "built_offline",
+      "reason": "Exact reviewed iCEnhancer delta on pinned stock CE programs; no FusionFix shader code or providers.",
+      "sources": [
+        {
+          "container": "gta_cutout_fence.fxc",
+          "slot": 14,
+          "sha256": "0e955b7ececcfde81e0a355d7152da4eaee7aa42e39f65bbf083acff20a686b2",
+          "interface_audit": {
+            "source_slot": 14,
+            "stage": "ps",
+            "roles": [
+              "deferredalphaclip_draw/0",
+              "deferredalphaclip_drawskinned/0"
+            ],
+            "missing_roles": [],
+            "target_slots": [
+              15
+            ],
+            "candidates": [
+              {
+                "target_slot": 15,
+                "changed_bindings": {},
+                "target_extra_bindings": {},
+                "source_writes_depth": false,
+                "target_writes_depth": false,
+                "declarations_equal": true,
+                "changed_pass_states": [],
+                "source_bindings_preserved": true
+              }
+            ],
+            "mapping_unambiguous": true
+          }
+        },
+        {
+          "container": "gta_default.fxc",
+          "slot": 14,
+          "sha256": "0e955b7ececcfde81e0a355d7152da4eaee7aa42e39f65bbf083acff20a686b2",
+          "interface_audit": {
+            "source_slot": 14,
+            "stage": "ps",
+            "roles": [
+              "deferredalphaclip_draw/0",
+              "deferredalphaclip_drawskinned/0"
+            ],
+            "missing_roles": [],
+            "target_slots": [
+              15
+            ],
+            "candidates": [
+              {
+                "target_slot": 15,
+                "changed_bindings": {},
+                "target_extra_bindings": {},
+                "source_writes_depth": false,
+                "target_writes_depth": false,
+                "declarations_equal": true,
+                "changed_pass_states": [],
+                "source_bindings_preserved": true
+              }
+            ],
+            "mapping_unambiguous": true
+          }
+        },
+        {
+          "container": "gta_wire.fxc",
+          "slot": 13,
+          "sha256": "0e955b7ececcfde81e0a355d7152da4eaee7aa42e39f65bbf083acff20a686b2",
+          "interface_audit": {
+            "source_slot": 13,
+            "stage": "ps",
+            "roles": [
+              "deferred_draw/0",
+              "deferred_drawskinned/0"
+            ],
+            "missing_roles": [],
+            "target_slots": [
+              14
+            ],
+            "candidates": [
+              {
+                "target_slot": 14,
+                "changed_bindings": {},
+                "target_extra_bindings": {},
+                "source_writes_depth": false,
+                "target_writes_depth": false,
+                "declarations_equal": true,
+                "changed_pass_states": [],
+                "source_bindings_preserved": true
+              }
+            ],
+            "mapping_unambiguous": true
+          }
+        },
+        {
+          "container": "gta_wire.fxc",
+          "slot": 14,
+          "sha256": "0e955b7ececcfde81e0a355d7152da4eaee7aa42e39f65bbf083acff20a686b2",
+          "interface_audit": {
+            "source_slot": 14,
+            "stage": "ps",
+            "roles": [
+              "deferredalphaclip_draw/0",
+              "deferredalphaclip_drawskinned/0"
+            ],
+            "missing_roles": [],
+            "target_slots": [
+              15
+            ],
+            "candidates": [
+              {
+                "target_slot": 15,
+                "changed_bindings": {},
+                "target_extra_bindings": {},
+                "source_writes_depth": false,
+                "target_writes_depth": false,
+                "declarations_equal": true,
+                "changed_pass_states": [],
+                "source_bindings_preserved": true
+              }
+            ],
+            "mapping_unambiguous": true
+          }
+        }
+      ],
+      "targets": [
+        {
+          "container": "gta_cutout_fence.fxc",
+          "slot": 15,
+          "roles": [
+            "deferredalphaclip_draw/0",
+            "deferredalphaclip_drawskinned/0"
+          ],
+          "stage": "ps",
+          "alias": "pshB3377693.txt",
+          "stock_sha256": "9df3a3b8351b1b4a262f9de27feedf7e8539126ea79ef01865a4e19006ae541b",
+          "adapted_sha256": "abe17f567e63a48fe64fec5d6df31fd045929791428690f6852c09a1ef5275f4",
+          "assembly_sha256": "f9a380fb6a21ec932c8d52c7dee851ba2f608ca45469f5897d560af1662314ac",
+          "exact_preset_program": false,
+          "unedited_ce_instructions_byte_identical": true,
+          "paired_stage": false,
+          "edits": [
+            {
+              "before": [
+                "def c0, 0, -1, -0, 9.99999975e-006"
+              ],
+              "after": [
+                "def c0, 0, -1, 0, 9.99999975e-006"
+              ]
+            },
+            {
+              "before": [
+                "ps_3_0"
+              ],
+              "after": [
+                "ps_3_0",
+                "def c150, 0.0, 1.0, 0.0, 0.0",
+                "def c175, 0.0, 0.5, 2.0, -1.0",
+                "def c177, 1.0, 4.0, 3.0, 0.0"
+              ]
+            },
+            {
+              "before": [
+                "dcl_2d s0"
+              ],
+              "after": [
+                "dcl_2d s0",
+                "dcl_2d s13"
+              ]
+            },
+            {
+              "before": [
+                "texld r0, v0, s0"
+              ],
+              "after": [
+                "texld r0, v0, s0",
+                "mov r10.zw, c150.x",
+                "mov r10.xy, v0",
+                "mul r10.xy, r10, c177.z",
+                "texld r11, r10, s13",
+                "mad r11, r11, c175.z, c175.w",
+                "mov r10.xyz, r11.w",
+                "mul r10, r10, c177.w",
+                "add r10, r10, -c175.w",
+                "mul r10, r0, r10",
+                "mov r9.xyz, r0",
+                "max r9.w, r0.x, r0.y",
+                "max r9.w, r9.w, r0.z",
+                "mul_sat r9.w, r9.w, c177.x",
+                "pow r9.w, r9.w, c177.x",
+                "lrp r0.xyz, r9.w, r9, r10"
+              ]
+            }
+          ]
+        },
+        {
+          "container": "gta_default.fxc",
+          "slot": 15,
+          "roles": [
+            "deferredalphaclip_draw/0",
+            "deferredalphaclip_drawskinned/0"
+          ],
+          "stage": "ps",
+          "alias": "pshB3377693.txt",
+          "stock_sha256": "9df3a3b8351b1b4a262f9de27feedf7e8539126ea79ef01865a4e19006ae541b",
+          "adapted_sha256": "abe17f567e63a48fe64fec5d6df31fd045929791428690f6852c09a1ef5275f4",
+          "assembly_sha256": "f9a380fb6a21ec932c8d52c7dee851ba2f608ca45469f5897d560af1662314ac",
+          "exact_preset_program": false,
+          "unedited_ce_instructions_byte_identical": true,
+          "paired_stage": false,
+          "edits": [
+            {
+              "before": [
+                "def c0, 0, -1, -0, 9.99999975e-006"
+              ],
+              "after": [
+                "def c0, 0, -1, 0, 9.99999975e-006"
+              ]
+            },
+            {
+              "before": [
+                "ps_3_0"
+              ],
+              "after": [
+                "ps_3_0",
+                "def c150, 0.0, 1.0, 0.0, 0.0",
+                "def c175, 0.0, 0.5, 2.0, -1.0",
+                "def c177, 1.0, 4.0, 3.0, 0.0"
+              ]
+            },
+            {
+              "before": [
+                "dcl_2d s0"
+              ],
+              "after": [
+                "dcl_2d s0",
+                "dcl_2d s13"
+              ]
+            },
+            {
+              "before": [
+                "texld r0, v0, s0"
+              ],
+              "after": [
+                "texld r0, v0, s0",
+                "mov r10.zw, c150.x",
+                "mov r10.xy, v0",
+                "mul r10.xy, r10, c177.z",
+                "texld r11, r10, s13",
+                "mad r11, r11, c175.z, c175.w",
+                "mov r10.xyz, r11.w",
+                "mul r10, r10, c177.w",
+                "add r10, r10, -c175.w",
+                "mul r10, r0, r10",
+                "mov r9.xyz, r0",
+                "max r9.w, r0.x, r0.y",
+                "max r9.w, r9.w, r0.z",
+                "mul_sat r9.w, r9.w, c177.x",
+                "pow r9.w, r9.w, c177.x",
+                "lrp r0.xyz, r9.w, r9, r10"
+              ]
+            }
+          ]
+        },
+        {
+          "container": "gta_wire.fxc",
+          "slot": 14,
+          "roles": [
+            "deferred_draw/0",
+            "deferred_drawskinned/0"
+          ],
+          "stage": "ps",
+          "alias": "pshB3377693.txt",
+          "stock_sha256": "9df3a3b8351b1b4a262f9de27feedf7e8539126ea79ef01865a4e19006ae541b",
+          "adapted_sha256": "abe17f567e63a48fe64fec5d6df31fd045929791428690f6852c09a1ef5275f4",
+          "assembly_sha256": "f9a380fb6a21ec932c8d52c7dee851ba2f608ca45469f5897d560af1662314ac",
+          "exact_preset_program": false,
+          "unedited_ce_instructions_byte_identical": true,
+          "paired_stage": false,
+          "edits": [
+            {
+              "before": [
+                "def c0, 0, -1, -0, 9.99999975e-006"
+              ],
+              "after": [
+                "def c0, 0, -1, 0, 9.99999975e-006"
+              ]
+            },
+            {
+              "before": [
+                "ps_3_0"
+              ],
+              "after": [
+                "ps_3_0",
+                "def c150, 0.0, 1.0, 0.0, 0.0",
+                "def c175, 0.0, 0.5, 2.0, -1.0",
+                "def c177, 1.0, 4.0, 3.0, 0.0"
+              ]
+            },
+            {
+              "before": [
+                "dcl_2d s0"
+              ],
+              "after": [
+                "dcl_2d s0",
+                "dcl_2d s13"
+              ]
+            },
+            {
+              "before": [
+                "texld r0, v0, s0"
+              ],
+              "after": [
+                "texld r0, v0, s0",
+                "mov r10.zw, c150.x",
+                "mov r10.xy, v0",
+                "mul r10.xy, r10, c177.z",
+                "texld r11, r10, s13",
+                "mad r11, r11, c175.z, c175.w",
+                "mov r10.xyz, r11.w",
+                "mul r10, r10, c177.w",
+                "add r10, r10, -c175.w",
+                "mul r10, r0, r10",
+                "mov r9.xyz, r0",
+                "max r9.w, r0.x, r0.y",
+                "max r9.w, r9.w, r0.z",
+                "mul_sat r9.w, r9.w, c177.x",
+                "pow r9.w, r9.w, c177.x",
+                "lrp r0.xyz, r9.w, r9, r10"
+              ]
+            }
+          ]
+        },
+        {
+          "container": "gta_wire.fxc",
+          "slot": 15,
+          "roles": [
+            "deferredalphaclip_draw/0",
+            "deferredalphaclip_drawskinned/0"
+          ],
+          "stage": "ps",
+          "alias": "pshB3377693.txt",
+          "stock_sha256": "9df3a3b8351b1b4a262f9de27feedf7e8539126ea79ef01865a4e19006ae541b",
+          "adapted_sha256": "abe17f567e63a48fe64fec5d6df31fd045929791428690f6852c09a1ef5275f4",
+          "assembly_sha256": "f9a380fb6a21ec932c8d52c7dee851ba2f608ca45469f5897d560af1662314ac",
+          "exact_preset_program": false,
+          "unedited_ce_instructions_byte_identical": true,
+          "paired_stage": false,
+          "edits": [
+            {
+              "before": [
+                "def c0, 0, -1, -0, 9.99999975e-006"
+              ],
+              "after": [
+                "def c0, 0, -1, 0, 9.99999975e-006"
+              ]
+            },
+            {
+              "before": [
+                "ps_3_0"
+              ],
+              "after": [
+                "ps_3_0",
+                "def c150, 0.0, 1.0, 0.0, 0.0",
+                "def c175, 0.0, 0.5, 2.0, -1.0",
+                "def c177, 1.0, 4.0, 3.0, 0.0"
+              ]
+            },
+            {
+              "before": [
+                "dcl_2d s0"
+              ],
+              "after": [
+                "dcl_2d s0",
+                "dcl_2d s13"
+              ]
+            },
+            {
+              "before": [
+                "texld r0, v0, s0"
+              ],
+              "after": [
+                "texld r0, v0, s0",
+                "mov r10.zw, c150.x",
+                "mov r10.xy, v0",
+                "mul r10.xy, r10, c177.z",
+                "texld r11, r10, s13",
+                "mad r11, r11, c175.z, c175.w",
+                "mov r10.xyz, r11.w",
+                "mul r10, r10, c177.w",
+                "add r10, r10, -c175.w",
+                "mul r10, r0, r10",
+                "mov r9.xyz, r0",
+                "max r9.w, r0.x, r0.y",
+                "max r9.w, r9.w, r0.z",
+                "mul_sat r9.w, r9.w, c177.x",
+                "pow r9.w, r9.w, c177.x",
+                "lrp r0.xyz, r9.w, r9, r10"
+              ]
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "surface": "Preserve every stock CE coverage/normal/output instruction outside the explicit preset delta.",
+        "signed_zero": "Original preset -0 -> +0 applied to the exact corresponding CE local DEF component.",
+        "resources": "Only the preset adds s13 detail input and (normal-spec) c199.x; no FusionFix providers."
+      }
+    },
+    {
+      "preset_file": "psh323E9BB8.txt",
+      "preset_sha256": "5eaa490309bd879e6fd9262be9860a789f00f66c5ec7898265056235f738fffe",
+      "status": "built_offline",
+      "reason": "Exact reviewed iCEnhancer delta on pinned stock CE programs; no FusionFix shader code or providers.",
+      "sources": [
+        {
+          "container": "gta_cutout_fence.fxc",
+          "slot": 13,
+          "sha256": "e0fcd61ba6036d1d946f1f870a4d5975aec12b8f86c6e91b8b212fb612ba511d",
+          "interface_audit": {
+            "source_slot": 13,
+            "stage": "ps",
+            "roles": [
+              "deferred_draw/0",
+              "deferred_drawskinned/0"
+            ],
+            "missing_roles": [],
+            "target_slots": [
+              14
+            ],
+            "candidates": [
+              {
+                "target_slot": 14,
+                "changed_bindings": {
+                  "StippleTexture": {
+                    "source": [
+                      "sampler",
+                      10
+                    ],
+                    "target": null
+                  }
+                },
+                "target_extra_bindings": {},
+                "source_writes_depth": false,
+                "target_writes_depth": false,
+                "declarations_equal": false,
+                "changed_pass_states": [],
+                "source_bindings_preserved": false
+              }
+            ],
+            "mapping_unambiguous": true
+          }
+        },
+        {
+          "container": "gta_default.fxc",
+          "slot": 13,
+          "sha256": "e0fcd61ba6036d1d946f1f870a4d5975aec12b8f86c6e91b8b212fb612ba511d",
+          "interface_audit": {
+            "source_slot": 13,
+            "stage": "ps",
+            "roles": [
+              "deferred_draw/0",
+              "deferred_drawskinned/0"
+            ],
+            "missing_roles": [],
+            "target_slots": [
+              14
+            ],
+            "candidates": [
+              {
+                "target_slot": 14,
+                "changed_bindings": {
+                  "StippleTexture": {
+                    "source": [
+                      "sampler",
+                      10
+                    ],
+                    "target": null
+                  }
+                },
+                "target_extra_bindings": {},
+                "source_writes_depth": false,
+                "target_writes_depth": false,
+                "declarations_equal": false,
+                "changed_pass_states": [],
+                "source_bindings_preserved": false
+              }
+            ],
+            "mapping_unambiguous": true
+          }
+        }
+      ],
+      "targets": [
+        {
+          "container": "gta_cutout_fence.fxc",
+          "slot": 14,
+          "roles": [
+            "deferred_draw/0",
+            "deferred_drawskinned/0"
+          ],
+          "stage": "ps",
+          "alias": "psh12A8C432.txt",
+          "stock_sha256": "31b6288a1d53ff7441a974cb62ad31129212bc9077c3a6772c34c57b39388709",
+          "adapted_sha256": "937b05516e3553d2703eaf2099b2383b19e59f7cd2ead2270db0f5399b4c86d5",
+          "assembly_sha256": "7bdafa6605147bb33762b750a23208262a20fbd6f67c1ecbde06ed069fcc02dc",
+          "exact_preset_program": false,
+          "unedited_ce_instructions_byte_identical": true,
+          "paired_stage": false,
+          "edits": [
+            {
+              "before": [
+                "def c0, 0.176470593, -1, -0, 9.99999975e-006"
+              ],
+              "after": [
+                "def c0, 0.176470593, -1, 0, 9.99999975e-006"
+              ]
+            },
+            {
+              "before": [
+                "ps_3_0"
+              ],
+              "after": [
+                "ps_3_0",
+                "def c150, 0.0, 1.0, 0.0, 0.0",
+                "def c175, 0.0, 0.5, 2.0, -1.0",
+                "def c177, 0.7, 4.0, 3.0, 0"
+              ]
+            },
+            {
+              "before": [
+                "dcl_2d s0"
+              ],
+              "after": [
+                "dcl_2d s0",
+                "dcl_2d s13"
+              ]
+            },
+            {
+              "before": [
+                "texld r0, v0, s0"
+              ],
+              "after": [
+                "texld r0, v0, s0",
+                "mov r10.zw, c150.x",
+                "mov r10.xy, v0",
+                "mul r10.xy, r10, c177.z",
+                "texld r11, r10, s13",
+                "mad r11, r11, c175.z, c175.w",
+                "mov r10.xyz, r11.w",
+                "mul r10, r10, c177.w",
+                "add r10, r10, -c175.w",
+                "mul r10, r0, r10",
+                "mov r9.xyz, r0",
+                "max r9.w, r0.x, r0.y",
+                "max r9.w, r9.w, r0.z",
+                "mul_sat r9.w, r9.w, c177.x",
+                "pow r9.w, r9.w, c177.x",
+                "lrp r0.xyz, r9.w, r9, r10"
+              ]
+            }
+          ]
+        },
+        {
+          "container": "gta_default.fxc",
+          "slot": 14,
+          "roles": [
+            "deferred_draw/0",
+            "deferred_drawskinned/0"
+          ],
+          "stage": "ps",
+          "alias": "psh12A8C432.txt",
+          "stock_sha256": "31b6288a1d53ff7441a974cb62ad31129212bc9077c3a6772c34c57b39388709",
+          "adapted_sha256": "937b05516e3553d2703eaf2099b2383b19e59f7cd2ead2270db0f5399b4c86d5",
+          "assembly_sha256": "7bdafa6605147bb33762b750a23208262a20fbd6f67c1ecbde06ed069fcc02dc",
+          "exact_preset_program": false,
+          "unedited_ce_instructions_byte_identical": true,
+          "paired_stage": false,
+          "edits": [
+            {
+              "before": [
+                "def c0, 0.176470593, -1, -0, 9.99999975e-006"
+              ],
+              "after": [
+                "def c0, 0.176470593, -1, 0, 9.99999975e-006"
+              ]
+            },
+            {
+              "before": [
+                "ps_3_0"
+              ],
+              "after": [
+                "ps_3_0",
+                "def c150, 0.0, 1.0, 0.0, 0.0",
+                "def c175, 0.0, 0.5, 2.0, -1.0",
+                "def c177, 0.7, 4.0, 3.0, 0"
+              ]
+            },
+            {
+              "before": [
+                "dcl_2d s0"
+              ],
+              "after": [
+                "dcl_2d s0",
+                "dcl_2d s13"
+              ]
+            },
+            {
+              "before": [
+                "texld r0, v0, s0"
+              ],
+              "after": [
+                "texld r0, v0, s0",
+                "mov r10.zw, c150.x",
+                "mov r10.xy, v0",
+                "mul r10.xy, r10, c177.z",
+                "texld r11, r10, s13",
+                "mad r11, r11, c175.z, c175.w",
+                "mov r10.xyz, r11.w",
+                "mul r10, r10, c177.w",
+                "add r10, r10, -c175.w",
+                "mul r10, r0, r10",
+                "mov r9.xyz, r0",
+                "max r9.w, r0.x, r0.y",
+                "max r9.w, r9.w, r0.z",
+                "mul_sat r9.w, r9.w, c177.x",
+                "pow r9.w, r9.w, c177.x",
+                "lrp r0.xyz, r9.w, r9, r10"
+              ]
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "surface": "Preserve every stock CE coverage/normal/output instruction outside the explicit preset delta.",
+        "signed_zero": "Original preset -0 -> +0 applied to the exact corresponding CE local DEF component.",
+        "resources": "Only the preset adds s13 detail input and (normal-spec) c199.x; no FusionFix providers."
+      }
+    },
+    {
+      "preset_file": "psh405ABC1B.txt",
+      "preset_sha256": "ac7ddbba137b192b509b1893f694209d6bdc293783e9b915c483573fcbff1cb2",
+      "status": "built_offline",
+      "reason": "Exact reviewed iCEnhancer delta on pinned stock CE programs; no FusionFix shader code or providers.",
+      "sources": [
+        {
+          "container": "gta_terrain_va_3lyr.fxc",
+          "slot": 7,
+          "sha256": "7df8520badcab36b702576085d823e5ec08427e9cdc88f3f7b99afba0ee0ce75",
+          "interface_audit": {
+            "source_slot": 7,
+            "stage": "ps",
+            "roles": [
+              "deferred_draw/0"
+            ],
+            "missing_roles": [],
+            "target_slots": [
+              7
+            ],
+            "candidates": [
+              {
+                "target_slot": 7,
+                "changed_bindings": {},
+                "target_extra_bindings": {},
+                "source_writes_depth": false,
+                "target_writes_depth": false,
+                "declarations_equal": true,
+                "changed_pass_states": [],
+                "source_bindings_preserved": true
+              }
+            ],
+            "mapping_unambiguous": true
+          }
+        }
+      ],
+      "targets": [
+        {
+          "container": "gta_terrain_va_3lyr.fxc",
+          "slot": 7,
+          "roles": [
+            "deferred_draw/0"
+          ],
+          "stage": "ps",
+          "alias": "pshFDFF185D.txt",
+          "stock_sha256": "b7172ce35b4fcb07005bee26c3097613e92b70b6046f3399862230c90562353a",
+          "adapted_sha256": "82456b962ad0d2f39798341f2ac6ed137ef94d95c166a427e8f76dbde90eecb1",
+          "assembly_sha256": "f25f1cda76d3e89db1f3a9d01968267b302bc730d488c197f47a4be815cf3064",
+          "exact_preset_program": true,
+          "unedited_ce_instructions_byte_identical": true,
+          "paired_stage": false,
+          "edits": [
+            {
+              "before": [
+                "def c0, 0.5, 0, 1, 0.25"
+              ],
+              "after": [
+                "def c0, 0.5, 0, 1, 0"
+              ]
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "proof": "The entire generated executable token stream must exactly equal the assembled original preset program."
+      }
+    },
+    {
+      "preset_file": "psh46A43A9F.txt",
+      "preset_sha256": "1137bda71f6f6a64ba915dc13c7430c78af5a84bdd2884b447bf06437171ee74",
+      "status": "built_offline",
+      "reason": "Exact reviewed iCEnhancer delta on pinned stock CE programs; no FusionFix shader code or providers.",
+      "sources": [
+        {
+          "container": "rage_billboard_nobump.fxc",
+          "slot": 4,
+          "sha256": "f1ff8d265895e21273fdad0c962ba8e196daf8854214fe6f3dacf5db7caa4a51",
+          "interface_audit": {
+            "source_slot": 4,
+            "stage": "ps",
+            "roles": [
+              "wd_draw/0"
+            ],
+            "missing_roles": [],
+            "target_slots": [
+              4
+            ],
+            "candidates": [
+              {
+                "target_slot": 4,
+                "changed_bindings": {},
+                "target_extra_bindings": {
+                  "g_ImposterSize": [
+                    "float4",
+                    66
+                  ]
+                },
+                "source_writes_depth": false,
+                "target_writes_depth": false,
+                "declarations_equal": false,
+                "changed_pass_states": [],
+                "source_bindings_preserved": true
+              }
+            ],
+            "mapping_unambiguous": true
+          }
+        }
+      ],
+      "targets": [
+        {
+          "container": "rage_billboard_nobump.fxc",
+          "slot": 4,
+          "roles": [
+            "wd_draw/0"
+          ],
+          "stage": "ps",
+          "alias": "psh18B040CA.txt",
+          "stock_sha256": "a26822f2e2d531116511b948d3a7e7144f2b01f8ad2dfa3a05a4a457d02f455d",
+          "adapted_sha256": "76ad31323674592eada6a8e3fcf97d400ce8cb8cc992d945f5208d2bfa105dd1",
+          "assembly_sha256": "0415497c16135e02ac7475bb1d14fc57c54a022047d81b9353ffc9646172f68e",
+          "exact_preset_program": false,
+          "unedited_ce_instructions_byte_identical": true,
+          "paired_stage": false,
+          "edits": [
+            {
+              "before": [
+                "def c0, 0.200000003, 1, -0.5, 0"
+              ],
+              "after": [
+                "def c0, 0.128, 1, -0.5, 0"
+              ]
+            },
+            {
+              "before": [
+                "mul r0.xy, v0.z, v0"
+              ],
+              "after": [
+                "add r5.x, v0.z, v0.z",
+                "mul r0.xy, r5.x, v0"
+              ]
+            },
+            {
+              "before": [
+                "mul r0.x, r0.w, v0.z"
+              ],
+              "after": [
+                "mul r0.x, r0.w, r5.x"
+              ]
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "wind": "Stock CE packs the original 16*color+8 factor in TEXCOORD0.z. Double that factor only in wd_draw PS and apply the exact preset offset ratio; retain stock CE shadow moments and the shared stock VS."
+      }
+    },
+    {
+      "preset_file": "psh71CC11CF.txt",
+      "preset_sha256": "5c64fa78bda74586fae6f05a079cbaf3c376871a9f27890e19ea4a59538ef7bf",
+      "status": "no_preset_delta",
+      "reason": "Preset is exactly the original 1.0.4.0 grass program; no preset change to apply to stock CE grass.",
+      "sources": [
+        {
+          "container": "gta_grass.fxc",
+          "slot": 2,
+          "sha256": "55ac9e98c57e847be8e45cc48424cd05b48848a15f6fa556aeba9b19aa95b2fc",
+          "interface_audit": {
+            "source_slot": 2,
+            "stage": "ps",
+            "roles": [
+              "deferred_draw/0",
+              "deferred_drawskinned/0",
+              "deferredalphaclip_draw/0",
+              "deferredalphaclip_drawskinned/0"
+            ],
+            "missing_roles": [],
+            "target_slots": [
+              2
+            ],
+            "candidates": [
+              {
+                "target_slot": 2,
+                "changed_bindings": {},
+                "target_extra_bindings": {},
+                "source_writes_depth": false,
+                "target_writes_depth": false,
+                "declarations_equal": true,
+                "changed_pass_states": [],
+                "source_bindings_preserved": true
+              }
+            ],
+            "mapping_unambiguous": true
+          }
+        }
+      ],
+      "targets": []
+    },
+    {
+      "preset_file": "psh841FD9AE.txt",
+      "preset_sha256": "f2ee6ff902604a0e1deecf302089108b600122f32dcd8234c8ee29d3664cc1bd",
+      "status": "built_offline",
+      "reason": "Exact reviewed iCEnhancer delta on pinned stock CE programs; no FusionFix shader code or providers.",
+      "sources": [
+        {
+          "container": "gta_terrain_va_4lyr.fxc",
+          "slot": 9,
+          "sha256": "8c204cf98b85ed9a0ba72b92c1bc6275cefb0156d59c444e14f2e7ca79d484be",
+          "interface_audit": {
+            "source_slot": 9,
+            "stage": "ps",
+            "roles": [
+              "deferred_draw/0"
+            ],
+            "missing_roles": [],
+            "target_slots": [
+              9
+            ],
+            "candidates": [
+              {
+                "target_slot": 9,
+                "changed_bindings": {},
+                "target_extra_bindings": {},
+                "source_writes_depth": false,
+                "target_writes_depth": false,
+                "declarations_equal": true,
+                "changed_pass_states": [],
+                "source_bindings_preserved": true
+              }
+            ],
+            "mapping_unambiguous": true
+          }
+        }
+      ],
+      "targets": [
+        {
+          "container": "gta_terrain_va_4lyr.fxc",
+          "slot": 9,
+          "roles": [
+            "deferred_draw/0"
+          ],
+          "stage": "ps",
+          "alias": "psh1D661524.txt",
+          "stock_sha256": "29e50d84858272c037e1a731252c18760b812d05998d228027119bfab96aa449",
+          "adapted_sha256": "c14801c8edf6f4debadb31856b3d9f7c96b04cf4c5ec5594afe51be0d9501503",
+          "assembly_sha256": "e554069569c41dcca0c8ecf87a2311d8c8c421250c4c3facd6701cb553619182",
+          "exact_preset_program": true,
+          "unedited_ce_instructions_byte_identical": true,
+          "paired_stage": false,
+          "edits": [
+            {
+              "before": [
+                "def c0, 0.5, 0, 1, 0.25"
+              ],
+              "after": [
+                "def c0, 0.5, 0, 1, 0"
+              ]
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "proof": "The entire generated executable token stream must exactly equal the assembled original preset program."
+      }
+    },
+    {
+      "preset_file": "psh8DB4CDB2.txt",
+      "preset_sha256": "9b54182821c2b8e4861ccf34b1977984559b823bcba106b1ce5e17767ab61370",
+      "status": "built_offline",
+      "reason": "Exact reviewed iCEnhancer delta on pinned stock CE programs; no FusionFix shader code or providers.",
+      "sources": [
+        {
+          "container": "gta_normal_spec.fxc",
+          "slot": 13,
+          "sha256": "de87c3164c3a22e711f47a4c223c74bd590b2aaab02c9cea460eadd0e47ccf6b",
+          "interface_audit": {
+            "source_slot": 13,
+            "stage": "ps",
+            "roles": [
+              "deferred_draw/0",
+              "deferred_drawskinned/0"
+            ],
+            "missing_roles": [],
+            "target_slots": [
+              14
+            ],
+            "candidates": [
+              {
+                "target_slot": 14,
+                "changed_bindings": {
+                  "StippleTexture": {
+                    "source": [
+                      "sampler",
+                      10
+                    ],
+                    "target": null
+                  }
+                },
+                "target_extra_bindings": {},
+                "source_writes_depth": false,
+                "target_writes_depth": false,
+                "declarations_equal": false,
+                "changed_pass_states": [],
+                "source_bindings_preserved": false
+              }
+            ],
+            "mapping_unambiguous": true
+          }
+        }
+      ],
+      "targets": [
+        {
+          "container": "gta_normal_spec.fxc",
+          "slot": 14,
+          "roles": [
+            "deferred_draw/0",
+            "deferred_drawskinned/0"
+          ],
+          "stage": "ps",
+          "alias": "psh573DE346.txt",
+          "stock_sha256": "0e6f65e7c78d022d669d38df75d84559818649712bee558de6b0773b05befd6b",
+          "adapted_sha256": "a6c7971cfdde906867f8bd542e76f395920a8803e08b9b23ed0d8ccb743b6830",
+          "assembly_sha256": "1c8bed7439d5d3c47434710ec8a54ebe36a3d62805ab273ee2dc96feffdabcf3",
+          "exact_preset_program": false,
+          "unedited_ce_instructions_byte_identical": true,
+          "paired_stage": false,
+          "edits": [
+            {
+              "before": [
+                "def c1, 0.176470593, -1, -0, 1"
+              ],
+              "after": [
+                "def c1, 0.176470593, -1, 0, 1"
+              ]
+            },
+            {
+              "before": [
+                "ps_3_0"
+              ],
+              "after": [
+                "ps_3_0",
+                "def c150, 0.0, 1.0, 0.0, 0.0",
+                "def c175, 0.0, 0.5, 2.0, -1.0",
+                "def c177, 0.5, 4.0, 1.0, 0.0",
+                "def c178, 1.0, 1.0, 0.0, 3.0"
+              ]
+            },
+            {
+              "before": [
+                "dcl_2d s0"
+              ],
+              "after": [
+                "dcl_2d s0",
+                "dcl_2d s13"
+              ]
+            },
+            {
+              "before": [
+                "texld r0, v0, s0"
+              ],
+              "after": [
+                "texld r0, v0, s0",
+                "texld r12, v0, s2",
+                "mul r12.w, r12.w, c66.x",
+                "dp3 r12.x, r12, c73",
+                "mov r10.zw, c150.x",
+                "mov r10.xy, v0",
+                "mul r10.xy, r10, c178.w",
+                "texld r11, r10, s13",
+                "mad r11, r11, c175.z, c175.w",
+                "mov r10.xyz, r11.w",
+                "mul r10, r10, c177.w",
+                "add r10, r10, -c175.w",
+                "mul r10, r0, r10",
+                "mov r9.xyz, r0",
+                "max r9.w, r0.x, r0.y",
+                "max r9.w, r9.w, r0.z",
+                "mul_sat r9.w, r9.w, c177.x",
+                "pow r9.w, r9.w, c177.x",
+                "lrp r0.xyz, r9.w, r9, r10"
+              ]
+            },
+            {
+              "before": [
+                "texld r3, v0, s1"
+              ],
+              "after": [
+                "texld r3, v0, s1",
+                "mad r3.xyz, r3, c175.z, c175.w",
+                "mul r10.z, r11.z, c199.x",
+                "mov r10.xy, r11.xy",
+                "nrm r11.xyz, r10.xyz",
+                "mov r14.xyz, r3.xzy",
+                "mov r15.xyz, r3.zyx",
+                "mov r16.xyz, r3.yxz",
+                "dp3 r10.y, r11.xyz, r14.xyz",
+                "dp3 r10.x, r11.xyz, r15.xyz",
+                "dp3 r10.z, r11.xyz, r16.xyz",
+                "nrm r11.xyz, r10.xyz",
+                "add_sat r9.w, r9.w, r12.x",
+                "lrp r3.xyz, r9.w, r3, r11",
+                "mad r3.xyz, r3, c175.y, c175.y"
+              ]
+            },
+            {
+              "before": [
+                "texld r3, v0, s2",
+                "mul r2.x, r3.w, c66.x",
+                "dp3 r2.w, r3, c73"
+              ],
+              "after": [
+                "mov r2.x, r12.w",
+                "mov r2.w, r12.x",
+                "mul r11.w, r2.w, r11.w",
+                "mov r12.x, r2.w",
+                "mul_sat r9.w, r2.w, c177.z",
+                "lrp r2.w, r9.w, r12.x, r11.w",
+                "mov_sat r2.w, r2.w"
+              ]
+            },
+            {
+              "before": [
+                "mov oC0.xyz, r0"
+              ],
+              "after": [
+                "pow r0.x, r0.x, c178.x",
+                "pow r0.y, r0.y, c178.x",
+                "pow r0.z, r0.z, c178.x",
+                "mul r0.x, r0.x, c178.y",
+                "mul r0.y, r0.y, c178.y",
+                "mul r0.z, r0.z, c178.y",
+                "mov oC0.xyz, r0"
+              ]
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "surface": "Preserve every stock CE coverage/normal/output instruction outside the explicit preset delta.",
+        "signed_zero": "Original preset -0 -> +0 applied to the exact corresponding CE local DEF component.",
+        "resources": "Only the preset adds s13 detail input and (normal-spec) c199.x; no FusionFix providers."
+      }
+    },
+    {
+      "preset_file": "pshF5256B40.txt",
+      "preset_sha256": "3a55a2d22e24f32bb38200ead378898451c37ed4dc098d492008ffbcb9b7d57d",
+      "status": "built_offline",
+      "reason": "Exact reviewed iCEnhancer delta on pinned stock CE programs; no FusionFix shader code or providers.",
+      "sources": [
+        {
+          "container": "gta_spec.fxc",
+          "slot": 13,
+          "sha256": "4d6ca6ce0394c991ef1dbf8201dd7010d9e421ee9602be4d84aecf64f5e133c0",
+          "interface_audit": {
+            "source_slot": 13,
+            "stage": "ps",
+            "roles": [
+              "deferred_draw/0",
+              "deferred_drawskinned/0"
+            ],
+            "missing_roles": [],
+            "target_slots": [
+              14
+            ],
+            "candidates": [
+              {
+                "target_slot": 14,
+                "changed_bindings": {
+                  "StippleTexture": {
+                    "source": [
+                      "sampler",
+                      10
+                    ],
+                    "target": null
+                  }
+                },
+                "target_extra_bindings": {},
+                "source_writes_depth": false,
+                "target_writes_depth": false,
+                "declarations_equal": false,
+                "changed_pass_states": [],
+                "source_bindings_preserved": false
+              }
+            ],
+            "mapping_unambiguous": true
+          }
+        }
+      ],
+      "targets": [
+        {
+          "container": "gta_spec.fxc",
+          "slot": 14,
+          "roles": [
+            "deferred_draw/0",
+            "deferred_drawskinned/0"
+          ],
+          "stage": "ps",
+          "alias": "psh216B7814.txt",
+          "stock_sha256": "f6355810a3c3e1fa8e245adecf701407cebb55c981e3fcc8afc0d4f51457fb50",
+          "adapted_sha256": "4156bff45ac54e9c7c600c8c6804e82c03a9107a8c3d3696475e2100e6d1236f",
+          "assembly_sha256": "7401ab9e8090c430ddd8ec397007a85a06d614721b32e3b342679256de168443",
+          "exact_preset_program": false,
+          "unedited_ce_instructions_byte_identical": true,
+          "paired_stage": false,
+          "edits": [
+            {
+              "before": [
+                "def c0, 0.176470593, -1, -0, 9.99999975e-006"
+              ],
+              "after": [
+                "def c0, 0.176470593, -1, 0, 9.99999975e-006"
+              ]
+            },
+            {
+              "before": [
+                "ps_3_0"
+              ],
+              "after": [
+                "ps_3_0",
+                "def c150, 0.0, 1.0, 0.0, 0.0",
+                "def c175, 0.0, 0.5, 2.0, -1.0",
+                "def c177, 0.4, 4.0, 3.0, 0"
+              ]
+            },
+            {
+              "before": [
+                "dcl_2d s0"
+              ],
+              "after": [
+                "dcl_2d s0",
+                "dcl_2d s13"
+              ]
+            },
+            {
+              "before": [
+                "texld r0, v0, s0"
+              ],
+              "after": [
+                "texld r0, v0, s0",
+                "texld r12, v0, s1",
+                "mul r12.w, r12.w, c66.x",
+                "dp3 r12.x, r12, c73",
+                "mov r10.zw, c150.x",
+                "mov r10.xy, v0",
+                "mul r10.xy, r10, c177.z",
+                "texld r11, r10, s13",
+                "mad r11, r11, c175.z, c175.w",
+                "mov r10.xyz, r11.w",
+                "mul r10, r10, c177.w",
+                "add r10, r10, -c175.w",
+                "mul r10, r0, r10",
+                "mov r9.xyz, r0",
+                "max r9.w, r0.x, r0.y",
+                "max r9.w, r9.w, r0.z",
+                "mul_sat r9.w, r9.w, c177.x",
+                "pow r9.w, r9.w, c177.x",
+                "lrp r0.xyz, r9.w, r9, r10"
+              ]
+            },
+            {
+              "before": [
+                "texld r3, v0, s1",
+                "mul r2.x, r3.w, c66.x",
+                "dp3 r2.w, r3, c73"
+              ],
+              "after": [
+                "mov r2.x, r12.w",
+                "mov r2.w, r12.x",
+                "mul r11.w, r2.w, r11.w",
+                "mov r12.x, r2.w",
+                "mov r9.w, r2.w",
+                "add_sat r9.w, r2.w, r2.w",
+                "lrp r2.w, r9.w, r12.x, r11.w",
+                "mov_sat r2.w, r2.w"
+              ]
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "surface": "Preserve every stock CE coverage/normal/output instruction outside the explicit preset delta.",
+        "signed_zero": "Original preset -0 -> +0 applied to the exact corresponding CE local DEF component.",
+        "resources": "Only the preset adds s13 detail input and (normal-spec) c199.x; no FusionFix providers."
+      }
+    },
+    {
+      "preset_file": "vsh54F25463.txt",
+      "preset_sha256": "07b1b306e969f8969afe3d9fe1ed7fffe46137a23abe4f6ab7776850f6e9bb5a",
+      "status": "built_offline",
+      "reason": "Exact reviewed iCEnhancer delta on pinned stock CE programs; no FusionFix shader code or providers.",
+      "sources": [
+        {
+          "container": "deferred_lighting.fxc",
+          "slot": 7,
+          "sha256": "643dc4d8f0b955c549305351947c61e2ab1c5faf4bc38f0a0112100a56e67f30",
+          "interface_audit": {
+            "source_slot": 7,
+            "stage": "vs",
+            "roles": [
+              "lightShafts/0",
+              "lightShafts/1",
+              "lightShafts/4",
+              "lightShafts/5"
+            ],
+            "missing_roles": [],
+            "target_slots": [
+              7
+            ],
+            "candidates": [
+              {
+                "target_slot": 7,
+                "changed_bindings": {},
+                "target_extra_bindings": {},
+                "source_writes_depth": false,
+                "target_writes_depth": false,
+                "declarations_equal": true,
+                "changed_pass_states": [],
+                "source_bindings_preserved": true
+              }
+            ],
+            "mapping_unambiguous": true
+          }
+        }
+      ],
+      "targets": [
+        {
+          "container": "deferred_lighting.fxc",
+          "slot": 7,
+          "roles": [
+            "lightShafts/0",
+            "lightShafts/1",
+            "lightShafts/4",
+            "lightShafts/5"
+          ],
+          "stage": "vs",
+          "alias": "vsh9EC48C3F.txt",
+          "stock_sha256": "96e0e0f79f98616247f944bb40a662f158695265240901e83092736dba4f377b",
+          "adapted_sha256": "35cfcf689d866d38f86ce229995a5016cd3f5afcf256b26394427afa3347b6d2",
+          "assembly_sha256": "91d1eccc387f891c6209de2483b22060f79e29c5a2005f5a26298438acee228c",
+          "exact_preset_program": true,
+          "unedited_ce_instructions_byte_identical": true,
+          "paired_stage": false,
+          "edits": [
+            {
+              "before": [
+                "def c2, 9.99999975e-005, -2, 9.99999975e-006, 0.662"
+              ],
+              "after": [
+                "def c2, 9.99999975e-005, -2, 9.99999975e-006, 2"
+              ]
+            },
+            {
+              "before": [
+                "sge r1.x, v0_abs.z, c2.x"
+              ],
+              "after": []
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "proof": "The entire generated executable token stream must exactly equal the assembled original preset program."
+      }
+    },
+    {
+      "preset_file": "vshC35A5E05.txt",
+      "preset_sha256": "0f749b766602f446032130f4b2df3e6e2ee58b9a6e0f3fb926436110a077c4df",
+      "status": "built_offline",
+      "reason": "Exact reviewed iCEnhancer delta on pinned stock CE programs; no FusionFix shader code or providers.",
+      "sources": [
+        {
+          "container": "deferred_lighting.fxc",
+          "slot": 8,
+          "sha256": "8231b9cdba9c0aecbc105461fa1e230c473ad902eec627aca556c2d9287d8c51",
+          "interface_audit": {
+            "source_slot": 8,
+            "stage": "vs",
+            "roles": [
+              "lightShafts/2",
+              "lightShafts/3",
+              "lightShafts/6",
+              "lightShafts/7"
+            ],
+            "missing_roles": [],
+            "target_slots": [
+              8
+            ],
+            "candidates": [
+              {
+                "target_slot": 8,
+                "changed_bindings": {},
+                "target_extra_bindings": {},
+                "source_writes_depth": false,
+                "target_writes_depth": false,
+                "declarations_equal": true,
+                "changed_pass_states": [],
+                "source_bindings_preserved": true
+              }
+            ],
+            "mapping_unambiguous": true
+          }
+        }
+      ],
+      "targets": [
+        {
+          "container": "deferred_lighting.fxc",
+          "slot": 8,
+          "roles": [
+            "lightShafts/2",
+            "lightShafts/3",
+            "lightShafts/6",
+            "lightShafts/7"
+          ],
+          "stage": "vs",
+          "alias": "vshF40198F6.txt",
+          "stock_sha256": "6589ac0fe5b332fef5b20dbff87b21df2d09cfa20b3ee695642175b54d1861e0",
+          "adapted_sha256": "2f5fc754eeb2a526ff004d10fb616dfaffa3ca1b840d7db571d1a22b12b00941",
+          "assembly_sha256": "6fd50b1f01b12477c30bd41ea0e4b725049557797682be59899b57020dd47873",
+          "exact_preset_program": true,
+          "unedited_ce_instructions_byte_identical": true,
+          "paired_stage": false,
+          "edits": [
+            {
+              "before": [
+                "def c1, 6.28318548, -3.14159274, -1.57079637, 1.57079637",
+                "def c2, 9.99999975e-005, -2, 9.99999975e-006, 0.662",
+                "def c3, 0, -1, 1, 0.000244140625",
+                "def c4, 0.5, -0.5, 0.25, 0"
+              ],
+              "after": [
+                "def c1, 9.28318548, -3.14159274, -1.57079637, 1.57079637",
+                "def c2, 9.99999975e-005, -2, 9.99999975e-006, 100",
+                "def c3, 1, -1, 1, 0.000244140625",
+                "def c4, 0, 0, 0, 0"
+              ]
+            },
+            {
+              "before": [
+                "min r0.x, r0.x, c0.w"
+              ],
+              "after": []
+            },
+            {
+              "before": [
+                "mul r0.x, r0.x, c4.z"
+              ],
+              "after": [
+                "mul r0.x, r0.x, c0.z"
+              ]
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "proof": "The entire generated executable token stream must exactly equal the assembled original preset program."
+      }
+    }
+  ]
+}

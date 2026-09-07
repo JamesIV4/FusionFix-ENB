@@ -1,5 +1,7 @@
 # Test matrix and scenes
 
+**Current baseline:** follow the [stock CE strategy](stock-ce-strategy.md). Modern-FusionShaders compatibility experiments below are historical; shadows can be validated after the first stock shader scene.
+
 The configurations and scenes every experiment in this project is measured
 against. Capturing the same scenes under each configuration is what makes two
 results comparable; a screenshot with no matching baseline proves nothing.

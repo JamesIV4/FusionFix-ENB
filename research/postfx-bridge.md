@@ -1,5 +1,7 @@
 # Runtime postfx bridge
 
+> **Historical; superseded September 7.** Modern-shader/mixed-pipeline workarounds and their setup commands are retired. Use [the stock CE strategy](stock-ce-strategy.md).
+
 **September 6:** use `analyze_postfx_capture.py` for numeric projection,
 converted-depth and HDR/adaptation checks after a user-run `Diagnose` capture.
 No new raw game capture is available yet. All preset shader translations are

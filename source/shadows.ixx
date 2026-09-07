@@ -97,7 +97,9 @@ public:
             bHighResolutionShadows  = iniReader.ReadInteger("SHADOWS", "HighResolutionShadows",  0) != 0;
 
             // Dynamic shadows for trees
-            if (bDynamicShadowsForTrees && ENBCompat::Renderer().ShadowPipelineFixes)
+            // Caster flags use the game's existing shadow techniques. Keep
+            // these non-shader fixes with either shader baseline.
+            if (bDynamicShadowsForTrees)
             {
                 auto pattern = find_pattern("E8 ? ? ? ? EB 11 8D 44 24 54", "E8 ? ? ? ? EB 0E 09 4C 24 08");
                 CModelInfoStore__allocateBaseModel = injector::GetBranchDestination(pattern.get_first(0));
@@ -109,7 +111,7 @@ public:
             }
 
             // Extra dynamic shadows
-            if (bExtraDynamicShadows && ENBCompat::Renderer().ShadowPipelineFixes)
+            if (bExtraDynamicShadows)
             {
                 if (bExtraDynamicShadows >= 1)
                 {

@@ -1,5 +1,7 @@
 # User-run test: CE terrain shader filename bridge
 
+> **Historical; superseded September 7.** Modern-shader/mixed-pipeline workarounds and their setup commands are retired. Use [the stock CE strategy](stock-ce-strategy.md).
+
 **September 5 update:** FixedBaseline was tested successfully; trees look
 unchanged and exposure remains unresolved. The user requested compatibility-layer
 development instead of more tree diagnosis. New modern shader delta adapters

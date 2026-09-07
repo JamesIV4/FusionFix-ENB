@@ -1,0 +1,21 @@
+[
+  "plugins/ENBCompat/capture.request",
+  "plugins/ENBCompat/legacy_composite.cso",
+  "plugins/ENBCompat/legacy_depth.cso",
+  "shaderinput/psh07FE34FB.txt",
+  "shaderinput/psh227985B3.txt",
+  "shaderinput/psh38133605.txt",
+  "shaderinput/psh534939FB.txt",
+  "shaderinput/psh54B11AF3.txt",
+  "shaderinput/psh5FF05F86.txt",
+  "shaderinput/psh830C2AC8.txt",
+  "shaderinput/psh89F19EB7.txt",
+  "shaderinput/pshB59C0F9F.txt",
+  "shaderinput/pshBD733B58.txt",
+  "shaderinput/pshC0223F26.txt",
+  "shaderinput/pshD27C2451.txt",
+  "shaderinput/pshD3E7B05D.txt",
+  "shaderinput/pshDEB9B5B7.txt",
+  "shaderinput/vsh2EE562FD.txt",
+  "shaderinput/vsh6871A11C.txt"
+]

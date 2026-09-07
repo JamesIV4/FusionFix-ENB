@@ -192,50 +192,15 @@ public:
             bNoBloomColorShift = iniReader.ReadInteger("MISC", "NoBloomColorShift", 1) != 0;
             fMaxPQValue = std::max(iniReader.ReadFloat("MISC", "MaxPQValue", 100.0f), 0.0000001f);
 
-            // Redirect path to one unified folder
-            //
-            // The game keeps six GPU-specific shader-variant folders
-            // (win32_30, win32_30_low_ati, _nv6, _nv7, _nv8, _atidx10) and
-            // picks one at runtime. FusionFix collapses every lookup onto a
-            // single folder so it only has to ship one shader set. Normally
-            // that is entry 0, win32_30, which is the folder its own package
-            // overlays.
-            //
-            // In ENB mode the package is not wanted, so the collapse targets a
-            // folder nothing overlays instead and the game loads the stock
-            // shaders. Same hook either way -- only the index differs -- so
-            // there is no separate code path to keep working.
-            static auto shaderFolderIndex = [](const char** table) -> uint32_t
+            // FusionShaders' unified folder and embedded perlin replacement
+            // belong exclusively to the normal FusionFix renderer.
+            if (ENBCompat::Renderer().FusionShaderPackage)
             {
-                if (ENBCompat::Renderer().FusionShaderPackage)
-                    return 0;
-
-                // Resolve by name rather than by a hard-coded index: the table
-                // order is not guaranteed, and a wrong index here would send
-                // every shader lookup somewhere arbitrary.
-                auto& wanted = ENBCompat::StockShaderFolder();
-                for (uint32_t i = 0; i < 8; i++)
-                {
-                    // Walk only as far as entries that still look like variant
-                    // folder names, so running off the end of the table stops
-                    // the scan instead of comparing against arbitrary memory.
-                    auto entry = table[i];
-                    if (IsBadReadPtr(entry, 32) || strncmp(entry, "win32_30", 8) != 0)
-                        break;
-                    if (wanted == entry)
-                        return i;
-                }
-
-                ENBCompat::Log("StockShaderFolder '" + wanted + "' is not one of the game's shader"
-                    " variant folders; falling back to the FusionFix package.");
-                return 0;
-            };
-
             auto pattern = hook::pattern("8B 04 8D ? ? ? ? A3 ? ? ? ? 8B 44 24 04");
             if (!pattern.empty())
             {
                 static auto off_1045520 = *pattern.get_first<const char**>(3);
-                static auto index = shaderFolderIndex(off_1045520);
+                static constexpr uint32_t index = 0;
                 struct ShaderPathHook
                 {
                     void operator()(injector::reg_pack& regs)
@@ -249,7 +214,7 @@ public:
             {
                 pattern = hook::pattern("8B 14 85 ? ? ? ? A3 ? ? ? ? 8B 44 24 04");
                 static auto off_1045520 = *pattern.get_first<const char**>(3);
-                static auto index = shaderFolderIndex(off_1045520);
+                static constexpr uint32_t index = 0;
                 struct ShaderPathHook
                 {
                     void operator()(injector::reg_pack& regs)
@@ -285,6 +250,8 @@ public:
                         }
                     }
                 }
+            }
+
             }
 
             // Actually read the rain lighting settings in the visualsettings.dat
@@ -352,6 +319,7 @@ public:
             }
 
             // Force the water surface render target resolution to always be 256x256. This matches the water tiling on the console versions.
+            if (ENBCompat::Renderer().FusionShaderTweaks)
             {
                 static uint32_t dwWaterQuality = 1; // MO_MED?
 
@@ -666,6 +634,7 @@ public:
 
         FusionFix::onInitEventAsync() += []()
         {
+            if (!ENBCompat::Renderer().ShaderConstantInjection) return;
             // This only suppresses unsupported-state warnings on DXVK. Legacy
             // ENB forces native D3D9, where these states may carry vendor
             // alpha-to-coverage controls, so leave the original calls intact.

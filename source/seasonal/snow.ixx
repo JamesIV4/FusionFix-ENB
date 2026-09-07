@@ -8,6 +8,7 @@ export module seasonal.snow;
 import comvars;
 import natives;
 import timecycext;
+import enbcompat;
 
 #define IDR_SNOWTX 200
 #define IDR_BLITPS 201
@@ -22,7 +23,8 @@ public:
 
     auto Init() -> void override
     {
-        CRenderPhaseDeferredLighting_LightsToScreen::OnBuildRenderList() += OnBuildRenderList;
+        if (ENBCompat::Renderer().SnowShaders)
+            CRenderPhaseDeferredLighting_LightsToScreen::OnBuildRenderList() += OnBuildRenderList;
 
         // Disables rain-related audio (e.g. Surface impacts)
         auto pattern = hook::pattern("F3 0F 10 05 ? ? ? ? F3 0F 11 04 24 E8 ? ? ? ? 51");

@@ -1,5 +1,7 @@
 # September 6: offline progress and remaining work
 
+> **Historical; superseded September 7.** Modern-shader/mixed-pipeline workarounds and their setup commands are retired. Use [the stock CE strategy](stock-ce-strategy.md).
+
 **Follow-up completed:** the three translations listed as pending below have
 now been implemented. The current package has eleven adapted inputs, unchanged
 grass, and fifteen aliases. See [the completed translations and validation](translations-complete-2026-09-06.md).

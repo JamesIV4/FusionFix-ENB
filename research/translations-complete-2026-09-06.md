@@ -1,5 +1,7 @@
 # All preset translations implemented
 
+> **Historical; superseded September 7.** Modern-shader/mixed-pipeline workarounds and their setup commands are retired. Use [the stock CE strategy](stock-ce-strategy.md).
+
 The three remaining translations are complete and assembled. All twelve
 original iCEnhancer inputs are now accounted for: **eleven adapted inputs,
 one unchanged grass shader, zero pending translations**. They produce fifteen

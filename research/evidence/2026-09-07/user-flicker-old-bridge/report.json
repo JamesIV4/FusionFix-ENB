@@ -1,0 +1,47 @@
+{
+  "date": "2026-09-07",
+  "user_report": "Stationary sky/building flicker, dark overall presentation, severe moving-camera halos.",
+  "screenshots": [
+    {
+      "file": "20260907112409_1.jpg",
+      "sha256": "12d6b204e8bc742dfca4d08737d4748111912563add92c436e0619c36c2d7c5f"
+    },
+    {
+      "file": "20260907112411_1.jpg",
+      "sha256": "5e96460ba3c5a42651d6ec96b224592d557d243a285e4ede19177b03b10b5c62"
+    },
+    {
+      "file": "20260907112411_2.jpg",
+      "sha256": "89bcbef453812bf7d8c98f3f9a2bc6e8e7732cab980838ff92b79ba447618991"
+    },
+    {
+      "file": "20260907112411_3.jpg",
+      "sha256": "b688076318d877bd353d2dbbcd7d0954498bcaa32afe5ce681ec482dc948044e"
+    },
+    {
+      "file": "20260907112415_1.jpg",
+      "sha256": "000cbb5c8e1710a8a69c4530389bd085f8216fdd9d95f3d3c6f25b921dccc894"
+    }
+  ],
+  "observed": "Alternating blue/black bands and bridge/building shading in stationary frames; pronounced bright edge outlines in the final moving-camera frame.",
+  "run_log": "ENBCompat.log.txt",
+  "run_start_local": "11:23:04",
+  "pipeline": "retired modern FusionShaders + postfx bridge",
+  "installed_asi_sha256": "5df954a5b28ed2fa615bc4a7e66c8e5f4e7439781275fe44fe1f2c14ef1e2f6f",
+  "stock_package_asi_sha256": "ced1e28b311e3f0b2d1c103b01a859c4c43b0f74391ccf4d163c24a9287c17ca",
+  "installed_effect_sha256": "da7f697611c62dded78ca347965bc60cdd0377d762fb5be96a9b6c36d95f74ee",
+  "installed_wrapper_sha256": "280e2bc15485bb7b944d47bad9e7d553b6e63eba3afb97bdbc546d45fcc203c4",
+  "stock_cache_present": false,
+  "stock_snapshot_present": false,
+  "stock_package_preflight": {
+    "staged_baseline_files_verified": 339,
+    "original_game_baseline_files_verified": 339,
+    "aliases_verified": 11,
+    "asi_verified": true
+  },
+  "conclusion": "This run does not validate the new stock CE baseline. Install the already-prepared stock package before assigning these symptoms to the new translator.",
+  "symptom_root_cause_proven": false,
+  "game_modified": false,
+  "game_launched": false,
+  "computer_use": false
+}

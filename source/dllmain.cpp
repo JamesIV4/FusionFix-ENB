@@ -4,6 +4,7 @@ import common;
 import comvars;
 import compat;
 import fusiondxhook;
+import enbstockfiles;
 
 injector::hook_back<void(*)()> hbCGameProcess;
 void CGameProcessHook()
@@ -140,6 +141,7 @@ extern "C"
     {
         std::call_once(CallbackHandler::flag, []()
         {
+            ENBStockFiles::Initialize();
             CompatibilityWarnings();
             CallbackHandler::RegisterCallback(Init, hook::pattern("F3 0F 10 44 24 ? F3 0F 59 05 ? ? ? ? EB ? E8"));
         });

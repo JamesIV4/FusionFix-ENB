@@ -1,8 +1,7 @@
 # Research
 
-Current development: [all preset translations implemented](translations-complete-2026-09-06.md),
-[runtime postfx bridge](postfx-bridge.md) and
-[the recovered 1.0.4.0 shader reference](patch1040-reference.md).
+Current development: [strict stock CE baseline](stock-ce-strategy.md) and
+[the current plan](../GTAIV_FusionFix_ENB_Compatibility_Plan.md). Older experiments are historical.
 
 Evidence for the ENB compatibility work. Kept separate from `docs/` on purpose:
 `docs/` says how to use the thing, this says what is actually known.
