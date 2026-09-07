@@ -17,23 +17,17 @@ results comparable; a screenshot with no matching baseline proves nothing.
 | E | GTA IV 1.0.4.0 or 1.0.7.0 + ENB | the reference the preset was built for | optional |
 | F | GTA IV 1.0.4.0 or 1.0.7.0, stock | reference baseline | optional |
 
-**E and F are optional.** They were originally listed as the reference for what
-the preset expects, but that turned out to be recoverable without them: ENB
-documents the interface it wants in `enbeffect.fx`, and the shaders it targets
-are present in Complete Edition essentially unchanged -- three of the twelve
-match at similarity 1.000. [enb-contract.md](enb-contract.md) §4 breaks down,
-question by question, what an old install would and would not add.
+**E and F remain optional live reference configurations.** The ENB hash
+function has been recovered offline, and the separate
+[1.0.4.0 patch reference](patch1040-reference.md) supplies exact matches for all
+twelve original preset filenames. Similarity scores are no longer the identity
+evidence. The [1.0.8.0 reference](steam1080-reference.md) also supplies original
+renderer data. Neither reference was installed over CE or run for these checks.
 
-The one thing it would settle outright is ENB's hash function: hash a known
-1.0.x shader, compare to the `shaderinput` filename. That is not on the critical
-path, and if it becomes necessary the function lives in ENB's own `d3d9.dll`.
-
-Old builds are no longer distributed by Rockstar, and the third-party mirrors
-that carry them are not worth the risk. The only clean route would be Steam's
-own CDN, via the `download_depot` console command against a licence already
-owned -- and even that depends on the old manifests still being served.
-
-Everything below proceeds on A-D alone.
+The current work uses A-D plus those offline references. Follow
+[the completed package's runtime checks](translations-complete-2026-09-06.md) before expanding
+to the full scene matrix below; dark-output measurements and the new material
+adapters should be tested separately.
 
 ## 2. Preconditions
 

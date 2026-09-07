@@ -1,5 +1,44 @@
 # Research log
 
+## 2026-09-06 - completed the remaining translations
+
+Finished both light-volume VS translations and composite /10. The VS adapters
+apply the preset radius multiplier to the modern SmoothLightVolumes correction,
+retain fog and depth outputs, and keep the corrected modern occlusion sampler.
+The composite adapter preserves its modern input/depth/phone-camera/HDR path
+while applying all active preset weight/bloom/tone changes. The old edge-filter
+threshold is explicitly retired with that replaced filter; modern half-texel
+offsets stay intact. It bypasses the separate canonical final-pass bridge.
+
+All twelve inputs are accounted for: eleven adapted, unchanged grass, zero
+pending; fifteen aliases assemble and pass the full corpus collision scan.
+67 Python tests include 53 finite complete-VS comparisons, the original singular
+case, fog/smoothing checks and 120 composite arithmetic cases. Fixtures are
+checked against real exports during the build. Native router/state/readback
+tests and Release build pass. Fresh installation and v3-to-v4 upgrade/restore
+pass in synthetic directories, retaining all original backups. No game launch,
+computer use or real-game writes. See [the completed translation record](translations-complete-2026-09-06.md).
+
+## 2026-09-06 - unattended offline adapter and diagnostic work
+
+Reviewed the plan and latest regression evidence without computer use or game
+launches. Added exact-1.0.4.0 delta recipes and an offline builder accounting for
+all twelve original inputs: eight adapted, grass unchanged, three pending.
+Twelve modern aliases preserve modern coverage, normal reconstruction and depth.
+The billboard wind change stays in wd_draw PS because its VS is shared with
+wd_masked_draw. The full 103-container corpus and all adapted bytes are pinned.
+
+Added numeric projection/depth/HDR-adaptation analysis for the existing automatic
+capture format. No raw game captures are available yet, so darkening remains
+unresolved. Added a separate material Apply/Restore helper and reusable synthetic
+integration test. It preflights files and profile settings, preserves original
+aliases and unrelated files, and rejects damaged backups before restoration.
+
+57 Python tests, all original/preset/modern assembly checks, Release build and
+native headless state/router/readback tests pass. Synthetic Apply/reapply/Restore
+and rejection checks pass. No real game files changed. Current artifacts and
+ordered remaining work: [offline-progress-2026-09-06.md](offline-progress-2026-09-06.md).
+
 ## 2026-09-05 20:07 - reported normals regression; preserve recovery checkpoint
 
 User reports normals/seams broken again and brightness unresolved. Screenshot

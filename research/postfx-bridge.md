@@ -1,5 +1,11 @@
 # Runtime postfx bridge
 
+**September 6:** use `analyze_postfx_capture.py` for numeric projection,
+converted-depth and HDR/adaptation checks after a user-run `Diagnose` capture.
+No new raw game capture is available yet. All preset shader translations are
+implemented, including composite `/10` as a direct modern alias that bypasses
+this final-pass bridge. See [the completed translations](translations-complete-2026-09-06.md).
+
 The experimental implementation is `source/enb_compat/postfxbridge.hxx`. The
 existing game composite hook in `source/postfx.ixx` now installs the callback
 on ENB's inner device; translation executes at its actual draw boundary. It is opt-in via

@@ -1,5 +1,15 @@
 # gamesetup
 
+For the current modern-pipeline work, use
+[the completed translations and follow-up tests](../../research/translations-complete-2026-09-06.md).
+`Invoke-PostFxBridgeTest.ps1` manages the bridge, effect-only comparison and
+automatic numeric captures. `Invoke-ModernMaterialTest.ps1` separately stages
+the fifteen reviewed modern aliases with its own per-file snapshot. It supports
+upgrading the earlier twelve-alias snapshot without replacing original backups.
+Restore the material snapshot before the older bridge/alias-kit snapshots.
+`Test-ModernMaterialSetup.ps1` exercises installation, rejection and restoration
+inside a new synthetic build directory; it never runs the game.
+
 For the September 2026 shader-hash experiment, use
 [the focused user-run test](../../research/alias-test.md) and
 `Invoke-ShaderAliasTest.ps1`. Its Baseline/Probe/Aliases/Effect phases share a

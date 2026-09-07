@@ -1,5 +1,14 @@
 # Status
 
+**September 6: all preset translations implemented; rendering remains unverified.**
+Eleven adapted inputs plus unchanged grass account for all twelve preset inputs.
+The complete v4 package contains fifteen aliases and no pending translations.
+67 Python tests, D3DX assembly, the Release build, native headless checks and
+synthetic installation/upgrade/restoration checks pass. No game was launched or
+modified. See [the completed translations and next validation work](translations-complete-2026-09-06.md).
+The September 5 notes below are historical runtime evidence; there has been no
+new visual test or raw texel capture to establish the darkening's cause.
+
 **20:07 regression report — recover the earlier effect first:** the user reports
 that normal/seam artifacts returned and brightness remains broken. The installed
 ASI is still `5df954a5...`, identical to the seam-improved 19:04 run; the effect

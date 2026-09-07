@@ -296,4 +296,13 @@ int main(int argc, char** argv) {
         assert(ENBPostFxBridge::ModernSlot(code.data(), code.size()) == 13);
         std::cout << "Captured in-game comment-stripped composite recognized as slot 13.\n";
     }
+    for (int i = 3; i < argc; ++i) {
+        // The secondary composite keeps a modern interface through its alias;
+        // applying the canonical final-pass bridge again would corrupt inputs.
+        std::ifstream file(argv[i], std::ios::binary);
+        std::vector<char> code((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
+        assert(ENBPostFxBridge::ProgramIdentity(code.data(), code.size()).bytes > 0);
+        assert(ENBPostFxBridge::ModernSlot(code.data(), code.size()) == -1);
+    }
+    if (argc >= 4) std::cout << "Secondary composite programs bypass the canonical final-pass bridge.\n";
 }

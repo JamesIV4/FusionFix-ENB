@@ -1,6 +1,7 @@
 # Research
 
-Current development: [runtime postfx bridge](postfx-bridge.md) and
+Current development: [all preset translations implemented](translations-complete-2026-09-06.md),
+[runtime postfx bridge](postfx-bridge.md) and
 [the recovered 1.0.4.0 shader reference](patch1040-reference.md).
 
 Evidence for the ENB compatibility work. Kept separate from `docs/` on purpose:

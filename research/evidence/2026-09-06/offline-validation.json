@@ -1,0 +1,78 @@
+{
+  "date": "2026-09-06",
+  "game_modified": false,
+  "game_launched": false,
+  "computer_use": false,
+  "python_tests": {
+    "passed": 57,
+    "command": "python -m unittest discover -s tools/shader_dump -p 'test_*.py'"
+  },
+  "release_build": {
+    "passed": true,
+    "postbuild_installation_disabled": true,
+    "asi_sha256": "bb5f2069d4fb29d9bd0f1984ee112a3a0564ada686a3ad656ee61318094464ca"
+  },
+  "native_headless": {
+    "passed": true,
+    "graphics_device_created": false,
+    "command": "build/test_postfx_state.exe build/postfx-bridge-v4/references build/captured-modern-composite13.cso"
+  },
+  "material_stage": {
+    "directory": "build/modern-preset-adapters-v3",
+    "manifest_sha256": "ca969ddda81d8238ec08389ce3775ab04dc3acc6bcde388366761a70d12d227d",
+    "aliases": 12,
+    "adapted_inputs": 8,
+    "unchanged_inputs": 1,
+    "pending_inputs": 3,
+    "collision_scan_containers": 103
+  },
+  "rejection_checks": [
+    {
+      "case": "duplicate_input",
+      "rejected_before_publication": true,
+      "reason": "Recipe must account for every preset input exactly once"
+    },
+    {
+      "case": "incomplete_corpus",
+      "rejected_before_publication": true,
+      "reason": "Modern corpus is incomplete or has extra containers"
+    },
+    {
+      "case": "changed_legacy_export",
+      "rejected_before_publication": true,
+      "reason": "Export identity changed: deferred_lighting.fxc"
+    },
+    {
+      "case": "changed_original_program",
+      "rejected_before_publication": true,
+      "reason": "Original 1.0.4.0 identity changed: psh0CBF49C5.txt"
+    },
+    {
+      "case": "changed_preset",
+      "rejected_before_publication": true,
+      "reason": "Preset changed: psh0CBF49C5.txt"
+    },
+    {
+      "case": "incomplete_preset_delta",
+      "rejected_before_publication": true,
+      "reason": "Reviewed delta does not cover the entire preset program: psh0CBF49C5.txt"
+    },
+    {
+      "case": "changed_adapted_program",
+      "rejected_before_publication": true,
+      "reason": "Adapted bytecode differs from the reviewed output"
+    },
+    {
+      "case": "scratch_register_collision",
+      "rejected_before_publication": true,
+      "reason": "Preset register is already used: c0"
+    }
+  ],
+  "synthetic_setup": {
+    "passed": true,
+    "directory": "build/material-setup-test-b66bc438bc544640b4cae67b48f5cdac",
+    "result": "PASS: 12 aliases; Apply/reapply/Restore/repeated Restore; missing package, changed asset, stock profile and corrupt backup rejected before mutation. No game launched."
+  },
+  "visual_validation": false,
+  "automatic_game_texel_captures_available": false
+}

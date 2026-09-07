@@ -1,0 +1,1 @@
+﻿PASS: 15 aliases; Apply/reapply/Restore/repeated Restore; missing package, changed asset, stock profile and corrupt backup rejected before mutation. No game launched. Expanded-stage upgrade preserves all original backups; invalid upgrades and shrinking stages rejected.

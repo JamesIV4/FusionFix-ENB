@@ -1,5 +1,12 @@
 # shader_dump
 
+Current work: [completed translations and numeric diagnostics](../../research/translations-complete-2026-09-06.md).
+`build_preset_adapters.py` uses the exact 1.0.4.0 references and reviewed recipes
+to generate fifteen modern aliases for eleven preset inputs; grass is unchanged
+and no translations remain pending. `analyze_postfx_capture.py` checks
+projection/depth and HDR/adaptation measurements from the automatic capture
+format. Both operate offline and report rendering as unverified.
+
 Offline analysis of GTA IV shader packages. Nothing here needs the game running.
 
 | Script | Does |

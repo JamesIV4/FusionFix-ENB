@@ -1,5 +1,14 @@
 # GTA IV Complete Edition + FusionFix ENB Compatibility Project Plan
 
+> **Current checkpoint, September 6:** all translations are implemented.
+> Eleven adapted inputs and unchanged grass account for all twelve original
+> preset inputs, producing fifteen modern aliases. Numeric postfx diagnosis
+> and reversible installation/upgrade are prepared. Release, 67 Python tests,
+> D3DX assembly, headless native checks and synthetic setup/restore pass.
+> No computer use, game launch or real-game file changes occurred.
+> **Darkening and rendering correctness still require measured runtime tests.**
+> Follow [the completed translations and current artifacts](research/translations-complete-2026-09-06.md).
+
 > **Latest checkpoint, September 5:** computer use is stopped at the user's
 > request; the user runs all further game checks and supplies screenshots.
 > [The 1.0.4.0 reference](research/patch1040-reference.md) resolves all twelve

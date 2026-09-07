@@ -1,5 +1,13 @@
 # Modern shader adapter
 
+**September 6 update:** all translations are implemented. The exact-1.0.4.0
+backend produces fifteen aliases covering eleven preset inputs, including both
+light-shaft inputs and composite `/10`. Grass needs no preset delta.
+See [the completed implementation and test procedure](translations-complete-2026-09-06.md).
+The three-terrain backend described below remains a historical reproducible
+checkpoint. All twelve identities have been resolved; references below to
+four unmapped inputs are superseded.
+
 September 5: the user redirected work from individual visual defects to the
 compatibility layer. The FixedBaseline test loaded successfully, but trees were
 visually unchanged. Exposure remains unresolved. That result is recorded in

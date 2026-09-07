@@ -1,0 +1,81 @@
+{
+  "date": "2026-09-06",
+  "task": "Finish the remaining three translations",
+  "game_modified": false,
+  "game_launched": false,
+  "computer_use": false,
+  "visual_validation": false,
+  "stage": {
+    "directory": "build/modern-preset-adapters-v4",
+    "manifest_sha256": "58eb3b9d28336e992a27c0995c5b1b9ac3ba6cac9c97d63466ef88d67e64b98f",
+    "adapted_inputs": 11,
+    "unchanged_inputs": 1,
+    "pending_translations": 0,
+    "aliases": 15,
+    "previous_twelve_aliases_byte_identical": true,
+    "collision_scan_containers": 103
+  },
+  "python_tests": {
+    "passed": 67,
+    "command": "python -m unittest discover -s tools/shader_dump -p 'test_*.py'",
+    "finite_complete_volume_cases": 53,
+    "original_singular_case_explicitly_checked": true,
+    "composite_reference_cases": 120,
+    "scope": "ideal arithmetic and caller-provided texture functions; not GPU precision, filtering, or rendering"
+  },
+  "native_headless": {
+    "passed": true,
+    "graphics_device_created": false,
+    "secondary_composite_bypass_checked": true,
+    "command": "build/test_postfx_state.exe build/postfx-bridge-v4/references build/captured-modern-composite13.cso build/postfx12-reference.cso build/modern-preset-adapters-v4/assembled/pshDEB9B5B7.cso"
+  },
+  "release_build": {
+    "passed": true,
+    "postbuild_installation_disabled": true,
+    "asi_sha256": "90ab21a639a1cf8d9bbf3483835074e13a10f3d5dd85555b0bc0c4a89cde1643",
+    "warnings": "Existing third-party missing PDB warnings"
+  },
+  "synthetic_setup": {
+    "fresh": "build/material-setup-test-dff933a08d5d439eaec6f02d21291c61",
+    "upgrade_from_v3": "build/material-setup-test-3025fb8d91ff450da9b43addbcb12c93",
+    "both_passed": true
+  },
+  "rejection_checks": [
+    {
+      "preset_file": "psh22DCDB69.txt",
+      "case": "fixture_mismatch",
+      "rejected_before_publication": true,
+      "reason": "Validated arithmetic fixture differs from the actual shader source"
+    },
+    {
+      "preset_file": "psh22DCDB69.txt",
+      "case": "adapted_program_mismatch",
+      "rejected_before_publication": true,
+      "reason": "Adapted bytecode differs from the reviewed output"
+    },
+    {
+      "preset_file": "vsh54F25463.txt",
+      "case": "fixture_mismatch",
+      "rejected_before_publication": true,
+      "reason": "Validated arithmetic fixture differs from the actual shader source"
+    },
+    {
+      "preset_file": "vsh54F25463.txt",
+      "case": "adapted_program_mismatch",
+      "rejected_before_publication": true,
+      "reason": "Adapted bytecode differs from the reviewed output"
+    },
+    {
+      "preset_file": "vshC35A5E05.txt",
+      "case": "fixture_mismatch",
+      "rejected_before_publication": true,
+      "reason": "Validated arithmetic fixture differs from the actual shader source"
+    },
+    {
+      "preset_file": "vshC35A5E05.txt",
+      "case": "adapted_program_mismatch",
+      "rejected_before_publication": true,
+      "reason": "Adapted bytecode differs from the reviewed output"
+    }
+  ]
+}
